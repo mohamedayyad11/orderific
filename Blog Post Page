@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Post - Orderific</title>
+</head>
+<body>
+    <h1>Point of Sale Solutions</h1>
+    <h3>by Orderific Team</h3>
+    <p>Orderific offers amazing POS solutions for businesses. Learn more at <a href="https://orderific.com/" target="_blank">our site</a>.</p>
+    <hr>
+    <p>Contact us: <a href="mailto:support@orderific.com">support@orderific.com</a></p>
+</body>
+</html>
