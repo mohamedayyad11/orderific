@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Orderific - HTML5 Forms and Multimedia Practice">
+    <title>Orderific - All-in-One Solution</title>
+</head>
+<body>
+    <!-- Header -->
+    <h1>Orderific - Business Management</h1>
+    <hr>
+
+    <!-- Task 1: User Registration Form -->
+    <section>
+        <h2>Point of Sale - Register</h2>
+        <form>
+            <label for="reg-username">Username:</label><br>
+            <input type="text" id="reg-username" name="username" required maxlength="20"><br>
+
+            <label for="reg-email">Email:</label><br>
+            <input type="email" id="reg-email" name="email" required><br>
+
+            <label for="reg-password">Password:</label><br>
+            <input type="password" id="reg-password" name="password" required pattern="[A-Za-z0-9]{6,}" title="At least 6 characters"><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" min="18" max="100" required><br>
+
+            <button type="submit">Register</button>
+        </form>
+    </section>
+    <hr>
+
+    <!-- Sign-In Form -->
+    <section>
+        <h2>Advanced Reporting - Sign In</h2>
+        <form>
+            <label for="signin-email">Email:</label><br>
+            <input type="email" id="signin-email" name="email" required><br>
+
+            <label for="signin-password">Password:</label><br>
+            <input type="password" id="signin-password" name="password" required><br>
+
+            <button type="submit">Sign In</button>
+        </form>
+        <p>Forgot password? Contact <a href="mailto:support@orderific.com">support@orderific.com</a></p>
+    </section>
+    <hr>
+
+    <!-- Task 2: Video and Audio Player -->
+    <section>
+        <h2>Online Ordering - Media</h2>
+        <p>Watch a sample video:</p>
+        <video width="320" height="240" controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <p>Listen to a sample audio:</p>
+        <audio controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </section>
+    <hr>
+
+    <!-- Task 3: SVG Icon -->
+    <section>
+        <h2>Table Reservations - SVG Icon</h2>
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" stroke="black" stroke-width="2"/>
+            <circle cx="12" cy="12" r="5" fill="blue"/>
+        </svg>
+        <p>A simple table icon (rectangle with a circle).</p>
+    </section>
+    <hr>
+
+    <!-- Task 4: YouTube Video -->
+    <section>
+        <h2>Menu Management - Video Tutorial</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+        <p>Watch this sample video from YouTube.</p>
+    </section>
+    <hr>
+
+    <!-- Footer: Contact Info -->
+    <footer>
+        <h2>Customer Loyalty</h2>
+        <p>Contact us: <a href="mailto:support@orderific.com">support@orderific.com</a></p>
+    </footer>
+</body>
+</html>
