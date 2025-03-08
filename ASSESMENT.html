@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderific Pricing Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .pricing-container {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pricing-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .pricing-card h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 36px;
+            color: #ff5733;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price span {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .pricing-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card .btn {
+            background-color: #ff5733;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .pricing-card .btn:hover {
+            background-color: #e64a2e;
+        }
+
+        .pricing-card h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card ul li {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .pricing-card ul li::before {
+            content: "✔";
+            color: #ff5733;
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+
+        .pricing-card .description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .pricing-card .description strong {
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <!-- Full/Pro Plan -->
+        <div class="pricing-card">
+            <h2>Full/Pro Plan</h2>
+            <div class="price">$99<span>/Month</span></div>
+            <p>Become a culinary sensation with Orderific’s Full Plan at just 999$/month.</p>
+            <a href="#" class="btn">Get Started</a>
+            <h3>Key Features:</h3>
+            <ul>
+                <li>Digital Smart Menu<br>Interactive menu system with real-time updates.</li>
+                <li>Loyalty Program<br>Features for rewarding and retaining customers.</li>
+                <li>Business Analytics<br>Tools for analyzing and strategizing business data.</li>
+                <li>Loyalty Program<br>Features for rewarding and retaining customers.</li>
+                <li>Website Builder<br>Tools for creating a dynamic online presence.</li>
+                <li>Integrated Payment Options<br>Diverse payment methods for customer convenience.</li>
+                <li>Delivery System Setup<br>Tools for establishing and managing delivery services.</li>
+                <li>Marketing Tools<br>Resources to enhance marketing reach and effectiveness.</li>
+                <li>Menu Translation<br>Feature to translate menus into multiple languages.</li>
+                <li>Clear Reporting<br>Stay informed with straightforward analytics.</li>
+                <li>Seamless POS Integration<br>Efficient integration with point-of-sale systems.</li>
+                <li>...and much more!</li>
+            </ul>
+            <div class="description">
+                <strong>Ideal for Visionary Restaurateurs:</strong><br>
+                Choose this plan to elevate your dining experience and set your restaurant apart. Ideal for combining technology and insights to grow your business.
+            </div>
+        </div>
+
+        <!-- Complimentary Plan -->
+        <div class="pricing-card">
+            <h2>Complimentary Plan</h2>
+            <div class="price">$0<span>/Month</span></div>
+            <p>Experience premium services at zero cost with Orderific’s Complimentary Plan by offering price guarantee.</p>
+            <a href="#" class="btn">Get Started</a>
+            <h3>Key Features:</h3>
+            <ul>
+                <li>Access All Features<br>Get EVERY feature of the Full Plan without the $99 fee.</li>
+                <li>Zero Cost<br>Enjoy ALL features at NO COST by offering price guarantee with Orderific.</li>
+                <li>Commitment to Best Prices<br>Offer the lowest menu prices on Orderific and enjoy FREE premium services.</li>
+            </ul>
+            <div class="description">
+                <strong>Perfect for Value-Focused Eateries:</strong><br>
+                If your restaurant is all about great deals and top-notch quality, this plan is perfect for you. It’s more than just cost-saving – it’s about building a community of happy, loyal customers who appreciate your dedication to affordability and excellence.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
