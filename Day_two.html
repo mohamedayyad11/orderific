@@ -6,7 +6,7 @@
     <title>CSS3 Day 2 Practice - Orderific Inspired</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables for theme colors (Task 7) */
+        /* Task 7: CSS Variables for theme colors */
         :root {
             --primary-color: #4CAF50;
             --secondary-color: #2196F3;
@@ -14,9 +14,9 @@
             --light-bg: rgba(255, 255, 255, 0.8);
         }
 
+        /* Task 1: Font styles and sizes */
         body {
-            /* Task 1: Font styles and sizes */
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto', sans-serif; /* Task 5: Google Fonts */
             font-size: 16px;
             /* Task 13: Letter spacing and line-height */
             letter-spacing: 0.5px;
@@ -64,13 +64,13 @@
             margin: 0 auto 20px;
         }
 
-        /* Task 5: Google Fonts already imported above */
-
         /* Task 9: Semi-transparent background */
         .feature-box {
             background-color: var(--light-bg);
             padding: 20px;
             margin: 20px 0;
+            /* Task 11: Border radius for divs */
+            border-radius: 10px;
         }
 
         /* Task 10: Form element styling */
@@ -121,6 +121,17 @@
             margin: 0 auto;
             position: relative;
         }
+
+        /* Enhanced link styling */
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -134,22 +145,25 @@
         <div class="content">
             <h1>My Orderific-Inspired Project</h1>
             <p>
-                Hello! I put together this page, drawing ideas from Orderific’s cool restaurant management tools. 
-                It’s filled with neat features and designs I’ve been tinkering with.
+                Hello! I put together this page, drawing ideas from 
+                <a href="https://orderific.com/" target="_blank">Orderific</a>’s 
+                cool restaurant management tools. It’s filled with neat features 
+                and designs I’ve been tinkering with.
             </p>
         </div>
 
         <!-- Feature Box -->
         <div class="feature-box">
             <h2>Features</h2>
-            <p>Discover the beauty of this subtle, semi-transparent section.</p>
+            <p>Discover the beauty of this subtle, semi-transparent section inspired by 
+                <a href="https://orderific.com/" target="_blank">Orderific</a>.</p>
         </div>
 
         <!-- Form Section -->
         <div class="custom-form">
             <h2>Contact Us</h2>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
+            <input type="text" placeholder="Your Name" value="Visit Orderific">
+            <input type="email" placeholder="Your Email" value="info@orderific.com">
             <select>
                 <option>Select Inquiry Type</option>
                 <option>Support</option>
