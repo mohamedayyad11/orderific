@@ -4,179 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS3 Day 2 Practice - Orderific Inspired</title>
+    <!-- Task 5: Use Google Fonts to style text -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Task 7: CSS Variables for theme colors (Updated to dark blue theme) */
+        /* Task 7: CSS Variables for theme colors */
         :root {
-            --primary-color: #1E3A8A; /* Dark blue */
-            --secondary-color: #3B82F6; /* Lighter blue for hover */
-            --text-color: #333;
-            --light-bg: rgba(255, 255, 255, 0.8);
+            --primary-color: #2A4365; /* Dark blue */
+            --secondary-color: #4C78A8; /* Medium blue for hover */
+            --accent-color: #E53E3E; /* Red for badge */
+            --text-color: #2D3748;
+            --light-bg: rgba(237, 242, 247, 0.85); /* Semi-transparent bg */
         }
 
-        /* Task 1: Font styles and sizes */
+        /* Task 1: Apply different font styles and sizes */
+        /* Task 5: Google Fonts (applied here) */
+        /* Task 13: Letter-spacing and line-height adjustments */
+        /* Task 6: Gradient background effect */
         body {
-            font-family: 'Roboto', sans-serif; /* Task 5: Google Fonts */
-            font-size: 16px;
-            /* Task 13: Letter spacing and line-height */
-            letter-spacing: 0.5px;
-            line-height: 1.6;
-            /* Task 6: Gradient background (Adjusted to blue tones) */
-            background: linear-gradient(135deg, #e0e7ff 0%, #93c5fd 100%);
+            font-family: 'Roboto', sans-serif; /* Google Fonts */
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.8px; /* Task 13 */
+            line-height: 1.8; /* Task 13 */
+            background: linear-gradient(45deg, #E6F0FA 0%, #BEE3F8 100%); /* Task 6 */
             margin: 0;
-            padding: 20px;
+            padding: 30px;
         }
 
-        /* Task 2: Background images and colors */
-        .hero-section {
+        /* Task 2: Set background images and colors */
+        .header {
             background: url('https://orderific.com/wp-content/uploads/2023/07/hero-bg.jpg') no-repeat center;
             background-size: cover;
-            padding: 40px;
-            margin-bottom: 20px;
+            background-color: var(--primary-color); /* Fallback color */
+            padding: 50px;
+            margin-bottom: 25px;
+            position: relative;
         }
 
-        /* Task 3 & 8: Styled buttons with hover and shadow */
-        .custom-button {
-            /* Task 11: Border radius */
-            border-radius: 25px;
-            padding: 12px 24px;
-            background-color: var(--primary-color); /* Dark blue */
+        /* Task 3: Create styled buttons with hover effects */
+        /* Task 8: Use box-shadow property */
+        /* Task 11: Use border-radius */
+        /* Task 12: Implement CSS transitions on hover */
+        .styled-button {
+            border-radius: 30px; /* Task 11 */
+            padding: 15px 30px;
+            background-color: var(--primary-color);
             color: white;
             border: none;
             cursor: pointer;
-            /* Task 8: Box shadow */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            /* Task 12: Transitions */
-            transition: all 0.3s ease;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Task 8 */
+            transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Task 12 */
         }
 
-        .custom-button:hover {
-            background-color: var(--secondary-color); /* Lighter blue on hover */
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        .styled-button:hover {
+            background-color: var(--secondary-color); /* Task 3 */
+            transform: scale(1.05); /* Task 12 */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Task 8 */
         }
 
-        /* Task 4: Text color and alignment */
-        .content {
+        /* Task 4: Change text color and align text */
+        .main-content {
             color: var(--text-color);
-            text-align: justify;
-            max-width: 800px;
-            margin: 0 auto 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 30px;
         }
 
-        /* Task 9: Semi-transparent background */
-        .feature-box {
-            background-color: var(--light-bg);
-            padding: 20px;
+        /* Task 9: Section with semi-transparent background */
+        /* Task 11: Use border-radius (also applied here) */
+        .info-box {
+            background-color: var(--light-bg); /* Task 9 */
+            padding: 25px;
             margin: 20px 0;
-            /* Task 11: Border radius for divs */
-            border-radius: 10px;
+            border-radius: 15px; /* Task 11 */
         }
 
-        /* Task 10: Form element styling */
-        .custom-form input,
-        .custom-form select {
+        /* Task 10: Style form elements using different border styles */
+        .contact-form input,
+        .contact-form textarea {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 2px solid var(--primary-color); /* Dark blue border */
-            border-radius: 5px;
+            padding: 12px;
+            margin: 12px 0;
+            border: 3px solid var(--primary-color); /* Solid border */
+            border-radius: 8px;
             box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
         }
 
-        .custom-form select {
-            border-style: dashed;
+        .contact-form textarea {
+            border-style: dotted; /* Different border style */
+            resize: vertical;
         }
 
-        /* Task 14: Notification badge (Moved to top right) */
-        .notification {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: inline-block;
+        /* Task 14: Create a notification badge with bell icon */
+        .notification-bell {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .bell-icon {
-            font-size: 24px;
+        .bell {
+            font-size: 28px;
             cursor: pointer;
+            position: relative;
         }
 
         .badge {
             position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: #DC2626; /* Kept red for contrast */
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
             color: white;
             border-radius: 50%;
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 12px;
+            font-weight: 700;
         }
 
-        /* Additional styling for layout */
-        .container {
-            max-width: 1200px;
+        /* Container for layout */
+        .wrapper {
+            max-width: 1100px;
             margin: 0 auto;
-            position: relative; /* Required for absolute positioning of notification */
+            position: relative;
         }
 
-        /* Enhanced link styling */
+        /* Additional styling for clarity */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
         a {
-            color: var(--secondary-color); /* Lighter blue for links */
+            color: var(--secondary-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: var(--primary-color); /* Dark blue on hover */
+            color: var(--primary-color);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <div class="hero-section">
-            <button class="custom-button">Get Started</button>
+    <div class="wrapper">
+        <!-- Header Section -->
+        <div class="header">
+            <button class="styled-button">Explore Now</button>
         </div>
 
-        <!-- Content Section -->
-        <div class="content">
-            <h1>My Orderific-Inspired Project</h1>
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1>Welcome to My CSS3 Practice</h1>
             <p>
-                Hello! I put together this page, drawing ideas from 
-                <a href="https://orderific.com/" target="_blank">Orderific</a>’s 
-                cool restaurant management tools. It’s filled with neat features 
-                and designs I’ve been tinkering with.
+                This page is inspired by <a href="https://orderific.com/" target="_blank">Orderific</a>, 
+                a platform for restaurant management. I've applied various CSS3 techniques 
+                to create a modern, responsive design.
             </p>
         </div>
 
-        <!-- Feature Box -->
-        <div class="feature-box">
-            <h2>Features</h2>
-            <p>Discover the beauty of this subtle, semi-transparent section inspired by 
-                <a href="https://orderific.com/" target="_blank">Orderific</a>.</p>
+        <!-- Info Box -->
+        <div class="info-box">
+            <h2>About This Project</h2>
+            <p>
+                Built with CSS3 skills from Day 2 learning, this showcases styling inspired by 
+                <a href="https://orderific.com/" target="_blank">Orderific</a>. Enjoy the design!
+            </p>
         </div>
 
-        <!-- Form Section -->
-        <div class="custom-form">
-            <h2>Contact Us</h2>
-            <input type="text" placeholder="Your Name" value="Visit Orderific">
-            <input type="email" placeholder="Your Email" value="info@orderific.com">
-            <select>
-                <option>Select Inquiry Type</option>
-                <option>Support</option>
-                <option>Sales</option>
-            </select>
-            <button class="custom-button">Submit</button>
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <input type="text" placeholder="Your Name" value="Orderific User">
+            <input type="email" placeholder="Your Email" value="contact@orderific.com">
+            <textarea placeholder="Your Message" rows="4">Inspired by https://orderific.com/</textarea>
+            <button class="styled-button">Send Message</button>
         </div>
 
-        <!-- Notification Badge (Now at top right) -->
-        <div class="notification">
-            <span class="bell-icon">🔔</span>
-            <span class="badge">3</span>
+        <!-- Notification Badge -->
+        <div class="notification-bell">
+            <span class="bell">🔔</span>
+            <span class="badge">5</span>
         </div>
     </div>
 </body>
