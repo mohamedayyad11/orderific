@@ -77,7 +77,7 @@
         }
 
         .cancel-btn {
-            background-color: #1E3A8A; /* Changed to Dark Blue */
+            background-color: #1E3A8A; /* Dark Blue */
             color: white;
             border: none;
             padding: 8px 15px;
@@ -94,7 +94,7 @@
             display: none;
         }
 
-        /* Flexbox Section */
+        /* Flexbox Section (Top Culinary Journeys) */
         .global-dishes h2 {
             font-size: 22px;
             margin-bottom: 15px;
@@ -104,14 +104,14 @@
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            justify-content: center; /* Center items for better spacing */
+            justify-content: center;
         }
 
         .dish {
             background-color: #f9f9f9;
             padding: 10px;
             border-radius: 12px;
-            width: 200px; /* Matches the size of the "Ethiopian Injera" rectangle */
+            width: 200px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
@@ -126,7 +126,7 @@
             margin: 0;
         }
 
-        /* Grid Section */
+        /* Grid Section (World Cuisine Highlights) */
         .world-cuisine h2 {
             font-size: 22px;
             margin-bottom: 15px;
@@ -134,16 +134,16 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for responsive layout */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 12px;
-            justify-items: center; /* Center items in the grid */
+            justify-items: center;
         }
 
         .grid-item {
             background-color: #f9f9f9;
             padding: 10px;
             border-radius: 12px;
-            width: 200px; /* Matches the size of the "Ethiopian Injera" rectangle */
+            width: 200px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -156,7 +156,7 @@
         .grid-item p {
             color: #666;
             margin: 0;
-            text-align: center; /* Centered for all items, including Caramel Popcorn */
+            text-align: center;
         }
 
         /* Grid Item Positioning */
@@ -180,6 +180,58 @@
         .grid-item:nth-child(18) { grid-area: C6; }
         .grid-item:nth-child(19) { grid-area: C7; }
         .grid-item:nth-child(20) { grid-area: D1; }
+
+        /* New Flexbox Section (Explore More Cuisines) */
+        .explore-more h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .explore-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .explore-item {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 12px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .explore-item h3 {
+            font-size: 14px;
+            margin: 0 0 8px;
+        }
+
+        .explore-item p {
+            color: #666;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Borders for specific items as per the image */
+        .explore-item:nth-child(1) { border: 2px solid #ff4444; } /* A1 */
+        .explore-item:nth-child(2) { border: 2px solid #ff4444; } /* A2 */
+        .explore-item:nth-child(3) { border: 2px dashed #ff4444; } /* A3 */
+        .explore-item:nth-child(5) { border: 2px solid #00cc00; } /* A5 */
+        .explore-item:nth-child(6) { border: 2px solid #00cc00; } /* A6 */
+        .explore-item:nth-child(7) { border: 2px solid #00cc00; } /* B1 */
+        .explore-item:nth-child(8) { border: 2px solid #00cc00; } /* B2 */
+        .explore-item:nth-child(9) { border: 2px solid #00cc00; } /* B3 */
+        .explore-item:nth-child(10) { border: 2px solid #00cc00; } /* B4 */
+        .explore-item:nth-child(11) { border: 2px solid #ff4444; } /* B5 */
+        .explore-item:nth-child(12) { border: 2px solid #ff4444; } /* B6 */
+        .explore-item:nth-child(13) { border: 2px solid #00cc00; } /* C1 */
+        .explore-item:nth-child(14) { border: 2px solid #00cc00; } /* C2 */
+        .explore-item:nth-child(15) { border: 2px solid #00cc00; } /* C3 */
+        .explore-item:nth-child(16) { border: 2px solid #00cc00; } /* C4 */
+        .explore-item:nth-child(17) { border: 2px solid #00cc00; } /* C5 */
+        .explore-item:nth-child(18) { border: 2px solid #00cc00; } /* C6 */
     </style>
 </head>
 <body>
@@ -201,7 +253,7 @@
         </div>
     </section>
 
-    <!-- Flexbox Section -->
+    <!-- Flexbox Section (Top Culinary Journeys) -->
     <section class="global-dishes">
         <h2>Top Culinary Journeys</h2>
         <div class="dishes-container">
@@ -232,7 +284,7 @@
         </div>
     </section>
 
-    <!-- Grid Section -->
+    <!-- Grid Section (World Cuisine Highlights) -->
     <section class="world-cuisine">
         <h2>World Cuisine Highlights</h2>
         <div class="grid-container">
@@ -313,6 +365,93 @@
                 <p>Orders: 15</p>
             </div>
             <div class="grid-item">
+                <h3>Ethiopian Injera</h3>
+                <p>Orders: 12</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Flexbox Section (Explore More Cuisines) -->
+    <section class="explore-more">
+        <h2>Explore More Cuisines</h2>
+        <div class="explore-container">
+            <div class="explore-item">
+                <h3>Spanish Paella</h3>
+                <p>Orders: 110</p>
+            </div>
+            <div class="explore-item">
+                <h3>Greek Souvlaki</h3>
+                <p>Orders: 102</p>
+            </div>
+            <div class="explore-item">
+                <h3>Korean Kimchi Stew</h3>
+                <p>Orders: 90</p>
+            </div>
+            <div class="explore-item">
+                <h3>Turkish Kebab</h3>
+                <p>Orders: 78</p>
+            </div>
+            <div class="explore-item">
+                <h3>Vietnamese Pho</h3>
+                <p>Orders: 68</p>
+            </div>
+            <div class="explore-item">
+                <h3>Egyptian Koshari</h3>
+                <p>Orders: 62</p>
+            </div>
+            <div class="explore-item">
+                <h3>Peruvian Ceviche</h3>
+                <p>Orders: 55</p>
+            </div>
+            <div class="explore-item">
+                <h3>Swedish Meatballs</h3>
+                <p>Orders: 50</p>
+            </div>
+            <div class="explore-item">
+                <h3>Moroccan Tagine</h3>
+                <p>Orders: 47</p>
+            </div>
+            <div class="explore-item">
+                <h3>Thai Green Curry</h3>
+                <p>Orders: 43</p>
+            </div>
+            <div class="explore-item">
+                <h3>Argentinian Empanadas</h3>
+                <p>Orders: 40</p>
+            </div>
+            <div class="explore-item">
+                <h3>Indian Samosas</h3>
+                <p>Orders: 37</p>
+            </div>
+            <div class="explore-item">
+                <h3>Chinese Dumplings</h3>
+                <p>Orders: 34</p>
+            </div>
+            <div class="explore-item">
+                <h3>Russian Borscht</h3>
+                <p>Orders: 31</p>
+            </div>
+            <div class="explore-item">
+                <h3>Australian Lamington</h3>
+                <p>Orders: 28</p>
+            </div>
+            <div class="explore-item">
+                <h3>Colombian Arepas</h3>
+                <p>Orders: 25</p>
+            </div>
+            <div class="explore-item">
+                <h3>Polish Pierogi</h3>
+                <p>Orders: 22</p>
+            </div>
+            <div class="explore-item">
+                <h3>Jamaican Jerk Chicken</h3>
+                <p>Orders: 19</p>
+            </div>
+            <div class="explore-item">
+                <h3>Caramel Popcorn</h3>
+                <p>Orders: 15</p>
+            </div>
+            <div class="explore-item">
                 <h3>Ethiopian Injera</h3>
                 <p>Orders: 12</p>
             </div>
