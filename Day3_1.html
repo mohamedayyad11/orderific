@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display & Positioning Exercise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="clickBtn">CLICK HERE</button>
+
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <h2>Cancel Order</h2>
+            <p>Are you sure you want to cancel this order?</p>
+            <p><strong>Grilled Veggie Wrap</strong><br>Size: Medium, Sauce: Spicy Mayo, Add-ons: Extra Cheese</p>
+            <button class="cancel-btn">CANCEL ORDER</button>
+        </div>
+    </div>
+
+    <script>
+        const clickBtn = document.getElementById('clickBtn');
+        const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('closePopup');
+
+        clickBtn.addEventListener('click', () => {
+            popup.classList.remove('hidden');
+        });
+
+        closePopup.addEventListener('click', () => {
+            popup.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
