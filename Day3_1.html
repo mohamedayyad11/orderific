@@ -3,22 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display & Positioning Exercise</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Day 3: CSS Box Model and Layouts</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Display & Positioning Section */
+        .display-positioning {
+            text-align: center;
+        }
+
+        button#clickBtn {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button#clickBtn:hover {
+            background-color: #45a049;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .cancel-btn {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .cancel-btn:hover {
+            background-color: #cc0000;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Flexbox Section */
+        .featured-items h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .items-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 calc(50% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .item h3 {
+            font-size: 18px;
+            margin: 0 0 10px;
+        }
+
+        .item p {
+            color: #888;
+            margin: 0;
+        }
+
+        /* Grid Section */
+        .popular-items h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .grid-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-item h3 {
+            font-size: 16px;
+            margin: 0 0 10px;
+        }
+
+        .grid-item p {
+            color: #888;
+            margin: 0;
+        }
+
+        /* Grid Item Positioning */
+        .grid-item:nth-child(1) { grid-area: A1; }
+        .grid-item:nth-child(2) { grid-area: A2; }
+        .grid-item:nth-child(3) { grid-area: A3; }
+        .grid-item:nth-child(4) { grid-area: A4; }
+        .grid-item:nth-child(5) { grid-area: A5; }
+        .grid-item:nth-child(6) { grid-area: A6; }
+        .grid-item:nth-child(7) { grid-area: B1; }
+        .grid-item:nth-child(8) { grid-area: B2; }
+        .grid-item:nth-child(9) { grid-area: B3; }
+        .grid-item:nth-child(10) { grid-area: B4; }
+        .grid-item:nth-child(11) { grid-area: B5; }
+        .grid-item:nth-child(12) { grid-area: B6; }
+        .grid-item:nth-child(13) { grid-area: C1; }
+        .grid-item:nth-child(14) { grid-area: C2; }
+        .grid-item:nth-child(15) { grid-area: C3; }
+        .grid-item:nth-child(16) { grid-area: C4; }
+        .grid-item:nth-child(17) { grid-area: C5; }
+        .grid-item:nth-child(18) { grid-area: C6; }
+        .grid-item:nth-child(19) { grid-area: C7; }
+        .grid-item:nth-child(20) { grid-area: D1; }
+    </style>
 </head>
 <body>
-    <button id="clickBtn">CLICK HERE</button>
+    <h1>Day 3: CSS Box Model and Layouts</h1>
 
-    <div id="popup" class="popup hidden">
-        <div class="popup-content">
-            <span id="closePopup" class="close">&times;</span>
-            <h2>Cancel Order</h2>
-            <p>Are you sure you want to cancel this order?</p>
-            <p><strong>Grilled Veggie Wrap</strong><br>Size: Medium, Sauce: Spicy Mayo, Add-ons: Extra Cheese</p>
-            <button class="cancel-btn">CANCEL ORDER</button>
+    <!-- Display & Positioning Section -->
+    <section class="display-positioning">
+        <h2>Display & Positioning: Centered Popup</h2>
+        <button id="clickBtn">CLICK HERE</button>
+
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <span id="closePopup" class="close">×</span>
+                <h2>Cancel Order</h2>
+                <p>Are you sure you want to cancel this order?</p>
+                <p><strong>Grilled Veggie Wrap</strong><br>Size: Medium, Sauce: Spicy Mayo, Add-ons: Extra Cheese</p>
+                <button class="cancel-btn">CANCEL ORDER</button>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Flexbox Section -->
+    <section class="featured-items">
+        <h2>Featured Items</h2>
+        <div class="items-container">
+            <div class="item">
+                <h3>Avocado Toast + Smoothie</h3>
+                <p>Order: 92</p>
+            </div>
+            <div class="item">
+                <h3>BBQ Pulled Pork Sandwich</h3>
+                <p>Order: 85</p>
+            </div>
+            <div class="item">
+                <h3>Truffle Mac & Cheese</h3>
+                <p>Order: 67</p>
+            </div>
+            <div class="item">
+                <h3>Spicy Tuna Roll</h3>
+                <p>Order: 53</p>
+            </div>
+            <div class="item">
+                <h3>Garlic Parmesan Wings</h3>
+                <p>Order: 44</p>
+            </div>
+            <div class="item">
+                <h3>Iced Matcha Latte</h3>
+                <p>Order: 39</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid Section -->
+    <section class="popular-items">
+        <h2>Popular Items</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>Teriyaki Chicken Bowl</h3>
+                <p>Order: 105</p>
+            </div>
+            <div class="grid-item">
+                <h3>Mango Salsa Tacos</h3>
+                <p>Order: 98</p>
+            </div>
+            <div class="grid-item">
+                <h3>Buffalo Cauliflower Bites</h3>
+                <p>Order: 87</p>
+            </div>
+            <div class="grid-item">
+                <h3>Classic Margherita Pizza</h3>
+                <p>Order: 76</p>
+            </div>
+            <div class="grid-item">
+                <h3>Lemon Herb Salmon</h3>
+                <p>Order: 65</p>
+            </div>
+            <div class="grid-item">
+                <h3>Churro Bites</h3>
+                <p>Order: 59</p>
+            </div>
+            <div class="grid-item">
+                <h3>Spicy Ramen Bowl</h3>
+                <p>Order: 52</p>
+            </div>
+            <div class="grid-item">
+                <h3>Caprese Salad</h3>
+                <p>Order: 48</p>
+            </div>
+            <div class="grid-item">
+                <h3>Falafel Wrap</h3>
+                <p>Order: 45</p>
+            </div>
+            <div class="grid-item">
+                <h3>Blueberry Smoothie</h3>
+                <p>Order: 42</p>
+            </div>
+            <div class="grid-item">
+                <h3>Crispy Onion Rings</h3>
+                <p>Order: 39</p>
+            </div>
+            <div class="grid-item">
+                <h3>Shrimp Tempura Roll</h3>
+                <p>Order: 36</p>
+            </div>
+            <div class="grid-item">
+                <h3>Garlic Naan Bread</h3>
+                <p>Order: 33</p>
+            </div>
+            <div class="grid-item">
+                <h3>Butter Chicken Curry</h3>
+                <p>Order: 30</p>
+            </div>
+            <div class="grid-item">
+                <h3>Strawberry Milkshake</h3>
+                <p>Order: 28</p>
+            </div>
+            <div class="grid-item">
+                <h3>Loaded Nachos</h3>
+                <p>Order: 25</p>
+            </div>
+            <div class="grid-item">
+                <h3>Chocolate Lava Cake</h3>
+                <p>Order: 22</p>
+            </div>
+            <div class="grid-item">
+                <h3>Green Tea</h3>
+                <p>Order: 20</p>
+            </div>
+            <div class="grid-item">
+                <h3>BBQ Ribs</h3>
+                <p>Order: 18</p>
+            </div>
+            <div class="grid-item">
+                <h3>Caramel Popcorn</h3>
+                <p>Order: 15</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Popup -->
     <script>
         const clickBtn = document.getElementById('clickBtn');
         const popup = document.getElementById('popup');
