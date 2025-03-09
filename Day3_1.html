@@ -3,48 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 3: CSS Box Model and Layouts</title>
+    <title>Orderific: Culinary Adventure Hub</title>
     <style>
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 20px;
         }
 
         h1, h2 {
             text-align: center;
-            color: #333;
+            color: #2d2d2d;
         }
 
         section {
-            max-width: 1000px;
-            margin: 0 auto 40px;
-            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding: 15px;
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         /* Display & Positioning Section */
-        .display-positioning {
+        .culinary-experience {
             text-align: center;
         }
 
-        button#clickBtn {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #4CAF50;
+        button#exploreBtn {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #1E3A8A; /* Dark Blue Color */
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        button#clickBtn:hover {
-            background-color: #45a049;
+        button#exploreBtn:hover {
+            background-color: #152e6b; /* Darker Blue on Hover */
         }
 
         .popup {
@@ -61,18 +61,18 @@
 
         .popup-content {
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
+            padding: 15px;
+            border-radius: 8px;
+            width: 250px;
             text-align: center;
             position: relative;
         }
 
         .close {
             position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 24px;
+            top: 8px;
+            right: 12px;
+            font-size: 20px;
             cursor: pointer;
         }
 
@@ -80,10 +80,10 @@
             background-color: #ff4444;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 8px 15px;
+            border-radius: 4px;
             cursor: pointer;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
         .cancel-btn:hover {
@@ -95,64 +95,65 @@
         }
 
         /* Flexbox Section */
-        .featured-items h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
+        .global-dishes h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
         }
 
-        .items-container {
+        .dishes-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
         }
 
-        .item {
+        .dish {
             background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            flex: 1 1 calc(50% - 20px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 6px;
+            flex: 1 1 calc(50% - 15px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
-        .item h3 {
-            font-size: 18px;
-            margin: 0 0 10px;
+        .dish h3 {
+            font-size: 16px;
+            margin: 0 0 8px;
         }
 
-        .item p {
-            color: #888;
+        .dish p {
+            color: #666;
             margin: 0;
         }
 
         /* Grid Section */
-        .popular-items h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
+        .world-cuisine h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
         }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
+            gap: 12px;
         }
 
         .grid-item {
             background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 6px;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .grid-item h3 {
-            font-size: 16px;
-            margin: 0 0 10px;
+            font-size: 14px;
+            margin: 0 0 8px;
         }
 
         .grid-item p {
-            color: #888;
+            color: #666;
             margin: 0;
+            text-align: center; /* Centered for Caramel Popcorn */
         }
 
         /* Grid Item Positioning */
@@ -179,149 +180,149 @@
     </style>
 </head>
 <body>
-    <h1>Day 3: CSS Box Model and Layouts</h1>
+    <h1>Orderific: Culinary Adventure Hub</h1>
 
     <!-- Display & Positioning Section -->
-    <section class="display-positioning">
-        <h2>Display & Positioning: Centered Popup</h2>
-        <button id="clickBtn">CLICK HERE</button>
+    <section class="culinary-experience">
+        <h2>Explore Global Flavors</h2>
+        <button id="exploreBtn">EXPLORE NOW</button>
 
         <div id="popup" class="popup hidden">
             <div class="popup-content">
                 <span id="closePopup" class="close">×</span>
-                <h2>Cancel Order</h2>
-                <p>Are you sure you want to cancel this order?</p>
-                <p><strong>Grilled Veggie Wrap</strong><br>Size: Medium, Sauce: Spicy Mayo, Add-ons: Extra Cheese</p>
-                <button class="cancel-btn">CANCEL ORDER</button>
+                <h2>Cancel Adventure</h2>
+                <p>Are you sure you want to cancel this culinary journey?</p>
+                <p><strong>Savory Thai Noodle Bowl</strong><br>Region: Southeast Asia, Spice Level: Medium, Add-on: Peanuts</p>
+                <button class="cancel-btn">CANCEL JOURNEY</button>
             </div>
         </div>
     </section>
 
     <!-- Flexbox Section -->
-    <section class="featured-items">
-        <h2>Featured Items</h2>
-        <div class="items-container">
-            <div class="item">
-                <h3>Avocado Toast + Smoothie</h3>
-                <p>Order: 92</p>
+    <section class="global-dishes">
+        <h2>Top Culinary Journeys</h2>
+        <div class="dishes-container">
+            <div class="dish">
+                <h3>Italian Pasta Feast</h3>
+                <p>Orders: 95</p>
             </div>
-            <div class="item">
-                <h3>BBQ Pulled Pork Sandwich</h3>
-                <p>Order: 85</p>
+            <div class="dish">
+                <h3>Mexican Street Tacos</h3>
+                <p>Orders: 88</p>
             </div>
-            <div class="item">
-                <h3>Truffle Mac & Cheese</h3>
-                <p>Order: 67</p>
+            <div class="dish">
+                <h3>Japanese Sushi Platter</h3>
+                <p>Orders: 70</p>
             </div>
-            <div class="item">
-                <h3>Spicy Tuna Roll</h3>
-                <p>Order: 53</p>
+            <div class="dish">
+                <h3>Indian Butter Chicken</h3>
+                <p>Orders: 60</p>
             </div>
-            <div class="item">
-                <h3>Garlic Parmesan Wings</h3>
-                <p>Order: 44</p>
+            <div class="dish">
+                <h3>French Crepe Delight</h3>
+                <p>Orders: 50</p>
             </div>
-            <div class="item">
-                <h3>Iced Matcha Latte</h3>
-                <p>Order: 39</p>
+            <div class="dish">
+                <h3>Brazilian BBQ Skewers</h3>
+                <p>Orders: 45</p>
             </div>
         </div>
     </section>
 
     <!-- Grid Section -->
-    <section class="popular-items">
-        <h2>Popular Items</h2>
+    <section class="world-cuisine">
+        <h2>World Cuisine Highlights</h2>
         <div class="grid-container">
             <div class="grid-item">
-                <h3>Teriyaki Chicken Bowl</h3>
-                <p>Order: 105</p>
+                <h3>Spanish Paella</h3>
+                <p>Orders: 110</p>
             </div>
             <div class="grid-item">
-                <h3>Mango Salsa Tacos</h3>
-                <p>Order: 98</p>
+                <h3>Greek Souvlaki</h3>
+                <p>Orders: 102</p>
             </div>
             <div class="grid-item">
-                <h3>Buffalo Cauliflower Bites</h3>
-                <p>Order: 87</p>
+                <h3>Korean Kimchi Stew</h3>
+                <p>Orders: 90</p>
             </div>
             <div class="grid-item">
-                <h3>Classic Margherita Pizza</h3>
-                <p>Order: 76</p>
+                <h3>Turkish Kebab</h3>
+                <p>Orders: 78</p>
             </div>
             <div class="grid-item">
-                <h3>Lemon Herb Salmon</h3>
-                <p>Order: 65</p>
+                <h3>Vietnamese Pho</h3>
+                <p>Orders: 68</p>
             </div>
             <div class="grid-item">
-                <h3>Churro Bites</h3>
-                <p>Order: 59</p>
+                <h3>Egyptian Koshari</h3>
+                <p>Orders: 62</p>
             </div>
             <div class="grid-item">
-                <h3>Spicy Ramen Bowl</h3>
-                <p>Order: 52</p>
+                <h3>Peruvian Ceviche</h3>
+                <p>Orders: 55</p>
             </div>
             <div class="grid-item">
-                <h3>Caprese Salad</h3>
-                <p>Order: 48</p>
+                <h3>Swedish Meatballs</h3>
+                <p>Orders: 50</p>
             </div>
             <div class="grid-item">
-                <h3>Falafel Wrap</h3>
-                <p>Order: 45</p>
+                <h3>Moroccan Tagine</h3>
+                <p>Orders: 47</p>
             </div>
             <div class="grid-item">
-                <h3>Blueberry Smoothie</h3>
-                <p>Order: 42</p>
+                <h3>Thai Green Curry</h3>
+                <p>Orders: 43</p>
             </div>
             <div class="grid-item">
-                <h3>Crispy Onion Rings</h3>
-                <p>Order: 39</p>
+                <h3>Argentinian Empanadas</h3>
+                <p>Orders: 40</p>
             </div>
             <div class="grid-item">
-                <h3>Shrimp Tempura Roll</h3>
-                <p>Order: 36</p>
+                <h3>Indian Samosas</h3>
+                <p>Orders: 37</p>
             </div>
             <div class="grid-item">
-                <h3>Garlic Naan Bread</h3>
-                <p>Order: 33</p>
+                <h3>Chinese Dumplings</h3>
+                <p>Orders: 34</p>
             </div>
             <div class="grid-item">
-                <h3>Butter Chicken Curry</h3>
-                <p>Order: 30</p>
+                <h3>Russian Borscht</h3>
+                <p>Orders: 31</p>
             </div>
             <div class="grid-item">
-                <h3>Strawberry Milkshake</h3>
-                <p>Order: 28</p>
+                <h3>Australian Lamington</h3>
+                <p>Orders: 28</p>
             </div>
             <div class="grid-item">
-                <h3>Loaded Nachos</h3>
-                <p>Order: 25</p>
+                <h3>Colombian Arepas</h3>
+                <p>Orders: 25</p>
             </div>
             <div class="grid-item">
-                <h3>Chocolate Lava Cake</h3>
-                <p>Order: 22</p>
+                <h3>Polish Pierogi</h3>
+                <p>Orders: 22</p>
             </div>
             <div class="grid-item">
-                <h3>Green Tea</h3>
-                <p>Order: 20</p>
-            </div>
-            <div class="grid-item">
-                <h3>BBQ Ribs</h3>
-                <p>Order: 18</p>
+                <h3>Jamaican Jerk Chicken</h3>
+                <p>Orders: 19</p>
             </div>
             <div class="grid-item">
                 <h3>Caramel Popcorn</h3>
-                <p>Order: 15</p>
+                <p>Orders: 15</p> <!-- Centered text -->
+            </div>
+            <div class="grid-item">
+                <h3>Ethiopian Injera</h3>
+                <p>Orders: 12</p>
             </div>
         </div>
     </section>
 
     <!-- JavaScript for Popup -->
     <script>
-        const clickBtn = document.getElementById('clickBtn');
+        const exploreBtn = document.getElementById('exploreBtn');
         const popup = document.getElementById('popup');
         const closePopup = document.getElementById('closePopup');
 
-        clickBtn.addEventListener('click', () => {
+        exploreBtn.addEventListener('click', () => {
             popup.classList.remove('hidden');
         });
 
