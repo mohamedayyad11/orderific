@@ -43,24 +43,26 @@
         }
 
         .sidebar-buttons {
-            background-color: #ffffff; /* White background for buttons */
+            background-color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 15px;
             padding: 20px 15px;
-            border-radius: 20px;
-            margin-bottom: 30px; /* Space between buttons and user section */
+            border-radius: 60px; /* Circular ends */
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px #1e3a8a; /* Dark blue shadow */
         }
 
         .sidebar-user {
-            background-color: #ffffff; /* White background for user section */
+            background-color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 8px;
             padding: 15px;
-            border-radius: 20px;
+            border-radius: 60px; /* Circular ends */
+            box-shadow: 0 8px 20px #1e3a8a; /* Dark blue shadow */
         }
 
         .sidebar button {
@@ -138,7 +140,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             flex: 1;
-            min-height: 700px; /* Reduced by half from 1400px */
+            min-height: 350px; /* Reduced by half from 700px */
         }
 
         .section {
@@ -179,12 +181,12 @@
 
         .preparing .order-grid {
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, auto); /* Reduced rows to match halved length */
+            grid-template-rows: repeat(1, auto); /* Reduced rows to fit halved length */
         }
 
         .ready .order-grid {
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(1, auto); /* Reduced rows to match halved length */
+            grid-template-rows: repeat(1, auto); /* Reduced rows to fit halved length */
         }
 
         .order-item {
@@ -257,7 +259,7 @@
 
             .order-status {
                 grid-template-columns: 1fr;
-                min-height: 900px; /* Adjusted for mobile halved length */
+                min-height: 450px; /* Adjusted for mobile halved length */
             }
 
             .preparing .order-grid,
@@ -298,9 +300,6 @@
                         <div class="order-item">1001</div>
                         <div class="order-item">1002</div>
                         <div class="order-item">1003</div>
-                        <div class="order-item">1004</div>
-                        <div class="order-item">1005</div>
-                        <div class="order-item">1006</div>
                     </div>
                 </div>
                 <div class="section ready">
