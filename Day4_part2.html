@@ -18,45 +18,47 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 30px; /* Increased padding */
+            padding: 30px;
         }
 
         .container {
             background-color: #ffffff;
-            border-radius: 20px; /* Increased radius */
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Larger shadow */
+            border-radius: 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             width: 100%;
-            max-width: 1400px; /* Increased from 1200px */
+            max-width: 1400px;
             display: flex;
-            padding: 30px; /* Increased padding */
-            border: 3px solid #1e3a8a; /* Thicker border */
+            padding: 30px;
+            border: 3px solid #1e3a8a;
         }
 
         .sidebar {
-            width: 80px; /* Increased width */
+            width: 60px; /* Reduced from 80px */
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 0; /* Increased to match .section padding */
-            border-right: 1px solid #d1d9e6;
-            border-radius: 15px; /* Increased to match .section */
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Matches .section shadow */
+            padding: 20px 0; /* Matches .section padding */
+            border-radius: 15px; /* Matches .section */
             margin-top: 60px; /* Aligns top with Preparing (header height + margin) */
-            height: fit-content; /* Matches content height */
+            height: fit-content; /* Matches content height to end with Preparing */
         }
 
         .sidebar-content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px; /* Increased gap */
+            gap: 5px; /* Reduced gap */
+            background-color: #ffffff;
+            padding: 10px; /* Padding for shadow container */
+            border-radius: 25px; /* Circular ends */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow for button group */
         }
 
         .sidebar button {
-            width: 50px; /* Increased size */
-            height: 50px; /* Increased size */
+            width: 40px; /* Reduced from 50px */
+            height: 40px; /* Reduced from 50px */
             border: none;
             background-color: #333333;
             border-radius: 50%;
@@ -65,7 +67,7 @@
             align-items: center;
             justify-content: center;
             color: #ffffff;
-            font-size: 1.5em; /* Increased font size */
+            font-size: 1.2em; /* Reduced from 1.5em */
             transition: background-color 0.3s;
         }
 
@@ -78,31 +80,35 @@
         }
 
         .user-profile {
-            margin-top: 100px; /* Increased spacing (2.5 × 40px circles) */
+            margin-top: 20px; /* Reduced spacing to fit within Preparing height */
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px; /* Increased spacing */
+            gap: 5px; /* Reduced gap */
+            background-color: #ffffff;
+            padding: 10px; /* Padding for shadow container */
+            border-radius: 25px; /* Circular ends */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow for user group */
         }
 
         .user-profile img {
-            width: 50px; /* Increased size */
-            height: 50px; /* Increased size */
+            width: 40px; /* Reduced from 50px */
+            height: 40px; /* Reduced from 50px */
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #ffffff; /* Thicker border */
+            border: 2px solid #ffffff; /* Reduced border thickness */
         }
 
         .user-profile .notification {
-            width: 15px; /* Increased size */
-            height: 15px; /* Increased size */
+            width: 12px; /* Reduced from 15px */
+            height: 12px; /* Reduced from 15px */
             background-color: #ff0000;
             border-radius: 50%;
         }
 
         .content {
             flex: 1;
-            padding-left: 30px; /* Increased padding */
+            padding-left: 30px;
             display: flex;
             flex-direction: column;
         }
@@ -111,27 +117,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 15px; /* Increased padding */
+            padding: 20px 15px;
             border-bottom: 1px solid #d1d9e6;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Larger shadow */
-            border-radius: 8px; /* Increased radius */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
             background-color: #ffffff;
-            margin-bottom: 30px; /* Increased margin */
+            margin-bottom: 30px;
         }
 
         .header .logo {
-            height: 60px; /* Increased size */
+            height: 60px;
         }
 
         .header .time {
-            font-size: 1.5em; /* Increased size */
+            font-size: 1.5em;
             color: #1e3a8a;
         }
 
         .order-status {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px; /* Increased gap */
+            gap: 30px;
             flex: 1;
         }
 
@@ -141,29 +147,29 @@
             align-items: center;
             text-align: center;
             background-color: #ffffff;
-            padding: 20px; /* Increased padding */
-            border-radius: 15px; /* Increased radius */
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Larger shadow */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
         }
 
         .section h2 {
             color: #ffffff;
             background-color: #1e3a8a;
-            padding: 8px 15px; /* Increased padding */
-            border-radius: 8px; /* Increased radius */
+            padding: 8px 15px;
+            border-radius: 8px;
             width: 100%;
             text-align: center;
-            margin-bottom: 15px; /* Increased margin */
-            font-size: 1.5em; /* Increased size */
+            margin-bottom: 15px;
+            font-size: 1.5em;
         }
 
         .order-grid {
             background-color: #ffffff;
-            padding: 15px; /* Increased padding */
-            border-radius: 10px; /* Increased radius */
+            padding: 15px;
+            border-radius: 10px;
             width: 100%;
             display: grid;
-            gap: 8px; /* Increased gap */
+            gap: 8px;
             text-align: center;
         }
 
@@ -179,9 +185,9 @@
 
         .order-item {
             background-color: #ffcc00;
-            padding: 15px; /* Increased padding */
-            border-radius: 8px; /* Increased radius */
-            font-size: 1.2em; /* Increased size */
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.2em;
             color: #333333;
         }
 
@@ -198,29 +204,31 @@
         @media (max-width: 600px) {
             .container {
                 flex-direction: column;
-                max-width: 900px; /* Increased from 800px */
+                max-width: 900px;
             }
 
             .sidebar {
                 flex-direction: row;
                 width: 100%;
                 height: auto;
-                border-right: none;
-                border-bottom: 1px solid #d1d9e6;
-                padding: 15px; /* Increased padding */
+                padding: 15px;
                 margin-top: 0;
                 justify-content: space-between;
             }
 
             .sidebar-content {
                 flex-direction: row;
-                gap: 8px;
+                gap: 5px;
+                padding: 5px;
+                border-radius: 20px;
             }
 
             .user-profile {
                 margin-top: 0;
                 flex-direction: row;
-                gap: 10px;
+                gap: 5px;
+                padding: 5px;
+                border-radius: 20px;
             }
 
             .content {
