@@ -57,42 +57,52 @@
         }
 
         .section {
-            padding: 15px;
-            border-radius: 10px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             text-align: center;
+            background-color: #ffffff; /* White background for sections */
+            padding: 15px;
+            border-radius: 10px;
         }
 
-        .preparing {
-            background-color: #ffcc00; /* Subway yellow */
-            color: #333333;
+        .section h2 {
+            color: #ffffff; /* White titles */
+            background-color: #333333; /* Dark background for title contrast */
+            padding: 5px 10px;
+            border-radius: 5px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
         }
 
-        .ready {
-            background-color: #006633; /* Subway green */
-            color: white;
+        .preparing .order-grid {
+            background-color: #ffcc00; /* Yellow background for Preparing orders */
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .ready .order-grid {
+            background-color: #006633; /* Green background for Ready orders */
+            padding: 10px;
+            border-radius: 8px;
         }
 
         .order-grid {
             display: grid;
             gap: 5px;
             text-align: center;
+            width: 100%;
         }
 
         .preparing .order-grid {
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(5, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
         }
 
         .ready .order-grid {
-            grid-template-areas: 
-                "large large . . . ."
-                "small1 small2 small3 small4 small5 small6"
-                "small7 small8 small9 small10 small11 small12"
-                "small13 small14 small15 small16 small17 small18";
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, 1fr);
         }
 
         .order-item {
@@ -102,12 +112,10 @@
             font-size: 1em;
         }
 
-        .order-item.large {
-            grid-area: large;
-            font-size: 1.5em;
-            font-weight: bold;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px;
+        /* Hide extra grid cells if fewer items */
+        .preparing .order-grid div:empty,
+        .ready .order-grid div:empty {
+            display: none;
         }
 
         /* Responsive Design with Media Queries */
@@ -116,17 +124,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .preparing .order-grid {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(10, 1fr);
-            }
-
+            .preparing .order-grid,
             .ready .order-grid {
-                grid-template-areas: 
-                    "large large large large . ."
-                    "small1 small2 small3 small4 small5 small6"
-                    "small7 small8 small9 small10 small11 small12"
-                    "small13 small14 small15 small16 small17 small18";
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .header .time {
@@ -142,11 +142,6 @@
             .order-item {
                 font-size: 0.9em;
                 padding: 8px;
-            }
-
-            .order-item.large {
-                font-size: 1.2em;
-                padding: 12px;
             }
         }
     </style>
@@ -166,55 +161,15 @@
                     <div class="order-item">Order #5003</div>
                     <div class="order-item">Order #5004</div>
                     <div class="order-item">Order #5005</div>
-                    <div class="order-item">Order #5006</div>
-                    <div class="order-item">Order #5007</div>
-                    <div class="order-item">Order #5008</div>
-                    <div class="order-item">Order #5009</div>
-                    <div class="order-item">Order #5010</div>
-                    <div class="order-item">Order #5011</div>
-                    <div class="order-item">Order #5012</div>
-                    <div class="order-item">Order #5013</div>
-                    <div class="order-item">Order #5014</div>
-                    <div class="order-item">Order #5015</div>
-                    <div class="order-item">Order #5016</div>
-                    <div class="order-item">Order #5017</div>
-                    <div class="order-item">Order #5018</div>
-                    <div class="order-item">Order #5019</div>
-                    <div class="order-item">Order #5020</div>
-                    <div class="order-item">Order #5021</div>
-                    <div class="order-item">Order #5022</div>
-                    <div class="order-item">Order #5023</div>
-                    <div class="order-item">Order #5024</div>
-                    <div class="order-item">Order #5025</div>
-                    <div class="order-item">Order #5026</div>
-                    <div class="order-item">Order #5027</div>
-                    <div class="order-item">Order #5028</div>
-                    <div class="order-item">Order #5029</div>
-                    <div class="order-item">Order #5030</div>
+                    <div></div> <!-- Empty cell to fill the 3x2 grid -->
                 </div>
             </div>
             <div class="section ready">
                 <h2>Ready</h2>
                 <div class="order-grid">
-                    <div class="order-item large">Order #3885</div>
-                    <div class="order-item" style="grid-area: small1;">Order #3886</div>
-                    <div class="order-item" style="grid-area: small2;">Order #3887</div>
-                    <div class="order-item" style="grid-area: small3;">Order #3888</div>
-                    <div class="order-item" style="grid-area: small4;">Order #3889</div>
-                    <div class="order-item" style="grid-area: small5;">Order #3890</div>
-                    <div class="order-item" style="grid-area: small6;">Order #3891</div>
-                    <div class="order-item" style="grid-area: small7;">Order #3892</div>
-                    <div class="order-item" style="grid-area: small8;">Order #3893</div>
-                    <div class="order-item" style="grid-area: small9;">Order #3894</div>
-                    <div class="order-item" style="grid-area: small10;">Order #3895</div>
-                    <div class="order-item" style="grid-area: small11;">Order #3896</div>
-                    <div class="order-item" style="grid-area: small12;">Order #3897</div>
-                    <div class="order-item" style="grid-area: small13;">Order #3898</div>
-                    <div class="order-item" style="grid-area: small14;">Order #3899</div>
-                    <div class="order-item" style="grid-area: small15;">Order #3900</div>
-                    <div class="order-item" style="grid-area: small16;">Order #3901</div>
-                    <div class="order-item" style="grid-area: small17;">Order #3902</div>
-                    <div class="order-item" style="grid-area: small18;">Order #3903</div>
+                    <div class="order-item">Order #3885</div>
+                    <div class="order-item">Order #3886</div>
+                    <div class="order-item">Order #3887</div>
                 </div>
             </div>
         </div>
