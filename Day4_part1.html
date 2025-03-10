@@ -29,7 +29,7 @@
             width: 100%;
             max-width: 800px;
             padding: 20px;
-            border: 2px solid #ffcc00; /* Subway yellow border */
+            border: 2px solid #1e3a8a; /* Dark blue border replacing yellow frame */
         }
 
         .header {
@@ -46,7 +46,7 @@
 
         .header .time {
             font-size: 1.2em;
-            color: #006633; /* Subway green for text */
+            color: #1e3a8a; /* Dark blue time color */
         }
 
         .order-status {
@@ -68,7 +68,7 @@
 
         .section h2 {
             color: #ffffff; /* White titles */
-            background-color: #333333; /* Dark background for title contrast */
+            background-color: #1e3a8a; /* Dark blue background for titles */
             padding: 5px 10px;
             border-radius: 5px;
             width: 100%;
@@ -77,13 +77,13 @@
         }
 
         .preparing .order-grid {
-            background-color: #ffcc00; /* Yellow background for Preparing orders */
+            background-color: #ffffff; /* White background for Preparing order grid */
             padding: 10px;
             border-radius: 8px;
         }
 
         .ready .order-grid {
-            background-color: #006633; /* Green background for Ready orders */
+            background-color: #ffffff; /* White background for Ready order grid */
             padding: 10px;
             border-radius: 8px;
         }
@@ -106,10 +106,16 @@
         }
 
         .order-item {
-            background: rgba(255, 255, 255, 0.7);
+            background-color: #ffcc00; /* Yellow interior for Preparing orders */
             padding: 10px;
             border-radius: 5px;
             font-size: 1em;
+            color: #333333; /* Dark text for readability */
+        }
+
+        .ready .order-item {
+            background-color: #006633; /* Green interior for Ready orders */
+            color: #ffffff; /* White text for readability */
         }
 
         /* Hide extra grid cells if fewer items */
