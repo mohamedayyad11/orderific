@@ -95,6 +95,18 @@
             margin-right: 20px;
         }
 
+        .sidebar-buttons {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 10px;
+            border-radius: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px #1e3a8a;
+        }
+
         .sidebar-user {
             background-color: #ffffff;
             display: flex;
@@ -104,18 +116,7 @@
             padding: 10px;
             border-radius: 40px;
             box-shadow: 0 5px 15px #1e3a8a;
-            margin-bottom: 20px; /* Space between user section and buttons */
-        }
-
-        .sidebar-buttons {
-            background-color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 10px;
-            border-radius: 40px;
-            box-shadow: 0 5px 15px #1e3a8a;
+            /* Removed margin-top, keeping it below buttons naturally */
         }
 
         .sidebar button {
@@ -426,17 +427,16 @@
                 justify-content: space-between;
             }
 
-            .sidebar-user {
-                flex-direction: row;
-                gap: 5px;
-                padding: 10px;
-                border-radius: 20px;
-                margin-bottom: 10px; /* Adjusted for mobile horizontal layout */
-            }
-
             .sidebar-buttons {
                 flex-direction: row;
                 gap: 8px;
+                padding: 10px;
+                border-radius: 20px;
+            }
+
+            .sidebar-user {
+                flex-direction: row;
+                gap: 5px;
                 padding: 10px;
                 border-radius: 20px;
             }
@@ -480,6 +480,14 @@
         </div>
         <div class="main-content">
             <nav class="sidebar">
+                <div class="sidebar-buttons">
+                    <button><i class="fas fa-file-alt"></i></button>
+                    <button><i class="fas fa-table"></i></button>
+                    <button><i class="fas fa-signal"></i></button>
+                    <button class="active"><i class="fas fa-comment"></i></button>
+                    <button><i class="fas fa-book"></i></button>
+                    <button><i class="fas fa-phone"></i></button>
+                </div>
                 <div class="sidebar-user">
                     <div class="user-profile">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbniq9GcQbBlbNR3fbCKdmVfntZCGYmoeummGXHGIE7w&s" alt="User Profile">
@@ -488,14 +496,6 @@
                         <i class="fas fa-bell"></i>
                         <div class="dot"></div>
                     </div>
-                </div>
-                <div class="sidebar-buttons">
-                    <button><i class="fas fa-file-alt"></i></button>
-                    <button><i class="fas fa-table"></i></button>
-                    <button><i class="fas fa-signal"></i></button>
-                    <button class="active"><i class="fas fa-comment"></i></button>
-                    <button><i class="fas fa-book"></i></button>
-                    <button><i class="fas fa-phone"></i></button>
                 </div>
             </nav>
             <div class="content">
