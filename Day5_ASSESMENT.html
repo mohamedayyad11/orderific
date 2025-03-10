@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderific - Smart Kitchen & Mobile Ordering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .left-section {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            background: url('https://via.placeholder.com/800x600.png?text=Restaurant+Staff+with+Tablet') no-repeat center center;
+            background-size: cover;
+            color: white;
+        }
+        .overlay1 {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+        }
+        .overlay2 {
+            position: absolute;
+            bottom: 20%;
+            right: 10%;
+            background: rgba(255, 165, 0, 0.7); /* Orange tint for contrast */
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .content h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+        .right-section {
+            width: 50%;
+            background-color: #ff8c00; /* Matching orange theme */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-section, .right-section {
+                width: 100%;
+                height: 50vh;
+            }
+            .overlay1, .overlay2 {
+                position: static;
+                margin: 20px auto;
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="logo">📱 Orderific</div>
+            <div class="overlay1">
+                <h2>Smart Kitchen Management</h2>
+                <p>Optimize your kitchen workflow with real-time order tracking and staff coordination. Save time and reduce errors effortlessly!</p>
+            </div>
+            <div class="overlay2">
+                <h2>Mobile Ordering Efficiency</h2>
+                <p>Empower customers with seamless mobile ordering. Increase sales with a 25% boost in order frequency!</p>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="content">
+                <h1>Revolutionize Your Restaurant</h1>
+                <p>Streamline operations with Orderific’s cutting-edge tools. Manage orders, track inventory, and enhance customer experiences on the go. Start today and watch your business thrive!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
