@@ -28,7 +28,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             width: 100%;
-            max-width: 1500px; /* Increased width */
+            max-width: 1500px;
             display: flex;
             flex-direction: column;
             padding: 20px;
@@ -63,13 +63,13 @@
         }
 
         .top-bar .fullscreen {
-            font-size: 0.9em; /* Reduced font size */
+            font-size: 0.8em; /* Reduced font size */
             color: #666;
             cursor: pointer;
             background: none;
             border: none;
             text-transform: uppercase;
-            padding: 5px 10px; /* Reduced padding */
+            padding: 5px 8px; /* Reduced padding */
         }
 
         .top-bar .fullscreen:hover {
@@ -82,7 +82,7 @@
         }
 
         .sidebar {
-            width: 80px; /* Slightly wider sidebar */
+            width: 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -94,10 +94,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px; /* Reduced gap */
-            padding: 12px 8px; /* Reduced padding */
-            border-radius: 30px; /* Reduced radius */
-            margin-bottom: 15px; /* Reduced margin */
+            gap: 10px;
+            padding: 15px 10px;
+            border-radius: 40px;
+            margin-bottom: 20px;
             box-shadow: 0 5px 15px #1e3a8a;
         }
 
@@ -106,15 +106,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px; /* Reduced gap */
-            padding: 8px; /* Reduced padding */
-            border-radius: 30px; /* Reduced radius */
+            gap: 8px;
+            padding: 10px;
+            border-radius: 40px;
             box-shadow: 0 5px 15px #1e3a8a;
         }
 
         .sidebar button {
-            width: 35px; /* Reduced width */
-            height: 35px; /* Reduced height */
+            width: 40px;
+            height: 40px;
             border: none;
             background-color: #1e3a8a;
             border-radius: 50%;
@@ -123,7 +123,7 @@
             align-items: center;
             justify-content: center;
             color: #ffffff;
-            font-size: 1.1em; /* Reduced font size */
+            font-size: 1.2em;
             transition: background-color 0.3s;
         }
 
@@ -142,31 +142,31 @@
         }
 
         .user-profile img {
-            width: 35px; /* Reduced width */
-            height: 35px; /* Reduced height */
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             object-fit: cover;
             background-color: #1e3a8a;
-            border: 2px solid #ffffff; /* Reduced border thickness */
+            border: 3px solid #ffffff;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .bell-notification {
             position: relative;
-            margin-top: 8px; /* Reduced margin */
+            margin-top: 10px;
         }
 
         .bell-notification i {
-            font-size: 1.1em; /* Reduced font size */
+            font-size: 1.2em;
             color: #1e3a8a;
         }
 
         .bell-notification .dot {
             position: absolute;
-            top: -4px; /* Reduced position */
-            right: -4px; /* Reduced position */
-            width: 10px; /* Reduced width */
-            height: 10px; /* Reduced height */
+            top: -5px;
+            right: -5px;
+            width: 12px;
+            height: 12px;
             background-color: #ff0000;
             border-radius: 50%;
             border: 2px solid #ffffff;
@@ -183,21 +183,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 15px; /* Reduced padding */
-            border-bottom: 1px solid #d1d9e6; /* Reduced border thickness */
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Reduced shadow */
-            border-radius: 8px; /* Reduced radius */
+            padding: 25px 30px; /* Increased padding */
+            border-bottom: 3px solid #d1d9e6; /* Increased border thickness */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px; /* Increased radius */
             background-color: #ffffff;
-            margin-bottom: 15px; /* Reduced margin */
-            height: 50px; /* Reduced height */
+            margin-bottom: 20px;
+            height: 100px; /* Increased height */
         }
 
         .header .logo {
-            height: 30px; /* Reduced height */
+            height: 60px; /* Increased height */
         }
 
         .header .time {
-            font-size: 1.2em; /* Reduced font size */
+            font-size: 2em; /* Increased font size */
             color: #1e3a8a;
         }
 
@@ -287,7 +287,6 @@
         @media (min-width: 768px) {
             .top-bar {
                 padding: 20px 30px; /* Reduced padding */
-                font-size: 1.4em; /* Reduced font size */
                 height: 80px; /* Reduced height */
             }
 
@@ -305,7 +304,7 @@
 
             .container {
                 padding: 30px; /* Reduced padding */
-                max-width: 1800px; /* Increased width for larger screens */
+                max-width: 1800px;
                 min-height: 900px; /* Reduced height */
             }
 
@@ -319,23 +318,23 @@
             }
 
             .sidebar button {
-                width: 40px; /* Reduced width */
-                height: 40px; /* Reduced height */
-                font-size: 1.3em; /* Reduced font size */
+                width: 50px;
+                height: 50px;
+                font-size: 1.5em;
             }
 
             .user-profile img {
-                width: 40px; /* Reduced width */
-                height: 40px; /* Reduced height */
+                width: 50px;
+                height: 50px;
             }
 
             .bell-notification i {
-                font-size: 1.3em; /* Reduced font size */
+                font-size: 1.5em;
             }
 
             .bell-notification .dot {
-                width: 12px; /* Reduced width */
-                height: 12px; /* Reduced height */
+                width: 14px;
+                height: 14px;
             }
 
             .content {
@@ -343,16 +342,16 @@
             }
 
             .header {
-                padding: 15px 20px; /* Reduced padding */
-                height: 60px; /* Reduced height */
+                padding: 30px 40px; /* Increased padding */
+                height: 120px; /* Increased height */
             }
 
             .header .logo {
-                height: 35px; /* Reduced height */
+                height: 70px; /* Increased height */
             }
 
             .header .time {
-                font-size: 1.5em; /* Reduced font size */
+                font-size: 2.5em; /* Increased font size */
             }
 
             .order-status {
@@ -400,7 +399,7 @@
             }
 
             .top-bar .fullscreen {
-                font-size: 0.8em; /* Reduced font size */
+                font-size: 0.7em; /* Reduced font size */
             }
 
             .container {
@@ -416,27 +415,40 @@
                 flex-direction: row;
                 width: 100%;
                 height: auto;
-                padding: 8px; /* Reduced padding */
-                margin-bottom: 15px; /* Reduced margin */
+                padding: 10px;
+                margin-bottom: 20px;
                 justify-content: space-between;
             }
 
             .sidebar-buttons {
                 flex-direction: row;
-                gap: 6px; /* Reduced gap */
-                padding: 8px; /* Reduced padding */
-                border-radius: 15px; /* Reduced radius */
+                gap: 8px;
+                padding: 10px;
+                border-radius: 20px;
             }
 
             .sidebar-user {
                 flex-direction: row;
-                gap: 4px; /* Reduced gap */
-                padding: 6px; /* Reduced padding */
-                border-radius: 15px; /* Reduced radius */
+                gap: 5px;
+                padding: 10px;
+                border-radius: 20px;
             }
 
             .content {
-                padding-top: 15px; /* Reduced padding */
+                padding-top: 20px;
+            }
+
+            .header {
+                padding: 15px 20px; /* Adjusted for mobile */
+                height: 80px; /* Adjusted for mobile */
+            }
+
+            .header .logo {
+                height: 50px; /* Adjusted for mobile */
+            }
+
+            .header .time {
+                font-size: 1.5em; /* Adjusted for mobile */
             }
 
             .order-status {
