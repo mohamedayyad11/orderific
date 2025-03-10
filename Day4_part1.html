@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunar Bistro Order Status</title>
+    <title>Subway Order Status</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #f0f4f8;
+            background-color: #f5e8c7; /* Light beige background inspired by Subway branding */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,6 +29,7 @@
             width: 100%;
             max-width: 800px;
             padding: 20px;
+            border: 2px solid #ffcc00; /* Subway yellow border */
         }
 
         .header {
@@ -45,7 +46,7 @@
 
         .header .time {
             font-size: 1.2em;
-            color: #1e3a8a;
+            color: #006633; /* Subway green for text */
         }
 
         .order-status {
@@ -66,28 +67,47 @@
         }
 
         .preparing {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            color: white;
+            background-color: #ffcc00; /* Subway yellow */
+            color: #333333;
         }
 
         .ready {
-            background: linear-gradient(135deg, #1e3a8a, #60a5fa);
+            background-color: #006633; /* Subway green */
             color: white;
         }
 
         .order-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-            gap: 2px; /* Very slight vertical spacing */
+            gap: 5px;
             text-align: center;
-            margin-top: 10px; /* Small spacing between title and orders */
+        }
+
+        .preparing .order-grid {
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+        }
+
+        .ready .order-grid {
+            grid-template-areas: 
+                "large large . . . ."
+                "small1 small2 small3 small4 small5 small6"
+                "small7 small8 small9 small10 small11 small12"
+                "small13 small14 small15 small16 small17 small18";
         }
 
         .order-item {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.7);
             padding: 10px;
             border-radius: 5px;
             font-size: 1em;
+        }
+
+        .order-item.large {
+            grid-area: large;
+            font-size: 1.5em;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
         }
 
         /* Responsive Design with Media Queries */
@@ -96,8 +116,17 @@
                 grid-template-columns: 1fr;
             }
 
-            .order-grid {
-                grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            .preparing .order-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(10, 1fr);
+            }
+
+            .ready .order-grid {
+                grid-template-areas: 
+                    "large large large large . ."
+                    "small1 small2 small3 small4 small5 small6"
+                    "small7 small8 small9 small10 small11 small12"
+                    "small13 small14 small15 small16 small17 small18";
             }
 
             .header .time {
@@ -114,35 +143,78 @@
                 font-size: 0.9em;
                 padding: 8px;
             }
+
+            .order-item.large {
+                font-size: 1.2em;
+                padding: 12px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://img.icons8.com/ios-filled/50/000000/moon-and-fork.png" alt="Lunar Bistro Logo" class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Subway_logo.svg/1200px-Subway_logo.svg.png" alt="Subway Logo" class="logo">
             <div class="time">15:03</div>
         </div>
         <div class="order-status">
             <div class="section preparing">
                 <h2>Preparing</h2>
                 <div class="order-grid">
-                    <div class="order-item">Order #4721</div>
-                    <div class="order-item">Order #5839</div>
-                    <div class="order-item">Order #6940</div>
-                    <div class="order-item">Order #7502</div>
-                    <div class="order-item">Order #8123</div>
-                    <div class="order-item">Order #9345</div>
+                    <div class="order-item">Order #5001</div>
+                    <div class="order-item">Order #5002</div>
+                    <div class="order-item">Order #5003</div>
+                    <div class="order-item">Order #5004</div>
+                    <div class="order-item">Order #5005</div>
+                    <div class="order-item">Order #5006</div>
+                    <div class="order-item">Order #5007</div>
+                    <div class="order-item">Order #5008</div>
+                    <div class="order-item">Order #5009</div>
+                    <div class="order-item">Order #5010</div>
+                    <div class="order-item">Order #5011</div>
+                    <div class="order-item">Order #5012</div>
+                    <div class="order-item">Order #5013</div>
+                    <div class="order-item">Order #5014</div>
+                    <div class="order-item">Order #5015</div>
+                    <div class="order-item">Order #5016</div>
+                    <div class="order-item">Order #5017</div>
+                    <div class="order-item">Order #5018</div>
+                    <div class="order-item">Order #5019</div>
+                    <div class="order-item">Order #5020</div>
+                    <div class="order-item">Order #5021</div>
+                    <div class="order-item">Order #5022</div>
+                    <div class="order-item">Order #5023</div>
+                    <div class="order-item">Order #5024</div>
+                    <div class="order-item">Order #5025</div>
+                    <div class="order-item">Order #5026</div>
+                    <div class="order-item">Order #5027</div>
+                    <div class="order-item">Order #5028</div>
+                    <div class="order-item">Order #5029</div>
+                    <div class="order-item">Order #5030</div>
                 </div>
             </div>
             <div class="section ready">
                 <h2>Ready</h2>
                 <div class="order-grid">
-                    <div class="order-item">Order #1234</div>
-                    <div class="order-item">Order #2456</div>
-                    <div class="order-item">Order #3678</div>
-                    <div class="order-item">Order #4890</div>
-                    <div class="order-item">Order #5012</div>
+                    <div class="order-item large">Order #3885</div>
+                    <div class="order-item" style="grid-area: small1;">Order #3886</div>
+                    <div class="order-item" style="grid-area: small2;">Order #3887</div>
+                    <div class="order-item" style="grid-area: small3;">Order #3888</div>
+                    <div class="order-item" style="grid-area: small4;">Order #3889</div>
+                    <div class="order-item" style="grid-area: small5;">Order #3890</div>
+                    <div class="order-item" style="grid-area: small6;">Order #3891</div>
+                    <div class="order-item" style="grid-area: small7;">Order #3892</div>
+                    <div class="order-item" style="grid-area: small8;">Order #3893</div>
+                    <div class="order-item" style="grid-area: small9;">Order #3894</div>
+                    <div class="order-item" style="grid-area: small10;">Order #3895</div>
+                    <div class="order-item" style="grid-area: small11;">Order #3896</div>
+                    <div class="order-item" style="grid-area: small12;">Order #3897</div>
+                    <div class="order-item" style="grid-area: small13;">Order #3898</div>
+                    <div class="order-item" style="grid-area: small14;">Order #3899</div>
+                    <div class="order-item" style="grid-area: small15;">Order #3900</div>
+                    <div class="order-item" style="grid-area: small16;">Order #3901</div>
+                    <div class="order-item" style="grid-area: small17;">Order #3902</div>
+                    <div class="order-item" style="grid-area: small18;">Order #3903</div>
                 </div>
             </div>
         </div>
