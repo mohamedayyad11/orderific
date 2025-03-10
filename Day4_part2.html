@@ -17,10 +17,49 @@
         body {
             background-color: #f5e8c7;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+        }
+
+        .top-bar {
+            background: linear-gradient(to right, #f5e8c7, #ffffff);
+            width: 100%;
+            max-width: 1200px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #d1d9e6;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .top-bar .title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .top-bar .title i {
+            color: #ff4500;
+            font-size: 1.2em;
+        }
+
+        .top-bar .fullscreen {
+            font-size: 0.9em;
+            color: #666;
+            cursor: pointer;
+            background: none;
+            border: none;
+            text-transform: uppercase;
+        }
+
+        .top-bar .fullscreen:hover {
+            color: #1e3a8a;
         }
 
         .container {
@@ -104,16 +143,6 @@
             background-color: #1e3a8a;
             border: 3px solid #ffffff;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .user-profile .notification {
-            width: 14px;
-            height: 14px;
-            background-color: #1e3a8a;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 6px;
         }
 
         .bell-notification {
@@ -229,8 +258,16 @@
             justify-content: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
-            background-color: #ffd700;
+        }
+
+        .preparing .order-item {
+            background-color: #ffd700; /* Yellow for Preparing */
             color: #333333;
+        }
+
+        .ready .order-item {
+            background-color: #006633; /* Green for Ready */
+            color: #ffffff;
         }
 
         .order-item:hover {
@@ -244,6 +281,23 @@
 
         /* Responsive Design */
         @media (min-width: 768px) {
+            .top-bar {
+                padding: 15px 30px;
+                font-size: 1.4em;
+            }
+
+            .top-bar .title {
+                font-size: 1.5em;
+            }
+
+            .top-bar .title i {
+                font-size: 1.5em;
+            }
+
+            .top-bar .fullscreen {
+                font-size: 1em;
+            }
+
             .container {
                 padding: 40px;
                 max-width: 1400px;
@@ -264,11 +318,6 @@
             .user-profile img {
                 width: 50px;
                 height: 50px;
-            }
-
-            .user-profile .notification {
-                width: 16px;
-                height: 16px;
             }
 
             .bell-notification i {
@@ -318,6 +367,22 @@
         }
 
         @media (max-width: 767px) {
+            .top-bar {
+                padding: 8px 15px;
+            }
+
+            .top-bar .title {
+                font-size: 1em;
+            }
+
+            .top-bar .title i {
+                font-size: 1em;
+            }
+
+            .top-bar .fullscreen {
+                font-size: 0.8em;
+            }
+
             .container {
                 flex-direction: column;
                 padding: 20px;
@@ -364,6 +429,13 @@
     </style>
 </head>
 <body>
+    <div class="top-bar">
+        <div class="title">
+            <i class="fas fa-sync-alt"></i>
+            Order Status
+        </div>
+        <button class="fullscreen">FULLSCREEN</button>
+    </div>
     <div class="container">
         <nav class="sidebar">
             <div class="sidebar-buttons">
@@ -377,7 +449,6 @@
             <div class="sidebar-user">
                 <div class="user-profile">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbniq9GcQbBlbNR3fbCKdmVfntZCGYmoeummGXHGIE7w&s" alt="User Profile">
-                    <div class="notification"></div>
                 </div>
                 <div class="bell-notification">
                     <i class="fas fa-bell"></i>
