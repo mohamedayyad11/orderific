@@ -3,48 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Featured Products</title>
+    <title>Art Gallery Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <!-- Featured Products Section -->
-    <section class="bg-blue-100 rounded-2xl p-6 w-full max-w-4xl shadow-lg">
-        <h2 class="text-2xl font-bold text-blue-800 text-center mb-6">Featured Products</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Product Card 1 -->
-            <div class="bg-green-400 text-white p-4 rounded-lg shadow-md hover:bg-green-500 transition duration-200">
-                <h3 class="text-lg font-medium">Smart Watch Pro</h3>
-                <p class="text-sm text-gray-200 mt-2">Stock: 45</p>
-            </div>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-6">
+    <!-- Order Card Section -->
+    <section class="mb-12">
+        <div class="bg-pink-100 rounded-xl p-4 w-64 shadow-md border border-pink-200">
+            <h3 class="text-xl font-semibold text-pink-800">#A045</h3>
+            <p class="text-gray-700 mt-1">Emma Thompson</p>
+            <p class="text-gray-500 mt-2">Purchased</p>
+            <p class="text-gray-500">12 min ago</p>
+        </div>
+    </section>
 
-            <!-- Product Card 2 -->
-            <div class="bg-green-500 text-white p-4 rounded-lg shadow-md hover:bg-green-600 transition duration-200">
-                <h3 class="text-lg font-medium">Wireless Earbuds</h3>
-                <p class="text-sm text-gray-200 mt-2">Stock: 32</p>
-            </div>
+    <!-- Flexbox Section -->
+    <section class="mb-12 w-full max-w-4xl">
+        <h2 class="text-2xl font-bold text-lavender-700 text-center mb-6">Art Piece Showcase</h2>
+        <div class="flex flex-wrap justify-around items-center bg-lavender-100 p-4 rounded-lg">
+            <div class="bg-lavender-400 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">P1</div>
+            <div class="bg-lavender-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">P2</div>
+            <div class="bg-lavender-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">P3</div>
+            <div class="bg-mint-400 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Q1</div>
+            <div class="bg-mint-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Q2</div>
+            <div class="bg-mint-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Q3</div>
+            <div class="bg-lavender-400 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">R1</div>
+            <div class="bg-lavender-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">R2</div>
+            <div class="bg-lavender-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">R3</div>
+            <div class="bg-mint-400 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">T4</div>
+        </div>
+    </section>
 
-            <!-- Product Card 3 -->
-            <div class="bg-yellow-400 text-gray-800 p-4 rounded-lg shadow-md hover:bg-yellow-500 transition duration-200">
-                <h3 class="text-lg font-medium">Portable Charger</h3>
-                <p class="text-sm text-gray-700 mt-2">Stock: 67</p>
-            </div>
+    <!-- Grid Section -->
+    <section class="w-full max-w-4xl">
+        <h2 class="text-2xl font-bold text-lavender-800 text-center mb-6">Featured Artworks</h2>
+        <div class="bg-lavender-100 rounded-2xl p-6 shadow-lg">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Artwork Card 1 -->
+                <div class="bg-mint-400 text-white p-4 rounded-lg shadow-md hover:bg-mint-500 transition duration-200">
+                    <h3 class="text-lg font-medium">Starry Night Sketch</h3>
+                    <p class="text-sm text-gray-200 mt-2">Stock: 12</p>
+                </div>
 
-            <!-- Product Card 4 -->
-            <div class="bg-yellow-500 text-gray-800 p-4 rounded-lg shadow-md hover:bg-yellow-600 transition duration-200">
-                <h3 class="text-lg font-medium">Bluetooth Speaker</h3>
-                <p class="text-sm text-gray-700 mt-2">Stock: 28</p>
-            </div>
+                <!-- Artwork Card 2 -->
+                <div class="bg-mint-500 text-white p-4 rounded-lg shadow-md hover:bg-mint-600 transition duration-200">
+                    <h3 class="text-lg font-medium">Ocean Waves Canvas</h3>
+                    <p class="text-sm text-gray-200 mt-2">Stock: 8</p>
+                </div>
 
-            <!-- Product Card 5 -->
-            <div class="bg-green-600 text-white p-4 rounded-lg shadow-md hover:bg-green-700 transition duration-200">
-                <h3 class="text-lg font-medium">Fitness Tracker</h3>
-                <p class="text-sm text-gray-200 mt-2">Stock: 19</p>
-            </div>
+                <!-- Artwork Card 3 -->
+                <div class="bg-lavender-400 text-white p-4 rounded-lg shadow-md hover:bg-lavender-500 transition duration-200">
+                    <h3 class="text-lg font-medium">Golden Horizon</h3>
+                    <p class="text-sm text-gray-200 mt-2">Stock: 15</p>
+                </div>
 
-            <!-- Product Card 6 -->
-            <div class="bg-yellow-600 text-gray-800 p-4 rounded-lg shadow-md hover:bg-yellow-700 transition duration-200">
-                <h3 class="text-lg font-medium">Smart LED Bulb</h3>
-                <p class="text-sm text-gray-700 mt-2">Stock: 54</p>
+                <!-- Artwork Card 4 -->
+                <div class="bg-lavender-500 text-white p-4 rounded-lg shadow-md hover:bg-lavender-600 transition duration-200">
+                    <h3 class="text-lg font-medium">Autumn Leaves</h3>
+                    <p class="text-sm text-gray-200 mt-2">Stock: 9</p>
+                </div>
+
+                <!-- Artwork Card 5 -->
+                <div class="bg-mint-600 text-white p-4 rounded-lg shadow-md hover:bg-mint-700 transition duration-200">
+                    <h3 class="text-lg font-medium">Midnight Bloom</h3>
+                    <p class="text-sm text-gray-200 mt-2">Stock: 6</p>
+                </div>
+
+                <!-- Artwork Card 6 -->
+                <div class="bg-lavender-600 text-white p-4 rounded-lg shadow-md hover:bg-lavender-700 transition duration-200">
+                    <h3 class="text-lg font-medium">Desert Sunset</h3>
+                    <p class="text-sm text-gray-200 mt-2">Stock: 10</p>
+                </div>
             </div>
         </div>
     </section>
