@@ -3,79 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Gallery Dashboard</title>
+    <title>Event Ticketing Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .popup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-6">
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-6">
     <!-- Order Card Section -->
     <section class="mb-12">
-        <div class="bg-pink-100 rounded-xl p-4 w-64 shadow-md border border-pink-200">
-            <h3 class="text-xl font-semibold text-pink-800">#A045</h3>
-            <p class="text-gray-700 mt-1">Emma Thompson</p>
-            <p class="text-gray-500 mt-2">Purchased</p>
-            <p class="text-gray-500">12 min ago</p>
+        <div class="bg-blue-800 text-white rounded-xl p-4 w-64 shadow-lg border border-blue-700">
+            <h3 class="text-xl font-semibold">#T300</h3>
+            <p class="mt-1">Lily Carter</p>
+            <p class="mt-2 text-blue-200">Confirmed</p>
+            <p class="text-blue-200">10 min ago</p>
         </div>
     </section>
 
     <!-- Flexbox Section -->
     <section class="mb-12 w-full max-w-4xl">
-        <h2 class="text-2xl font-bold text-lavender-700 text-center mb-6">Art Piece Showcase</h2>
-        <div class="flex flex-wrap justify-around items-center bg-lavender-100 p-4 rounded-lg">
-            <div class="bg-lavender-400 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">P1</div>
-            <div class="bg-lavender-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">P2</div>
-            <div class="bg-lavender-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">P3</div>
-            <div class="bg-mint-400 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Q1</div>
-            <div class="bg-mint-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Q2</div>
-            <div class="bg-mint-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Q3</div>
-            <div class="bg-lavender-400 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">R1</div>
-            <div class="bg-lavender-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">R2</div>
-            <div class="bg-lavender-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">R3</div>
-            <div class="bg-mint-400 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">T4</div>
+        <h2 class="text-2xl font-bold text-blue-800 text-center mb-6">Ticket Categories</h2>
+        <div class="flex flex-wrap justify-around items-center bg-blue-100 p-4 rounded-lg">
+            <div class="bg-blue-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">V1</div>
+            <div class="bg-blue-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">V2</div>
+            <div class="bg-blue-700 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">V3</div>
+            <div class="bg-blue-800 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">W1</div>
+            <div class="bg-blue-900 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">W2</div>
+            <div class="bg-blue-950 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">W3</div>
+            <div class="bg-blue-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">X1</div>
+            <div class="bg-blue-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">X2</div>
+            <div class="bg-blue-700 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">X3</div>
+            <div class="bg-blue-800 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">Z4</div>
         </div>
     </section>
 
-    <!-- Grid Section -->
-    <section class="w-full max-w-4xl">
-        <h2 class="text-2xl font-bold text-lavender-800 text-center mb-6">Featured Artworks</h2>
-        <div class="bg-lavender-100 rounded-2xl p-6 shadow-lg">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Artwork Card 1 -->
-                <div class="bg-mint-400 text-white p-4 rounded-lg shadow-md hover:bg-mint-500 transition duration-200">
-                    <h3 class="text-lg font-medium">Starry Night Sketch</h3>
-                    <p class="text-sm text-gray-200 mt-2">Stock: 12</p>
-                </div>
+    <!-- Popup Section -->
+    <section class="text-center">
+        <button id="openPopup" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-200 shadow-md">Click HERE</button>
 
-                <!-- Artwork Card 2 -->
-                <div class="bg-mint-500 text-white p-4 rounded-lg shadow-md hover:bg-mint-600 transition duration-200">
-                    <h3 class="text-lg font-medium">Ocean Waves Canvas</h3>
-                    <p class="text-sm text-gray-200 mt-2">Stock: 8</p>
-                </div>
-
-                <!-- Artwork Card 3 -->
-                <div class="bg-lavender-400 text-white p-4 rounded-lg shadow-md hover:bg-lavender-500 transition duration-200">
-                    <h3 class="text-lg font-medium">Golden Horizon</h3>
-                    <p class="text-sm text-gray-200 mt-2">Stock: 15</p>
-                </div>
-
-                <!-- Artwork Card 4 -->
-                <div class="bg-lavender-500 text-white p-4 rounded-lg shadow-md hover:bg-lavender-600 transition duration-200">
-                    <h3 class="text-lg font-medium">Autumn Leaves</h3>
-                    <p class="text-sm text-gray-200 mt-2">Stock: 9</p>
-                </div>
-
-                <!-- Artwork Card 5 -->
-                <div class="bg-mint-600 text-white p-4 rounded-lg shadow-md hover:bg-mint-700 transition duration-200">
-                    <h3 class="text-lg font-medium">Midnight Bloom</h3>
-                    <p class="text-sm text-gray-200 mt-2">Stock: 6</p>
-                </div>
-
-                <!-- Artwork Card 6 -->
-                <div class="bg-lavender-600 text-white p-4 rounded-lg shadow-md hover:bg-lavender-700 transition duration-200">
-                    <h3 class="text-lg font-medium">Desert Sunset</h3>
-                    <p class="text-sm text-gray-200 mt-2">Stock: 10</p>
-                </div>
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <button id="closePopup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">×</button>
+                <h3 class="text-lg font-semibold text-blue-800">Cancel Ticket</h3>
+                <p class="mt-2 text-gray-600">Are you sure to cancel this ticket?</p>
+                <p class="mt-2 text-gray-700">Event: Cosmic Symphony</p>
+                <p class="text-gray-700">Details: VIP Seat, Date: May 20, 2025</p>
+                <button id="confirmCancel" class="mt-4 bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition duration-200 shadow-md">Cancel Ticket</button>
             </div>
         </div>
     </section>
+
+    <script>
+        const openPopupBtn = document.getElementById('openPopup');
+        const popup = document.getElementById('popup');
+        const closePopupBtn = document.getElementById('closePopup');
+        const confirmCancelBtn = document.getElementById('confirmCancel');
+
+        openPopupBtn.addEventListener('click', () => {
+            popup.classList.remove('hidden');
+        });
+
+        closePopupBtn.addEventListener('click', () => {
+            popup.classList.add('hidden');
+        });
+
+        confirmCancelBtn.addEventListener('click', () => {
+            alert('Ticket cancellation confirmed!');
+            popup.classList.add('hidden');
+        });
+    </script>
 </body>
 </html>
