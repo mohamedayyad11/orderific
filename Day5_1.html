@@ -17,7 +17,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f5f5f5;
+            background-color: #e6f0fa; /* Light blue background */
         }
 
         .left-section {
@@ -29,8 +29,17 @@
             border-radius: 20px; /* Rounded corners like the screenshot */
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: rgba(255, 128, 0, 0.7); /* Orange tint similar to screenshot */
+            background-color: rgba(0, 102, 204, 0.6); /* Blue tint */
             background-blend-mode: overlay; /* Blends the tint with the image */
+        }
+
+        /* Logo Styling */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px; /* Adjust size as needed */
+            height: auto;
         }
 
         /* Overlay 1 - Top Left */
@@ -38,7 +47,7 @@
             position: absolute;
             top: 10%;
             left: 5%;
-            background: rgba(255, 165, 0, 0.9); /* Vibrant orange with transparency */
+            background: rgba(0, 153, 255, 0.9); /* Vibrant blue with transparency */
             padding: 15px;
             border-radius: 10px;
             color: white;
@@ -77,7 +86,7 @@
         .overlay-2 h2 {
             font-size: 24px;
             margin-bottom: 10px;
-            color: #ff8000; /* Orderific orange */
+            color: #0066cc; /* Deeper blue for title */
             font-weight: bold;
             text-transform: uppercase;
         }
@@ -85,18 +94,7 @@
         .overlay-2 p {
             font-size: 14px;
             line-height: 1.5;
-            color: #666;
-        }
-
-        /* Logo Styling */
-        .logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 24px;
-            color: white;
-            font-weight: bold;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            color: #555;
         }
 
         /* Responsive Design */
@@ -137,14 +135,14 @@
 </head>
 <body>
     <div class="left-section">
-        <div class="logo">🏍️ Orderific</div> <!-- Creative logo with emoji -->
+        <img src="data:image/png;base64,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" class="logo" alt="Orderific Logo">
         <div class="overlay-1">
-            <h2>Fast Deliveries</h2>
-            <p>Empower your team with real-time order tracking.</p>
+            <h2>Swift Delivery Quest</h2>
+            <p>Embark on a journey of lightning-fast deliveries with real-time updates and seamless coordination.</p>
         </div>
         <div class="overlay-2">
-            <h2>Service Panel</h2>
-            <p>Streamline operations with BMS. Manage reservations, orders, inventory, and staff effortlessly, focusing on exceptional dining experiences.</p>
+            <h2>Operation Hub</h2>
+            <p>Revolutionize your restaurant with our advanced BMS. Effortlessly oversee reservations, orders, inventory, and staff, crafting unforgettable dining adventures.</p>
         </div>
     </div>
 </body>
