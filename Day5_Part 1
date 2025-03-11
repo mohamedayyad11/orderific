@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderific WSP - Login & OTP Confirmation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* Container for the entire layout */
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Left Section - Image with Overlays */
+        .left-section {
+            width: 50%;
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        }
+
+        /* Overlay 1 */
+        .overlay-1 {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            background: rgba(255, 165, 0, 0.8); /* Orange with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            width: 300px;
+        }
+
+        .overlay-1 h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .overlay-1 p {
+            font-size: 16px;
+        }
+
+        /* Overlay 2 */
+        .overlay-2 {
+            position: absolute;
+            bottom: 20%;
+            right: 10%;
+            background: rgba(255, 255, 255, 0.8); /* White with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+            width: 300px;
+        }
+
+        .overlay-2 h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .overlay-2 p {
+            font-size: 16px;
+        }
+
+        /* Right Section - Login & OTP Forms */
+        .right-section {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 40px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container h1 {
+            font-size: 32px;
+            color: #ff8000;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-container p {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #ff8000;
+        }
+
+        .otp-inputs {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .otp-inputs input {
+            width: 50px;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff8000;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e67300;
+        }
+
+        .switch-form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .switch-form a {
+            color: #ff8000;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .switch-form a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section with Image and Overlays -->
+        <div class="left-section">
+            <div class="overlay-1">
+                <h2>Smart POS System</h2>
+                <p>Boost your restaurant's efficiency with Orderific's AI-powered Smart POS. Manage orders seamlessly and upsell smarter.</p>
+            </div>
+            <div class="overlay-2">
+                <h2>0% Commissions</h2>
+                <p>Keep more of your earnings with zero delivery fees. Orderific ensures your profits stay where they belong—in your pocket.</p>
+            </div>
+        </div>
+
+        <!-- Right Section with Login & OTP Forms -->
+        <div class="right-section">
+            <div class="form-container">
+                <!-- Login Form -->
+                <div id="login-form">
+                    <h1>Welcome to Orderific WSP</h1>
+                    <p>Streamline your restaurant operations with ease.</p>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="e.g., manager@restaurant.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <button onclick="showOTPForm()">Login</button>
+                    <div class="switch-form">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- OTP Confirmation Form (Hidden by Default) -->
+                <div id="otp-form" style="display: none;">
+                    <h1>Verify OTP</h1>
+                    <p>We’ve sent a 4-digit code to your email.</p>
+                    <div class="form-group">
+                        <label for="otp">Enter OTP</label>
+                        <div class="otp-inputs">
+                            <input type="text" maxlength="1" required>
+                            <input type="text" maxlength="1" required>
+                            <input type="text" maxlength="1" required>
+                            <input type="text" maxlength="1" required>
+                        </div>
+                    </div>
+                    <button onclick="alert('OTP Verified! Welcome to Orderific WSP.')">Verify OTP</button>
+                    <div class="switch-form">
+                        <a href="#" onclick="showLoginForm()">Back to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showOTPForm() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('otp-form').style.display = 'block';
+        }
+
+        function showLoginForm() {
+            document.getElementById('otp-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
