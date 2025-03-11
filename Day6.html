@@ -3,10 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind CSS Box Model Tasks</title>
+    <title>Rare Book Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-8">
-    <!-- Content will go here -->
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-indigo-900 text-white py-8">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold tracking-wide">Rare Book Collection</h1>
+            <p class="mt-2 text-lg opacity-80">Discover a curated selection of literary treasures from centuries past.</p>
+        </div>
+    </header>
+
+    <!-- Main Content: Grid of Book Cards -->
+    <main class="container mx-auto py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Book Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-gray-800">The Celestial Atlas</h2>
+                    <p class="text-gray-600 mt-1">Author: Johannes Kepler</p>
+                    <p class="text-gray-600">Published: 1610</p>
+                    <p class="text-gray-700 mt-3">A groundbreaking work mapping the stars, filled with intricate illustrations and early astronomical theories.</p>
+                    <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200">View Details</button>
+                </div>
+            </div>
+
+            <!-- Book Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-gray-800">Whispers of the Forest</h2>
+                    <p class="text-gray-600 mt-1">Author: Eleanor Ashwood</p>
+                    <p class="text-gray-600">Published: 1795</p>
+                    <p class="text-gray-700 mt-3">A poetic anthology capturing the beauty of nature through vivid imagery and heartfelt verses.</p>
+                    <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200">View Details</button>
+                </div>
+            </div>
+
+            <!-- Book Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-gray-800">The Alchemist’s Codex</h2>
+                    <p class="text-gray-600 mt-1">Author: Nicolas Flamel</p>
+                    <p class="text-gray-600">Published: 1382</p>
+                    <p class="text-gray-700 mt-3">A mysterious manuscript detailing ancient alchemical practices, rumored to hold the secret to eternal life.</p>
+                    <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200">View Details</button>
+                </div>
+            </div>
+
+            <!-- Book Card 4 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-gray-800">Tales of the Crimson Sea</h2>
+                    <p class="text-gray-600 mt-1">Author: Captain Eliza Harrow</p>
+                    <p class="text-gray-600">Published: 1723</p>
+                    <p class="text-gray-700 mt-3">A thrilling account of pirate adventures, filled with daring escapades and hidden treasures.</p>
+                    <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200">View Details</button>
+                </div>
+            </div>
+
+            <!-- Book Card 5 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-gray-800">The Philosopher’s Dialogues</h2>
+                    <p class="text-gray-600 mt-1">Author: Marcus Aurelius</p>
+                    <p class="text-gray-600">Published: 180 AD</p>
+                    <p class="text-gray-700 mt-3">A collection of stoic reflections, offering timeless wisdom on living a virtuous life.</p>
+                    <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200">View Details</button>
+                </div>
+            </div>
+
+            <!-- Book Card 6 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-gray-800">Echoes of Eternity</h2>
+                    <p class="text-gray-600 mt-1">Author: Sophia Laurent</p>
+                    <p class="text-gray-600">Published: 1890</p>
+                    <p class="text-gray-700 mt-3">A romantic novel exploring themes of love and loss across generations, set in a quaint village.</p>
+                    <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200">View Details</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-indigo-900 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Rare Book Collection. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
