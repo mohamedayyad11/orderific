@@ -3,85 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox and Popup Exercise</title>
+    <title>Featured Products</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .hidden {
-            display: none;
-        }
-        .popup {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        .popup-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            position: relative;
-            width: 300px;
-        }
-    </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
-    <!-- Flexbox Section -->
-    <section class="w-full max-w-4xl mb-12">
-        <h2 class="text-2xl font-bold text-teal-700 text-center mb-6">Flexible Item Showcase</h2>
-        <div class="flex flex-wrap justify-around items-center bg-teal-100 p-4 rounded-lg">
-            <div class="bg-purple-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">X1</div>
-            <div class="bg-purple-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">X2</div>
-            <div class="bg-purple-700 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">X3</div>
-            <div class="bg-orange-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Y1</div>
-            <div class="bg-orange-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Y2</div>
-            <div class="bg-orange-700 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Y3</div>
-            <div class="bg-teal-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Z1</div>
-            <div class="bg-teal-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Z2</div>
-            <div class="bg-teal-700 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Z3</div>
-            <div class="bg-purple-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center">Z4</div>
-        </div>
-    </section>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <!-- Featured Products Section -->
+    <section class="bg-blue-100 rounded-2xl p-6 w-full max-w-4xl shadow-lg">
+        <h2 class="text-2xl font-bold text-blue-800 text-center mb-6">Featured Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Product Card 1 -->
+            <div class="bg-green-400 text-white p-4 rounded-lg shadow-md hover:bg-green-500 transition duration-200">
+                <h3 class="text-lg font-medium">Smart Watch Pro</h3>
+                <p class="text-sm text-gray-200 mt-2">Stock: 45</p>
+            </div>
 
-    <!-- Popup Section -->
-    <section class="text-center">
-        <button id="openPopup" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-200">Click HERE</button>
+            <!-- Product Card 2 -->
+            <div class="bg-green-500 text-white p-4 rounded-lg shadow-md hover:bg-green-600 transition duration-200">
+                <h3 class="text-lg font-medium">Wireless Earbuds</h3>
+                <p class="text-sm text-gray-200 mt-2">Stock: 32</p>
+            </div>
 
-        <div id="popup" class="popup hidden">
-            <div class="popup-content bg-white shadow-lg rounded-lg p-6">
-                <button id="closePopup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
-                <h3 class="text-lg font-semibold text-purple-800">Cancel Ticket</h3>
-                <p class="mt-2 text-gray-600">Are you sure to cancel this ticket?</p>
-                <p class="mt-2 text-gray-700">Event: Galactic Concert</p>
-                <p class="text-gray-700">Details: VIP Pass, Date: April 15, 2025</p>
-                <button id="confirmCancel" class="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200">Cancel Ticket</button>
+            <!-- Product Card 3 -->
+            <div class="bg-yellow-400 text-gray-800 p-4 rounded-lg shadow-md hover:bg-yellow-500 transition duration-200">
+                <h3 class="text-lg font-medium">Portable Charger</h3>
+                <p class="text-sm text-gray-700 mt-2">Stock: 67</p>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="bg-yellow-500 text-gray-800 p-4 rounded-lg shadow-md hover:bg-yellow-600 transition duration-200">
+                <h3 class="text-lg font-medium">Bluetooth Speaker</h3>
+                <p class="text-sm text-gray-700 mt-2">Stock: 28</p>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="bg-green-600 text-white p-4 rounded-lg shadow-md hover:bg-green-700 transition duration-200">
+                <h3 class="text-lg font-medium">Fitness Tracker</h3>
+                <p class="text-sm text-gray-200 mt-2">Stock: 19</p>
+            </div>
+
+            <!-- Product Card 6 -->
+            <div class="bg-yellow-600 text-gray-800 p-4 rounded-lg shadow-md hover:bg-yellow-700 transition duration-200">
+                <h3 class="text-lg font-medium">Smart LED Bulb</h3>
+                <p class="text-sm text-gray-700 mt-2">Stock: 54</p>
             </div>
         </div>
     </section>
-
-    <script>
-        const openPopupBtn = document.getElementById('openPopup');
-        const popup = document.getElementById('popup');
-        const closePopupBtn = document.getElementById('closePopup');
-        const confirmCancelBtn = document.getElementById('confirmCancel');
-
-        openPopupBtn.addEventListener('click', () => {
-            popup.classList.remove('hidden');
-        });
-
-        closePopupBtn.addEventListener('click', () => {
-            popup.classList.add('hidden');
-        });
-
-        confirmCancelBtn.addEventListener('click', () => {
-            alert('Ticket cancellation confirmed!');
-            popup.classList.add('hidden');
-        });
-    </script>
 </body>
 </html>
