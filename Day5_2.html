@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderific Service Panel Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e8f0fa; /* Slightly more blue-tinted background */
+            flex-direction: row; /* Align left and right sections horizontally */
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 900px; /* Total width for both sections */
+            height: 600px; /* Matches the left section height */
+        }
+
+        .left-section {
+            position: relative;
+            width: 50%; /* Half of the container */
+            max-width: 400px;
+            height: 100%;
+            background: url('https://orderific.com/ord-website/assets/img/cover1.webp') no-repeat center center/cover; /* Delivery person on bike */
+            border-radius: 20px 0 0 20px; /* Rounded corners only on left side */
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo Styling */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            filter: invert(100%) brightness(200%); /* Makes the logo appear white */
+        }
+
+        /* Overlay 1 - Top Left */
+        .overlay-1 {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            background: rgba(0, 123, 255, 0.9); /* Vibrant blue with transparency */
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            width: 40%;
+            max-width: 150px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .overlay-1 h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .overlay-1 p {
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        /* Overlay 2 - Bottom Center */
+        .overlay-2 {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9); /* White with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .overlay-2 h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #0066cc; /* Deeper blue for title */
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .overlay-2 p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* Right Section Styling */
+        .right-section {
+            width: 50%; /* Half of the container */
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9); /* Light white background like screenshot */
+            border-radius: 0 20px 20px 0; /* Rounded corners only on right side */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .login-form h2 {
+            font-size: 24px;
+            color: #0066cc;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .login-form label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-container input[type="password"] {
+            padding-right: 40px; /* Space for the eye icon */
+        }
+
+        .password-eye {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: auto;
+        }
+
+        .login-form .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .login-form .remember-me input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .login-form .remember-me label {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .login-form .login-with-code {
+            display: block;
+            font-size: 12px;
+            color: #0066cc;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #333;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .left-section {
+                max-width: 500px;
+                height: 750px;
+            }
+
+            .overlay-1 {
+                font-size: 20px;
+                padding: 20px;
+                max-width: 200px;
+            }
+
+            .overlay-1 h2 {
+                font-size: 22px;
+            }
+
+            .overlay-1 p {
+                font-size: 14px;
+            }
+
+            .overlay-2 {
+                padding: 25px;
+                max-width: 350px;
+            }
+
+            .overlay-2 h2 {
+                font-size: 28px;
+            }
+
+            .overlay-2 p {
+                font-size: 16px;
+            }
+
+            .right-section {
+                padding: 40px;
+            }
+
+            .login-form {
+                max-width: 350px;
+            }
+
+            .login-form h2 {
+                font-size: 28px;
+            }
+
+            .login-form label {
+                font-size: 16px;
+            }
+
+            .login-form input[type="text"],
+            .login-form input[type="password"] {
+                font-size: 16px;
+            }
+
+            .login-form .remember-me label {
+                font-size: 14px;
+            }
+
+            .login-form .login-with-code {
+                font-size: 14px;
+            }
+
+            .login-form button {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" class="logo" alt="Orderific Logo">
+            <div class="overlay-1">
+                <h2>Swift Delivery Quest</h2>
+                <p>Embark on a journey of lightning-fast deliveries with real-time updates and seamless coordination.</p>
+            </div>
+            <div class="overlay-2">
+                <h2>Operation Hub</h2>
+                <p>Revolutionize your restaurant with our advanced BMS. Effortlessly oversee reservations, orders, inventory, and staff, crafting unforgettable dining adventures.</p>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="login-form">
+                <h2>Welcome Back</h2>
+                <label>Email address</label>
+                <input type="text" value="samsmith@gmail.com" readonly>
+
+                <label>Password</label>
+                <div class="password-container">
+                    <input type="password" value="password" readonly>
+                    <img src="https://img.icons8.com/ios-filled/50/000000/visible.png" class="password-eye" alt="Eye Icon">
+                </div>
+
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+
+                <a href="#" class="login-with-code">Login with Code</a>
+                <button type="button">Sign in</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
