@@ -3,34 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Ticketing Dashboard</title>
+    <title>Food Order Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-6">
     <!-- Order Card Section -->
     <section class="mb-12">
-        <div class="bg-blue-800 text-white rounded-xl p-4 w-64 shadow-lg border border-blue-700">
-            <h3 class="text-xl font-semibold">#T300</h3>
-            <p class="mt-1">Lily Carter</p>
-            <p class="mt-2 text-blue-200">Confirmed</p>
-            <p class="text-blue-200">10 min ago</p>
+        <div class="bg-white text-black rounded-xl p-4 w-64 shadow-lg border border-gray-200">
+            <h3 class="text-xl font-semibold">#F102</h3>
+            <p class="mt-1">Emma Wilson</p>
+            <p class="mt-2 text-gray-500">Ordered</p>
+            <p class="text-gray-500">8 min ago</p>
         </div>
     </section>
 
-    <!-- Flexbox Section -->
+    <!-- Flexbox Section (Popular Items) -->
     <section class="mb-12 w-full max-w-4xl">
-        <h2 class="text-2xl font-bold text-blue-800 text-center mb-6">Ticket Categories</h2>
-        <div class="flex flex-wrap justify-around items-center bg-blue-100 p-4 rounded-lg">
-            <div class="bg-blue-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">V1</div>
-            <div class="bg-blue-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">V2</div>
-            <div class="bg-blue-700 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">V3</div>
-            <div class="bg-blue-800 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">W1</div>
-            <div class="bg-blue-900 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">W2</div>
-            <div class="bg-blue-950 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">W3</div>
-            <div class="bg-blue-500 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">X1</div>
-            <div class="bg-blue-600 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">X2</div>
-            <div class="bg-blue-700 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">X3</div>
-            <div class="bg-blue-800 text-white p-4 m-2 rounded text-center w-20 h-20 flex items-center justify-center shadow-md">Z4</div>
+        <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Popular Items</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                <p class="font-semibold">Spicy Avocado Wrap</p>
+                <p class="text-gray-600">Order: 92</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                <p class="font-semibold">Crispy Onion Burger</p>
+                <p class="text-gray-600">Order: 85</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                <p class="font-semibold">Garlic Herb Fries</p>
+                <p class="text-gray-600">Order: 67</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                <p class="font-semibold">Zesty Lemonade</p>
+                <p class="text-gray-600">Order: 53</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                <p class="font-semibold">Choco Lava Cake</p>
+                <p class="text-gray-600">Order: 48</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                <p class="font-semibold">Mango Tango Smoothie</p>
+                <p class="text-gray-600">Order: 39</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                <p class="font-semibold">BBQ Chicken Bites</p>
+                <p class="text-gray-600">Order: 35</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                <p class="font-semibold">Truffle Mac & Cheese</p>
+                <p class="text-gray-600">Order: 29</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                <p class="font-semibold">Peppermint Milkshake</p>
+                <p class="text-gray-600">Order: 22</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                <p class="font-semibold">Sizzling Veggie Tacos</p>
+                <p class="text-gray-600">Order: 18</p>
+            </div>
         </div>
     </section>
 
@@ -39,13 +69,15 @@
         <button id="openPopup" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-200 shadow-md">Click HERE</button>
 
         <div id="popup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-            <div class="bg-white p-5 rounded-lg text-center relative w-72 shadow-lg">
+            <div class="bg-white p-5 rounded-lg text-center relative w-80 shadow-lg">
                 <button id="closePopup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">×</button>
-                <h3 class="text-lg font-semibold text-blue-800">Cancel Ticket</h3>
-                <p class="mt-2 text-gray-600">Are you sure to cancel this ticket?</p>
-                <p class="mt-2 text-gray-700">Event: Cosmic Symphony</p>
-                <p class="text-gray-700">Details: VIP Seat, Date: May 20, 2025</p>
-                <button id="confirmCancel" class="mt-4 bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition duration-200 shadow-md">Cancel Ticket</button>
+                <h3 class="text-lg font-semibold text-gray-800">Cancel Item</h3>
+                <p class="mt-2 text-gray-600">Are you sure to cancel this item?</p>
+                <div class="mt-4 bg-gray-100 p-3 rounded-lg">
+                    <p class="font-semibold">Zesty Lemonade</p>
+                    <p class="text-gray-600">Size: Medium, Ice: Extra, Sugar: Light</p>
+                </div>
+                <button id="confirmCancel" class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-200 shadow-md">Cancel Item</button>
             </div>
         </div>
     </section>
@@ -65,7 +97,7 @@
         });
 
         confirmCancelBtn.addEventListener('click', () => {
-            alert('Ticket cancellation confirmed!');
+            alert('Item cancellation confirmed!');
             popup.classList.add('hidden');
         });
     </script>
