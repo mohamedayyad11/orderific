@@ -18,20 +18,19 @@
             justify-content: center;
             align-items: center;
             background-color: #e8f0fa; /* Slightly more blue-tinted background */
-            flex-direction: row; /* Align left and right sections horizontally */
+            flex-direction: row;
         }
 
         .container {
             display: flex;
             width: 100%;
             max-width: 900px; /* Total width for both sections */
-            height: 600px; /* Matches the left section height */
+            height: 600px; /* Fixed height for consistency */
         }
 
         .left-section {
             position: relative;
             width: 50%; /* Half of the container */
-            max-width: 400px;
             height: 100%;
             background: url('https://orderific.com/ord-website/assets/img/cover1.webp') no-repeat center center/cover; /* Delivery person on bike */
             border-radius: 20px 0 0 20px; /* Rounded corners only on left side */
@@ -109,7 +108,7 @@
         .right-section {
             width: 50%; /* Half of the container */
             height: 100%;
-            background: rgba(255, 255, 255, 0.9); /* Light white background like screenshot */
+            background: rgba(245, 166, 35, 0.9); /* Warm orange-ish wall color with transparency */
             border-radius: 0 20px 20px 0; /* Rounded corners only on right side */
             display: flex;
             justify-content: center;
@@ -135,7 +134,7 @@
         .login-form label {
             display: block;
             font-size: 14px;
-            color: #555;
+            color: #fff; /* Changed to white for contrast against orange background */
             margin-bottom: 5px;
         }
 
@@ -147,6 +146,8 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 14px;
+            background-color: #fff; /* Ensure input background is white for readability */
+            color: #333;
         }
 
         .password-container {
@@ -178,7 +179,7 @@
 
         .login-form .remember-me label {
             font-size: 12px;
-            color: #555;
+            color: #fff; /* Changed to white for contrast */
         }
 
         .login-form .login-with-code {
@@ -206,9 +207,13 @@
 
         /* Responsive Design */
         @media (min-width: 768px) {
+            .container {
+                max-width: 1000px; /* Slightly wider for desktop */
+                height: 750px; /* Increased height for consistency */
+            }
+
             .left-section {
                 max-width: 500px;
-                height: 750px;
             }
 
             .overlay-1 {
@@ -290,7 +295,7 @@
             <div class="login-form">
                 <h2>Welcome Back</h2>
                 <label>Email address</label>
-                <input type="text" value="samsmith@gmail.com" readonly>
+                <input type="text" value="admin@example.com" readonly>
 
                 <label>Password</label>
                 <div class="password-container">
