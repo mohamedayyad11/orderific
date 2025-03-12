@@ -29,28 +29,29 @@
             padding: 20px 0;
         }
 
-        /* Logo Styling */
-        .logo {
-            margin: 0 auto 20px;
-            display: block; /* Center the logo */
-            width: 100px;
-            height: auto;
-            filter: invert(100%) brightness(200%); /* Makes the logo appear white */
-        }
-
-        /* Right Section Styling (now the only section) */
-        .right-section {
+        /* Frame Styling (previously right-section) */
+        .frame {
             width: 100%;
             height: auto;
             background: #f4e4d8; /* Keeping the original background color as requested */
             border-radius: 20px;
             display: flex;
+            flex-direction: column; /* Stack logo and form vertically */
             justify-content: center;
             align-items: center;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        /* Logo Styling */
+        .logo {
+            width: 100px;
+            height: auto;
+            filter: invert(100%) brightness(200%); /* Ensures the logo is white */
+            margin-bottom: 20px; /* Space between logo and heading */
+        }
+
+        /* Login Form Styling */
         .login-form {
             width: 100%;
             max-width: 300px;
@@ -148,8 +149,12 @@
                 padding: 20px;
             }
 
-            .right-section {
+            .frame {
                 padding: 20px;
+            }
+
+            .logo {
+                display: block; /* Ensure logo is visible on mobile */
             }
 
             .login-form {
@@ -190,8 +195,12 @@
                 height: auto;
             }
 
-            .right-section {
+            .frame {
                 padding: 40px;
+            }
+
+            .logo {
+                display: block; /* Ensure logo is visible on desktop */
             }
 
             .login-form {
@@ -227,8 +236,8 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" class="logo" alt="Orderific Logo">
-        <div class="right-section">
+        <div class="frame">
+            <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" class="logo" alt="Orderific Logo">
             <div class="login-form">
                 <h2>Welcome Back</h2>
                 <label>Email address</label>
