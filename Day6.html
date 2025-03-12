@@ -5,31 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Ticketing Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .hidden {
-            display: none;
-        }
-        .popup {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        .popup-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            position: relative;
-            width: 300px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-6">
     <!-- Order Card Section -->
@@ -63,9 +38,9 @@
     <section class="text-center">
         <button id="openPopup" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-200 shadow-md">Click HERE</button>
 
-        <div id="popup" class="popup hidden">
-            <div class="popup-content">
-                <button id="closePopup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">×</button>
+        <div id="popup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <div class="bg-white p-5 rounded-lg text-center relative w-72 shadow-lg">
+                <button id="closePopup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">×</button>
                 <h3 class="text-lg font-semibold text-blue-800">Cancel Ticket</h3>
                 <p class="mt-2 text-gray-600">Are you sure to cancel this ticket?</p>
                 <p class="mt-2 text-gray-700">Event: Cosmic Symphony</p>
