@@ -22,11 +22,11 @@
 
         .container {
             width: 100%;
-            max-width: 900px;
+            max-width: 1200px; /* Increased max-width for a larger page */
             height: auto;
             display: flex;
             flex-direction: column;
-            padding: 20px 0;
+            padding: 40px 0; /* Increased padding for larger appearance */
         }
 
         .frame {
@@ -38,34 +38,34 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 40px; /* Increased padding for larger frame */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            width: 100px;
+            width: 120px; /* Slightly larger logo for proportionality */
             height: auto;
-            filter: hue-rotate(30deg) saturate(500%) brightness(80%); /* Makes logo orange */
-            margin-top: -20px; /* Moves logo up 2 steps (10px per step) */
-            margin-bottom: 40px; /* Space below logo */
+            filter: hue-rotate(30deg) saturate(500%) brightness(80%); /* Orange logo */
+            margin-top: -20px;
+            margin-bottom: 40px;
         }
 
         .service-panel {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 40px; /* 4 steps (10px per step) spacing below "Service Panel" */
+            font-size: 24px; /* Increased font size */
+            color: #0066cc; /* Blue color */
+            margin-bottom: 60px; /* Increased spacing (6 steps) below "Service Panel" */
             text-align: center;
         }
 
         .login-form {
             width: 100%;
-            max-width: 300px;
+            max-width: 400px; /* Increased max-width for larger form */
             text-align: left;
         }
 
         .login-form h2 {
-            font-size: 24px;
-            color: #0066cc;
+            font-size: 24px; /* Same size as Service Panel */
+            color: #0066cc; /* Blue color */
             margin-bottom: 20px;
             font-weight: bold;
             text-transform: uppercase;
@@ -74,7 +74,7 @@
 
         .login-form label {
             display: block;
-            font-size: 14px;
+            font-size: 16px; /* Slightly larger for readability */
             color: #555;
             margin-bottom: 5px;
         }
@@ -82,11 +82,11 @@
         .login-form input[type="text"],
         .login-form input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px; /* Slightly larger padding */
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 16px;
             background-color: #fff;
             color: #333;
         }
@@ -119,13 +119,13 @@
         }
 
         .login-form .remember-me label {
-            font-size: 12px;
+            font-size: 14px; /* Slightly larger for readability */
             color: #555;
         }
 
         .login-form .login-with-code {
             display: block;
-            font-size: 12px;
+            font-size: 14px; /* Slightly larger */
             color: #0066cc;
             margin-bottom: 20px;
             text-decoration: none;
@@ -134,12 +134,12 @@
 
         .login-form button {
             width: 100%;
-            padding: 10px;
+            padding: 12px; /* Slightly larger padding */
             background-color: #000;
             color: #fff;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 18px; /* Slightly larger font */
             cursor: pointer;
         }
 
@@ -166,8 +166,12 @@
                 padding: 0 20px;
             }
 
+            .service-panel {
+                font-size: 20px;
+            }
+
             .login-form h2 {
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .login-form label {
@@ -194,12 +198,12 @@
 
         @media (min-width: 769px) {
             .container {
-                max-width: 400px;
+                max-width: 600px; /* Increased for larger desktop view */
                 height: auto;
             }
 
             .frame {
-                padding: 40px;
+                padding: 60px; /* Increased padding for larger frame */
             }
 
             .logo {
@@ -207,11 +211,15 @@
             }
 
             .login-form {
-                max-width: 350px;
+                max-width: 450px; /* Increased for larger form */
+            }
+
+            .service-panel {
+                font-size: 24px;
             }
 
             .login-form h2 {
-                font-size: 28px;
+                font-size: 24px;
             }
 
             .login-form label {
