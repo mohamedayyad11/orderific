@@ -17,41 +17,46 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #e8f0fa; /* Keeping the original body background */
+            background-color: #e8f0fa;
         }
 
         .container {
             width: 100%;
             max-width: 900px;
-            height: auto; /* Adjusted for mobile-like view */
+            height: auto;
             display: flex;
-            flex-direction: column; /* Stack elements vertically */
+            flex-direction: column;
             padding: 20px 0;
         }
 
-        /* Frame Styling (previously right-section) */
         .frame {
             width: 100%;
             height: auto;
-            background: #f4e4d8; /* Keeping the original background color as requested */
+            background: #f4e4d8;
             border-radius: 20px;
             display: flex;
-            flex-direction: column; /* Stack logo and form vertically */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Logo Styling */
         .logo {
             width: 100px;
             height: auto;
-            filter: invert(100%) brightness(200%); /* Ensures the logo is white */
-            margin-bottom: 40px; /* Space between logo and heading */
+            filter: hue-rotate(30deg) saturate(500%) brightness(80%); /* Makes logo orange */
+            margin-top: -20px; /* Moves logo up 2 steps (10px per step) */
+            margin-bottom: 40px; /* Space below logo */
         }
 
-        /* Login Form Styling */
+        .service-panel {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 40px; /* 4 steps (10px per step) spacing below "Service Panel" */
+            text-align: center;
+        }
+
         .login-form {
             width: 100%;
             max-width: 300px;
@@ -64,7 +69,7 @@
             margin-bottom: 20px;
             font-weight: bold;
             text-transform: uppercase;
-            text-align: center; /* Centered heading as in the screenshot */
+            text-align: center;
         }
 
         .login-form label {
@@ -124,7 +129,7 @@
             color: #0066cc;
             margin-bottom: 20px;
             text-decoration: none;
-            text-align: right; /* Aligned to the right as in the screenshot */
+            text-align: right;
         }
 
         .login-form button {
@@ -142,7 +147,6 @@
             background-color: #333;
         }
 
-        /* Mobile Responsive Design (Default for this layout) */
         @media (max-width: 768px) {
             .container {
                 max-width: 100%;
@@ -154,7 +158,7 @@
             }
 
             .logo {
-                display: block; /* Ensure logo is visible on mobile */
+                display: block;
             }
 
             .login-form {
@@ -188,10 +192,9 @@
             }
         }
 
-        /* Desktop Responsive Design */
         @media (min-width: 769px) {
             .container {
-                max-width: 400px; /* Narrower container for desktop to match screenshot */
+                max-width: 400px;
                 height: auto;
             }
 
@@ -200,7 +203,7 @@
             }
 
             .logo {
-                display: block; /* Ensure logo is visible on desktop */
+                display: block;
             }
 
             .login-form {
@@ -238,6 +241,7 @@
     <div class="container">
         <div class="frame">
             <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" class="logo" alt="Orderific Logo">
+            <div class="service-panel">Service Panel</div>
             <div class="login-form">
                 <h2>Welcome Back</h2>
                 <label>Email address</label>
