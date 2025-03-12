@@ -22,11 +22,11 @@
 
         .container {
             width: 100%;
-            max-width: 1400px; /* Increased max-width for a larger page */
+            max-width: 1400px;
             height: auto;
             display: flex;
             flex-direction: column;
-            padding: 50px 0; /* Increased padding for larger appearance */
+            padding: 50px 0;
         }
 
         .frame {
@@ -38,13 +38,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 50px; /* Increased padding for larger frame */
+            padding: 50px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding-bottom: 100px; /* Added extra space under Sign In section */
+            padding-bottom: 100px; /* Extra space under Sign In */
         }
 
         .logo {
-            width: 130px; /* Slightly larger logo for proportionality */
+            width: 130px;
             height: auto;
             filter: hue-rotate(30deg) saturate(500%) brightness(80%); /* Orange logo */
             margin-top: -20px;
@@ -53,20 +53,25 @@
 
         .service-panel {
             font-size: 24px;
-            color: #000; /* Changed to black */
-            margin-bottom: 60px; /* Kept larger spacing below "Service Panel" */
+            color: #000; /* Black color */
+            font-weight: bold; /* Made "Service Panel" bold */
+            margin-bottom: 60px;
             text-align: center;
+        }
+
+        .service-panel .orderific {
+            color: #ff6200; /* Orange color matching logo (approx. based on filter) */
         }
 
         .login-form {
             width: 100%;
-            max-width: 450px; /* Increased max-width for larger form */
+            max-width: 450px;
             text-align: left;
         }
 
         .login-form h2 {
-            font-size: 24px; /* Same size as Service Panel */
-            color: #000; /* Changed to black */
+            font-size: 24px;
+            color: #000; /* Black color */
             margin-bottom: 20px;
             font-weight: bold;
             text-transform: uppercase;
@@ -156,7 +161,7 @@
 
             .frame {
                 padding: 20px;
-                padding-bottom: 60px; /* Adjusted extra space for mobile */
+                padding-bottom: 60px;
             }
 
             .logo {
@@ -200,13 +205,13 @@
 
         @media (min-width: 769px) {
             .container {
-                max-width: 700px; /* Increased for larger desktop view */
+                max-width: 700px;
                 height: auto;
             }
 
             .frame {
-                padding: 70px; /* Increased padding for larger frame */
-                padding-bottom: 120px; /* Increased extra space under Sign In */
+                padding: 70px;
+                padding-bottom: 120px;
             }
 
             .logo {
@@ -214,7 +219,7 @@
             }
 
             .login-form {
-                max-width: 500px; /* Increased for larger form */
+                max-width: 500px;
             }
 
             .service-panel {
@@ -252,7 +257,7 @@
     <div class="container">
         <div class="frame">
             <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" class="logo" alt="Orderific Logo">
-            <div class="service-panel">Service Panel</div>
+            <div class="service-panel"><span class="orderific">Orderific</span> Service Panel</div>
             <div class="login-form">
                 <h2>Welcome Back</h2>
                 <label>Email address</label>
