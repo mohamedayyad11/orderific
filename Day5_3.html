@@ -17,102 +17,33 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #e8f0fa; /* Slightly more blue-tinted background */
+            background-color: #e8f0fa; /* Keeping the original body background */
         }
 
         .container {
             width: 100%;
             max-width: 900px;
-            height: 600px;
+            height: auto; /* Adjusted for mobile-like view */
             display: flex;
-            flex-direction: row;
-        }
-
-        .left-section {
-            position: relative;
-            width: 50%;
-            height: 100%;
-            background: url('https://orderific.com/ord-website/assets/img/cover1.webp') no-repeat center center/cover;
-            border-radius: 20px 0 0 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex; /* Ensure content is centered */
-            justify-content: center;
-            align-items: center;
+            flex-direction: column; /* Stack elements vertically */
+            padding: 20px 0;
         }
 
         /* Logo Styling */
         .logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            margin: 0 auto 20px;
+            display: block; /* Center the logo */
             width: 100px;
             height: auto;
             filter: invert(100%) brightness(200%); /* Makes the logo appear white */
         }
 
-        /* Overlay 1 - Top Left */
-        .overlay-1 {
-            position: absolute;
-            top: 10%;
-            left: 5%;
-            background: rgba(0, 123, 255, 0.9);
-            padding: 15px;
-            border-radius: 10px;
-            color: white;
-            width: 40%;
-            max-width: 150px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .overlay-1 h2 {
-            font-size: 18px;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .overlay-1 p {
-            font-size: 12px;
-            line-height: 1.4;
-        }
-
-        /* Overlay 2 - Bottom Center */
-        .overlay-2 {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            color: #333;
-            width: 80%;
-            max-width: 300px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .overlay-2 h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #0066cc;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .overlay-2 p {
-            font-size: 14px;
-            line-height: 1.5;
-            color: #555;
-        }
-
-        /* Right Section Styling */
+        /* Right Section Styling (now the only section) */
         .right-section {
-            width: 50%;
-            height: 100%;
-            background: #f4e4d8;
-            border-radius: 0 20px 20px 0;
+            width: 100%;
+            height: auto;
+            background: #f4e4d8; /* Keeping the original background color as requested */
+            border-radius: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -132,6 +63,7 @@
             margin-bottom: 20px;
             font-weight: bold;
             text-transform: uppercase;
+            text-align: center; /* Centered heading as in the screenshot */
         }
 
         .login-form label {
@@ -191,6 +123,7 @@
             color: #0066cc;
             margin-bottom: 20px;
             text-decoration: none;
+            text-align: right; /* Aligned to the right as in the screenshot */
         }
 
         .login-form button {
@@ -208,31 +141,15 @@
             background-color: #333;
         }
 
-        /* Mobile Responsive Design (Portrait Mode) */
+        /* Mobile Responsive Design (Default for this layout) */
         @media (max-width: 768px) {
             .container {
                 max-width: 100%;
-                height: auto;
-                flex-direction: column; /* Stack sections vertically */
-                padding: 20px 0;
-            }
-
-            .left-section {
-                display: none; /* Hide the left section on mobile */
+                padding: 20px;
             }
 
             .right-section {
-                width: 100%;
-                height: auto;
-                border-radius: 20px;
                 padding: 20px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            .logo {
-                position: static;
-                margin: 0 auto 20px;
-                display: block; /* Center the logo */
             }
 
             .login-form {
@@ -242,7 +159,6 @@
 
             .login-form h2 {
                 font-size: 24px;
-                text-align: center;
             }
 
             .login-form label {
@@ -260,7 +176,6 @@
 
             .login-form .login-with-code {
                 font-size: 12px;
-                text-align: center;
             }
 
             .login-form button {
@@ -271,39 +186,8 @@
         /* Desktop Responsive Design */
         @media (min-width: 769px) {
             .container {
-                max-width: 1000px;
-                height: 750px;
-            }
-
-            .left-section {
-                max-width: 500px;
-            }
-
-            .overlay-1 {
-                font-size: 20px;
-                padding: 20px;
-                max-width: 200px;
-            }
-
-            .overlay-1 h2 {
-                font-size: 22px;
-            }
-
-            .overlay-1 p {
-                font-size: 14px;
-            }
-
-            .overlay-2 {
-                padding: 25px;
-                max-width: 350px;
-            }
-
-            .overlay-2 h2 {
-                font-size: 28px;
-            }
-
-            .overlay-2 p {
-                font-size: 16px;
+                max-width: 400px; /* Narrower container for desktop to match screenshot */
+                height: auto;
             }
 
             .right-section {
@@ -343,19 +227,8 @@
 </head>
 <body>
     <div class="container">
-        <div class="left-section">
-            <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" class="logo" alt="Orderific Logo">
-            <div class="overlay-1">
-                <h2>Swift Delivery Quest</h2>
-                <p>Embark on a journey of lightning-fast deliveries with real-time updates and seamless coordination.</p>
-            </div>
-            <div class="overlay-2">
-                <h2>Operation Hub</h2>
-                <p>Revolutionize your restaurant with our advanced BMS. Effortlessly oversee reservations, orders, inventory, and staff, crafting unforgettable dining adventures.</p>
-            </div>
-        </div>
+        <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" class="logo" alt="Orderific Logo">
         <div class="right-section">
-            <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" class="logo" alt="Orderific Logo">
             <div class="login-form">
                 <h2>Welcome Back</h2>
                 <label>Email address</label>
