@@ -13,17 +13,17 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Subway_2016_logo.svg/1200px-Subway_2016_logo.svg.png" 
                  alt="Subway Logo" 
                  class="h-8 md:h-10">
-            <div class="text-[#1e3a8a] text-lg md:text-xl font-semibold">15:03</div>
+            <div id="time" class="text-[#1e3a8a] text-lg md:text-xl font-semibold"></div>
         </div>
 
         <!-- Order Status Sections -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <!-- Preparing Section -->
-            <div class="flex flex-col items-center bg-white p-4 rounded-lg shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+            <!-- Preparing Section (Wider: spans 3 columns on md screens) -->
+            <div class="flex flex-col items-center bg-white p-4 rounded-lg shadow-lg md:col-span-3">
                 <h2 class="bg-[#1e3a8a] text-white text-center w-full py-2 rounded-md mb-4 text-lg font-semibold">
                     Preparing
                 </h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 w-full">
                     <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base">
                         Order #5001
                     </div>
@@ -39,15 +39,33 @@
                     <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base">
                         Order #5005
                     </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base">
+                        Order #5006
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base">
+                        Order #5007
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base">
+                        Order #5008
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base">
+                        Order #5009
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base">
+                        Order #5010
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base">
+                        Order #5011
+                    </div>
                 </div>
             </div>
 
-            <!-- Ready Section -->
-            <div class="flex flex-col items-center bg-white p-4 rounded-lg shadow-lg">
+            <!-- Ready Section (Narrower: spans 1 column on md screens) -->
+            <div class="flex flex-col items-center bg-white p-4 rounded-lg shadow-lg md:col-span-1">
                 <h2 class="bg-[#1e3a8a] text-white text-center w-full py-2 rounded-md mb-4 text-lg font-semibold">
                     Ready
                 </h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-3 w-full">
                     <div class="bg-[#006633] text-white p-3 rounded-md text-center text-sm md:text-base">
                         Order #3885
                     </div>
@@ -61,5 +79,19 @@
             </div>
         </div>
     </div>
+
+    <!-- JavaScript for Real-Time Clock -->
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('time').textContent = `${hours}:${minutes}`;
+        }
+
+        // Update time immediately and then every minute
+        updateTime();
+        setInterval(updateTime, 60000); // 60000 ms = 1 minute
+    </script>
 </body>
 </html>
