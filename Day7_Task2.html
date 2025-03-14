@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2: Position Sidebar and Sticky Header (4 hours) - Subway Order Status</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f5e8c7] min-h-screen flex p-4 md:p-6">
+    <!-- Sidebar (Inspired from first code's structured layout) -->
+    <div class="hidden md:block w-64 bg-white rounded-xl shadow-lg border-2 border-[#1e3a8a] p-4 mr-6 sticky top-6 h-[calc(100vh-3rem)]">
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Subway_2016_logo.svg/1200px-Subway_2016_logo.svg.png" 
+                 alt="Subway Logo" 
+                 class="h-10 mx-auto mb-4">
+            <h3 class="text-[#1e3a8a] text-lg font-semibold">Order Dashboard</h3>
+            <p class="text-gray-600 mt-2">Track your Subway orders in real-time.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 max-w-4xl">
+        <!-- Sticky Header -->
+        <div class="bg-white rounded-xl shadow-md border-b border-gray-200 p-4 sticky top-0 z-10 flex justify-between items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Subway_2016_logo.svg/1200px-Subway_2016_logo.svg.png" 
+                 alt="Subway Logo" 
+                 class="h-8 md:h-10">
+            <div id="time" class="text-[#1e3a8a] text-lg md:text-xl font-semibold"></div>
+        </div>
+
+        <!-- Order Status Sections -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mt-6">
+            <!-- Preparing Section (Much more space downward) -->
+            <div class="flex flex-col items-center bg-white p-4 pb-64 rounded-lg shadow-lg md:col-span-3">
+                <h2 class="bg-[#1e3a8a] text-white text-center w-full py-2 rounded-md mb-4 text-lg font-semibold">
+                    Preparing
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 w-full">
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5001
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5002
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5003
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5004
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5005
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5006
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5007
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5008
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5009
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5010
+                    </div>
+                    <div class="bg-[#ffcc00] text-[#333333] p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #5011
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ready Section (Much more space downward, same order size as Preparing) -->
+            <div class="flex flex-col items-center bg-white p-4 pb-64 rounded-lg shadow-lg md:col-span-2">
+                <h2 class="bg-[#1e3a8a] text-white text-center w-full py-2 rounded-md mb-4 text-lg font-semibold">
+                    Ready
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3 w-full">
+                    <div class="bg-[#006633] text-white p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #3885
+                    </div>
+                    <div class="bg-[#006633] text-white p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #3886
+                    </div>
+                    <div class="bg-[#006633] text-white p-3 rounded-md text-center text-sm md:text-base h-16 flex items-center justify-center">
+                        Order #3887
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Real-Time Clock -->
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('time').textContent = `${hours}:${minutes}`;
+        }
+
+        // Update time immediately and then every minute
+        updateTime();
+        setInterval(updateTime, 60000); // 60000 ms = 1 minute
+    </script>
+</body>
+</html>
