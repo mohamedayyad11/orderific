@@ -175,7 +175,7 @@
                     if (user.unread) {
                         user.unread = false; // Mark as read
                         userDiv.classList.remove("bg-gray-100"); // Remove highlight
-                        const redCircle = userDiv.querySelector(".bg-red-500");
+                        const redCircle = redCircle = userDiv.querySelector(".bg-red-500");
                         if (redCircle) redCircle.remove(); // Remove red circle
                         userDiv.querySelector(".text-xs").textContent = `${new Date().toLocaleDateString()} - ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`; // Update to timestamp
                         updatePendingCount(userList); // Update count based on displayed users
@@ -228,12 +228,10 @@
             }
         });
 
-        // Hide search input when clicking outside
+        // Hide search input when clicking outside (no refresh)
         document.addEventListener("click", (e) => {
             if (!searchIcon.contains(e.target) && !searchInput.contains(e.target)) {
                 searchInput.classList.add("hidden");
-                searchInput.value = ""; // Clear input
-                updatePendingUsers(); // Reset to default
             }
         });
 
