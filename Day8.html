@@ -8,6 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the popup */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 300px;
+            text-align: center;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
 </head>
 <body class="bg-[#f5e8c7] min-h-screen flex items-center justify-center p-4 md:p-6">
     <div class="bg-white rounded-2xl shadow-2xl border-4 border-[#1e3a8a] w-full max-w-7xl p-4 md:p-6 flex flex-col min-h-[650px]">
@@ -42,7 +69,7 @@
                     </button>
                 </div>
                 <!-- User Profile and Notification -->
-                <div class="flex flex-col items-center gap-2 bg-white p-2 md:p-2 rounded-full shadow-lg shadow-[#1e3a8a] absolute bottom-0 -mb-35">
+                <div class="flex flex-col items-center gap-2 bg-white p-2 md:p-2 rounded-full shadow-lg shadow-[#1e3a8a] absolute bottom-0 -mb-20">
                     <div class="w-8 h-8 md:w-10 md:h-10 bg-[#1e3a8a] rounded-full border-2 border-white shadow-md">
                         <img src="https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369988.png" alt="User Profile" class="w-full h-full object-cover rounded-full">
                     </div>
@@ -74,7 +101,7 @@
             <div class="flex-1 flex justify-center items-center p-6 md:p-8">
                 <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-md">
                     <div class="flex justify-between items-center mb-4">
-                        <h2 class="text-xl font-semibold text-gray-700"></h2>
+                        <h2 class="text-xl font-semibold text-gray-700">OTP Confirmation</h2>
                         <button class="text-gray-500 hover:text-gray-700">
                             Close
                         </button>
@@ -87,7 +114,7 @@
                         <p class="text-sm text-gray-600 mb-4">To accept cash transfers, the rider must enter this 4-digit code in their app before you can accept the transaction.</p>
                         <p class="text-xl font-semibold text-gray-800 mb-4">The amount you should receive:</p>
                         <p id="user-amount" class="text-3xl font-bold text-green-600 mb-4"></p>
-                        <button class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-200">
+                        <button id="accept-button" class="w-full bg-[#1e3a8a] text-white py-2 rounded-lg hover:bg-[#2b5cb3] transition duration-200">
                             Accept Cash Transfer
                         </button>
                     </div>
@@ -96,7 +123,18 @@
         </div>
     </div>
 
-    <!-- JavaScript to Handle Dynamic Users, Interactions, and Search -->
+    <!-- Popup Overlay and Content -->
+    <div id="overlay"></div>
+    <div id="popup">
+        <h3 class="text-lg font-semibold mb-4">Collect Confirmation</h3>
+        <button id="close-popup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">✕</button>
+        <p id="popup-message" class="mb-6"></p>
+        <button id="confirm-button" class="w-full bg-[#1e3a8a] text-white py-2 rounded-lg hover:bg-[#2b5cb3] transition duration-200">
+            Confirm
+        </button>
+    </div>
+
+    <!-- JavaScript to Handle Dynamic Users, Interactions, Search, and Popup -->
     <script>
         // Array of users with their details
         const users = [
@@ -192,6 +230,39 @@
                 searchInput.value = ""; // Clear input
                 updatePendingUsers(); // Reset to default
             }
+        });
+
+        // Popup functionality
+        const acceptButton = document.getElementById("accept-button");
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closePopup = document.getElementById("close-popup");
+        const confirmButton = document.getElementById("confirm-button");
+        const popupMessage = document.getElementById("popup-message");
+
+        acceptButton.addEventListener("click", () => {
+            const userName = document.getElementById("user-name").textContent;
+            const userAmount = document.getElementById("user-amount").textContent;
+            const userOtp = document.getElementById("user-otp").textContent;
+            popupMessage.textContent = `Do you confirm the receipt of the exact amount of ${userAmount} from ${userName} with OTP ${userOtp}?`;
+            popup.style.display = "block";
+            overlay.style.display = "block";
+        });
+
+        closePopup.addEventListener("click", () => {
+            popup.style.display = "none";
+            overlay.style.display = "none";
+        });
+
+        confirmButton.addEventListener("click", () => {
+            popup.style.display = "none";
+            overlay.style.display = "none";
+            // Add additional logic here if needed after confirmation
+        });
+
+        overlay.addEventListener("click", () => {
+            popup.style.display = "none";
+            overlay.style.display = "none";
         });
 
         // Call the function on page load
