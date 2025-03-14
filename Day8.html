@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Confirmation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/4 bg-white shadow-lg p-4">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-lg font-semibold text-gray-700">Pending</h2>
+            <button class="text-gray-500 hover:text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                <div>
+                    <p class="text-sm font-medium text-gray-900">Nasser Alsubai</p>
+                    <p class="text-xs text-gray-500">674951</p>
+                </div>
+            </div>
+            <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                <div>
+                    <p class="text-sm font-medium text-gray-900">Nguyen, Shane</p>
+                    <p class="text-xs text-gray-500">10:24 - 9 Feb 2024</p>
+                </div>
+            </div>
+            <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                <div>
+                    <p class="text-sm font-medium text-gray-900">Flores, Juanita</p>
+                    <p class="text-xs text-gray-500">10:04 - 9 Feb 2024</p>
+                </div>
+            </div>
+            <!-- Add more users as needed -->
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="w-3/4 p-6 flex justify-center items-center">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-700">OTP Confirmation</h2>
+                <button class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="text-center">
+                <img src="https://via.placeholder.com/100" alt="User" class="w-24 h-24 rounded-full mx-auto mb-4">
+                <h3 class="text-lg font-medium text-gray-900">Nasser Alsubai</h3>
+                <p class="text-sm text-gray-500 mb-4">ID: 29657105</p>
+                <p class="text-2xl font-bold text-red-500 mb-2">674951</p>
+                <p class="text-sm text-gray-600 mb-4">To accept cash transfers, the rider must enter this 4-digit code in their app before you can accept the transaction.</p>
+                <p class="text-xl font-semibold text-gray-800 mb-4">The amount you should receive:</p>
+                <p class="text-3xl font-bold text-green-600 mb-4">$86.60</p>
+                <button class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-200">
+                    Accept Cash Transfer
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
