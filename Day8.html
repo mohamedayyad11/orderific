@@ -42,7 +42,7 @@
                     </button>
                 </div>
                 <!-- User Profile and Notification (Moved to End of Page) -->
-                <div class="flex flex-col items-center gap-2 bg-white p-2 md:p-2 rounded-full shadow-lg shadow-[#1e3a8a] absolute bottom-0 -mb-60">
+                <div class="flex flex-col items-center gap-2 bg-white p-2 md:p-2 rounded-full shadow-lg shadow-[#1e3a8a] absolute bottom-0 -mb-20">
                     <div class="w-8 h-8 md:w-10 md:h-10 bg-[#1e3a8a] rounded-full border-2 border-white shadow-md">
                         <img src="https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369988.png" alt="User Profile" class="w-full h-full object-cover rounded-full">
                     </div>
@@ -57,7 +57,7 @@
             <div class="w-full md:w-1/4 bg-white p-4 md:mr-6 shadow-lg rounded-lg">
                 <div class="flex items-center justify-between mb-4">
                     <h2 class="text-lg font-semibold text-gray-700">Pending</h2>
-                    <span class="bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span>
+                    <span id="pending-count" class="bg-black text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span>
                 </div>
                 <div class="space-y-2">
                     <div class="flex items-center p-2 hover:bg-gray-100 rounded-full shadow-md cursor-pointer">
@@ -155,17 +155,17 @@
         </div>
     </div>
 
-    <!-- JavaScript to Randomly Select User on Refresh -->
+    <!-- JavaScript to Randomly Select User on Refresh and Update Pending Count -->
     <script>
-        // Array of users with their details
+        // Array of users with their details and unread status
         const users = [
-            { name: "Nasser Alsubai", id: "29657105", otp: "674951", amount: "$86.60", image: "https://via.placeholder.com/100" },
-            { name: "Nguyen, Shane", id: "12345678", otp: "123456", amount: "$45.20", image: "https://via.placeholder.com/100" },
-            { name: "Flores, Juanita", id: "87654321", otp: "789123", amount: "$72.50", image: "https://via.placeholder.com/100" },
-            { name: "Miles, Esther", id: "45678912", otp: "456789", amount: "$19.99", image: "https://via.placeholder.com/100" },
-            { name: "Black, Marvin", id: "98765432", otp: "321654", amount: "$33.40", image: "https://via.placeholder.com/100" },
-            { name: "Cooper, Kristin", id: "65432198", otp: "654987", amount: "$55.75", image: "https://via.placeholder.com/100" },
-            { name: "Henry, Arthur", id: "32198765", otp: "987321", amount: "$92.10", image: "https://via.placeholder.com/100" }
+            { name: "Nasser Alsubai", id: "29657105", otp: "674951", amount: "$86.60", image: "https://via.placeholder.com/100", unread: true },
+            { name: "Nguyen, Shane", id: "12345678", otp: "123456", amount: "$45.20", image: "https://via.placeholder.com/100", unread: false },
+            { name: "Flores, Juanita", id: "87654321", otp: "789123", amount: "$72.50", image: "https://via.placeholder.com/100", unread: false },
+            { name: "Miles, Esther", id: "45678912", otp: "456789", amount: "$19.99", image: "https://via.placeholder.com/100", unread: false },
+            { name: "Black, Marvin", id: "98765432", otp: "321654", amount: "$33.40", image: "https://via.placeholder.com/100", unread: false },
+            { name: "Cooper, Kristin", id: "65432198", otp: "654987", amount: "$55.75", image: "https://via.placeholder.com/100", unread: false },
+            { name: "Henry, Arthur", id: "32198765", otp: "987321", amount: "$92.10", image: "https://via.placeholder.com/100", unread: false }
         ];
 
         // Function to randomly select a user
@@ -181,8 +181,17 @@
             document.getElementById("user-image").src = selectedUser.image;
         }
 
-        // Call the function on page load
-        window.onload = selectRandomUser;
+        // Function to update pending count
+        function updatePendingCount() {
+            const unreadCount = users.filter(user => user.unread).length;
+            document.getElementById("pending-count").textContent = unreadCount;
+        }
+
+        // Call the functions on page load
+        window.onload = function() {
+            selectRandomUser();
+            updatePendingCount();
+        };
     </script>
 </body>
 </html>
