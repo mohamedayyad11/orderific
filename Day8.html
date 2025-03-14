@@ -194,6 +194,11 @@
             document.getElementById("user-otp").textContent = user.otp;
             document.getElementById("user-amount").textContent = user.amount;
             document.getElementById("user-image").src = user.image.replace("40", "100"); // Larger image for OTP section
+            // Reset button to blue "Accept Cash Transfer" when switching users
+            const acceptButton = document.getElementById("accept-button");
+            acceptButton.textContent = "Accept Cash Transfer";
+            acceptButton.classList.remove("bg-green-500", "hover:bg-green-600");
+            acceptButton.classList.add("bg-[#1e3a8a]", "hover:bg-[#2b5cb3]");
         }
 
         // Function to update pending count based on displayed users
@@ -241,12 +246,14 @@
         const popupMessage = document.getElementById("popup-message");
 
         acceptButton.addEventListener("click", () => {
-            const userName = document.getElementById("user-name").textContent;
-            const userAmount = document.getElementById("user-amount").textContent;
-            const userOtp = document.getElementById("user-otp").textContent;
-            popupMessage.textContent = `Do you confirm the receipt of the exact amount of ${userAmount} from ${userName} with OTP ${userOtp}?`;
-            popup.style.display = "block";
-            overlay.style.display = "block";
+            if (acceptButton.textContent === "Accept Cash Transfer") {
+                const userName = document.getElementById("user-name").textContent;
+                const userAmount = document.getElementById("user-amount").textContent;
+                const userOtp = document.getElementById("user-otp").textContent;
+                popupMessage.textContent = `Do you confirm the receipt of the exact amount of ${userAmount} from ${userName} with OTP ${userOtp}?`;
+                popup.style.display = "block";
+                overlay.style.display = "block";
+            }
         });
 
         closePopup.addEventListener("click", () => {
@@ -257,7 +264,9 @@
         confirmButton.addEventListener("click", () => {
             popup.style.display = "none";
             overlay.style.display = "none";
-            // Add additional logic here if needed after confirmation
+            acceptButton.textContent = "Cash Transfer Confirmed";
+            acceptButton.classList.remove("bg-[#1e3a8a]", "hover:bg-[#2b5cb3]");
+            acceptButton.classList.add("bg-green-500", "hover:bg-green-600");
         });
 
         overlay.addEventListener("click", () => {
