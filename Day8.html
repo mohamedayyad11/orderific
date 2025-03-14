@@ -11,70 +11,96 @@
 </head>
 <body class="bg-[#f5e8c7] min-h-screen flex items-center justify-center p-4 md:p-6">
     <div class="bg-white rounded-2xl shadow-2xl border-4 border-[#1e3a8a] w-full max-w-7xl p-4 md:p-6 flex flex-col min-h-[650px]">
-        <!-- Top Bar -->
-        <div class="bg-gradient-to-r from-[#1e3a8a] to-[#2b5cb3] w-full p-4 md:p-6 flex justify-between items-center rounded-2xl shadow-md mb-4 h-16 md:h-20">
-            <div class="flex items-center gap-2 md:gap-3 text-white font-bold text-lg md:text-xl">
-                <i class="fas fa-sync-alt text-[#ff4500] text-xl md:text-2xl"></i>
-                OTP Confirmation
-            </div>
-            <button class="text-white text-sm md:text-base uppercase border-2 border-black rounded-full px-3 py-1 md:px-4 md:py-2 shadow-md">
-                FULLSCREEN
-            </button>
-        </div>
-
         <!-- Main Content -->
         <div class="flex flex-1">
-            <!-- Sidebar -->
-            <nav class="flex md:flex-col items-center justify-between md:justify-start w-full md:w-24 mb-4 md:mb-0 md:mt-32 md:mr-6">
-                <div class="flex flex-row md:flex-col items-center gap-2 md:gap-3 bg-white p-3 md:p-4 rounded-full shadow-lg shadow-[#1e3a8a]">
-                    <button class="w-10 h-10 md:w-12 md:h-12 bg-[#1e3a8a] rounded-full flex items-center justify-center text-white text-lg md:text-xl hover:bg-[#5a9bd4]">
-                        <i class="fas fa-file-alt"></i>
-                    </button>
-                    <button class="w-10 h-10 md:w-12 md:h-12 bg-[#1e3a8a] rounded-full flex items-center justify-center text-white text-lg md:text-xl hover:bg-[#5a9bd4]">
-                        <i class="fas fa-table"></i>
-                    </button>
-                    <button class="w-10 h-10 md:w-12 md:h-12 bg-[#1e3a8a] rounded-full flex items-center justify-center text-white text-lg md:text-xl hover:bg-[#5a9bd4]">
-                        <i class="fas fa-signal"></i>
-                    </button>
-                    <button class="w-10 h-10 md:w-12 md:h-12 bg-[#ff4500] rounded-full flex items-center justify-center text-white text-lg md:text-xl hover:bg-[#5a9bd4]">
-                        <i class="fas fa-comment"></i>
-                    </button>
-                    <button class="w-10 h-10 md:w-12 md:h-12 bg-[#1e3a8a] rounded-full flex items-center justify-center text-white text-lg md:text-xl hover:bg-[#5a9bd4]">
-                        <i class="fas fa-book"></i>
-                    </button>
-                    <button class="w-10 h-10 md:w-12 md:h-12 bg-[#1e3a8a] rounded-full flex items-center justify-center text-white text-lg md:text-xl hover:bg-[#5a9bd4]">
-                        <i class="fas fa-phone"></i>
-                    </button>
+            <!-- Sidebar (from the screenshot) -->
+            <div class="w-full md:w-1/4 bg-white p-4 md:mr-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-semibold text-gray-700">Pending</h2>
+                    <span class="bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span>
                 </div>
-                <div class="flex flex-row md:flex-col items-center gap-2 bg-white p-3 md:p-4 rounded-full shadow-lg shadow-[#1e3a8a] mt-0 md:mt-5">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-[#1e3a8a] rounded-full border-2 border-white shadow-md">
-                        <img src="https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369988.png" alt="User Profile" class="w-full h-full object-cover rounded-full">
+                <div class="space-y-2">
+                    <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                        <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Nasser Alsubai</p>
+                            <p class="text-xs text-gray-500">674951</p>
+                        </div>
+                        <div class="ml-auto">
+                            <span class="bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span>
+                        </div>
                     </div>
-                    <div class="relative">
-                        <i class="fas fa-bell text-[#1e3a8a] text-lg md:text-xl"></i>
-                        <div class="absolute top-[-5px] right-[-5px] w-3 h-3 bg-red-600 rounded-full border-2 border-white shadow-md"></div>
+                    <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                        <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Nguyen, Shane</p>
+                            <p class="text-xs text-gray-500">9 Feb 2024 - 10:24</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                        <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Flores, Juanita</p>
+                            <p class="text-xs text-gray-500">9 Feb 2024 - 10:04</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                        <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Miles, Esther</p>
+                            <p class="text-xs text-gray-500">9 Feb 2024 - 08:30</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                        <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Black, Marvin</p>
+                            <p class="text-xs text-gray-500">9 Feb 2024 - 08:20</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                        <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Cooper, Kristin</p>
+                            <p class="text-xs text-gray-500">9 Feb 2024 - 08:18</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                        <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Flores, Juanita</p>
+                            <p class="text-xs text-gray-500">9 Feb 2024 - 08:07</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                        <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Black, Marvin</p>
+                            <p class="text-xs text-gray-500">9 Feb 2024 - 08:20</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                        <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full mr-2">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Henry, Arthur</p>
+                            <p class="text-xs text-gray-500">9 Feb 2024 - 08:17</p>
+                        </div>
                     </div>
                 </div>
-            </nav>
+            </div>
 
             <!-- Content -->
             <div class="flex-1 flex flex-col">
-                <!-- Header -->
-                <div class="flex justify-between items-center p-6 md:p-8 bg-white rounded-xl shadow-lg border-b-4 border-gray-200 mb-5 h-24 md:h-32">
-                    <img src="data:image/png;base64,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" alt="Subway Logo" class="h-16 md:h-20">
-                    <div id="current-time" class="text-[#1e3a8a] text-3xl md:text-5xl font-bold"></div>
-                </div>
-
                 <!-- OTP Confirmation Content -->
                 <div class="flex justify-center items-center p-6 md:p-8 bg-white rounded-xl shadow-lg flex-1">
                     <div class="text-center w-full max-w-md">
-                        <img src="https://via.placeholder.com/100" alt="User" class="w-24 h-24 rounded-full mx-auto mb-4">
-                        <h3 class="text-lg font-medium text-gray-900">Nasser Alsubai</h3>
-                        <p class="text-sm text-gray-500 mb-4">ID: 29657105</p>
-                        <p class="text-2xl font-bold text-red-500 mb-2">674951</p>
+                        <img id="user-image" src="https://via.placeholder.com/100" alt="User" class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <h3 id="user-name" class="text-lg font-medium text-gray-900"></h3>
+                        <p id="user-id" class="text-sm text-gray-500 mb-4"></p>
+                        <p id="user-otp" class="text-2xl font-bold text-red-500 mb-2"></p>
                         <p class="text-sm text-gray-600 mb-4">To accept cash transfers, the rider must enter this 4-digit code in their app before you can accept the transaction.</p>
                         <p class="text-xl font-semibold text-gray-800 mb-4">The amount you should receive:</p>
-                        <p class="text-3xl font-bold text-green-600 mb-4">$86.60</p>
+                        <p id="user-amount" class="text-3xl font-bold text-green-600 mb-4"></p>
                         <button class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-200">
                             Accept Cash Transfer
                         </button>
@@ -84,20 +110,34 @@
         </div>
     </div>
 
-    <!-- JavaScript for Real-Time Clock -->
+    <!-- JavaScript to Randomly Select User on Refresh -->
     <script>
-        function updateTime() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('current-time').textContent = `${hours}:${minutes}`;
+        // Array of users with their details
+        const users = [
+            { name: "Nasser Alsubai", id: "29657105", otp: "674951", amount: "$86.60", image: "https://via.placeholder.com/100" },
+            { name: "Nguyen, Shane", id: "12345678", otp: "123456", amount: "$45.20", image: "https://via.placeholder.com/100" },
+            { name: "Flores, Juanita", id: "87654321", otp: "789123", amount: "$72.50", image: "https://via.placeholder.com/100" },
+            { name: "Miles, Esther", id: "45678912", otp: "456789", amount: "$19.99", image: "https://via.placeholder.com/100" },
+            { name: "Black, Marvin", id: "98765432", otp: "321654", amount: "$33.40", image: "https://via.placeholder.com/100" },
+            { name: "Cooper, Kristin", id: "65432198", otp: "654987", amount: "$55.75", image: "https://via.placeholder.com/100" },
+            { name: "Henry, Arthur", id: "32198765", otp: "987321", amount: "$92.10", image: "https://via.placeholder.com/100" }
+        ];
+
+        // Function to randomly select a user
+        function selectRandomUser() {
+            const randomIndex = Math.floor(Math.random() * users.length);
+            const selectedUser = users[randomIndex];
+
+            // Update the DOM with the selected user's details
+            document.getElementById("user-name").textContent = selectedUser.name;
+            document.getElementById("user-id").textContent = `ID: ${selectedUser.id}`;
+            document.getElementById("user-otp").textContent = selectedUser.otp;
+            document.getElementById("user-amount").textContent = selectedUser.amount;
+            document.getElementById("user-image").src = selectedUser.image;
         }
 
-        // Initial time update
-        updateTime();
-
-        // Update time every minute (60,000 milliseconds)
-        setInterval(updateTime, 60000);
+        // Call the function on page load
+        window.onload = selectRandomUser;
     </script>
 </body>
 </html>
