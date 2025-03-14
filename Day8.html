@@ -132,6 +132,9 @@
                     if (user.unread) {
                         user.unread = false; // Mark as read
                         userDiv.classList.remove("bg-gray-100"); // Remove highlight
+                        const redCircle = userDiv.querySelector(".bg-red-500");
+                        if (redCircle) redCircle.remove(); // Remove red circle
+                        userDiv.querySelector(".text-xs").textContent = `${new Date().toLocaleDateString()} - ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`; // Update to timestamp
                         updatePendingCount(shuffledUsers); // Update count based on displayed users
                     }
                     displayUserInfo(user); // Show user info
