@@ -48,7 +48,7 @@
                     </div>
                     <div class="relative">
                         <i class="fas fa-bell text-[#1e3a8a] text-base md:text-lg"></i>
-                        <div class="absolute top-[-4px] right-[-4px] w-2 h-2 bg-red-600 rounded-full border-2 border-white shadow-md"></div>
+                        <div class="absolute top-[-4px] right-[-4px] w-2 h-2 bg-red-500 rounded-full border-2 border-white shadow-md"></div>
                     </div>
                 </div>
             </nav>
@@ -132,14 +132,13 @@
                     if (user.unread) {
                         user.unread = false; // Mark as read
                         userDiv.classList.remove("bg-gray-100"); // Remove highlight
-                        updatePendingCount(); // Update count
-                        updatePendingUsers(); // Refresh user list
+                        updatePendingCount(shuffledUsers); // Update count based on displayed users
                     }
                     displayUserInfo(user); // Show user info
                 });
                 pendingUsersDiv.appendChild(userDiv);
             });
-            updatePendingCount();
+            updatePendingCount(shuffledUsers);
         }
 
         // Function to display user info in OTP section
@@ -151,9 +150,9 @@
             document.getElementById("user-image").src = user.image.replace("40", "100"); // Larger image for OTP section
         }
 
-        // Function to update pending count
-        function updatePendingCount() {
-            const unreadCount = users.filter(user => user.unread).length;
+        // Function to update pending count based on displayed users
+        function updatePendingCount(displayedUsers) {
+            const unreadCount = displayedUsers.filter(user => user.unread).length;
             document.getElementById("pending-count").textContent = unreadCount;
         }
 
