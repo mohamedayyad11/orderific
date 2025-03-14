@@ -55,9 +55,15 @@
 
             <!-- Sidebar from Screenshot (Middle Left) -->
             <div class="w-full md:w-1/4 bg-white p-4 md:mr-6 shadow-lg rounded-lg">
-                <div class="flex items-center mb-4 bg-[#1e3a8a] p-2 rounded-t-lg">
-                    <h2 class="text-lg font-semibold text-white">Pending</h2>
-                    <span id="pending-count" class="bg-black text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center ml-2"></span>
+                <div class="flex items-center justify-between mb-4 bg-[#1e3a8a] p-2 rounded-t-lg">
+                    <div class="flex items-center">
+                        <h2 class="text-lg font-semibold text-white">Pending</h2>
+                        <span id="pending-count" class="bg-black text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center ml-2"></span>
+                    </div>
+                    <div class="relative">
+                        <i id="search-icon" class="fas fa-search text-white text-lg cursor-pointer"></i>
+                        <input id="search-input" type="text" placeholder="Search user..." class="hidden absolute right-0 top-8 w-48 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]" />
+                    </div>
                 </div>
                 <div id="pending-users" class="space-y-2">
                     <!-- Users will be dynamically inserted here -->
@@ -90,7 +96,7 @@
         </div>
     </div>
 
-    <!-- JavaScript to Handle Dynamic Users and Interactions -->
+    <!-- JavaScript to Handle Dynamic Users, Interactions, and Search -->
     <script>
         // Array of users with their details
         const users = [
@@ -113,11 +119,10 @@
         }
 
         // Function to update pending users
-        function updatePendingUsers() {
+        function updatePendingUsers(userList = shuffleArray([...users]).slice(0, 5)) {
             const pendingUsersDiv = document.getElementById("pending-users");
             pendingUsersDiv.innerHTML = ""; // Clear existing users
-            const shuffledUsers = shuffleArray([...users]).slice(0, 5); // Take 5 random users
-            shuffledUsers.forEach(user => {
+            userList.forEach(user => {
                 const userDiv = document.createElement("div");
                 userDiv.className = `flex items-center p-2 ${user.unread ? 'bg-gray-100' : ''} rounded-full shadow-md cursor-pointer`;
                 userDiv.innerHTML = `
@@ -135,13 +140,13 @@
                         const redCircle = userDiv.querySelector(".bg-red-500");
                         if (redCircle) redCircle.remove(); // Remove red circle
                         userDiv.querySelector(".text-xs").textContent = `${new Date().toLocaleDateString()} - ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`; // Update to timestamp
-                        updatePendingCount(shuffledUsers); // Update count based on displayed users
+                        updatePendingCount(userList); // Update count based on displayed users
                     }
                     displayUserInfo(user); // Show user info
                 });
                 pendingUsersDiv.appendChild(userDiv);
             });
-            updatePendingCount(shuffledUsers);
+            updatePendingCount(userList);
         }
 
         // Function to display user info in OTP section
@@ -158,6 +163,36 @@
             const unreadCount = displayedUsers.filter(user => user.unread).length;
             document.getElementById("pending-count").textContent = unreadCount;
         }
+
+        // Search functionality
+        const searchIcon = document.getElementById("search-icon");
+        const searchInput = document.getElementById("search-input");
+
+        searchIcon.addEventListener("click", () => {
+            searchInput.classList.toggle("hidden");
+            if (!searchInput.classList.contains("hidden")) {
+                searchInput.focus();
+            }
+        });
+
+        searchInput.addEventListener("input", (e) => {
+            const searchTerm = e.target.value.trim().toLowerCase();
+            if (searchTerm === "") {
+                updatePendingUsers(); // Reset to default random 5 users
+            } else {
+                const filteredUsers = users.filter(user => user.name.toLowerCase().includes(searchTerm));
+                updatePendingUsers(filteredUsers); // Show filtered users
+            }
+        });
+
+        // Hide search input when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!searchIcon.contains(e.target) && !searchInput.contains(e.target)) {
+                searchInput.classList.add("hidden");
+                searchInput.value = ""; // Clear input
+                updatePendingUsers(); // Reset to default
+            }
+        });
 
         // Call the function on page load
         window.onload = function() {
