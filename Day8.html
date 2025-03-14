@@ -55,8 +55,8 @@
 
             <!-- Sidebar from Screenshot (Middle Left) -->
             <div class="w-full md:w-1/4 bg-white p-4 md:mr-6 shadow-lg rounded-lg">
-                <div class="flex items-center mb-4">
-                    <h2 class="text-lg font-semibold text-gray-700">Pending</h2>
+                <div class="flex items-center mb-4 bg-[#1e3a8a] p-2 rounded-t-lg">
+                    <h2 class="text-lg font-semibold text-white">Pending</h2>
                     <span id="pending-count" class="bg-black text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center ml-2"></span>
                 </div>
                 <div id="pending-users" class="space-y-2">
@@ -96,11 +96,11 @@
         const users = [
             { name: "Nasser Alsubai", id: "29657105", otp: "674951", amount: "$86.60", image: "https://via.placeholder.com/40", unread: true },
             { name: "Nguyen, Shane", id: "12345678", otp: "123456", amount: "$45.20", image: "https://via.placeholder.com/40", unread: false },
-            { name: "Flores, Juanita", id: "87654321", otp: "789123", amount: "$72.50", image: "https://via.placeholder.com/40", unread: false },
+            { name: "Flores, Juanita", id: "87654321", otp: "789123", amount: "$72.50", image: "https://via.placeholder.com/40", unread: true },
             { name: "Miles, Esther", id: "45678912", otp: "456789", amount: "$19.99", image: "https://via.placeholder.com/40", unread: false },
-            { name: "Black, Marvin", id: "98765432", otp: "321654", amount: "$33.40", image: "https://via.placeholder.com/40", unread: false },
+            { name: "Black, Marvin", id: "98765432", otp: "321654", amount: "$33.40", image: "https://via.placeholder.com/40", unread: true },
             { name: "Cooper, Kristin", id: "65432198", otp: "654987", amount: "$55.75", image: "https://via.placeholder.com/40", unread: false },
-            { name: "Henry, Arthur", id: "32198765", otp: "987321", amount: "$92.10", image: "https://via.placeholder.com/40", unread: false }
+            { name: "Henry, Arthur", id: "32198765", otp: "987321", amount: "$92.10", image: "https://via.placeholder.com/40", unread: true }
         ];
 
         // Function to shuffle array
@@ -119,7 +119,7 @@
             const shuffledUsers = shuffleArray([...users]).slice(0, 5); // Take 5 random users
             shuffledUsers.forEach(user => {
                 const userDiv = document.createElement("div");
-                userDiv.className = "flex items-center p-2 hover:bg-gray-100 rounded-full shadow-md cursor-pointer";
+                userDiv.className = `flex items-center p-2 ${user.unread ? 'bg-gray-100' : ''} rounded-full shadow-md cursor-pointer`;
                 userDiv.innerHTML = `
                     <img src="${user.image}" alt="User" class="w-10 h-10 rounded-full mr-2">
                     <div>
@@ -128,7 +128,15 @@
                     </div>
                     ${user.unread ? '<div class="ml-auto"><span class="bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span></div>' : ""}
                 `;
-                userDiv.addEventListener("click", () => displayUserInfo(user));
+                userDiv.addEventListener("click", () => {
+                    if (user.unread) {
+                        user.unread = false; // Mark as read
+                        userDiv.classList.remove("bg-gray-100"); // Remove highlight
+                        updatePendingCount(); // Update count
+                        updatePendingUsers(); // Refresh user list
+                    }
+                    displayUserInfo(user); // Show user info
+                });
                 pendingUsersDiv.appendChild(userDiv);
             });
             updatePendingCount();
