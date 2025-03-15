@@ -310,53 +310,74 @@
         .footer-top {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 80px;
             align-items: center;
+            margin-bottom: 80px;
         }
 
         .footer-logo-block {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 16px;
         }
 
         .footer-logo {
-            width: 209px;
+            width: 48px;
             height: 48px;
-            background: url('https://via.placeholder.com/209x48?text=Orderific') no-repeat center;
+            background: url('https://via.placeholder.com/48?text=🚀') no-repeat center;
             background-size: cover;
         }
 
+        .footer-logo-text {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-24);
+            line-height: var(--line-height-34);
+            color: var(--neutral-colors800);
+        }
+
+        .footer-logo-description {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
         .footer-description {
-            width: 450px;
             font-weight: var(--text-regular-font-weight);
             font-size: var(--text-size-18);
             line-height: var(--line-height-30);
             color: var(--neutral-colors700);
+            width: 450px;
         }
 
         .download-buttons {
             display: flex;
-            gap: 20px;
+            gap: 24px;
         }
 
         .download-btn {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 16px 24px;
+            gap: 12px;
+            padding: 18px 32px;
             background-color: var(--primary-colorscolor-1);
             border-radius: 14px;
             color: var(--neutral-colors100);
             font-weight: var(--text-bold-font-weight);
-            font-size: var(--text-size-16);
-            line-height: var(--line-height-18);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-20);
         }
 
         .download-icon {
-            width: 16px;
-            height: 20px;
-            background: url('https://via.placeholder.com/16?text=↓') no-repeat center;
+            width: 24px;
+            height: 24px;
+        }
+
+        .ios-icon {
+            background: url('https://via.placeholder.com/24?text=') no-repeat center;
+            background-size: cover;
+        }
+
+        .android-icon {
+            background: url('https://via.placeholder.com/24?text=🤖') no-repeat center;
             background-size: cover;
         }
 
@@ -564,24 +585,27 @@
         <!-- Footer -->
         <section class="footer-section">
             <div class="footer-top">
-                <div class="footer-logo-block">
-                    <div class="footer-logo"></div>
-                    <div class="download-buttons">
-                        <a href="#" class="download-btn">
-                            <div class="download-icon"></div>
-                            Download for iOS
-                        </a>
-                        <a href="#" class="download-btn">
-                            <div class="download-icon"></div>
-                            Download for Android
-                        </a>
+                <div class="footer-logo-description">
+                    <div class="footer-logo-block">
+                        <div class="footer-logo"></div>
+                        <div class="footer-logo-text">Orderific</div>
                     </div>
+                    <p class="footer-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.
+                    </p>
                 </div>
-                <p class="footer-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.
-                </p>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn">
+                        <div class="download-icon ios-icon"></div>
+                        Download for iOS
+                    </a>
+                    <a href="#" class="download-btn">
+                        <div class="download-icon android-icon"></div>
+                        Download for Android
+                    </a>
+                </div>
             </div>
-            <div class="divider"></div> <!-- Line under Download for iOS and Android -->
+            <div class="divider"></div>
             <div class="footer-columns">
                 <div class="footer-column">
                     <div class="footer-title">Menu</div>
@@ -649,7 +673,7 @@
                     </div>
                 </div>
             </div>
-            <div class="divider"></div> <!-- Line above Copyright -->
+            <div class="divider"></div>
             <div class="footer-bottom">
                 Copyright © Delivery X | Designed by <a href="#">BRIX Templates</a> - Powered by <a href="#">Webflow</a>
             </div>
