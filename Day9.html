@@ -362,8 +362,8 @@
 
         .footer-columns {
             display: flex;
-            justify-content: flex-start; /* Move all columns to the left */
-            gap: 120px; /* Increased gap to accommodate left alignment and spacing */
+            justify-content: space-between; /* Distribute columns with Utility Pages on the right */
+            gap: 60px;
         }
 
         .footer-column {
@@ -392,9 +392,15 @@
             color: var(--neutral-colors700);
         }
 
-        .menu-links {
+        .footer-links .browse-link a {
+            font-weight: 600;
+            color: var(--primary-colorscolor-1);
+            text-decoration: underline;
+        }
+
+        .menu-row {
             display: flex;
-            gap: 45px;
+            gap: 30px; /* Space between items in the same row */
         }
 
         .locations {
@@ -434,25 +440,13 @@
             color: var(--neutral-colors800);
         }
 
-        .browse-link {
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .browse-link a {
-            font-weight: 600;
-            font-size: var(--text-size-18);
-            line-height: var(--line-height-20);
-            color: var(--primary-colorscolor-1);
-            text-decoration: underline;
-        }
-
         .footer-bottom {
             text-align: center;
             font-weight: var(--text-regular-font-weight);
             font-size: var(--text-size-18);
             line-height: var(--line-height-30);
             color: var(--neutral-colors700);
+            margin-top: 40px;
         }
 
         .footer-bottom a {
@@ -585,30 +579,34 @@
                 <div class="footer-column">
                     <div class="footer-title">Menu</div>
                     <div class="footer-links">
-                        <a href="#">Home</a>
-                        <a href="#">About</a>
-                        <a href="#">Contact</a>
+                        <div class="menu-row">
+                            <a href="#">Home</a>
+                        </div>
+                        <div class="menu-row">
+                            <a href="#">About</a>
+                        </div>
+                        <div class="menu-row">
+                            <a href="#">Contact</a>
+                        </div>
                         <a href="#">Blog</a>
                         <a href="#">Blog posts</a>
                     </div>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-title">&nbsp;</div> <!-- Empty title to align with Menu -->
                     <div class="footer-links">
-                        <a href="#">Plans</a>
-                        <a href="#">Plan single</a>
-                        <a href="#">Register</a>
+                        <div class="menu-row">
+                            <a href="#">Plans</a>
+                        </div>
+                        <div class="menu-row">
+                            <a href="#">Plan single</a>
+                        </div>
+                        <div class="menu-row">
+                            <a href="#">Register</a>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-column" style="margin-left: -50px;"> <!-- Shift Utility pages slightly left -->
-                    <div class="footer-title">Utility pages</div>
-                    <div class="footer-links">
-                        <a href="#">Start here</a>
-                        <a href="#">Styleguide</a>
-                        <a href="#">Password protected</a>
-                        <a href="#">404 Not found</a>
-                        <a href="#">Licenses</a>
-                        <a href="#">Changelog</a>
-                    </div>
-                </div>
-                <div class="footer-column" style="margin-left: 200px;"> <!-- Keep Available in on the right -->
+                <div class="footer-column">
                     <div class="footer-title">Available in</div>
                     <div class="locations">
                         <div class="location-item">
@@ -629,9 +627,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="browse-link">
-                <a href="#">Browse More Templates</a>
+                <div class="footer-column">
+                    <div class="footer-title">Utility pages</div>
+                    <div class="footer-links">
+                        <a href="#">Start here</a>
+                        <a href="#">Styleguide</a>
+                        <a href="#">Password protected</a>
+                        <a href="#">404 Not found</a>
+                        <a href="#">Licenses</a>
+                        <a href="#">Changelog</a>
+                        <div class="browse-link">
+                            <a href="#">Browse More Templates</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="footer-bottom">
                 Copyright © Delivery X | Designed by <a href="#">BRIX Templates</a> - Powered by <a href="#">Webflow</a>
