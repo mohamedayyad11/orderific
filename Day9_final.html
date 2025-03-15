@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orderific Free Plan</title>
     <style>
-        /* CSS */
         * {
             margin: 0;
             padding: 0;
@@ -309,10 +308,6 @@
             flex: 1;
         }
 
-        .footer-column:nth-child(2) {
-            padding-left: 10px; /* Added to move Plans section slightly left */
-        }
-
         .footer-column h5 {
             font-size: 16px;
             font-weight: bold;
@@ -335,6 +330,11 @@
             font-size: 14px;
         }
 
+        .plans-list li:nth-child(1) { margin-top: 0; } /* Align Plans with Home */
+        .plans-list li:nth-child(2) { margin-top: 12px; } /* Align Plan single with About */
+        .plans-list li:nth-child(3) { margin-top: 24px; } /* Align Register with Contact */
+        .plans-list li a { margin-left: -4px; } /* Move items 4px left */
+
         .locations {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -345,7 +345,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 16px; /* Increased from 14px to 16px */
+            font-size: 18px; /* Increased from 16px to 18px */
             color: #333;
         }
 
@@ -360,7 +360,7 @@
 
         .browse-more {
             color: #ff5733;
-            text-decoration: none;
+            text-decoration: underline; /* Added underline */
             font-size: 14px;
             font-weight: bold;
             text-transform: uppercase;
@@ -370,6 +370,7 @@
         .footer-bottom {
             text-align: center;
             padding-top: 40px;
+            border-top: 1px solid #eee; /* Added horizontal line */
         }
 
         .footer-bottom p {
@@ -466,7 +467,7 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <ul>
+                    <ul class="plans-list">
                         <li><a href="#">Plans</a></li>
                         <li><a href="#">Plan single</a></li>
                         <li><a href="#">Register</a></li>
