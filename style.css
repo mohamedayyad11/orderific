@@ -1,0 +1,172 @@
+.frame {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+  position: relative;
+}
+
+.frame .group {
+  position: relative;
+  width: 700.34px;
+  height: 144px;
+}
+
+.frame .frame-wrapper {
+  gap: 40px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.frame .div {
+  gap: 12px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.frame .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: var(--headings-typography-size-1-font-family);
+  font-weight: var(--headings-typography-size-1-font-weight);
+  color: var(--neutral-colors800);
+  font-size: var(--headings-typography-size-1-font-size);
+  letter-spacing: var(--headings-typography-size-1-letter-spacing);
+  line-height: var(--headings-typography-size-1-line-height);
+  white-space: nowrap;
+  font-style: var(--headings-typography-size-1-font-style);
+}
+
+.frame .p {
+  position: relative;
+  width: 700.34px;
+  font-family: var(--paragraph-default-font-family);
+  font-weight: var(--paragraph-default-font-weight);
+  color: var(--neutral-colors700);
+  font-size: var(--paragraph-default-font-size);
+  letter-spacing: var(--paragraph-default-letter-spacing);
+  line-height: var(--paragraph-default-line-height);
+  font-style: var(--paragraph-default-font-style);
+}
+
+.frame .div-2 {
+  gap: 48px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.frame .div-wrapper {
+  gap: 32px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.frame .div-3 {
+  gap: 24px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.frame .what-s-included-in {
+  position: relative;
+  width: 701.35px;
+  margin-top: -1.00px;
+  font-family: var(--headings-typography-size-2-font-family);
+  font-weight: var(--headings-typography-size-2-font-weight);
+  color: var(--neutral-colors800);
+  font-size: var(--headings-typography-size-2-font-size);
+  letter-spacing: var(--headings-typography-size-2-letter-spacing);
+  line-height: var(--headings-typography-size-2-line-height);
+  font-style: var(--headings-typography-size-2-font-style);
+}
+
+.frame .lorem-ipsum-dolor {
+  position: relative;
+  width: 701.35px;
+  font-family: "Metropolis-Regular", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.frame .span {
+  color: #3f3f3f;
+  font-family: var(--paragraph-default-font-family);
+  font-style: var(--paragraph-default-font-style);
+  font-weight: var(--paragraph-default-font-weight);
+  letter-spacing: var(--paragraph-default-letter-spacing);
+  line-height: var(--paragraph-default-line-height);
+  font-size: var(--paragraph-default-font-size);
+}
+
+.frame .text-wrapper-2 {
+  color: #121212;
+  font-family: var(--paragraph-default-font-family);
+  font-style: var(--paragraph-default-font-style);
+  font-weight: var(--paragraph-default-font-weight);
+  letter-spacing: var(--paragraph-default-letter-spacing);
+  line-height: var(--paragraph-default-line-height);
+  font-size: var(--paragraph-default-font-size);
+}
+
+.frame .text-wrapper-3 {
+  font-family: var(--rich-text-bold-font-family);
+  font-weight: var(--rich-text-bold-font-weight);
+  color: #ff5634;
+  font-style: var(--rich-text-bold-font-style);
+  letter-spacing: var(--rich-text-bold-letter-spacing);
+  line-height: var(--rich-text-bold-line-height);
+  font-size: var(--rich-text-bold-font-size);
+}
+
+.frame .div-4 {
+  gap: 16px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.frame .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: var(--headings-typography-size-3-font-family);
+  font-weight: var(--headings-typography-size-3-font-weight);
+  color: var(--neutral-colors800);
+  font-size: var(--headings-typography-size-3-font-size);
+  letter-spacing: var(--headings-typography-size-3-letter-spacing);
+  line-height: var(--headings-typography-size-3-line-height);
+  white-space: nowrap;
+  font-style: var(--headings-typography-size-3-font-style);
+}
+
+.frame .vitae-congue-eu {
+  position: relative;
+  width: 700.34px;
+  font-family: var(--paragraph-default-font-family);
+  font-weight: var(--paragraph-default-font-weight);
+  color: transparent;
+  font-size: var(--paragraph-default-font-size);
+  letter-spacing: var(--paragraph-default-letter-spacing);
+  line-height: var(--paragraph-default-line-height);
+  font-style: var(--paragraph-default-font-style);
+}
