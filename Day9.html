@@ -362,8 +362,8 @@
 
         .footer-columns {
             display: flex;
-            justify-content: flex-end; /* Move Utility pages and Available in to the right */
-            gap: 60px; /* Increased gap for better spacing */
+            justify-content: flex-start; /* Move all columns to the left */
+            gap: 120px; /* Increased gap to accommodate left alignment and spacing */
         }
 
         .footer-column {
@@ -399,9 +399,9 @@
 
         .locations {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two columns */
-            grid-template-rows: repeat(2, 1fr); /* Two rows */
-            gap: 20px 30px; /* Match the screenshot's spacing */
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px 30px;
         }
 
         .location-item {
@@ -436,7 +436,7 @@
 
         .browse-link {
             margin-bottom: 40px;
-            text-align: center; /* Center the "Browse More Templates" link */
+            text-align: center;
         }
 
         .browse-link a {
@@ -597,7 +597,7 @@
                         <a href="#">Register</a>
                     </div>
                 </div>
-                <div class="footer-column">
+                <div class="footer-column" style="margin-left: -50px;"> <!-- Shift Utility pages slightly left -->
                     <div class="footer-title">Utility pages</div>
                     <div class="footer-links">
                         <a href="#">Start here</a>
@@ -608,7 +608,7 @@
                         <a href="#">Changelog</a>
                     </div>
                 </div>
-                <div class="footer-column">
+                <div class="footer-column" style="margin-left: 200px;"> <!-- Keep Available in on the right -->
                     <div class="footer-title">Available in</div>
                     <div class="locations">
                         <div class="location-item">
