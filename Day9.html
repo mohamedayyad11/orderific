@@ -1,67 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Details</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="utf-8" />
+    <title>Navbar with TailwindCSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        /* Custom font if you want to keep Metropolis */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
         * {
             -webkit-font-smoothing: antialiased;
-            box-sizing: border-box;
-        }
-        html, body {
-            margin: 0;
-            height: 100%;
-        }
-        button:focus-visible {
-            outline: 2px solid #4a90e2 !important;
-        }
-        [data-font-family="Metropolis"] {
-            font-family: "Metropolis", Helvetica, sans-serif;
         }
     </style>
 </head>
-<body>
-    <div class="flex flex-col gap-12 p-4">
-        <!-- Free Plan Section -->
-        <div class="max-w-[700px]">
-            <div class="flex flex-col gap-3">
-                <h1 class="text-[#121212] text-[62px] font-bold leading-[72px]" data-font-family="Metropolis">
-                    Free Plan
-                </h1>
-                <p class="text-[#3f3f3f] text-lg leading-[30px] max-w-[700px]" data-font-family="Metropolis">
-                    Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta sceler古屋isque at ipsum.
-                </p>
-            </div>
-        </div>
-
-        <!-- Details Section -->
-        <div class="flex flex-col gap-12">
-            <!-- What's Included Section -->
-            <div class="flex flex-col gap-6">
-                <h2 class="text-[#121212] text-[44px] font-bold leading-[54px] max-w-[701px]" data-font-family="Metropolis">
-                    What's included in the plan?
-                </h2>
-                <p class="text-lg leading-[30px] max-w-[701px]" data-font-family="Metropolis">
-                    <span class="text-[#3f3f3f]">Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna</span>
-                    <span class="text-[#121212]">&nbsp;</span>
-                    <span class="text-[#ff5634] font-bold">adipiscing praesent</span>
-                    <span class="text-[#121212]">&nbsp;</span>
-                    <span class="text-[#3f3f3f]">velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</span>
-                </p>
-            </div>
-
-            <!-- Right Plan Section -->
-            <div class="flex flex-col gap-4">
-                <h3 class="text-[#121212] text-2xl font-bold leading-[34px]" data-font-family="Metropolis">
-                    Is this the right plan for my restaurant?
-                </h3>
-                <p class="text-lg leading-[30px] max-w-[700px]" data-font-family="Metropolis">
-                    <span class="text-[#3f3f3f]">Vitae congue eu consequat ac felis placerat </span>
-                    <span class="text-[#121212]">vestibulum lectus</span>
-                    <span class="text-[#3f3f3f]"> mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit turpis.</span>
-                </p>
+<body class="h-screen m-0">
+    <div class="w-[1440px] h-[118px]">
+        <div class="fixed w-[1442px] h-[118px] top-0 left-0">
+            <div class="relative w-[1440px] h-[118px]">
+                <!-- Background rectangle -->
+                <div class="absolute w-[1440px] h-[118px] top-0 left-0 bg-white shadow-[0px_3px_12px_rgba(18,18,18,0.06)]"></div>
+                
+                <!-- Logo -->
+                <img class="absolute w-[209px] h-[48px] top-[35px] left-[109px] object-cover" src="img/logo-orange-black-2-1.png" alt="Logo" />
+                
+                <!-- Home link -->
+                <div class="absolute top-[50px] left-[417px] font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Home</div>
+                
+                <!-- Navbar -->
+                <div class="absolute w-[420px] h-[18px] top-[50px] left-[489px] flex items-center justify-between">
+                    <div class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Pricing</div>
+                    <div class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">About Us</div>
+                    <div class="flex items-center gap-2">
+                        <div class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Features</div>
+                        <img class="w-[11px] h-[11px]" src="img/chevron-down.svg" alt="Chevron" />
+                    </div>
+                    <div class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Blog</div>
+                    <div class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Contact</div>
+                </div>
+                
+                <!-- Buttons -->
+                <div class="absolute top-[32px] left-[1036px] flex items-center justify-end gap-[18px]">
+                    <button class="flex items-center justify-center px-6 py-[18px] bg-white rounded-xl border border-[#ececec] shadow-[0px_2px_6px_rgba(15,15,15,0.04)] focus:outline-none focus:ring-2 focus:ring-[#4a90e2]">
+                        <span class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Login</span>
+                    </button>
+                    <button class="flex items-center justify-center px-6 py-[18px] bg-[#ff5634] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4a90e2]">
+                        <span class="font-bold text-white text-base leading-[18px] whitespace-nowrap">START FOR FREE</span>
+                    </button>
+                </div>
+                
+                <!-- Flag -->
+                <div class="absolute w-8 h-6 top-[49px] left-[980px] rounded-sm bg-[url('./img/clip-path-group.png')] bg-cover"></div>
             </div>
         </div>
     </div>
