@@ -14,7 +14,7 @@
             color: #f57c00;
         }
         .check-mark {
-            color: #4caf50;
+            color: #f57c00; /* Orange checkmark color */
         }
         .start-free, .get-started, .android-btn {
             background-color: #f57c00;
@@ -22,18 +22,17 @@
         .start-free:hover, .get-started:hover, .android-btn:hover {
             background-color: #e06b00;
         }
+        .orange-text {
+            color: #f57c00; /* For "adipiscing praesent" */
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
     <!-- Header -->
     <header class="flex justify-between items-center px-12 py-4 bg-white shadow-md sticky top-0 z-10">
         <div class="flex items-center">
-            <!-- Orderific Logo (SVG approximation) -->
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
-                <circle cx="20" cy="20" r="18" fill="#f57c00"/>
-                <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="white"/>
-                <path d="M20 14L26 20L20 26L14 20L20 14Z" fill="#f57c00"/>
-            </svg>
+            <!-- Updated Orderific Logo -->
+            <img src="https://orderific.com/ord-website/assets/img/company/orderific-og.png" alt="Orderific Logo" class="w-10 h-10 mr-2">
             <span class="logo-text text-2xl font-bold">Orderific</span>
         </div>
         <nav>
@@ -47,8 +46,9 @@
             </ul>
         </nav>
         <div class="flex items-center">
-            <img src="https://via.placeholder.com/20x15.png?text=UK" alt="UK Flag" class="w-5 h-4 mr-4">
-            <a href="#" class="text-gray-800 mr-4">Login</a>
+            <!-- Updated UK Flag -->
+            <img src="https://static.vecteezy.com/system/resources/previews/010/823/599/non_2x/england-flag-logo-vector.jpg" alt="UK Flag" class="w-5 h-4 mr-4">
+            <a href="#" class="login-btn text-gray-800 mr-4 px-4 py-2 bg-white shadow-md rounded-lg transition hover:bg-gray-100">Login</a>
             <button class="start-free text-white px-4 py-2 rounded-md transition">START FOR FREE</button>
         </div>
     </header>
@@ -58,11 +58,11 @@
         <section class="max-w-6xl flex flex-wrap justify-between items-start">
             <!-- Left Content -->
             <div class="w-full md:w-2/3 pr-0 md:pr-8">
-                <h1 class="text-4xl font-bold mb-6">Free Plan</h1>
+                <h1 class="text-5xl font-bold mb-6">Free Plan</h1>
                 <p class="text-gray-600 mb-6">Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
 
                 <h2 class="text-2xl font-semibold mt-8 mb-4">What’s included in the plan?</h2>
-                <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
+                <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna <span class="orange-text">adipiscing praesent</span> velit viverra sit lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
 
                 <h3 class="text-xl font-medium mt-6 mb-4">Is this the right plan for my restaurant?</h3>
                 <p class="text-gray-600">Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultricies cursus sit amet dictum sit amet justo donec enim diam porttitor lacinia felis ultricies accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit turpis.</p>
@@ -74,8 +74,8 @@
                     <div class="mb-6">
                         <!-- Bike Icon (SVG approximation) -->
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4">
-                            <circle cx="20" cy="20" r="18" stroke="#4caf50" stroke-width="2"/>
-                            <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#4caf50"/>
+                            <circle cx="20" cy="20" r="18" stroke="#f57c00" stroke-width="2"/>
+                            <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#f57c00"/>
                         </svg>
                         <h3 class="text-2xl font-semibold">FREE</h3>
                         <p class="text-gray-800 font-bold">$0/mo</p>
@@ -85,16 +85,16 @@
                     <div class="mt-6 text-left">
                         <h4 class="text-lg font-medium mb-4">What’s included:</h4>
                         <ul class="space-y-3">
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle check-mark mr-2"></i> Single Location (30 tables limit)</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle check-mark mr-2"></i> Mobile Order & Pay</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle check-mark mr-2"></i> Split the Bill</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle check-mark mr-2"></i> Delivery & Pickup</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle check-mark mr-2"></i> Directory</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle check-mark mr-2"></i> Limited Customisable</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle check-mark mr-2"></i> Website Builder Basic</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle check-mark mr-2"></i> Kitchen Printer Integration</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle check-mark mr-2"></i> Delivery & Pickup</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check-circle check-mark mr-2"></i> Gratuities (Tips)</li>
+                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Single Location (30 tables limit)</li>
+                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Mobile Order & Pay</li>
+                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Split the Bill</li>
+                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Delivery & Pickup</li>
+                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Directory</li>
+                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Limited Customisable</li>
+                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Website Builder Basic</li>
+                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Kitchen Printer Integration</li>
+                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Delivery & Pickup</li>
+                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Gratuities (Tips)</li>
                         </ul>
                     </div>
                 </div>
@@ -104,18 +104,17 @@
 
     <!-- Footer -->
     <footer class="text-center py-6 bg-white shadow-inner">
-        <div class="flex justify-center items-center mb-4">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
-                <circle cx="20" cy="20" r="18" fill="#f57c00"/>
-                <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="white"/>
-                <path d="M20 14L26 20L20 26L14 20L20 14Z" fill="#f57c00"/>
-            </svg>
-            <span class="logo-text text-2xl font-bold">Orderific</span>
-        </div>
-        <p class="text-gray-600 text-sm mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
-        <div class="flex justify-center space-x-4">
-            <button class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition"><i class="fab fa-apple mr-2"></i> Download for iOS</button>
-            <button class="android-btn text-white px-4 py-2 rounded-md transition"><i class="fab fa-android mr-2"></i> Download for Android</button>
+        <div class="flex flex-col items-start max-w-6xl mx-auto">
+            <div class="mb-4">
+                <img src="https://orderific.com/ord-website/assets/img/company/orderific-og.png" alt="Orderific Logo" class="w-16 h-16 mr-2">
+            </div>
+            <div class="text-left">
+                <p class="text-gray-600 text-sm mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+            </div>
+            <div class="flex justify-end space-x-4">
+                <button class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition"><i class="fab fa-apple mr-2"></i> Download for iOS</button>
+                <button class="android-btn text-white px-4 py-2 rounded-md transition"><i class="fab fa-android mr-2"></i> Download for Android</button>
+            </div>
         </div>
     </footer>
 
