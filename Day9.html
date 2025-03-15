@@ -1,55 +1,829 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Navbar with TailwindCSS</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderific - Free Plan</title>
     <style>
-        /* Custom font if you want to keep Metropolis */
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        :root {
+            --neutral-colors800: rgba(18, 18, 18, 1);
+            --neutral-colors700: rgba(63, 63, 63, 1);
+            --neutral-colors600: rgba(101, 101, 101, 1);
+            --neutral-colors100: rgba(255, 255, 255, 1);
+            --neutral-colors300: rgba(237, 237, 237, 1);
+            --primary-colorscolor-1: rgba(255, 86, 52, 1);
+            --text-single-100-medium-font-family: "Metropolis", Helvetica;
+            --text-single-100-medium-font-weight: 500;
+            --text-single-100-medium-font-size: 16px;
+            --text-single-100-medium-letter-spacing: 0px;
+            --text-single-100-medium-line-height: 18px;
+            --text-single-100-medium-font-style: normal;
+            --text-single-100-bold-font-family: "Metropolis", Helvetica;
+            --text-single-100-bold-font-weight: 700;
+            --text-single-100-bold-font-size: 16px;
+            --text-single-100-bold-letter-spacing: 0px;
+            --text-single-100-bold-line-height: 18px;
+            --text-single-100-bold-font-style: normal;
+            --headings-typography-size-1-font-family: "Metropolis", Helvetica;
+            --headings-typography-size-1-font-weight: 700;
+            --headings-typography-size-1-font-size: 62px;
+            --headings-typography-size-1-letter-spacing: 0px;
+            --headings-typography-size-1-line-height: 72px;
+            --headings-typography-size-1-font-style: normal;
+            --paragraph-default-font-family: "Metropolis", Helvetica;
+            --paragraph-default-font-weight: 400;
+            --paragraph-default-font-size: 18px;
+            --paragraph-default-letter-spacing: 0px;
+            --paragraph-default-line-height: 30px;
+            --paragraph-default-font-style: normal;
+            --headings-typography-size-2-font-family: "Metropolis", Helvetica;
+            --headings-typography-size-2-font-weight: 700;
+            --headings-typography-size-2-font-size: 44px;
+            --headings-typography-size-2-letter-spacing: 0px;
+            --headings-typography-size-2-line-height: 54px;
+            --headings-typography-size-2-font-style: normal;
+            --headings-typography-size-3-font-family: "Metropolis", Helvetica;
+            --headings-typography-size-3-font-weight: 700;
+            --headings-typography-size-3-font-size: 24px;
+            --headings-typography-size-3-letter-spacing: 0px;
+            --headings-typography-size-3-line-height: 34px;
+            --headings-typography-size-3-font-style: normal;
+            --text-single-200-bold-font-family: "Metropolis", Helvetica;
+            --text-single-200-bold-font-weight: 700;
+            --text-single-200-bold-font-size: 18px;
+            --text-single-200-bold-letter-spacing: 0px;
+            --text-single-200-bold-line-height: 20px;
+            --text-single-200-bold-font-style: normal;
+            --special-headings-display-4-font-family: "Metropolis", Helvetica;
+            --special-headings-display-4-font-weight: 700;
+            --special-headings-display-4-font-size: 28px;
+            --special-headings-display-4-letter-spacing: 0px;
+            --special-headings-display-4-line-height: 40px;
+            --special-headings-display-4-font-style: normal;
+            --text-single-200-medium-font-family: "Metropolis", Helvetica;
+            --text-single-200-medium-font-weight: 500;
+            --text-single-200-medium-font-size: 18px;
+            --text-single-200-medium-letter-spacing: 0px;
+            --text-single-200-medium-line-height: 20px;
+            --text-single-200-medium-font-style: normal;
+            --headings-typography-size-6-font-family: "THICCCBOI", Helvetica;
+            --headings-typography-size-6-font-weight: 800;
+            --headings-typography-size-6-font-size: 16px;
+            --headings-typography-size-6-letter-spacing: 0px;
+            --headings-typography-size-6-line-height: 22px;
+            --headings-typography-size-6-font-style: normal;
+            --text-single-300-bold-font-family: "Metropolis", Helvetica;
+            --text-single-300-bold-font-weight: 700;
+            --text-single-300-bold-font-size: 20px;
+            --text-single-300-bold-letter-spacing: 0px;
+            --text-single-300-bold-line-height: 22px;
+            --text-single-300-bold-font-style: normal;
+            --text-single-200-regular-font-family: "Metropolis", Helvetica;
+            --text-single-200-regular-font-weight: 400;
+            --text-single-200-regular-font-size: 18px;
+            --text-single-200-regular-letter-spacing: 0px;
+            --text-single-200-regular-line-height: 20px;
+            --text-single-200-regular-font-style: normal;
+            --headings-typography-size-5-font-family: "Metropolis", Helvetica;
+            --headings-typography-size-5-font-weight: 700;
+            --headings-typography-size-5-font-size: 18px;
+            --headings-typography-size-5-letter-spacing: 0px;
+            --headings-typography-size-5-line-height: 24px;
+            --headings-typography-size-5-font-style: normal;
+            --rich-text-bold-font-family: "Metropolis", Helvetica;
+            --rich-text-bold-font-weight: 700;
+            --rich-text-bold-font-size: 18px;
+            --rich-text-bold-letter-spacing: 0px;
+            --rich-text-bold-line-height: 30px;
+            --rich-text-bold-font-style: normal;
+            --general-shadow-01: 0px 2px 6px 0px rgba(16, 16, 16, 0.04);
+            --general-shadow-02: 0px 2px 12px 0px rgba(16, 16, 16, 0.08);
+        }
+
         * {
             -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        button:focus-visible {
+            outline: 2px solid #4a90e2 !important;
+            outline: -webkit-focus-ring-color auto 5px !important;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .frame {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 160px 128px;
+            position: relative;
+            overflow-x: hidden;
+            width: 1440px;
+            margin: 0 auto;
+        }
+
+        .group {
+            position: relative;
+            width: 1440px;
+            height: 118px;
+        }
+
+        .overlap-group {
+            position: relative;
+            width: 1440px;
+            height: 118px;
+            background-color: #ffffff;
+            box-shadow: 0px 3px 12px #1212120f;
+        }
+
+        .logo-orange-black {
+            position: absolute;
+            top: 35px;
+            left: 109px;
+            width: 209px;
+            height: 48px;
+        }
+
+        .navbar {
+            position: absolute;
+            width: 420px;
+            height: 18px;
+            top: 50px;
+            left: 489px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .navbar div, .navbar .group-2 {
+            font-family: var(--text-single-100-medium-font-family);
+            font-weight: var(--text-single-100-medium-font-weight);
+            color: #121212;
+            font-size: var(--text-single-100-medium-font-size);
+            letter-spacing: var(--text-single-100-medium-letter-spacing);
+            line-height: var(--text-single-100-medium-line-height);
+            white-space: nowrap;
+        }
+
+        .group-2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .line-rounded-chevron {
+            width: 11px;
+            height: 11px;
+        }
+
+        .flagpack-gb-ukm-wrapper {
+            position: absolute;
+            width: 32px;
+            height: 24px;
+            top: 49px;
+            left: 980px;
+        }
+
+        .flagpack-gb-ukm {
+            width: 100%;
+            height: 100%;
+            border-radius: 2px;
+            background: url('https://flagcdn.com/w20/gb.png') no-repeat center;
+            background-size: cover;
+        }
+
+        .div-2 {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            position: absolute;
+            top: 32px;
+            left: 1036px;
+        }
+
+        .secondary-button {
+            background-color: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #ececec;
+            box-shadow: var(--general-shadow-01);
+            padding: 18px 24px;
+            cursor: pointer;
+        }
+
+        .button-text {
+            font-family: var(--text-single-100-medium-font-family);
+            font-weight: var(--text-single-100-medium-font-weight);
+            color: #121212;
+            font-size: var(--text-single-100-medium-font-size);
+            text-align: center;
+            letter-spacing: var(--text-single-100-medium-letter-spacing);
+            line-height: var(--text-single-100-medium-line-height);
+        }
+
+        .primary-button {
+            background-color: #ff5634;
+            border-radius: 12px;
+            padding: 18px 24px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button-text-2 {
+            font-family: var(--text-single-100-bold-font-family);
+            font-weight: var(--text-single-100-bold-font-weight);
+            color: #ffffff;
+            font-size: var(--text-single-100-bold-font-size);
+            text-align: center;
+            letter-spacing: var(--text-single-100-bold-letter-spacing);
+            line-height: var(--text-single-100-bold-line-height);
+        }
+
+        .content-section {
+            display: flex;
+            gap: 128px;
+            width: 100%;
+            padding: 0 110px;
+        }
+
+        .div-3 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 48px;
+            flex: 1;
+        }
+
+        .text-wrapper-6 {
+            font-family: var(--headings-typography-size-1-font-family);
+            font-weight: var(--headings-typography-size-1-font-weight);
+            color: var(--neutral-colors800);
+            font-size: var(--headings-typography-size-1-font-size);
+            letter-spacing: var(--headings-typography-size-1-letter-spacing);
+            line-height: var(--headings-typography-size-1-line-height);
+        }
+
+        .p, .lorem-ipsum-dolor, .vitae-congue-eu {
+            font-family: var(--paragraph-default-font-family);
+            font-weight: var(--paragraph-default-font-weight);
+            color: var(--neutral-colors700);
+            font-size: var(--paragraph-default-font-size);
+            letter-spacing: var(--paragraph-default-letter-spacing);
+            line-height: var(--paragraph-default-line-height);
+            width: 100%;
+        }
+
+        .what-s-included-in {
+            font-family: var(--headings-typography-size-2-font-family);
+            font-weight: var(--headings-typography-size-2-font-weight);
+            color: var(--neutral-colors800);
+            font-size: var(--headings-typography-size-2-font-size);
+            letter-spacing: var(--headings-typography-size-2-letter-spacing);
+            line-height: var(--headings-typography-size-2-line-height);
+        }
+
+        .text-wrapper-8 {
+            font-family: var(--rich-text-bold-font-family);
+            font-weight: var(--rich-text-bold-font-weight);
+            color: #ff5634;
+            font-size: var(--rich-text-bold-font-size);
+            letter-spacing: var(--rich-text-bold-letter-spacing);
+            line-height: var(--rich-text-bold-line-height);
+        }
+
+        .text-wrapper-9 {
+            font-family: var(--headings-typography-size-3-font-family);
+            font-weight: var(--headings-typography-size-3-font-weight);
+            color: var(--neutral-colors800);
+            font-size: var(--headings-typography-size-3-font-size);
+            letter-spacing: var(--headings-typography-size-3-letter-spacing);
+            line-height: var(--headings-typography-size-3-line-height);
+        }
+
+        .overlap-wrapper {
+            width: 390px;
+            height: 889px;
+            background-color: var(--neutral-colors100);
+            border-radius: 24px;
+            border: 1px solid var(--neutral-colors300);
+            box-shadow: var(--general-shadow-02);
+        }
+
+        .overlap {
+            position: relative;
+            width: 327px;
+            height: 756px;
+            margin: 83px 30px;
+        }
+
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .element {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .square-paper-plane {
+            width: 72px;
+            height: 72px;
+            background: url('https://via.placeholder.com/72') no-repeat center;
+            background-size: cover;
+        }
+
+        .subtitle {
+            font-family: var(--text-single-200-bold-font-family);
+            font-weight: var(--text-single-200-bold-font-weight);
+            color: var(--neutral-colors600);
+            font-size: var(--text-single-200-bold-font-size);
+            letter-spacing: var(--text-single-200-bold-letter-spacing);
+            line-height: var(--text-single-200-bold-line-height);
+        }
+
+        .price {
+            font-family: var(--special-headings-display-4-font-family);
+            font-weight: var(--special-headings-display-4-font-weight);
+            color: var(--neutral-colors800);
+            font-size: var(--special-headings-display-4-font-size);
+            letter-spacing: var(--special-headings-display-4-letter-spacing);
+            line-height: var(--special-headings-display-4-line-height);
+        }
+
+        .pricing-paragraph {
+            font-family: var(--paragraph-default-font-family);
+            font-weight: var(--paragraph-default-font-weight);
+            color: var(--neutral-colors600);
+            font-size: var(--paragraph-default-font-size);
+            letter-spacing: var(--paragraph-default-letter-spacing);
+            line-height: var(--paragraph-default-line-height);
+        }
+
+        .master-primary-wrapper {
+            width: 100%;
+        }
+
+        .master-primary-2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 26px 38px;
+            background-color: var(--primary-colorscolor-1);
+            border-radius: 16px;
+            width: 100%;
+        }
+
+        .button {
+            font-family: var(--text-single-200-bold-font-family);
+            font-weight: var(--text-single-200-bold-font-weight);
+            color: var(--neutral-colors100);
+            font-size: var(--text-single-200-bold-font-size);
+            letter-spacing: var(--text-single-200-bold-letter-spacing);
+            line-height: var(--text-single-200-bold-line-height);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .text {
+            font-family: var(--text-single-200-bold-font-family);
+            font-weight: var(--text-single-200-bold-font-weight);
+            color: var(--neutral-colors800);
+            font-size: var(--text-single-200-bold-font-size);
+            letter-spacing: var(--text-single-200-bold-letter-spacing);
+            line-height: var(--text-single-200-bold-line-height);
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .line-rounded-check {
+            width: 26px;
+            height: 26px;
+            background: url('https://via.placeholder.com/26?text=✓') no-repeat center;
+            background-size: cover;
+        }
+
+        .text-2 {
+            font-family: var(--text-single-200-medium-font-family);
+            font-weight: var(--text-single-200-medium-font-weight);
+            color: var(--neutral-colors800);
+            font-size: var(--text-single-200-medium-font-size);
+            letter-spacing: var(--text-single-200-medium-letter-spacing);
+            line-height: var(--text-single-200-medium-line-height);
+        }
+
+        .group-3 {
+            width: 1440px;
+            height: 919px;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        .logo-orange-black-2 {
+            position: absolute;
+            top: 78px;
+            left: 110px;
+            width: 209px;
+            height: 48px;
+        }
+
+        .text-wrapper-12 {
+            position: absolute;
+            top: 161px;
+            left: 110px;
+            width: 450px;
+            font-family: var(--paragraph-default-font-family);
+            font-weight: var(--paragraph-default-font-weight);
+            color: #3f3f3f;
+            font-size: var(--paragraph-default-font-size);
+            letter-spacing: var(--paragraph-default-letter-spacing);
+            line-height: var(--paragraph-default-line-height);
+        }
+
+        .download-buttons {
+            position: absolute;
+            top: 126px;
+            left: 810px;
+            display: flex;
+            gap: 26px;
+        }
+
+        .group-wrapper, .group-6 {
+            background-color: #ff5634;
+            border-radius: 14px;
+            padding: 20px 32px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .text-wrapper-13, .text-wrapper-14 {
+            font-family: var(--headings-typography-size-6-font-family);
+            font-weight: var(--headings-typography-size-6-font-weight);
+            color: #ffffff;
+            font-size: var(--headings-typography-size-6-font-size);
+            letter-spacing: var(--headings-typography-size-6-letter-spacing);
+            line-height: var(--headings-typography-size-6-line-height);
+        }
+
+        .vector, .vector-2 {
+            width: 20px;
+            height: 24px;
+            background: url('https://via.placeholder.com/20?text=↓') no-repeat center;
+            background-size: cover;
+        }
+
+        .footer-column, .footer-column-2, .group-8 {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .footer-column {
+            top: 438px;
+            left: 110px;
+        }
+
+        .footer-column-2 {
+            top: 438px;
+            left: 497px;
+        }
+
+        .group-8 {
+            top: 438px;
+            left: 830px;
+        }
+
+        .footer-title, .footer-title-2 {
+            font-family: var(--text-single-300-bold-font-family);
+            font-weight: var(--text-single-300-bold-font-weight);
+            color: #121212;
+            font-size: var(--text-single-300-bold-font-size);
+            letter-spacing: var(--text-single-300-bold-letter-spacing);
+            line-height: var(--text-single-300-bold-line-height);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .div-8 {
+            display: flex;
+            gap: 45px;
+        }
+
+        .link-item {
+            font-family: var(--text-single-200-regular-font-family);
+            font-weight: var(--text-single-200-regular-font-weight);
+            color: #3f3f3f;
+            font-size: var(--text-single-200-regular-font-size);
+            letter-spacing: var(--text-single-200-regular-letter-spacing);
+            line-height: var(--text-single-200-regular-line-height);
+        }
+
+        .group-9 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 30px;
+        }
+
+        .group-10, .group-12, .group-14, .group-16 {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .bridge, .statue-of-liberty, .beach, .cn-tower {
+            width: 78px;
+            height: 78px;
+            background-color: #f1f1f1;
+            border-radius: 24.37px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .group-11, .group-13, .group-15, .group-17 {
+            width: 50px;
+            height: 50px;
+            background: url('https://via.placeholder.com/50') no-repeat center;
+            background-size: cover;
+        }
+
+        .heading, .heading-h {
+            font-family: var(--headings-typography-size-5-font-family);
+            font-weight: var(--headings-typography-size-5-font-weight);
+            color: #121212;
+            font-size: var(--headings-typography-size-5-font-size);
+            letter-spacing: var(--headings-typography-size-5-letter-spacing);
+            line-height: var(--headings-typography-size-5-line-height);
+        }
+
+        .link {
+            position: absolute;
+            top: 729px;
+            left: 497px;
+        }
+
+        .link-item-2 {
+            font-family: "Metropolis-SemiBold", Helvetica;
+            font-weight: 600;
+            color: #ff5634;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 0;
+            line-height: 20px;
+            text-decoration: underline;
+        }
+
+        .copyright-delivery-x {
+            position: absolute;
+            top: 862px;
+            left: 433px;
+            font-family: "Metropolis-Regular", Helvetica;
+            font-weight: 400;
+            color: #3f3f3f;
+            font-size: 18px;
+            letter-spacing: 0;
+            line-height: 30px;
+        }
+
+        .text-wrapper-11 {
+            color: #ff5634;
         }
     </style>
 </head>
-<body class="h-screen m-0">
-    <div class="w-[1440px] h-[118px]">
-        <div class="fixed w-[1442px] h-[118px] top-0 left-0">
-            <div class="relative w-[1440px] h-[118px]">
-                <!-- Background rectangle -->
-                <div class="absolute w-[1440px] h-[118px] top-0 left-0 bg-white shadow-[0px_3px_12px_rgba(18,18,18,0.06)]"></div>
-                
-                <!-- Logo -->
-                <img class="absolute w-[209px] h-[48px] top-[35px] left-[109px] object-cover" src="img/logo-orange-black-2-1.png" alt="Logo" />
-                
-                <!-- Home link -->
-                <div class="absolute top-[50px] left-[417px] font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Home</div>
-                
-                <!-- Navbar -->
-                <div class="absolute w-[420px] h-[18px] top-[50px] left-[489px] flex items-center justify-between">
-                    <div class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Pricing</div>
-                    <div class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">About Us</div>
-                    <div class="flex items-center gap-2">
-                        <div class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Features</div>
-                        <img class="w-[11px] h-[11px]" src="img/chevron-down.svg" alt="Chevron" />
+<body>
+    <div class="frame">
+        <!-- Navigation Bar -->
+        <div class="group">
+            <div class="overlap-group">
+                <img class="logo-orange-black" src="https://via.placeholder.com/209x48?text=Orderific" alt="Orderific Logo">
+                <div class="navbar">
+                    <div>Home</div>
+                    <div class="group-2">
+                        <div>Features</div>
+                        <div class="line-rounded-chevron"></div>
                     </div>
-                    <div class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Blog</div>
-                    <div class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Contact</div>
+                    <div>Pricing</div>
+                    <div>About Us</div>
+                    <div>Blog</div>
+                    <div>Contact</div>
                 </div>
-                
-                <!-- Buttons -->
-                <div class="absolute top-[32px] left-[1036px] flex items-center justify-end gap-[18px]">
-                    <button class="flex items-center justify-center px-6 py-[18px] bg-white rounded-xl border border-[#ececec] shadow-[0px_2px_6px_rgba(15,15,15,0.04)] focus:outline-none focus:ring-2 focus:ring-[#4a90e2]">
-                        <span class="font-medium text-[#121212] text-base leading-[18px] whitespace-nowrap">Login</span>
+                <div class="flagpack-gb-ukm-wrapper">
+                    <div class="flagpack-gb-ukm"></div>
+                </div>
+                <div class="div-2">
+                    <button class="secondary-button">
+                        <div class="button-text">Login</div>
                     </button>
-                    <button class="flex items-center justify-center px-6 py-[18px] bg-[#ff5634] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4a90e2]">
-                        <span class="font-bold text-white text-base leading-[18px] whitespace-nowrap">START FOR FREE</span>
+                    <button class="primary-button">
+                        <div class="button-text-2">START FOR FREE</div>
                     </button>
                 </div>
-                
-                <!-- Flag -->
-                <div class="absolute w-8 h-6 top-[49px] left-[980px] rounded-sm bg-[url('./img/clip-path-group.png')] bg-cover"></div>
             </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-section">
+            <div class="div-3">
+                <div class="frame-wrapper">
+                    <div class="div-wrapper">
+                        <div class="div-4">
+                            <div class="text-wrapper-6">Free Plan</div>
+                            <p class="p">
+                                Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-3">
+                    <div class="div-5">
+                        <div class="div-6">
+                            <p class="what-s-included-in">What's included in the plan?</p>
+                            <p class="lorem-ipsum-dolor">
+                                Lorem ipsum dolor sit amet, consectetur <span class="text-wrapper-8">adipiscing praesent</span> velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="div-7">
+                        <p class="text-wrapper-9">Is this the right plan for my restaurant?</p>
+                        <p class="vitae-congue-eu">
+                            Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit turpis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Card -->
+            <div class="overlap-wrapper">
+                <div class="overlap">
+                    <div class="pricing-card">
+                        <div class="div-5">
+                            <div class="div-7">
+                                <div class="element">
+                                    <div class="square-paper-plane"></div>
+                                    <div class="element-px">
+                                        <div class="subtitle">FREE</div>
+                                        <div class="price">$0/mo</div>
+                                    </div>
+                                </div>
+                                <p class="pricing-paragraph">Lorem ipsum dolor sit amet dolor sitiol conse ctetur adipiscing elit.</p>
+                            </div>
+                            <div class="master-primary-wrapper">
+                                <button class="master-primary-2">
+                                    <div class="button">Get started</div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="div-6">
+                            <div class="text">What´s included:</div>
+                            <div class="div-7">
+                                <div class="list-item">
+                                    <div class="line-rounded-check"></div>
+                                    <p class="text-2">Single Location (30 tables limit)</p>
+                                </div>
+                                <div class="list-item">
+                                    <div class="line-rounded-check"></div>
+                                    <div class="text-2">Mobile Order & Pay</div>
+                                </div>
+                                <div class="list-item">
+                                    <div class="line-rounded-check"></div>
+                                    <div class="text-2">Split the Bill</div>
+                                </div>
+                                <div class="list-item">
+                                    <div class="line-rounded-check"></div>
+                                    <div class="text-2">Delivery & Pickup</div>
+                                </div>
+                                <div class="list-item">
+                                    <div class="line-rounded-check"></div>
+                                    <div class="text-2">Directory</div>
+                                </div>
+                                <div class="list-item">
+                                    <div class="line-rounded-check"></div>
+                                    <div class="text-2">Limited Customisable</div>
+                                </div>
+                                <div class="list-item">
+                                    <div class="line-rounded-check"></div>
+                                    <div class="text-2">Website Builder Basic</div>
+                                </div>
+                                <div class="list-item">
+                                    <div class="line-rounded-check"></div>
+                                    <div class="text-2">Kitchen Printer Integration</div>
+                                </div>
+                                <div class="list-item">
+                                    <div class="line-rounded-check"></div>
+                                    <div class="text-2">Gratuities (Tips)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="group-3">
+            <img class="logo-orange-black-2" src="https://via.placeholder.com/209x48?text=Orderific" alt="Orderific Logo">
+            <p class="text-wrapper-12">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.
+            </p>
+            <div class="download-buttons">
+                <div class="group-wrapper">
+                    <div class="group-5">
+                        <div class="vector"></div>
+                        <div class="text-wrapper-13">Download for iOS</div>
+                    </div>
+                </div>
+                <div class="group-6">
+                    <div class="group-7">
+                        <div class="vector-2"></div>
+                        <div class="text-wrapper-14">Download for Android</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column">
+                <div class="footer-title">Menu</div>
+                <div class="div-8">
+                    <div class="footer-links">
+                        <div class="link-item">Home</div>
+                        <div class="link-item">About</div>
+                        <div class="link-item">Contact</div>
+                        <div class="link-item">Blog</div>
+                        <div class="link-item">Blog posts</div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="link-item">Plans</div>
+                        <div class="link-item">Plan single</div>
+                        <div class="link-item">Register</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column-2">
+                <div class="footer-title">Utility pages</div>
+                <div class="footer-links">
+                    <div class="link-item">Start here</div>
+                    <div class="link-item">Styleguide</div>
+                    <div class="link-item">Password protected</div>
+                    <div class="link-item">404 Not found</div>
+                    <div class="link-item">Licenses</div>
+                    <div class="link-item">Changelog</div>
+                </div>
+            </div>
+            <div class="group-8">
+                <div class="footer-title-2">Available in</div>
+                <div class="group-9">
+                    <div class="group-10">
+                        <div class="bridge">
+                            <div class="group-11"></div>
+                        </div>
+                        <div class="heading">San Francisco, CA</div>
+                    </div>
+                    <div class="group-12">
+                        <div class="statue-of-liberty">
+                            <div class="group-13"></div>
+                        </div>
+                        <div class="heading">New York, NY</div>
+                    </div>
+                    <div class="group-14">
+                        <div class="beach">
+                            <div class="group-15"></div>
+                        </div>
+                        <div class="heading">Los Angeles, CA</div>
+                    </div>
+                    <div class="group-16">
+                        <div class="cn-tower">
+                            <div class="group-17"></div>
+                        </div>
+                        <div class="heading-h">Seattle, WA</div>
+                    </div>
+                </div>
+            </div>
+            <div class="link">
+                <div class="link-item-2">Browse More Templates</div>
+            </div>
+            <p class="copyright-delivery-x">
+                Copyright © Delivery X | Designed by <span class="text-wrapper-11">BRIX Templates</span> - Powered by <span class="text-wrapper-11">Webflow</span>
+            </p>
         </div>
     </div>
 </body>
