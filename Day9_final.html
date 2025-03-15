@@ -14,19 +14,18 @@
         }
 
         body {
-            background-color: #f5f5f5; /* Light gray background */
+            background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
         }
 
-        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 60px;
             background-color: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow for header */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
@@ -34,8 +33,6 @@
             font-weight: bold;
             color: #ff5733;
             text-transform: uppercase;
-            /* Placeholder for logo; replace with image if available */
-            /* <img src="orderific-logo.png" alt="Orderific Logo" style="height: 40px;"> */
         }
 
         nav ul {
@@ -85,7 +82,7 @@
             padding: 8px 16px;
             background-color: #fff;
             border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for login */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s;
         }
 
@@ -104,14 +101,13 @@
             cursor: pointer;
             text-transform: uppercase;
             transition: background-color 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for button */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .start-free:hover {
             background-color: #e04e2d;
         }
 
-        /* Main Content */
         .free-plan {
             display: flex;
             justify-content: center;
@@ -158,7 +154,7 @@
             background-color: #fff;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Shadow for plan card */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             max-width: 350px;
             text-align: center;
             position: sticky;
@@ -177,7 +173,6 @@
             width: 40px;
             height: 40px;
             margin: 0 auto 10px;
-            /* Placeholder for bicycle icon */
         }
         .bicycle-icon svg {
             width: 100%;
@@ -210,7 +205,7 @@
             text-transform: uppercase;
             margin-bottom: 30px;
             transition: background-color 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for button */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
         }
 
@@ -240,18 +235,17 @@
         }
         .plan-card ul li::before {
             content: "✔";
-            color: #ff5733; /* Orange checkmarks */
+            color: #ff5733;
             margin-right: 8px;
         }
 
-        /* Download Section */
         .download {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 60px;
             background-color: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow for download section */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border-top: 1px solid #eee;
             max-width: 1200px;
             margin: 0 auto;
@@ -262,8 +256,6 @@
             font-weight: bold;
             color: #ff5733;
             text-transform: uppercase;
-            /* Placeholder for logo; replace with image if available */
-            /* <img src="orderific-logo.png" alt="Orderific Logo" style="height: 40px;"> */
         }
 
         .download p {
@@ -292,18 +284,17 @@
             align-items: center;
             gap: 10px;
             transition: background-color 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for buttons */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .ios:hover, .android:hover {
             background-color: #e04e2d;
         }
 
-        /* Footer */
         footer {
             background-color: #fff;
             padding: 60px;
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1); /* Shadow for footer */
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .footer-content {
@@ -316,6 +307,10 @@
 
         .footer-column {
             flex: 1;
+        }
+
+        .footer-column:nth-child(2) {
+            padding-left: 10px; /* Added to move Plans section slightly left */
         }
 
         .footer-column h5 {
@@ -342,22 +337,21 @@
 
         .locations {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two columns */
-            gap: 12px; /* Space between items */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
         .locations li {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 14px;
+            font-size: 16px; /* Increased from 14px to 16px */
             color: #333;
         }
 
         .location-icon {
             width: 24px;
             height: 24px;
-            /* Placeholder for location icons */
         }
         .location-icon svg {
             width: 100%;
@@ -367,7 +361,7 @@
         .browse-more {
             color: #ff5733;
             text-decoration: none;
-            font-size: 14px; /* Match the size of other links in the column */
+            font-size: 14px;
             font-weight: bold;
             text-transform: uppercase;
             display: inline-block;
@@ -385,9 +379,8 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="logo">Orderific</div> <!-- Placeholder for logo text; replace with image -->
+        <div class="logo">Orderific</div>
         <nav>
             <ul>
                 <li><a href="#">Features</a> <span class="dropdown-arrow">▼</span></li>
@@ -399,7 +392,6 @@
         </nav>
         <div class="header-right">
             <div class="language">
-                <!-- UK flag SVG -->
                 <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="36" height="36" rx="5" fill="#012169"/>
                     <path d="M36 0H0V36H36V0Z" fill="#FFF"/>
@@ -416,7 +408,6 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
         <section class="free-plan">
             <div class="plan-details">
@@ -430,7 +421,6 @@
             <div class="plan-card">
                 <h3>FREE</h3>
                 <div class="bicycle-icon">
-                    <!-- Bicycle icon SVG placeholder -->
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 19a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm14 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-7-2.5l-2-5h3l1 2.5h3.5L12 7h-2l-2 5h3l1 2.5H8.5L10 19h2l1.5-4.5z" fill="#00cc00"/>
                     </svg>
@@ -454,7 +444,6 @@
             </div>
         </section>
 
-        <!-- Download Section -->
         <section class="download">
             <div class="logo">Orderific</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
@@ -464,7 +453,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer>
             <div class="footer-content">
                 <div class="footer-column">
@@ -478,7 +466,6 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h5>Plans</h5>
                     <ul>
                         <li><a href="#">Plans</a></li>
                         <li><a href="#">Plan single</a></li>
@@ -513,7 +500,6 @@
         </footer>
     </main>
 
-    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const startFreeButton = document.querySelector('.start-free');
