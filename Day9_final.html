@@ -4,13 +4,323 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orderific Free Plan</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5; /* Light gray background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo img {
+            height: 40px; /* Adjust based on actual logo size */
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .dropdown-arrow {
+            font-size: 10px;
+            margin-left: 5px;
+            color: #666;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .language img {
+            height: 20px;
+        }
+
+        .login {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .start-free {
+            background-color: #ff5733; /* Orange color from design */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .start-free:hover {
+            background-color: #e04e2d;
+        }
+
+        /* Main Content */
+        .free-plan {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .plan-details {
+            max-width: 600px;
+        }
+
+        .plan-details h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .plan-details .description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .plan-details h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .plan-details p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .plan-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            text-align: center;
+        }
+
+        .plan-card h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff5733;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .plan-card .price {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .plan-card .card-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .get-started {
+            background-color: #ff5733;
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .get-started:hover {
+            background-color: #e04e2d;
+        }
+
+        .plan-card h4 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a1a1a;
+            text-align: left;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .plan-card ul li {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        /* Download Section */
+        .download {
+            text-align: center;
+            padding: 60px;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .download .logo img {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .download p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .ios, .android {
+            background-color: #ff5733;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .ios:hover, .android:hover {
+            background-color: #e04e2d;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fff;
+            padding: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h5 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .locations li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .browse-more {
+            color: #ff5733;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="logo">
-            <!-- Replace with actual logo image -->
+            <!-- Placeholder for Orderific logo -->
             <img src="orderific-logo.png" alt="Orderific Logo">
         </div>
         <nav>
@@ -24,7 +334,8 @@
         </nav>
         <div class="header-right">
             <div class="language">
-                <img src="uk-flag.png" alt="UK Flag"> <!-- Replace with actual flag -->
+                <!-- Placeholder for UK flag -->
+                <img src="uk-flag.png" alt="UK Flag">
             </div>
             <a href="#" class="login">Login</a>
             <button class="start-free">START FOR FREE</button>
@@ -45,7 +356,7 @@
             <div class="plan-card">
                 <h3>FREE</h3>
                 <p class="price">$0/mo</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sit lorem consectetur adipiscing elit.</p>
+                <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit sit lorem consectetur adipiscing elit.</p>
                 <button class="get-started">GET STARTED</button>
                 <h4>WHAT'S INCLUDED:</h4>
                 <ul>
@@ -115,6 +426,30 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startFreeButton = document.querySelector('.start-free');
+            const getStartedButton = document.querySelector('.get-started');
+            const iosButton = document.querySelector('.ios');
+            const androidButton = document.querySelector('.android');
+
+            startFreeButton.addEventListener('click', () => {
+                alert('Starting for free!');
+            });
+
+            getStartedButton.addEventListener('click', () => {
+                alert('Getting started with the Free Plan!');
+            });
+
+            iosButton.addEventListener('click', () => {
+                alert('Downloading for iOS...');
+            });
+
+            androidButton.addEventListener('click', () => {
+                alert('Downloading for Android...');
+            });
+        });
+    </script>
 </body>
 </html>
