@@ -2,148 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pricing Plan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-
-        :root {
-            --neutral-colors800: #121212;
-            --neutral-colors700: #3f3f3f;
-            --accent-color: #ff5634;
-            --font-family: "Metropolis", Helvetica, sans-serif;
-        }
-
         * {
             -webkit-font-smoothing: antialiased;
             box-sizing: border-box;
         }
-
-        body {
+        html, body {
             margin: 0;
-            min-height: 100vh;
-            font-family: var(--font-family);
+            height: 100%;
         }
-
         button:focus-visible {
-            outline: 2px solid #4a90e2;
+            outline: 2px solid #4a90e2 !important;
         }
-
-        a {
-            text-decoration: none;
-        }
-
-        .frame {
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
-            padding: 20px;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .group {
-            width: 100%;
-        }
-
-        .frame-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .plan-title {
-            font-size: 62px;
-            line-height: 72px;
-            font-weight: 700;
-            color: var(--neutral-colors800);
-            margin: 0;
-        }
-
-        .plan-description {
-            font-size: 18px;
-            line-height: 30px;
-            font-weight: 400;
-            color: var(--neutral-colors700);
-            margin: 0;
-            max-width: 700px;
-        }
-
-        .content-sections {
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
-        }
-
-        .section {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .section-title-large {
-            font-size: 44px;
-            line-height: 54px;
-            font-weight: 700;
-            color: var(--neutral-colors800);
-            margin: 0;
-        }
-
-        .section-title-small {
-            font-size: 24px;
-            line-height: 34px;
-            font-weight: 700;
-            color: var(--neutral-colors800);
-            margin: 0;
-        }
-
-        .section-content {
-            font-size: 18px;
-            line-height: 30px;
-            font-weight: 400;
-            color: var(--neutral-colors700);
-            margin: 0;
-            max-width: 700px;
-        }
-
-        .highlight {
-            color: var(--accent-color);
-            font-weight: 700;
-        }
-
-        .space {
-            color: var(--neutral-colors800);
+        [data-font-family="Metropolis"] {
+            font-family: "Metropolis", Helvetica, sans-serif;
         }
     </style>
 </head>
 <body>
-    <div class="frame">
-        <div class="group">
-            <div class="frame-wrapper">
-                <h1 class="plan-title">Free Plan</h1>
-                <p class="plan-description">
-                    Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo 
-                    cursus ultricies adipiscing risus porta scelerisque at ipsum.
+    <div class="flex flex-col gap-12 p-4">
+        <!-- Free Plan Section -->
+        <div class="max-w-[700px]">
+            <div class="flex flex-col gap-3">
+                <h1 class="text-[#121212] text-[62px] font-bold leading-[72px]" data-font-family="Metropolis">
+                    Free Plan
+                </h1>
+                <p class="text-[#3f3f3f] text-lg leading-[30px] max-w-[700px]" data-font-family="Metropolis">
+                    Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta sceler古屋isque at ipsum.
                 </p>
             </div>
         </div>
-        <div class="content-sections">
-            <div class="section">
-                <h2 class="section-title-large">What's included in the plan?</h2>
-                <p class="section-content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna 
-                    <span class="space"> </span><span class="highlight">adipiscing praesent</span><span class="space"> </span>
-                    velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur 
-                    etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.
+
+        <!-- Details Section -->
+        <div class="flex flex-col gap-12">
+            <!-- What's Included Section -->
+            <div class="flex flex-col gap-6">
+                <h2 class="text-[#121212] text-[44px] font-bold leading-[54px] max-w-[701px]" data-font-family="Metropolis">
+                    What's included in the plan?
+                </h2>
+                <p class="text-lg leading-[30px] max-w-[701px]" data-font-family="Metropolis">
+                    <span class="text-[#3f3f3f]">Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna</span>
+                    <span class="text-[#121212]">&nbsp;</span>
+                    <span class="text-[#ff5634] font-bold">adipiscing praesent</span>
+                    <span class="text-[#121212]">&nbsp;</span>
+                    <span class="text-[#3f3f3f]">velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</span>
                 </p>
             </div>
-            <div class="section">
-                <h3 class="section-title-small">Is this the right plan for my restaurant?</h3>
-                <p class="section-content">
-                    Vitae congue eu consequat ac felis placerat 
-                    <span class="space"> </span><span class="highlight">vestibulum lectus</span><span class="space"> </span>
-                    mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor 
-                    lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus 
-                    gravida quis blandit turpis.
+
+            <!-- Right Plan Section -->
+            <div class="flex flex-col gap-4">
+                <h3 class="text-[#121212] text-2xl font-bold leading-[34px]" data-font-family="Metropolis">
+                    Is this the right plan for my restaurant?
+                </h3>
+                <p class="text-lg leading-[30px] max-w-[700px]" data-font-family="Metropolis">
+                    <span class="text-[#3f3f3f]">Vitae congue eu consequat ac felis placerat </span>
+                    <span class="text-[#121212]">vestibulum lectus</span>
+                    <span class="text-[#3f3f3f]"> mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit turpis.</span>
                 </p>
             </div>
         </div>
