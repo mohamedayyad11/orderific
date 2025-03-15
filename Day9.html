@@ -362,8 +362,8 @@
 
         .footer-columns {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 80px;
+            justify-content: flex-end; /* Move Utility pages and Available in to the right */
+            gap: 60px; /* Increased gap for better spacing */
         }
 
         .footer-column {
@@ -398,9 +398,10 @@
         }
 
         .locations {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            grid-template-rows: repeat(2, 1fr); /* Two rows */
+            gap: 20px 30px; /* Match the screenshot's spacing */
         }
 
         .location-item {
@@ -435,6 +436,7 @@
 
         .browse-link {
             margin-bottom: 40px;
+            text-align: center; /* Center the "Browse More Templates" link */
         }
 
         .browse-link a {
@@ -582,19 +584,17 @@
             <div class="footer-columns">
                 <div class="footer-column">
                     <div class="footer-title">Menu</div>
-                    <div class="menu-links">
-                        <div class="footer-links">
-                            <a href="#">Home</a>
-                            <a href="#">About</a>
-                            <a href="#">Contact</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Blog posts</a>
-                        </div>
-                        <div class="footer-links">
-                            <a href="#">Plans</a>
-                            <a href="#">Plan single</a>
-                            <a href="#">Register</a>
-                        </div>
+                    <div class="footer-links">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Blog posts</a>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">Plans</a>
+                        <a href="#">Plan single</a>
+                        <a href="#">Register</a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -612,19 +612,19 @@
                     <div class="footer-title">Available in</div>
                     <div class="locations">
                         <div class="location-item">
-                            <div class="location-icon"><div></div></div>
+                            <div class="location-icon"><div style="background: url('https://via.placeholder.com/50?text=Bridge') no-repeat center; background-size: cover;"></div></div>
                             <div class="location-name">San Francisco, CA</div>
                         </div>
                         <div class="location-item">
-                            <div class="location-icon"><div></div></div>
+                            <div class="location-icon"><div style="background: url('https://via.placeholder.com/50?text=Statue') no-repeat center; background-size: cover;"></div></div>
                             <div class="location-name">New York, NY</div>
                         </div>
                         <div class="location-item">
-                            <div class="location-icon"><div></div></div>
+                            <div class="location-icon"><div style="background: url('https://via.placeholder.com/50?text=Beach') no-repeat center; background-size: cover;"></div></div>
                             <div class="location-name">Los Angeles, CA</div>
                         </div>
                         <div class="location-item">
-                            <div class="location-icon"><div></div></div>
+                            <div class="location-icon"><div style="background: url('https://via.placeholder.com/50?text=CN Tower') no-repeat center; background-size: cover;"></div></div>
                             <div class="location-name">Seattle, WA</div>
                         </div>
                     </div>
