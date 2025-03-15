@@ -2,157 +2,151 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orderific - Free Plan</title>
-    <!-- TailwindCSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Pricing Plan</title>
     <style>
-        /* Custom styles for specific overrides */
-        .logo-text {
-            color: #f57c00;
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        :root {
+            --neutral-colors800: #121212;
+            --neutral-colors700: #3f3f3f;
+            --accent-color: #ff5634;
+            --font-family: "Metropolis", Helvetica, sans-serif;
         }
-        .check-mark {
-            color: #f57c00; /* Orange checkmark color */
+
+        * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
         }
-        .start-free, .get-started, .android-btn {
-            background-color: #f57c00;
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: var(--font-family);
         }
-        .start-free:hover, .get-started:hover, .android-btn:hover {
-            background-color: #e06b00;
+
+        button:focus-visible {
+            outline: 2px solid #4a90e2;
         }
-        .orange-text {
-            color: #f57c00; /* For "adipiscing praesent" */
+
+        a {
+            text-decoration: none;
+        }
+
+        .frame {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            padding: 20px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .group {
+            width: 100%;
+        }
+
+        .frame-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .plan-title {
+            font-size: 62px;
+            line-height: 72px;
+            font-weight: 700;
+            color: var(--neutral-colors800);
+            margin: 0;
+        }
+
+        .plan-description {
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 400;
+            color: var(--neutral-colors700);
+            margin: 0;
+            max-width: 700px;
+        }
+
+        .content-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .section-title-large {
+            font-size: 44px;
+            line-height: 54px;
+            font-weight: 700;
+            color: var(--neutral-colors800);
+            margin: 0;
+        }
+
+        .section-title-small {
+            font-size: 24px;
+            line-height: 34px;
+            font-weight: 700;
+            color: var(--neutral-colors800);
+            margin: 0;
+        }
+
+        .section-content {
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 400;
+            color: var(--neutral-colors700);
+            margin: 0;
+            max-width: 700px;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .space {
+            color: var(--neutral-colors800);
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-    <!-- Header -->
-    <header class="flex justify-between items-center px-12 py-4 bg-white shadow-md sticky top-0 z-10">
-        <div class="flex items-center">
-            <!-- Updated Orderific Logo -->
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr955ltVJSd2aLnUQ-8FR7I0ZDBBJiwVu59A&s" alt="Orderific Logo" class="w-10 h-10 mr-2">
-            <span class="logo-text text-2xl font-bold">Orderific</span>
-        </div>
-        <nav>
-            <ul class="flex space-x-6">
-                <li><a href="#" class="text-gray-800 hover:text-orange-500">Home</a></li>
-                <li><a href="#" class="text-gray-800 hover:text-orange-500">Features</a></li>
-                <li><a href="#" class="text-gray-800 hover:text-orange-500">Pricing</a></li>
-                <li><a href="#" class="text-gray-800 hover:text-orange-500">About Us</a></li>
-                <li><a href="#" class="text-gray-800 hover:text-orange-500">Blog</a></li>
-                <li><a href="#" class="text-gray-800 hover:text-orange-500">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="flex items-center">
-            <!-- Updated UK Flag -->
-            <img src="data:image/png;base64,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" alt="UK Flag" class="w-5 h-4 mr-4">
-            <a href="#" class="login-btn text-gray-800 mr-4 px-4 py-2 bg-white shadow-md rounded-lg transition hover:bg-gray-100">Login</a>
-            <button class="start-free text-white px-4 py-2 rounded-md transition">START FOR FREE</button>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="flex justify-center py-12 px-4">
-        <section class="max-w-6xl flex flex-wrap justify-between items-start">
-            <!-- Left Content -->
-            <div class="w-full md:w-2/3 pr-0 md:pr-8">
-                <h1 class="text-5xl font-bold mb-6">Free Plan</h1>
-                <p class="text-gray-600 mb-6">Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
-
-                <h2 class="text-2xl font-semibold mt-8 mb-4">What’s included in the plan?</h2>
-                <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna <span class="orange-text">adipiscing praesent</span> velit viverra sit lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
-
-                <h3 class="text-xl font-medium mt-6 mb-4">Is this the right plan for my restaurant?</h3>
-                <p class="text-gray-600">Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultricies cursus sit amet dictum sit amet justo donec enim diam porttitor lacinia felis ultricies accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit turpis.</p>
-            </div>
-
-            <!-- Plan Card -->
-            <div class="w-full md:w-1/3 mt-8 md:mt-0">
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                    <div class="mb-6">
-                        <!-- Bike Icon (SVG approximation) -->
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4">
-                            <circle cx="20" cy="20" r="18" stroke="#f57c00" stroke-width="2"/>
-                            <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#f57c00"/>
-                        </svg>
-                        <h3 class="text-2xl font-semibold">FREE</h3>
-                        <p class="text-gray-800 font-bold">$0/mo</p>
-                        <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet dolor sit amet consectetur adipiscing elit.</p>
-                    </div>
-                    <button class="get-started text-white w-full py-3 rounded-md transition">Get started</button>
-                    <div class="mt-6 text-left">
-                        <h4 class="text-lg font-medium mb-4">What’s included:</h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Single Location (30 tables limit)</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Mobile Order & Pay</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Split the Bill</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Delivery & Pickup</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Directory</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Limited Customisable</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Website Builder Basic</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Kitchen Printer Integration</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Delivery & Pickup</li>
-                            <li class="flex items-center text-gray-600 text-sm"><i class="fas fa-check check-mark mr-2"></i> Gratuities (Tips)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="text-center py-6 bg-white shadow-inner">
-        <div class="flex flex-col items-start max-w-6xl mx-auto">
-            <div class="mb-4">
-                <img src="https://orderific.com/ord-website/assets/img/company/orderific-og.png" alt="Orderific Logo" class="w-16 h-16 mr-2">
-            </div>
-            <div class="text-left">
-                <p class="text-gray-600 text-sm mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
-            </div>
-            <div class="flex justify-end space-x-4">
-                <button class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition"><i class="fab fa-apple mr-2"></i> Download for iOS</button>
-                <button class="android-btn text-white px-4 py-2 rounded-md transition"><i class="fab fa-android mr-2"></i> Download for Android</button>
+<body>
+    <div class="frame">
+        <div class="group">
+            <div class="frame-wrapper">
+                <h1 class="plan-title">Free Plan</h1>
+                <p class="plan-description">
+                    Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo 
+                    cursus ultricies adipiscing risus porta scelerisque at ipsum.
+                </p>
             </div>
         </div>
-    </footer>
-
-    <script>
-        // Add click event listeners to buttons for interactivity
-        document.addEventListener('DOMContentLoaded', () => {
-            // Start for Free button
-            const startFreeBtn = document.querySelector('.start-free');
-            startFreeBtn.addEventListener('click', () => {
-                alert('Starting for free! Redirecting to sign-up page...');
-                // Replace with actual redirect logic
-                // window.location.href = '/signup';
-            });
-
-            // Get Started button in the plan card
-            const getStartedBtn = document.querySelector('.get-started');
-            getStartedBtn.addEventListener('click', () => {
-                alert('Getting started with the Free Plan! Redirecting to sign-up...');
-                // Replace with actual redirect logic
-                // window.location.href = '/signup';
-            });
-
-            // Download buttons in the footer
-            const iosBtn = document.querySelector('.bg-black');
-            const androidBtn = document.querySelector('.android-btn');
-
-            iosBtn.addEventListener('click', () => {
-                alert('Downloading for iOS...');
-                // Replace with actual download link
-                // window.location.href = 'https://www.apple.com/app-store/';
-            });
-
-            androidBtn.addEventListener('click', () => {
-                alert('Downloading for Android...');
-                // Replace with actual download link
-                // window.location.href = 'https://play.google.com/store';
-            });
-        });
-    </script>
+        <div class="content-sections">
+            <div class="section">
+                <h2 class="section-title-large">What's included in the plan?</h2>
+                <p class="section-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna 
+                    <span class="space"> </span><span class="highlight">adipiscing praesent</span><span class="space"> </span>
+                    velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur 
+                    etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.
+                </p>
+            </div>
+            <div class="section">
+                <h3 class="section-title-small">Is this the right plan for my restaurant?</h3>
+                <p class="section-content">
+                    Vitae congue eu consequat ac felis placerat 
+                    <span class="space"> </span><span class="highlight">vestibulum lectus</span><span class="space"> </span>
+                    mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor 
+                    lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus 
+                    gravida quis blandit turpis.
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
