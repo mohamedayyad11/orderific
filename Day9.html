@@ -77,7 +77,7 @@
         .logo {
             width: 209px;
             height: 48px;
-            background: url('https://orderific.com/blog/wp-content/uploads/2022/02/HQ2.png') no-repeat center;
+            background: url('https://via.placeholder.com/209x48?text=Orderific') no-repeat center;
             background-size: cover;
         }
 
@@ -119,7 +119,7 @@
             background: url('https://flagcdn.com/w80/gb.png') no-repeat center;
             background-size: 100% 100%;
             border-radius: 2px;
-            image-rendering: pixelated; /* Makes the flag appear more pixelated */
+            image-rendering: pixelated;
         }
 
         .login-btn {
@@ -163,6 +163,15 @@
             flex-direction: column;
             gap: 48px;
             padding: 40px 0;
+        }
+
+        .plan-section, .included-section, .suitability-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan-section h1, .included-section h2, .suitability-section h3 {
+            margin-bottom: 12px; /* Adjusted to create one line of space (approximately 30px total line height - 18px text height = 12px additional spacing) */
         }
 
         .plan-title {
@@ -333,7 +342,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 16px 24px; /* Reduced size */
+            padding: 16px 24px;
             background-color: var(--primary-colorscolor-1);
             border-radius: 14px;
             color: var(--neutral-colors100);
@@ -343,7 +352,7 @@
         }
 
         .download-icon {
-            width: 16px; /* Reduced size */
+            width: 16px;
             height: 20px;
             background: url('https://via.placeholder.com/16?text=↓') no-repeat center;
             background-size: cover;
@@ -475,19 +484,19 @@
         <!-- Main Content -->
         <section class="main-content">
             <div class="text-content">
-                <div>
+                <div class="plan-section">
                     <h1 class="plan-title">Free Plan</h1>
                     <p class="plan-description">
                         Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.
                     </p>
                 </div>
-                <div>
+                <div class="included-section">
                     <h2 class="included-title">What's included in the plan?</h2>
                     <p class="included-description">
                         Lorem ipsum dolor sit amet, consectetur <span class="highlight">adipiscing praesent</span> velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.
                     </p>
                 </div>
-                <div>
+                <div class="suitability-section">
                     <h3 class="suitability-title">Is this the right plan for my restaurant?</h3>
                     <p class="suitability-description">
                         Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit turpis.
