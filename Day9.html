@@ -116,9 +116,10 @@
         .flag {
             width: 32px;
             height: 24px;
-            background: url('https://flagcdn.com/w20/gb.png') no-repeat center;
-            background-size: cover;
+            background: url('https://flagcdn.com/w80/gb.png') no-repeat center;
+            background-size: 100% 100%;
             border-radius: 2px;
+            image-rendering: pixelated; /* Makes the flag appear more pixelated */
         }
 
         .login-btn {
@@ -213,11 +214,13 @@
             margin-bottom: 16px;
         }
 
-        .icon {
+        .bicycle-icon {
             width: 72px;
             height: 72px;
-            background: url('https://via.placeholder.com/72?text=🚀') no-repeat center;
+            background: url('https://via.placeholder.com/72?text=🚲') no-repeat center;
             background-size: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
         }
 
         .pricing-title {
@@ -297,6 +300,13 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 80px;
+            align-items: center;
+        }
+
+        .footer-logo-block {
+            display: flex;
+            align-items: center;
+            gap: 40px;
         }
 
         .footer-logo {
@@ -316,14 +326,14 @@
 
         .download-buttons {
             display: flex;
-            gap: 26px;
+            gap: 20px;
         }
 
         .download-btn {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 20px 32px;
+            gap: 8px;
+            padding: 16px 24px; /* Reduced size */
             background-color: var(--primary-colorscolor-1);
             border-radius: 14px;
             color: var(--neutral-colors100);
@@ -333,9 +343,9 @@
         }
 
         .download-icon {
-            width: 20px;
-            height: 24px;
-            background: url('https://via.placeholder.com/20?text=↓') no-repeat center;
+            width: 16px; /* Reduced size */
+            height: 20px;
+            background: url('https://via.placeholder.com/16?text=↓') no-repeat center;
             background-size: cover;
         }
 
@@ -486,7 +496,7 @@
             </div>
             <div class="pricing-card">
                 <div class="pricing-header">
-                    <div class="icon"></div>
+                    <div class="bicycle-icon"></div>
                     <div>
                         <div class="pricing-title">FREE</div>
                         <div class="pricing-price">$0/mo</div>
@@ -541,20 +551,22 @@
         <!-- Footer -->
         <section class="footer-section">
             <div class="footer-top">
-                <div class="footer-logo"></div>
+                <div class="footer-logo-block">
+                    <div class="footer-logo"></div>
+                    <div class="download-buttons">
+                        <a href="#" class="download-btn">
+                            <div class="download-icon"></div>
+                            Download for iOS
+                        </a>
+                        <a href="#" class="download-btn">
+                            <div class="download-icon"></div>
+                            Download for Android
+                        </a>
+                    </div>
+                </div>
                 <p class="footer-description">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.
                 </p>
-                <div class="download-buttons">
-                    <a href="#" class="download-btn">
-                        <div class="download-icon"></div>
-                        Download for iOS
-                    </a>
-                    <a href="#" class="download-btn">
-                        <div class="download-icon"></div>
-                        Download for Android
-                    </a>
-                </div>
             </div>
             <div class="footer-columns">
                 <div class="footer-column">
