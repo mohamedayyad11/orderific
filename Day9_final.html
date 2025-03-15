@@ -5,33 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orderific Free Plan</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        :root {
+            --neutral-colors800: #121212;
+            --neutral-colors700: #3f3f3f;
+            --neutral-colors600: #656565;
+            --neutral-colors100: #ffffff;
+            --neutral-colors300: #ededed;
+            --primary-colorscolor-1: #ff5634;
+            --text-font-family: "Metropolis", Helvetica, 'Arial', sans-serif;
+            --text-bold-font-weight: 700;
+            --text-medium-font-weight: 500;
+            --text-regular-font-weight: 400;
+            --text-size-16: 16px;
+            --text-size-18: 18px;
+            --text-size-20: 20px;
+            --heading-size-62: 62px;
+            --heading-size-44: 44px;
+            --heading-size-24: 24px;
+            --heading-size-28: 28px;
+            --line-height-18: 18px;
+            --line-height-20: 20px;
+            --line-height-30: 30px;
+            --line-height-72: 72px;
+            --line-height-54: 54px;
+            --line-height-34: 34px;
+            --line-height-40: 40px;
+            --shadow-light: 0px 2px 6px rgba(16, 16, 16, 0.04);
+            --shadow-medium: 0px 3px 12px rgba(18, 18, 18, 0.1);
+            --shadow-dark: 0px 4px 16px rgba(16, 16, 16, 0.08);
         }
 
-        body {
+        * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: var(--text-font-family);
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        /* Header (from first version) */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 60px;
-            background-color: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--neutral-colors100);
+            box-shadow: var(--shadow-medium);
         }
 
         .logo {
             font-size: 24px;
-            font-weight: bold;
-            color: #ff5733;
+            font-weight: var(--text-bold-font-weight);
+            color: var(--primary-colorscolor-1);
             text-transform: uppercase;
+            background: url('https://orderific.com/blog/wp-content/uploads/2022/02/HQ2.png') no-repeat center;
+            background-size: contain;
+            width: 209px;
+            height: 48px;
+            text-indent: -9999px;
         }
 
         nav ul {
@@ -47,15 +99,15 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: 500;
+            color: var(--neutral-colors800);
+            font-size: var(--text-size-16);
+            font-weight: var(--text-medium-font-weight);
         }
 
         .dropdown-arrow {
             font-size: 10px;
             margin-left: 5px;
-            color: #666;
+            color: var(--neutral-colors600);
         }
 
         .header-right {
@@ -65,201 +117,232 @@
         }
 
         .language {
-            width: 20px;
-            height: 20px;
-        }
-        .language svg {
-            width: 100%;
-            height: 100%;
+            width: 32px;
+            height: 24px;
+            background: url('https://flagcdn.com/w80/gb.png') no-repeat center;
+            background-size: 100% 100%;
+            border-radius: 2px;
         }
 
         .login {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: 500;
-            padding: 8px 16px;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
+            padding: 18px 24px;
+            background-color: var(--neutral-colors100);
+            border: 1px solid var(--neutral-colors300);
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            font-weight: var(--text-medium-font-weight);
+            font-size: var(--text-size-16);
+            line-height: var(--line-height-18);
+            color: var(--neutral-colors800);
+            cursor: pointer;
         }
 
         .login:hover {
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-medium);
         }
 
         .start-free {
-            background-color: #ff5733;
-            color: #fff;
+            padding: 18px 24px;
+            background-color: var(--primary-colorscolor-1);
+            border-radius: 12px;
             border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--text-size-16);
+            line-height: var(--line-height-18);
+            color: var(--neutral-colors100);
             cursor: pointer;
-            text-transform: uppercase;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-light);
         }
 
         .start-free:hover {
             background-color: #e04e2d;
         }
 
-        .free-plan {
+        /* Main Content */
+        .main-content {
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 60px;
-            gap: 40px;
+            gap: 128px;
+            padding: 0 110px;
+            background-color: var(--neutral-colors100);
+            box-shadow: var(--shadow-dark);
+            border-radius: 24px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 60px auto;
         }
 
-        .plan-details {
-            max-width: 600px;
+        .text-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            padding: 40px 0;
         }
 
-        .plan-details h1 {
-            font-size: 48px;
-            font-weight: bold;
-            color: #1a1a1a;
-            margin-bottom: 20px;
+        .plan-section, .included-section, .suitability-section {
+            display: flex;
+            flex-direction: column;
         }
 
-        .plan-details .description {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 40px;
-            line-height: 1.8;
+        .plan-section h1, .included-section h2, .suitability-section h3 {
+            margin-bottom: 12px;
         }
 
-        .plan-details h2 {
-            font-size: 24px;
-            font-weight: bold;
-            color: #1a1a1a;
-            margin-bottom: 15px;
+        .plan-title {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-62);
+            line-height: var(--line-height-72);
+            color: var(--neutral-colors800);
         }
 
-        .plan-details p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.8;
+        .plan-description, .included-description, .suitability-description {
+            font-weight: var(--text-regular-font-weight);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-30);
+            color: var(--neutral-colors700);
         }
 
-        .plan-card {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            max-width: 350px;
-            text-align: center;
+        .included-title {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-44);
+            line-height: var(--line-height-54);
+            color: var(--neutral-colors800);
+        }
+
+        .suitability-title {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-24);
+            line-height: var(--line-height-34);
+            color: var(--neutral-colors800);
+        }
+
+        .pricing-card {
+            width: 390px;
+            background-color: var(--neutral-colors100);
+            border-radius: 24px;
+            border: 1px solid var(--neutral-colors300);
+            box-shadow: var(--shadow-dark);
+            padding: 40px 30px;
             position: sticky;
             top: 20px;
+            text-align: center;
         }
 
-        .plan-card h3 {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff5733;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+        .pricing-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            justify-content: center;
         }
 
         .bicycle-icon {
-            width: 40px;
-            height: 40px;
-            margin: 0 auto 10px;
-        }
-        .bicycle-icon svg {
-            width: 100%;
-            height: 100%;
+            width: 72px;
+            height: 72px;
+            background: url('https://via.placeholder.com/72?text=🚲') no-repeat center;
+            background-size: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
         }
 
-        .plan-card .price {
-            font-size: 36px;
-            font-weight: bold;
-            color: #1a1a1a;
+        .pricing-title {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-24);
+            line-height: var(--line-height-34);
+            color: var(--primary-colorscolor-1);
+            text-transform: uppercase;
+        }
+
+        .pricing-price {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-28);
+            line-height: var(--line-height-40);
+            color: var(--neutral-colors800);
             margin-bottom: 20px;
         }
 
-        .plan-card .card-description {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
+        .pricing-description {
+            font-weight: var(--text-regular-font-weight);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-30);
+            color: var(--neutral-colors600);
+            margin-bottom: 32px;
         }
 
-        .get-started {
-            background-color: #ff5733;
-            color: #fff;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        .get-started-btn {
             width: 100%;
+            padding: 15px 40px;
+            background-color: var(--primary-colorscolor-1);
+            border-radius: 16px;
+            border: none;
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-20);
+            color: var(--neutral-colors100);
+            cursor: pointer;
+            margin-bottom: 48px;
+            box-shadow: var(--shadow-light);
         }
 
-        .get-started:hover {
+        .get-started-btn:hover {
             background-color: #e04e2d;
         }
 
-        .plan-card h4 {
-            font-size: 16px;
-            font-weight: bold;
-            color: #1a1a1a;
+        .features-title {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-20);
+            color: var(--neutral-colors800);
+            margin-bottom: 24px;
             text-align: left;
-            margin-bottom: 20px;
             text-transform: uppercase;
         }
 
-        .plan-card ul {
-            list-style: none;
-            text-align: left;
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
         }
 
-        .plan-card ul li {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-        .plan-card ul li::before {
-            content: "✔";
-            color: #ff5733;
-            margin-right: 8px;
+        .check-icon {
+            width: 18px;
+            height: 18px;
+            color: var(--primary-colorscolor-1);
+            font-size: var(--text-size-18);
         }
 
+        .feature-text {
+            font-weight: var(--text-medium-font-weight);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-20);
+            color: var(--neutral-colors800);
+        }
+
+        /* Download Section */
         .download {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 60px;
-            background-color: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border-top: 1px solid #eee;
+            background-color: var(--neutral-colors100);
+            box-shadow: var(--shadow-medium);
+            border-top: 1px solid var(--neutral-colors300);
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .download .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff5733;
-            text-transform: uppercase;
+            width: 209px;
+            height: 48px;
+            background: url('https://orderific.com/blog/wp-content/uploads/2022/02/HQ2.png') no-repeat center;
+            background-size: contain;
+            text-indent: -9999px;
         }
 
         .download p {
-            font-size: 16px;
-            color: #666;
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-30);
+            color: var(--neutral-colors700);
             text-align: center;
             flex: 1;
             margin: 0 20px;
@@ -271,29 +354,30 @@
         }
 
         .ios, .android {
-            background-color: #ff5733;
-            color: #fff;
-            border: none;
             padding: 15px 30px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
+            background-color: var(--primary-colorscolor-1);
+            border-radius: 12px;
+            border: none;
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--text-size-16);
+            line-height: var(--line-height-18);
+            color: var(--neutral-colors100);
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-light);
         }
 
         .ios:hover, .android:hover {
             background-color: #e04e2d;
         }
 
+        /* Footer */
         footer {
-            background-color: #fff;
+            background-color: var(--neutral-colors100);
             padding: 60px;
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-medium);
         }
 
         .footer-content {
@@ -309,9 +393,9 @@
         }
 
         .footer-column h5 {
-            font-size: 16px;
-            font-weight: bold;
-            color: #1a1a1a;
+            font-size: var(--text-size-16);
+            font-weight: var(--text-bold-font-weight);
+            color: var(--neutral-colors800);
             margin-bottom: 20px;
             text-transform: uppercase;
         }
@@ -325,15 +409,15 @@
         }
 
         .footer-column ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 14px;
+            color: var(--neutral-colors800);
+            font-size: var(--text-size-16);
+            font-weight: var(--text-regular-font-weight);
         }
 
-        .plans-list li:nth-child(1) { margin-top: 0; } /* Align Plans with Home */
-        .plans-list li:nth-child(2) { margin-top: 12px; } /* Align Plan single with About */
-        .plans-list li:nth-child(3) { margin-top: 24px; } /* Align Register with Contact */
-        .plans-list li a { margin-left: -4px; } /* Move items 4px left */
+        .plans-list li:nth-child(1) { margin-top: 0; }
+        .plans-list li:nth-child(2) { margin-top: 12px; }
+        .plans-list li:nth-child(3) { margin-top: 24px; }
+        .plans-list li a { margin-left: -4px; }
 
         .locations {
             display: grid;
@@ -345,37 +429,32 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 18px; /* Increased from 16px to 18px */
-            color: #333;
+            font-size: var(--text-size-18);
+            color: var(--neutral-colors800);
         }
 
         .location-icon {
             width: 24px;
             height: 24px;
         }
-        .location-icon svg {
-            width: 100%;
-            height: 100%;
-        }
 
         .browse-more {
-            color: #ff5733;
-            text-decoration: underline; /* Added underline */
-            font-size: 14px;
-            font-weight: bold;
+            color: var(--primary-colorscolor-1);
+            text-decoration: underline;
+            font-size: var(--text-size-16);
+            font-weight: var(--text-bold-font-weight);
             text-transform: uppercase;
-            display: inline-block;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 40px;
-            border-top: 1px solid #eee; /* Added horizontal line */
+            border-top: 1px solid var(--neutral-colors300);
         }
 
         .footer-bottom p {
-            font-size: 14px;
-            color: #666;
+            font-size: var(--text-size-16);
+            color: var(--neutral-colors700);
         }
     </style>
 </head>
@@ -392,56 +471,46 @@
             </ul>
         </nav>
         <div class="header-right">
-            <div class="language">
-                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="36" height="36" rx="5" fill="#012169"/>
-                    <path d="M36 0H0V36H36V0Z" fill="#FFF"/>
-                    <path d="M36 0L18 18L0 0H36ZM36 36L18 18L36 0V36Z" fill="#FFF"/>
-                    <path d="M0 36L18 18L36 36H0ZM0 0L18 18L0 36V0Z" fill="#FFF"/>
-                    <path d="M0 6H36V9H0V6ZM0 27H36V30H0V27ZM6 0V36H9V0H6ZM27 0V36H30V0H27Z" fill="#C8102E"/>
-                    <path d="M13.5 0V36H16.5V0H13.5ZM19.5 0V36H22.5V0H19.5Z" fill="#C8102E"/>
-                    <path d="M0 13.5H36V16.5H0V13.5Z" fill="#C8102E"/>
-                    <path d="M0 19.5H36V22.5H0V19.5Z" fill="#C8102E"/>
-                </svg>
-            </div>
+            <div class="language"></div>
             <a href="#" class="login">Login</a>
             <button class="start-free">START FOR FREE</button>
         </div>
     </header>
 
     <main>
-        <section class="free-plan">
-            <div class="plan-details">
-                <h1>Free Plan</h1>
-                <p class="description">Fugiat elit imperdiet enim pellentesque nihil bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
-                <h2>What's included in the plan?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
-                <h2>Is this the right plan for my restaurant?</h2>
-                <p>Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultricies cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit turpis.</p>
-            </div>
-            <div class="plan-card">
-                <h3>FREE</h3>
-                <div class="bicycle-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 19a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm14 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-7-2.5l-2-5h3l1 2.5h3.5L12 7h-2l-2 5h3l1 2.5H8.5L10 19h2l1.5-4.5z" fill="#00cc00"/>
-                    </svg>
+        <section class="main-content">
+            <div class="text-content">
+                <div class="plan-section">
+                    <h1 class="plan-title">Free Plan</h1>
+                    <p class="plan-description">Fugiat elit imperdiet enim pellentesque nihil bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
                 </div>
-                <p class="price">$0/mo</p>
-                <p class="card-description">Lorem ipsum dolor sit amet dolor sit lorem consectetur adipiscing elit.</p>
-                <button class="get-started">Get started</button>
-                <h4>What's included:</h4>
-                <ul>
-                    <li>Single Location (30 tables limit)</li>
-                    <li>Mobile Order & Pay</li>
-                    <li>Split the Bill</li>
-                    <li>Delivery & Pickup</li>
-                    <li>Directory</li>
-                    <li>Limited Customizable</li>
-                    <li>Website Builder Basic</li>
-                    <li>Kitchen Printer Integration</li>
-                    <li>Delivery & Pickup</li>
-                    <li>Gratuities (Tips)</li>
-                </ul>
+                <div class="included-section">
+                    <h2 class="included-title">What's included in the plan?</h2>
+                    <p class="included-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
+                </div>
+                <div class="suitability-section">
+                    <h3 class="suitability-title">Is this the right plan for my restaurant?</h3>
+                    <p class="suitability-description">Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultricies cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit turpis.</p>
+                </div>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="bicycle-icon"></div>
+                    <h3 class="pricing-title">FREE</h3>
+                </div>
+                <p class="pricing-price">$0/mo</p>
+                <p class="pricing-description">Lorem ipsum dolor sit amet dolor sit lorem consectetur adipiscing elit.</p>
+                <button class="get-started-btn">Get Started</button>
+                <h4 class="features-title">What's included:</h4>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Single Location (30 tables limit)</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Mobile Order & Pay</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Split the Bill</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Delivery & Pickup</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Directory</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Limited Customizable</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Website Builder Basic</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Kitchen Printer Integration</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Gratuities (Tips)</span></div>
             </div>
         </section>
 
@@ -504,7 +573,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const startFreeButton = document.querySelector('.start-free');
-            const getStartedButton = document.querySelector('.get-started');
+            const getStartedButton = document.querySelector('.get-started-btn');
             const iosButton = document.querySelector('.ios');
             const androidButton = document.querySelector('.android');
 
