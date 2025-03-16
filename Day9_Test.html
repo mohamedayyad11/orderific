@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderific Navigation Bar</title>
+    <style>
+        /* CSS3 Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown::after {
+            content: '▼';
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flag {
+            width: 24px;
+            height: 24px;
+        }
+
+        .login-btn {
+            padding: 8px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .start-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6200;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML5 Structure -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="https://via.placeholder.com/30?text=O" alt="Orderific Logo">
+            <span>Orderific</span>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="#">Features</a>
+            </div>
+            <a href="#">Pricing</a>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <!-- Buttons and Language Selector -->
+        <div class="nav-buttons">
+            <img src="https://via.placeholder.com/24?text=🇬🇧" alt="UK Flag" class="flag">
+            <a href="#" class="login-btn">Login</a>
+            <a href="#" class="start-btn">START FOR FREE</a>
+        </div>
+    </nav>
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript for potential dropdown functionality (not visible in the image, but implied)
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.querySelector('.dropdown');
+            
+            dropdown.addEventListener('click', function() {
+                // Since the dropdown menu isn't visible in the image, this is a placeholder
+                console.log('Dropdown clicked - menu would toggle here if present');
+            });
+        });
+    </script>
+</body>
+</html>
