@@ -3,140 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orderific Navigation Bar</title>
+    <title>Orderific Free Plan</title>
     <style>
-        /* CSS3 Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5; /* Light gray background */
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
         }
 
-        .navbar {
+        /* Header Styles */
+        header {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 15px 20px;
-            background-color: #fff; /* White navbar background */
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
+            height: 40px;
         }
 
-        .logo img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .nav-links a {
+        nav a {
+            margin: 0 15px;
             text-decoration: none;
             color: #333;
-            font-size: 16px;
-            font-weight: 500;
+            font-size: 14px;
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
+        nav a:hover {
+            color: #ff5722;
         }
 
-        .dropdown::after {
-            content: '▼';
-            font-size: 12px;
-            margin-left: 5px;
-        }
-
-        .nav-buttons {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .flag {
-            width: 24px;
-            height: 24px;
+        .login-btn, .start-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         .login-btn {
-            padding: 8px 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #fff;
-            color: #333;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
+            background-color: transparent;
+            color: #ff5722;
+            font-size: 14px;
         }
 
         .start-btn {
-            padding: 8px 20px;
+            background-color: #ff5722;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .start-btn:hover {
+            background-color: #e64a19;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .content {
+            flex: 2;
+        }
+
+        .plan-card {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff5722;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: #ff5722;
+        }
+
+        .plan-card img {
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #4caf50;
+            margin: 10px 0;
+        }
+
+        .get-started-btn {
+            background-color: #ff5722;
+            color: #fff;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            background-color: #ff4500; /* Adjusted orange color to match the image */
-            color: #fff;
-            font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
-            text-decoration: none;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .get-started-btn:hover {
+            background-color: #e64a19;
+        }
+
+        ul {
+            list-style-type: none;
+            color: #666;
+        }
+
+        ul li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li:before {
+            content: "✔";
+            color: #4caf50;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin-top: 50px;
+        }
+
+        footer img {
+            height: 30px;
         }
     </style>
 </head>
 <body>
-    <!-- HTML5 Structure -->
-    <nav class="navbar">
-        <!-- Logo -->
-        <div class="logo">
-            <img src="https://via.placeholder.com/30?text=O" alt="Orderific Logo">
-            <span>Orderific</span>
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="nav-links">
-            <div class="dropdown">
-                <a href="#">Features</a>
-            </div>
+    <header>
+        <img src="https://via.placeholder.com/100x40?text=Orderific+Logo" alt="Orderific Logo" class="logo">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Features ↓</a>
             <a href="#">Pricing</a>
             <a href="#">About Us</a>
             <a href="#">Blog</a>
             <a href="#">Contact</a>
-        </div>
+            <img src="https://via.placeholder.com/20x15?text=UK+Flag" alt="UK Flag" style="margin-left: 15px;">
+        </nav>
+        <button class="login-btn">Login</button>
+        <button class="start-btn">START FOR FREE</button>
+    </header>
 
-        <!-- Buttons and Language Selector -->
-        <div class="nav-buttons">
-            <img src="https://via.placeholder.com/24?text=🇬🇧" alt="UK Flag" class="flag">
-            <a href="#" class="login-btn">Login</a>
-            <a href="#" class="start-btn">START FOR FREE</a>
+    <div class="container">
+        <div class="content">
+            <h1>Free Plan</h1>
+            <p>Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
+            <h2 class="highlight">What's included in the plan?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim una adipiscing praesent velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
+            <h2 class="highlight">Is this the right plan for my restaurant?</h2>
+            <p>Vitae congue eu consequat ac felis placerat vestibulum lectus mauris utrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit.</p>
         </div>
-    </nav>
+        <div class="plan-card">
+            <img src="https://via.placeholder.com/80?text=Bike" alt="Bike Icon">
+            <div class="price">FREE<br>$0/mo</div>
+            <p>Lorem ipsum dolor sit amet dolor sit amet consectetur adipiscing elit.</p>
+            <button class="get-started-btn" onclick="alert('Getting started with the Free Plan!')">Get started</button>
+            <h3>What's included:</h3>
+            <ul>
+                <li>Single Location (30 tables limit)</li>
+                <li>Mobile Order & Pay</li>
+                <li>Split the Bill</li>
+                <li>Delivery & Pickup</li>
+                <li>Directory</li>
+                <li>Limited Customizable</li>
+                <li>Website Builder Basic</li>
+                <li>Kitchen Printer Integration</li>
+                <li>Delivery & Pickup</li>
+                <li>Gratuities (Tips)</li>
+            </ul>
+        </div>
+    </div>
 
-    <!-- JavaScript -->
+    <footer>
+        <img src="https://via.placeholder.com/30x30?text=Footer+Icon" alt="Footer Icon">
+    </footer>
+
     <script>
-        // JavaScript for potential dropdown functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdown = document.querySelector('.dropdown');
-            
-            dropdown.addEventListener('click', function() {
-                // Placeholder for dropdown toggle (menu not visible in image)
-                console.log('Dropdown clicked - menu would toggle here if present');
-            });
+        // Basic JavaScript for button interaction
+        document.querySelector('.get-started-btn').addEventListener('click', function() {
+            alert('Getting started with the Free Plan!');
         });
     </script>
 </body>
