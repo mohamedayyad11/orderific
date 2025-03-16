@@ -5,222 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orderific Free Plan</title>
     <style>
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
         }
-
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header Styles */
         header {
+            background: #fff;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
         .logo {
-            height: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6600;
         }
-
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #ff5722;
-        }
-
-        .login-btn, .start-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .login-btn {
-            background-color: transparent;
-            color: #ff5722;
-        }
-
-        .start-btn {
-            background-color: #ff5722;
-            color: #fff;
-        }
-
-        .start-btn:hover {
-            background-color: #e64a19;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
+        nav ul {
+            list-style: none;
             display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
+            gap: 15px;
         }
-
-        .content {
-            flex: 2;
-            padding-right: 40px;
+        nav ul li {
+            display: inline;
+            cursor: pointer;
         }
-
-        .plan-card {
-            flex: 1;
-            background-color: #fff;
+        .cta, .login {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .free-plan, .plan-details {
+            padding: 20px;
+        }
+        .plan-box {
+            background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .plan-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent 30%, #ff5722 50%, transparent 70%);
-            animation: shine 3s infinite;
+        .plan-box ul {
+            list-style: none;
+            padding: 0;
         }
-
-        @keyframes shine {
-            0% { left: -100%; }
-            20% { left: 100%; }
-            100% { left: 100%; }
+        .plan-box li {
+            padding: 5px 0;
         }
-
-        .plan-card-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #ff5722;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 24px;
-            color: #ff5722;
-            margin: 30px 0 15px;
-        }
-
-        p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .plan-card img {
-            height: 80px;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 24px;
-            color: #4caf50;
-            margin: 10px 0;
-        }
-
-        .get-started-btn {
-            background-color: #ff5722;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .get-started-btn:hover {
-            background-color: #e64a19;
-        }
-
-        ul {
-            list-style-type: none;
-            color: #666;
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        ul li {
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        ul li:before {
-            content: "✔";
-            color: #4caf50;
-            margin-right: 10px;
-        }
-
         footer {
-            text-align: center;
+            background: #fff;
             padding: 20px;
-            background-color: #fff;
-            margin-top: 50px;
+            text-align: center;
         }
-
-        footer img {
-            height: 30px;
+        .download-buttons button {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://via.placeholder.com/100x40?text=Orderific+Logo" alt="Orderific Logo" class="logo">
+        <div class="logo">Orderific</div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Features ↓</a>
-            <a href="#">Pricing</a>
-            <a href="#">About Us</a>
-            <a href="#">Blog</a>
-            <a href="#">Contact</a>
-            <img src="https://via.placeholder.com/20x15?text=UK+Flag" alt="UK Flag" style="margin-left: 15px;">
+            <ul>
+                <li>Features</li>
+                <li>Pricing</li>
+                <li>About Us</li>
+                <li>Blog</li>
+                <li>Contact</li>
+                <li><button class="login">Login</button></li>
+                <li><button class="cta">Start for Free</button></li>
+            </ul>
         </nav>
-        <button class="login-btn">Login</button>
-        <button class="start-btn">START FOR FREE</button>
     </header>
-
-    <div class="container">
-        <div class="content">
+    <main>
+        <section class="free-plan">
             <h1>Free Plan</h1>
-            <p>Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <h2>What's included in the plan?</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim una adipiscing praesent velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
-            <h2>Is this the right plan for my restaurant?</h2>
-            <p>Vitae congue eu consequat ac felis placerat vestibulum lectus mauris utrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit.</p>
-        </div>
-        <div class="plan-card">
-            <div class="plan-card-content">
-                <img src="https://via.placeholder.com/80?text=Bike" alt="Bike Icon">
-                <div class="price">FREE<br>$0/mo</div>
-                <p>Lorem ipsum dolor sit amet dolor sit amet consectetur adipiscing elit.</p>
-                <button class="get-started-btn" onclick="alert('Getting started with the Free Plan!')">Get started</button>
-                <h3>What's included:</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Is this the right plan for my restaurant?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </section>
+        <aside class="plan-details">
+            <div class="plan-box">
+                <h3>FREE</h3>
+                <p>$0/mo</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <button class="cta" onclick="showAlert()">Get Started</button>
                 <ul>
                     <li>Single Location (30 tables limit)</li>
                     <li>Mobile Order & Pay</li>
@@ -230,22 +112,28 @@
                     <li>Limited Customizable</li>
                     <li>Website Builder Basic</li>
                     <li>Kitchen Printer Integration</li>
-                    <li>Delivery & Pickup</li>
                     <li>Gratuities (Tips)</li>
                 </ul>
             </div>
-        </div>
-    </div>
-
+        </aside>
+    </main>
     <footer>
-        <img src="https://via.placeholder.com/30x30?text=Footer+Icon" alt="Footer Icon">
+        <div class="footer-content">
+            <div class="footer-logo">Orderific</div>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <div class="download-buttons">
+                <button onclick="downloadApp('iOS')">Download for iOS</button>
+                <button onclick="downloadApp('Android')">Download for Android</button>
+            </div>
+        </div>
     </footer>
-
     <script>
-        // Basic JavaScript for button interaction
-        document.querySelector('.get-started-btn').addEventListener('click', function() {
-            alert('Getting started with the Free Plan!');
-        });
+        function showAlert() {
+            alert('Thank you for getting started with the Free Plan!');
+        }
+        function downloadApp(platform) {
+            alert('Redirecting to download ' + platform + ' app.');
+        }
     </script>
 </body>
 </html>
