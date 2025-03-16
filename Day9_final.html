@@ -316,10 +316,10 @@
             color: var(--neutral-colors800);
         }
 
-        /* Download Section - Modified */
+        /* Download Section - Modified to match the picture */
         .download {
             display: flex;
-            flex-direction: column; /* Changed to column layout */
+            justify-content: space-between;
             align-items: center;
             padding: 60px;
             background-color: var(--neutral-colors100);
@@ -327,7 +327,6 @@
             border-top: 1px solid var(--neutral-colors300);
             max-width: 1200px;
             margin: 0 auto;
-            gap: 20px; /* Added gap between elements */
         }
 
         .download .logo {
@@ -343,7 +342,8 @@
             line-height: var(--line-height-30);
             color: var(--neutral-colors700);
             text-align: center;
-            max-width: 600px; /* Added max-width for better text wrapping */
+            flex: 1;
+            margin: 0 20px;
         }
 
         .download-buttons {
@@ -371,7 +371,7 @@
             background-color: #e04e2d;
         }
 
-        /* Footer */
+        /* Footer - Modified to match the picture */
         footer {
             background-color: var(--neutral-colors100);
             padding: 60px;
@@ -412,10 +412,10 @@
             font-weight: var(--text-regular-font-weight);
         }
 
-        .plans-list li:nth-child(1) { margin-top: 0; } /* Plans aligns with Home */
-        .plans-list li:nth-child(2) { margin-top: 12px; } /* Plan single aligns with About */
-        .plans-list li:nth-child(3) { margin-top: 24px; } /* Register aligns with Contact */
-        .plans-list li a { margin-left: -4px; } /* Move items 4px left */
+        .plans-list li:nth-child(1) { margin-top: 0; }
+        .plans-list li:nth-child(2) { margin-top: 12px; }
+        .plans-list li:nth-child(3) { margin-top: 24px; }
+        .plans-list li a { margin-left: -4px; } /* Shift left by 4px */
 
         .locations {
             display: grid;
