@@ -64,7 +64,6 @@
             gap: 80px;
         }
 
-        /* Header (from first version) */
         header {
             display: flex;
             justify-content: space-between;
@@ -158,7 +157,6 @@
             background-color: #e04e2d;
         }
 
-        /* Main Content */
         .main-content {
             display: flex;
             gap: 128px;
@@ -318,10 +316,10 @@
             color: var(--neutral-colors800);
         }
 
-        /* Download Section */
+        /* Download Section - Modified */
         .download {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column; /* Changed to column layout */
             align-items: center;
             padding: 60px;
             background-color: var(--neutral-colors100);
@@ -329,6 +327,7 @@
             border-top: 1px solid var(--neutral-colors300);
             max-width: 1200px;
             margin: 0 auto;
+            gap: 20px; /* Added gap between elements */
         }
 
         .download .logo {
@@ -344,8 +343,7 @@
             line-height: var(--line-height-30);
             color: var(--neutral-colors700);
             text-align: center;
-            flex: 1;
-            margin: 0 20px;
+            max-width: 600px; /* Added max-width for better text wrapping */
         }
 
         .download-buttons {
@@ -414,10 +412,10 @@
             font-weight: var(--text-regular-font-weight);
         }
 
-        .plans-list li:nth-child(1) { margin-top: 0; }
-        .plans-list li:nth-child(2) { margin-top: 12px; }
-        .plans-list li:nth-child(3) { margin-top: 24px; }
-        .plans-list li a { margin-left: -4px; }
+        .plans-list li:nth-child(1) { margin-top: 0; } /* Plans aligns with Home */
+        .plans-list li:nth-child(2) { margin-top: 12px; } /* Plan single aligns with About */
+        .plans-list li:nth-child(3) { margin-top: 24px; } /* Register aligns with Contact */
+        .plans-list li a { margin-left: -4px; } /* Move items 4px left */
 
         .locations {
             display: grid;
