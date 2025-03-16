@@ -5,71 +5,454 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orderific Free Plan</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        :root {
+            --neutral-colors800: #121212;
+            --neutral-colors700: #3f3f3f;
+            --neutral-colors600: #656565;
+            --neutral-colors100: #ffffff;
+            --neutral-colors300: #ededed;
+            --primary-colorscolor-1: #ff5634;
+            --text-font-family: "Metropolis", Helvetica, 'Arial', sans-serif;
+            --text-bold-font-weight: 700;
+            --text-medium-font-weight: 500;
+            --text-regular-font-weight: 400;
+            --text-size-16: 16px;
+            --text-size-18: 18px;
+            --text-size-20: 20px;
+            --heading-size-62: 62px;
+            --heading-size-44: 44px;
+            --heading-size-24: 24px;
+            --heading-size-28: 28px;
+            --line-height-18: 18px;
+            --line-height-20: 20px;
+            --line-height-30: 30px;
+            --line-height-72: 72px;
+            --line-height-54: 54px;
+            --line-height-34: 34px;
+            --line-height-40: 40px;
+            --shadow-light: 0px 2px 6px rgba(16, 16, 16, 0.04);
+            --shadow-medium: 0px 3px 12px rgba(18, 18, 18, 0.1);
+            --shadow-dark: 0px 4px 16px rgba(16, 16, 16, 0.08);
+        }
+
+        * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
         }
+
+        html, body {
+            height: 100%;
+            font-family: var(--text-font-family);
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
         header {
-            background: #fff;
-            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px 60px;
+            background-color: var(--neutral-colors100);
+            box-shadow: var(--shadow-medium);
         }
+
         .logo {
             font-size: 24px;
-            font-weight: bold;
-            color: #ff6600;
+            font-weight: var(--text-bold-font-weight);
+            color: var(--primary-colorscolor-1);
+            text-transform: uppercase;
+            background: url('https://orderific.com/blog/wp-content/uploads/2022/02/HQ2.png') no-repeat center;
+            background-size: contain;
+            width: 209px;
+            height: 48px;
+            text-indent: -9999px;
         }
+
         nav ul {
-            list-style: none;
             display: flex;
-            gap: 15px;
-        }
-        nav ul li {
-            display: inline;
-            cursor: pointer;
-        }
-        .cta, .login {
-            background-color: #ff6600;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .free-plan, .plan-details {
-            padding: 20px;
-        }
-        .plan-box {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .plan-box ul {
             list-style: none;
-            padding: 0;
+            gap: 20px;
         }
-        .plan-box li {
-            padding: 5px 0;
+
+        nav ul li {
+            display: flex;
+            align-items: center;
         }
-        footer {
-            background: #fff;
-            padding: 20px;
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--neutral-colors800);
+            font-size: var(--text-size-16);
+            font-weight: var(--text-medium-font-weight);
+        }
+
+        .dropdown-arrow {
+            font-size: 10px;
+            margin-left: 5px;
+            color: var(--neutral-colors600);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .language {
+            width: 32px;
+            height: 24px;
+            background: url('https://flagcdn.com/w80/gb.png') no-repeat center;
+            background-size: 100% 100%;
+            border-radius: 2px;
+        }
+
+        .login {
+            padding: 18px 24px;
+            background-color: var(--neutral-colors100);
+            border: 1px solid var(--neutral-colors300);
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            font-weight: var(--text-medium-font-weight);
+            font-size: var(--text-size-16);
+            line-height: var(--line-height-18);
+            color: var(--neutral-colors800);
+            cursor: pointer;
+        }
+
+        .login:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .start-free {
+            padding: 18px 24px;
+            background-color: var(--primary-colorscolor-1);
+            border-radius: 12px;
+            border: none;
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--text-size-16);
+            line-height: var(--line-height-18);
+            color: var(--neutral-colors100);
+            cursor: pointer;
+            box-shadow: var(--shadow-light);
+        }
+
+        .start-free:hover {
+            background-color: #e04e2d;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 128px;
+            padding: 0 110px;
+            background-color: var(--neutral-colors100);
+            box-shadow: var(--shadow-dark);
+            border-radius: 24px;
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+
+        .text-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            padding: 40px 0;
+        }
+
+        .plan-section, .included-section, .suitability-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan-section h1, .included-section h2, .suitability-section h3 {
+            margin-bottom: 12px;
+        }
+
+        .plan-title {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-62);
+            line-height: var(--line-height-72);
+            color: var(--neutral-colors800);
+        }
+
+        .plan-description, .included-description, .suitability-description {
+            font-weight: var(--text-regular-font-weight);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-30);
+            color: var(--neutral-colors700);
+        }
+
+        .included-title {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-44);
+            line-height: var(--line-height-54);
+            color: var(--neutral-colors800);
+        }
+
+        .suitability-title {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-24);
+            line-height: var(--line-height-34);
+            color: var(--neutral-colors800);
+        }
+
+        .pricing-card {
+            width: 390px;
+            background-color: var(--neutral-colors100);
+            border-radius: 24px;
+            border: 1px solid var(--neutral-colors300);
+            box-shadow: var(--shadow-dark);
+            padding: 40px 30px;
+            position: sticky;
+            top: 20px;
             text-align: center;
         }
-        .download-buttons button {
-            background-color: #ff6600;
-            color: white;
+
+        .pricing-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            justify-content: center;
+        }
+
+        .bicycle-icon {
+            width: 72px;
+            height: 72px;
+            background: url('https://via.placeholder.com/72?text=🚲') no-repeat center;
+            background-size: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .pricing-title {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-24);
+            line-height: var(--line-height-34);
+            color: var(--primary-colorscolor-1);
+            text-transform: uppercase;
+        }
+
+        .pricing-price {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--heading-size-28);
+            line-height: var(--line-height-40);
+            color: var(--neutral-colors800);
+            margin-bottom: 20px;
+        }
+
+        .pricing-description {
+            font-weight: var(--text-regular-font-weight);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-30);
+            color: var(--neutral-colors600);
+            margin-bottom: 32px;
+        }
+
+        .get-started-btn {
+            width: 100%;
+            padding: 15px 40px;
+            background-color: var(--primary-colorscolor-1);
+            border-radius: 16px;
             border: none;
-            padding: 10px 15px;
-            margin: 5px;
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-20);
+            color: var(--neutral-colors100);
             cursor: pointer;
-            border-radius: 5px;
+            margin-bottom: 48px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .get-started-btn:hover {
+            background-color: #e04e2d;
+        }
+
+        .features-title {
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-20);
+            color: var(--neutral-colors800);
+            margin-bottom: 24px;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .check-icon {
+            width: 18px;
+            height: 18px;
+            color: var(--primary-colorscolor-1);
+            font-size: var(--text-size-18);
+        }
+
+        .feature-text {
+            font-weight: var(--text-medium-font-weight);
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-20);
+            color: var(--neutral-colors800);
+        }
+
+        /* Download Section - Modified to match the picture */
+        .download {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px;
+            background-color: var(--neutral-colors100);
+            box-shadow: var(--shadow-medium);
+            border-top: 1px solid var(--neutral-colors300);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .download .logo {
+            width: 209px;
+            height: 48px;
+            background: url('https://orderific.com/blog/wp-content/uploads/2022/02/HQ2.png') no-repeat center;
+            background-size: contain;
+            text-indent: -9999px;
+        }
+
+        .download p {
+            font-size: var(--text-size-18);
+            line-height: var(--line-height-30);
+            color: var(--neutral-colors700);
+            text-align: center;
+            flex: 1;
+            margin: 0 20px;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .ios, .android {
+            padding: 15px 30px;
+            background-color: var(--primary-colorscolor-1);
+            border-radius: 12px;
+            border: none;
+            font-weight: var(--text-bold-font-weight);
+            font-size: var(--text-size-16);
+            line-height: var(--line-height-18);
+            color: var(--neutral-colors100);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .ios:hover, .android:hover {
+            background-color: #e04e2d;
+        }
+
+        /* Footer - Modified to match the picture */
+        footer {
+            background-color: var(--neutral-colors100);
+            padding: 60px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+        }
+
+        .footer-column h5 {
+            font-size: var(--text-size-16);
+            font-weight: var(--text-bold-font-weight);
+            color: var(--neutral-colors800);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: var(--neutral-colors800);
+            font-size: var(--text-size-16);
+            font-weight: var(--text-regular-font-weight);
+        }
+
+        .plans-list li:nth-child(1) { margin-top: 0; }
+        .plans-list li:nth-child(2) { margin-top: 12px; }
+        .plans-list li:nth-child(3) { margin-top: 24px; }
+        .plans-list li a { margin-left: -4px; } /* Shift left by 4px */
+
+        .locations {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .locations li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: var(--text-size-18);
+            color: var(--neutral-colors800);
+        }
+
+        .location-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .browse-more {
+            color: var(--primary-colorscolor-1);
+            text-decoration: underline;
+            font-size: var(--text-size-16);
+            font-weight: var(--text-bold-font-weight);
+            text-transform: uppercase;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--neutral-colors300);
+        }
+
+        .footer-bottom p {
+            font-size: var(--text-size-16);
+            color: var(--neutral-colors700);
         }
     </style>
 </head>
@@ -78,62 +461,136 @@
         <div class="logo">Orderific</div>
         <nav>
             <ul>
-                <li>Features</li>
-                <li>Pricing</li>
-                <li>About Us</li>
-                <li>Blog</li>
-                <li>Contact</li>
-                <li><button class="login">Login</button></li>
-                <li><button class="cta">Start for Free</button></li>
+                <li><a href="#">Features</a> <span class="dropdown-arrow">▼</span></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
-    </header>
-    <main>
-        <section class="free-plan">
-            <h1>Free Plan</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <h2>What's included in the plan?</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <h3>Is this the right plan for my restaurant?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </section>
-        <aside class="plan-details">
-            <div class="plan-box">
-                <h3>FREE</h3>
-                <p>$0/mo</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <button class="cta" onclick="showAlert()">Get Started</button>
-                <ul>
-                    <li>Single Location (30 tables limit)</li>
-                    <li>Mobile Order & Pay</li>
-                    <li>Split the Bill</li>
-                    <li>Delivery & Pickup</li>
-                    <li>Directory</li>
-                    <li>Limited Customizable</li>
-                    <li>Website Builder Basic</li>
-                    <li>Kitchen Printer Integration</li>
-                    <li>Gratuities (Tips)</li>
-                </ul>
-            </div>
-        </aside>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">Orderific</div>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <div class="download-buttons">
-                <button onclick="downloadApp('iOS')">Download for iOS</button>
-                <button onclick="downloadApp('Android')">Download for Android</button>
-            </div>
+        <div class="header-right">
+            <div class="language"></div>
+            <a href="#" class="login">Login</a>
+            <button class="start-free">START FOR FREE</button>
         </div>
-    </footer>
+    </header>
+
+    <main>
+        <section class="main-content">
+            <div class="text-content">
+                <div class="plan-section">
+                    <h1 class="plan-title">Free Plan</h1>
+                    <p class="plan-description">Fugiat elit imperdiet enim pellentesque nihil bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
+                </div>
+                <div class="included-section">
+                    <h2 class="included-title">What's included in the plan?</h2>
+                    <p class="included-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
+                </div>
+                <div class="suitability-section">
+                    <h3 class="suitability-title">Is this the right plan for my restaurant?</h3>
+                    <p class="suitability-description">Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultricies cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit turpis.</p>
+                </div>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="bicycle-icon"></div>
+                    <h3 class="pricing-title">FREE</h3>
+                </div>
+                <p class="pricing-price">$0/mo</p>
+                <p class="pricing-description">Lorem ipsum dolor sit amet dolor sit lorem consectetur adipiscing elit.</p>
+                <button class="get-started-btn">Get Started</button>
+                <h4 class="features-title">What's included:</h4>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Single Location (30 tables limit)</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Mobile Order & Pay</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Split the Bill</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Delivery & Pickup</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Directory</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Limited Customizable</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Website Builder Basic</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Kitchen Printer Integration</span></div>
+                <div class="feature-item"><span class="check-icon">✔</span><span class="feature-text">Gratuities (Tips)</span></div>
+            </div>
+        </section>
+
+        <section class="download">
+            <div class="logo">Orderific</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+            <div class="download-buttons">
+                <button class="ios"><span class="apple-icon">🍎</span> Download for iOS</button>
+                <button class="android"><span class="android-icon">🤖</span> Download for Android</button>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h5>Menu</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Blog posts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul class="plans-list">
+                        <li><a href="#">Plans</a></li>
+                        <li><a href="#">Plan single</a></li>
+                        <li><a href="#">Register</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Utility pages</h5>
+                    <ul>
+                        <li><a href="#">Start here</a></li>
+                        <li><a href="#">Styleguide</a></li>
+                        <li><a href="#">Password protected</a></li>
+                        <li><a href="#">404 Not found</a></li>
+                        <li><a href="#">Licenses</a></li>
+                        <li><a href="#">Changelog</a></li>
+                        <li><a href="#" class="browse-more">Browse More Templates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Available in</h5>
+                    <ul class="locations">
+                        <li><span class="location-icon">🏟️</span> San Francisco, CA</li>
+                        <li><span class="location-icon">🗽</span> New York, NY</li>
+                        <li><span class="location-icon">🏖️</span> Los Angeles, CA</li>
+                        <li><span class="location-icon">🗼</span> Seattle, WA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © Delivery X | Designed by BRIX Templates - Powered by Webflow</p>
+            </div>
+        </footer>
+    </main>
+
     <script>
-        function showAlert() {
-            alert('Thank you for getting started with the Free Plan!');
-        }
-        function downloadApp(platform) {
-            alert('Redirecting to download ' + platform + ' app.');
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const startFreeButton = document.querySelector('.start-free');
+            const getStartedButton = document.querySelector('.get-started-btn');
+            const iosButton = document.querySelector('.ios');
+            const androidButton = document.querySelector('.android');
+
+            startFreeButton.addEventListener('click', () => {
+                alert('Starting for free!');
+            });
+
+            getStartedButton.addEventListener('click', () => {
+                alert('Getting started with the Free Plan!');
+            });
+
+            iosButton.addEventListener('click', () => {
+                alert('Downloading for iOS...');
+            });
+
+            androidButton.addEventListener('click', () => {
+                alert('Downloading for Android...');
+            });
+        });
     </script>
 </body>
 </html>
