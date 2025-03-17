@@ -43,18 +43,19 @@
             padding: 2rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: left;
+            position: relative;
+            overflow: hidden; /* Ensures image stays within card */
         }
 
-        .badge {
+        .badge-image {
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background-color: #ffeb3b;
-            color: #333;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: bold;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%; /* Circular shape */
+            background: url('https://via.placeholder.com/40') no-repeat center/cover; /* Placeholder image */
+            border: 2px solid var(--primary-color); /* Optional border for visibility */
         }
 
         .pricing-card h2 {
@@ -129,7 +130,13 @@
             color: var(--check-color);
             position: absolute;
             left: 0;
-            font-size: 1rem;
+            font-size: 0.875rem;
+            font-weight: bold; /* Ensure checkmark stands out */
+        }
+
+        .pricing-card ul li strong {
+            font-weight: bold;
+            color: var(--light-text-color);
         }
 
         .pricing-card .features-more {
@@ -175,6 +182,13 @@
                 padding: 0.5rem 1.5rem;
                 font-size: 0.9rem;
             }
+
+            .badge-image {
+                top: 0.75rem;
+                left: 0.75rem;
+                width: 2rem;
+                height: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -193,6 +207,13 @@
             .pricing-card .btn {
                 font-size: 0.85rem;
             }
+
+            .badge-image {
+                top: 0.5rem;
+                left: 0.5rem;
+                width: 1.75rem;
+                height: 1.75rem;
+            }
         }
 
         /* Accessibility */
@@ -210,33 +231,24 @@
     <div class="pricing-container">
         <!-- Full/Pro Plan -->
         <div class="pricing-card">
-            <div class="badge">No Setup Fee or Binding Contracts</div>
+            <div class="badge-image"></div>
             <h2>Full/Pro Plan</h2>
             <div class="price">$99<span>/Month</span></div>
             <p class="description">Become a culinary sensation with Orderific's Full Plan at just $99/month.</p>
             <a href="#" class="btn">Get Started</a>
             <h3>Key Features:</h3>
             <ul>
-                <li>Digital Smart Menu</li>
-                <li>Interactive menu system with real-time updates.</li>
-                <li>Loyalty Program</li>
-                <li>Features for rewarding and retaining customers.</li>
-                <li>Business Analytics</li>
-                <li>Tools for analyzing and strategizing business data.</li>
-                <li>Website Builder</li>
-                <li>Tools for creating a dynamic online presence.</li>
-                <li>Integrated Payment Options</li>
-                <li>Diverse payment methods for customer convenience.</li>
-                <li>Delivery System Setup</li>
-                <li>Tools for establishing and managing delivery services.</li>
-                <li>Marketing Tools</li>
-                <li>Resources to enhance marketing reach and effectiveness.</li>
-                <li>Menu Translation</li>
-                <li>Feature to translate menus into multiple languages.</li>
-                <li>Clear Reporting</li>
-                <li>Stay informed with straightforward analytics.</li>
-                <li>Seamless POS Integration</li>
-                <li>Efficient integration with point-of-sale systems.</li>
+                <li><strong>Digital Smart Menu</strong><br>Interactive menu system with real-time updates.</li>
+                <li><strong>Loyalty Program</strong><br>Features for rewarding and retaining customers.</li>
+                <li><strong>Business Analytics</strong><br>Tools for analyzing and strategizing business data.</li>
+                <li><strong>Loyalty Program</strong><br>Features for rewarding and retaining customers.</li>
+                <li><strong>Website Builder</strong><br>Tools for creating a dynamic online presence.</li>
+                <li><strong>Integrated Payment Options</strong><br>Diverse payment methods for customer convenience.</li>
+                <li><strong>Delivery System Setup</strong><br>Tools for establishing and managing delivery services.</li>
+                <li><strong>Marketing Tools</strong><br>Resources to enhance marketing reach and effectiveness.</li>
+                <li><strong>Menu Translation</strong><br>Feature to translate menus into multiple languages.</li>
+                <li><strong>Clear Reporting</strong><br>Stay informed with straightforward analytics.</li>
+                <li><strong>Seamless POS Integration</strong><br>Efficient integration with point-of-sale systems.</li>
             </ul>
             <p class="features-more">...and much more!</p>
             <div class="ideal-section">
