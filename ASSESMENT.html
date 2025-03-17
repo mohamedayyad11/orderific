@@ -10,6 +10,7 @@
             --primary-color: #ff5733; /* Orange for button */
             --text-color: #333;
             --light-text-color: #666;
+            --badge-bg: #ff6f61; /* Adjusted orange for badge */
             --background-color: #fff;
             --check-color: #ff5733; /* Orange for checkmarks */
             --border-radius: 15px;
@@ -33,6 +34,9 @@
         }
 
         .pricing-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem; /* Space between badge and card */
             max-width: 400px;
             width: 100%;
             position: relative;
@@ -44,14 +48,27 @@
             padding: 2rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
+            flex: 1;
             position: relative;
             overflow: visible; /* Allows image to extend outside */
         }
 
+        .badge {
+            background-color: var(--badge-bg);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px; /* Circular badge */
+            font-size: 0.875rem;
+            font-weight: normal;
+            line-height: 1.2;
+            white-space: nowrap;
+            margin-top: 0.5rem;
+        }
+
         .top-image {
             position: absolute;
-            top: 0rem; /* Adjusted to move down, 1/4 inside */
-            left:  -3.3rem; /* 3/4 outside on left */
+            top: -4rem; /* Adjusted to move down, 1/4 inside */
+            left: -6rem; /* 3/4 outside on left */
             width: 8rem; /* Increased size */
             height: 8rem; /* Increased size */
             border-radius: 50%; /* Circular shape */
@@ -62,37 +79,40 @@
 
         .header-group {
             margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .small-image {
-            width: 2.4rem;
-            height: 2.4rem;
+            width: 1.5rem; /* Adjusted to match dollar sign size in image */
+            height: 1.5rem;
             border-radius: 50%;
             background: url('https://orderific.com/ord-website/assets/img/pricing/logo/icon4.png') no-repeat center/cover;
             display: inline-block;
-            vertical-align: 0.3rem;
-            margin-right: 0.5rem;
+            vertical-align: middle;
+            margin-left: 0.5rem;
         }
 
         .pricing-card h2 {
-            font-size: 1.5rem;
+            font-size: 1.25rem; /* Adjusted to match image */
             color: var(--text-color);
-            margin-bottom: 0.25rem;
+            font-weight: normal; /* Matches image */
             display: inline-block;
             vertical-align: middle;
         }
 
         .pricing-card .price {
-            font-size: 2.25rem;
+            font-size: 2rem; /* Adjusted to match image */
             color: var(--text-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem; /* Increased to match image spacing */
             font-weight: bold;
             display: inline-block;
             vertical-align: middle;
         }
 
         .pricing-card .price span {
-            font-size: 1rem;
+            font-size: 0.875rem; /* Adjusted to match image */
             color: var(--light-text-color);
             font-weight: normal;
             margin-left: 0.25rem;
@@ -117,10 +137,11 @@
             font-size: 1rem;
             cursor: pointer;
             display: block;
-            margin: 0 auto 2rem;
+            margin: 0 auto;
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.2s;
+            text-transform: uppercase; /* Matches image */
         }
 
         .pricing-card .btn:hover {
@@ -186,8 +207,16 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .pricing-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
                 padding: 1rem;
-                max-width: 350px; /* Slightly smaller for tablets */
+                max-width: 350px;
+            }
+
+            .badge {
+                margin-top: 0;
+                margin-bottom: 0.25rem;
             }
 
             .pricing-card {
@@ -195,7 +224,7 @@
             }
 
             .pricing-card h2 {
-                font-size: 1.25rem;
+                font-size: 1.1rem;
             }
 
             .pricing-card .price {
@@ -203,7 +232,7 @@
             }
 
             .pricing-card .price span {
-                font-size: 0.875rem;
+                font-size: 0.75rem;
             }
 
             .pricing-card .description {
@@ -246,24 +275,20 @@
             }
 
             .small-image {
-                width: 2rem;
-                height: -2rem;
-                margin-right: 0.25rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-left: 0.25rem;
             }
         }
 
         @media (max-width: 480px) {
             .pricing-container {
                 padding: 0.5rem;
-                max-width: 300px; /* Smaller for mobile */
-            }
-
-            .pricing-card {
-                padding: 1rem;
+                max-width: 300px;
             }
 
             .pricing-card h2 {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .pricing-card .price {
@@ -271,7 +296,7 @@
             }
 
             .pricing-card .price span {
-                font-size: 0.75rem;
+                font-size: 0.65rem;
             }
 
             .pricing-card .description {
@@ -314,9 +339,9 @@
             }
 
             .small-image {
-                width: 1.5rem;
-                height: 1.5rem;
-                margin-right: 0.2rem;
+                width: 1rem;
+                height: 1rem;
+                margin-left: 0.2rem;
             }
         }
 
@@ -328,16 +353,14 @@
 
         a {
             touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+            -webkit-tap-highlight-color: transparent;
         }
 
-        /* Ensure smooth scrolling on iOS */
         html {
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Fix for older browsers */
         img, a {
             border: 0;
             outline: none;
@@ -346,15 +369,16 @@
 </head>
 <body>
     <div class="pricing-container">
-        <!-- Full/Pro Plan -->
+        <div class="badge">No Setup Fee or Binding Contracts</div>
         <div class="pricing-card">
             <div class="top-image"></div>
             <div class="header-group">
                 <h2>Full/Pro Plan</h2>
+                <span class="small-image"></span>
             </div>
             <div class="header-group">
-                <span class="small-image"></span>
                 <div class="price">$99<span>/month</span></div>
+                <span class="small-image"></span>
             </div>
             <p class="description">Become a culinary sensation with Orderific's Full Plan at just $99/month.</p>
             <a href="#" class="btn">Get Started</a>
