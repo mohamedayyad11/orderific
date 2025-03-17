@@ -18,19 +18,23 @@
             color: #000;
         }
 
+        /* Container for consistent width */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         /* Header */
         .header {
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 20px 0;
             border-bottom: 1px solid #e0e0e0;
         }
 
-        .header .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #000;
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .header .logo img {
@@ -78,15 +82,18 @@
 
         /* Main Section */
         .main-section {
-            padding: 50px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .main-section .container {
             display: flex;
             gap: 40px;
+            flex-wrap: wrap;
         }
 
         .main-section .content {
             flex: 2;
+            min-width: 300px;
         }
 
         .main-section .content h1 {
@@ -116,6 +123,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 30px;
             text-align: center;
+            min-width: 300px;
         }
 
         .main-section .pricing-card img {
@@ -172,8 +180,7 @@
 
         /* Footer */
         .footer {
-            padding: 40px;
-            background-color: #fff;
+            padding: 40px 0;
             border-top: 1px solid #e0e0e0;
         }
 
@@ -182,6 +189,8 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .footer .top .logo img {
@@ -198,6 +207,7 @@
         .footer .top .buttons {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .footer .top .buttons a {
@@ -216,10 +226,13 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .footer .links div {
             flex: 1;
+            min-width: 200px;
         }
 
         .footer .links h5 {
@@ -242,12 +255,19 @@
         .footer .links .cities {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 20px;
         }
 
-        .footer .links .cities span {
+        .footer .links .cities div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 14px;
             color: #666;
+        }
+
+        .footer .links .cities div img {
+            height: 20px;
         }
 
         .footer .copyright {
@@ -255,107 +275,186 @@
             font-size: 14px;
             color: #666;
         }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header .container {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .header nav {
+                display: none; /* Simplified: Replace with a hamburger menu in a real implementation */
+            }
+
+            .header .actions {
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            .main-section .container {
+                flex-direction: column;
+            }
+
+            .main-section .content h1 {
+                font-size: 36px;
+            }
+
+            .main-section .content h3, .main-section .content h4 {
+                font-size: 20px;
+            }
+
+            .footer .top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer .top .buttons {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-section .content h1 {
+                font-size: 28px;
+            }
+
+            .main-section .content p {
+                font-size: 14px;
+            }
+
+            .main-section .pricing-card h4 {
+                font-size: 20px;
+            }
+
+            .main-section .pricing-card .price {
+                font-size: 28px;
+            }
+
+            .footer .top .buttons a {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="logo">
-            <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" alt="Orderific">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="actions">
-            <img src="https://orderific.com/ord-website/assets/img/country-logo.svg" alt="Country Flag">
-            <a href="#" class="login">Login</a>
-            <a href="#" class="start-free">Start for Free</a>
+        <div class="container">
+            <div class="logo">
+                <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" alt="Orderific">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="actions">
+                <img src="https://orderific.com/ord-website/assets/img/country-logo.svg" alt="Country Flag">
+                <a href="#" class="login">Login</a>
+                <a href="#" class="start-free">Start for Free</a>
+            </div>
         </div>
     </header>
 
     <!-- Main Section -->
     <section class="main-section">
-        <div class="content">
-            <h1>Free Plan</h1>
-            <p>Feugiat imperdiet pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
-            <h3>What's included in the plan?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
-            <h4>Is this the right plan for my restaurant?</h4>
-            <p>Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis turpis.</p>
-        </div>
-        <div class="pricing-card">
-            <img src="https://orderific.com/ord-website/assets/img/pricing/logo/icon5.png" alt="Icon">
-            <h4>FREE</h4>
-            <div class="price">$0/mo</div>
-            <p>Lorem ipsum dolor sit amet dolor adipiscing elit sit consectetur elit.</p>
-            <a href="#" class="btn">Get started</a>
-            <p><b>What's included:</b></p>
-            <ul>
-                <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Single Location (30 tables limit)</li>
-                <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Mobile Order & Pay</li>
-                <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Split the Bill</li>
-                <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Delivery & Pickup</li>
-                <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Limited Customizable</li>
-                <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Website Builder Basic</li>
-                <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Kitchen Printer Integration</li>
-                <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Delivery & Pickup</li>
-                <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Gratuities (Tips)</li>
-            </ul>
+        <div class="container">
+            <div class="content">
+                <h1>Free Plan</h1>
+                <p>Feugiat imperdiet pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
+                <h3>What's included in the plan?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
+                <h4>Is this the right plan for my restaurant?</h4>
+                <p>Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis turpis.</p>
+            </div>
+            <div class="pricing-card">
+                <img src="https://orderific.com/ord-website/assets/img/pricing/logo/icon5.png" alt="Icon">
+                <h4>FREE</h4>
+                <div class="price">$0/mo</div>
+                <p>Lorem ipsum dolor sit amet dolor adipiscing elit sit consectetur elit.</p>
+                <a href="#" class="btn">Get started</a>
+                <p><b>What's included:</b></p>
+                <ul>
+                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Single Location (30 tables limit)</li>
+                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Mobile Order & Pay</li>
+                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Split the Bill</li>
+                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Delivery & Pickup</li>
+                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Limited Customizable</li>
+                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Website Builder Basic</li>
+                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Kitchen Printer Integration</li>
+                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Delivery & Pickup</li>
+                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Gratuities (Tips)</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="top">
-            <div class="logo">
-                <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" alt="Orderific">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
-            </div>
-            <div class="buttons">
-                <a href="#"><i class="fab fa-apple"></i> Download for iOS</a>
-                <a href="#"><i class="fab fa-android"></i> Download for Android</a>
-            </div>
-        </div>
-        <div class="links">
-            <div>
-                <h5>Menu</h5>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5>Utility pages</h5>
-                <ul>
-                    <li><a href="#">Start here</a></li>
-                    <li><a href="#">Styleguide</a></li>
-                    <li><a href="#">Password protected</a></li>
-                    <li><a href="#">404 Not found</a></li>
-                    <li><a href="#">Licenses</a></li>
-                    <li><a href="#">Changelog</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5>Available in</h5>
-                <div class="cities">
-                    <span>San Francisco, CA</span>
-                    <span>New York, NY</span>
-                    <span>Los Angeles, CA</span>
-                    <span>Seattle, WA</span>
+        <div class="container">
+            <div class="top">
+                <div class="logo">
+                    <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" alt="Orderific">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+                </div>
+                <div class="buttons">
+                    <a href="#"><i class="fab fa-apple"></i> Download for iOS</a>
+                    <a href="#"><i class="fab fa-android"></i> Download for Android</a>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            Copyright © Delivery X | Designed by BRIX Templates - Powered by Webflow
+            <div class="links">
+                <div>
+                    <h5>Menu</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Utility pages</h5>
+                    <ul>
+                        <li><a href="#">Start here</a></li>
+                        <li><a href="#">Styleguide</a></li>
+                        <li><a href="#">Password protected</a></li>
+                        <li><a href="#">404 Not found</a></li>
+                        <li><a href="#">Licenses</a></li>
+                        <li><a href="#">Changelog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Available in</h5>
+                    <div class="cities">
+                        <div>
+                            <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon1.png" alt="San Francisco">
+                            <span>San Francisco, CA</span>
+                        </div>
+                        <div>
+                            <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon2.png" alt="New York">
+                            <span>New York, NY</span>
+                        </div>
+                        <div>
+                            <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon3.png" alt="Los Angeles">
+                            <span>Los Angeles, CA</span>
+                        </div>
+                        <div>
+                            <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon4.png" alt="Seattle">
+                            <span>Seattle, WA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright © Delivery X | Designed by BRIX Templates - Powered by Webflow
+            </div>
         </div>
     </footer>
 
