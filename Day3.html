@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Details</title>
+    <title>Grid Layout Exercise</title>
     <style>
         /* General Styles */
         body {
@@ -15,10 +15,10 @@
         }
 
         section {
-            max-width: 800px;
+            max-width: 1000px; /* Adjusted to accommodate the full layout */
             margin: 0 auto 30px;
             padding: 15px;
-            background-color: #fff;
+            background: linear-gradient(90deg, #f5f5f5, #f5f5f5); /* Gradient based on #f5f5f5 */
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
@@ -31,30 +31,53 @@
             font-weight: 600;
         }
 
-        /* Card-like Component */
-        .card {
-            background-color: #f7f3f2; /* Updated color as requested */
-            padding: 15px;
-            border-radius: 10px;
-            width: 250px;
-            text-align: center;
-            box-shadow: -8px 0 12px rgba(0, 0, 0, 0.15); /* Enhanced left-side shadow */
-            border: 1px solid #e0e0e0;
-            margin-top: 20px;
+        /* Grid Container */
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-start;
+            padding: 10px;
+            background: linear-gradient(90deg, #f5f5f5, #f5f5f5); /* Matching the rectangle background */
         }
 
-        .card h3 {
+        .grid-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            width: 80px; /* Adjusted to fit the layout */
+            height: 60px; /* Adjusted to match the height in the image */
+            text-align: center;
+            box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1); /* Left-side shadow */
+            border: 1px solid #e0e0e0;
             font-size: 14px;
             color: #333;
-            margin: 0 0 5px;
-            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .card p {
-            color: #666;
-            margin: 0;
-            font-size: 14px;
-        }
+        /* Grid Item Borders (Matching the Highlights from Image) */
+        .grid-item:nth-child(1) { border: 2px solid #ff4444; } /* A1 - Red solid */
+        .grid-item:nth-child(2) { border: 2px solid #ff4444; } /* A2 - Red solid */
+        .grid-item:nth-child(3) { border: 2px dashed #ff4444; } /* A3 - Red dashed */
+        .grid-item:nth-child(4) { border: none; } /* A4 - No border */
+        .grid-item:nth-child(5) { border: 2px solid #00cc00; } /* A5 - Green solid */
+        .grid-item:nth-child(6) { border: 2px solid #00cc00; } /* A6 - Green solid */
+        .grid-item:nth-child(7) { border: 2px solid #00cc00; } /* B1 - Green solid */
+        .grid-item:nth-child(8) { border: 2px solid #00cc00; } /* B2 - Green solid */
+        .grid-item:nth-child(9) { border: 2px solid #00cc00; } /* B3 - Green solid */
+        .grid-item:nth-child(10) { border: 2px solid #00cc00; } /* B4 - Green solid */
+        .grid-item:nth-child(11) { border: 2px solid #ff4444; } /* B5 - Red solid */
+        .grid-item:nth-child(12) { border: 2px solid #ff4444; } /* B6 - Red solid */
+        .grid-item:nth-child(13) { border: 2px solid #00cc00; } /* C1 - Green solid */
+        .grid-item:nth-child(14) { border: 2px solid #00cc00; } /* C2 - Green solid */
+        .grid-item:nth-child(15) { border: 2px solid #00cc00; } /* C3 - Green solid */
+        .grid-item:nth-child(16) { border: 2px solid #00cc00; } /* C4 - Green solid */
+        .grid-item:nth-child(17) { border: 2px solid #00cc00; } /* C5 - Green solid */
+        .grid-item:nth-child(18) { border: 2px solid #00cc00; } /* C6 - Green solid */
+        .grid-item:nth-child(19) { border: 2px solid #00cc00; } /* C7 - Green solid */
+        .grid-item:nth-child(20) { border: none; } /* D1 - No border */
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -66,19 +89,16 @@
                 font-size: 16px;
             }
 
-            .card {
-                width: 200px;
+            .grid-container {
+                justify-content: center;
+            }
+
+            .grid-item {
+                width: 70px;
+                height: 50px;
                 padding: 10px;
-                margin-top: 15px;
-                box-shadow: -6px 0 10px rgba(0, 0, 0, 0.15); /* Adjusted shadow for smaller screens */
-            }
-
-            .card h3 {
                 font-size: 12px;
-            }
-
-            .card p {
-                font-size: 12px;
+                box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1); /* Adjusted shadow for smaller screens */
             }
         }
 
@@ -92,19 +112,12 @@
                 font-size: 14px;
             }
 
-            .card {
-                width: 150px;
+            .grid-item {
+                width: 60px;
+                height: 40px;
                 padding: 8px;
-                margin-top: 10px;
-                box-shadow: -4px 0 8px rgba(0, 0, 0, 0.15); /* Further adjusted shadow */
-            }
-
-            .card h3 {
                 font-size: 10px;
-            }
-
-            .card p {
-                font-size: 10px;
+                box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1); /* Further adjusted shadow */
             }
         }
 
@@ -132,10 +145,28 @@
 </head>
 <body>
     <section>
-        <h2>Order Details</h2>
-        <div class="card">
-            <h3>#2001</h3>
-            <p>Ralph Edwards<br>Ordered<br>14 min ago</p>
+        <h2>Flexbox Exercises: (1 Hour)</h2>
+        <div class="grid-container">
+            <div class="grid-item">A1</div>
+            <div class="grid-item">A2</div>
+            <div class="grid-item">A3</div>
+            <div class="grid-item">A4</div>
+            <div class="grid-item">A5</div>
+            <div class="grid-item">A6</div>
+            <div class="grid-item">B1</div>
+            <div class="grid-item">B2</div>
+            <div class="grid-item">B3</div>
+            <div class="grid-item">B4</div>
+            <div class="grid-item">B5</div>
+            <div class="grid-item">B6</div>
+            <div class="grid-item">C1</div>
+            <div class="grid-item">C2</div>
+            <div class="grid-item">C3</div>
+            <div class="grid-item">C4</div>
+            <div class="grid-item">C5</div>
+            <div class="grid-item">C6</div>
+            <div class="grid-item">C7</div>
+            <div class="grid-item">D1</div>
         </div>
     </section>
 </body>
