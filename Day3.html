@@ -21,11 +21,10 @@
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            width: 600px; /* Wider than tall */
-            height: 400px; /* Shorter than wide */
+            width: 600px; /* Wider than previous but fixed width */
+            height: 650px; /* Increased height to fit all 6 items (3 rows of 2) */
             display: flex;
             flex-direction: column;
-            overflow-y: auto;
         }
 
         h2 {
@@ -53,7 +52,7 @@
 
         .item {
             background-color: #fff;
-            width: 180px; /* Larger size, square */
+            width: 180px; /* Square size */
             height: 180px; /* Square, matching width */
             border-radius: 8px; /* Square with slightly rounded corners */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -85,7 +84,7 @@
         @media (max-width: 768px) {
             .container {
                 width: 90%;
-                height: 350px;
+                height: 550px; /* Adjusted height for smaller screens */
                 padding: 8px;
             }
 
@@ -117,7 +116,7 @@
         @media (max-width: 480px) {
             .container {
                 width: 95%;
-                height: 300px;
+                height: 900px; /* Increased height for one-column layout */
                 padding: 5px;
             }
 
@@ -127,7 +126,7 @@
             }
 
             .items-container {
-                grid-template-columns: 1fr; /* Switch to one column on very small screens */
+                grid-template-columns: 1fr; /* Switch to one column */
                 gap: 8px;
                 padding: 0 5px;
             }
