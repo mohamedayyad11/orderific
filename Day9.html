@@ -261,13 +261,37 @@
             line-height: 2;
         }
 
+        .footer .links .menu-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer .links .menu-list li {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer .links .menu-list .sub-items {
+            display: flex;
+            gap: 10px;
+            margin-left: 10px;
+        }
+
+        .footer .links .menu-list .sub-items a {
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+        }
+
         .footer .links ul li a.browse {
             color: #EF6C00;
+            text-decoration: underline;
         }
 
         .footer .links .cities {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
 
@@ -431,11 +455,23 @@
             <div class="links">
                 <div>
                     <h5>Menu</h5>
-                    <ul>
+                    <ul class="menu-list">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li>
+                            <a href="#">About</a>
+                            <span class="sub-items">
+                                <a href="#">Plan single</a>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                            <span class="sub-items">
+                                <a href="#">Register</a>
+                            </span>
+                        </li>
+                        <li><a href="#">Blog</a></li>
                         <li><a href="#">Blog posts</a></li>
+                        <li><a href="#">Plans</a></li>
                     </ul>
                 </div>
                 <div>
@@ -458,12 +494,12 @@
                             <span>San Francisco, CA</span>
                         </div>
                         <div>
-                            <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon2.png" alt="New York">
-                            <span>New York, NY</span>
-                        </div>
-                        <div>
                             <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon3.png" alt="Los Angeles">
                             <span>Los Angeles, CA</span>
+                        </div>
+                        <div>
+                            <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon2.png" alt="New York">
+                            <span>New York, NY</span>
                         </div>
                         <div>
                             <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon4.png" alt="Seattle">
