@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orderific: Popular Items & World Cuisine Highlights</title>
+    <title>Box Model Exercises</title>
     <style>
         /* General Styles */
         body {
@@ -12,13 +12,6 @@
             margin: 0;
             padding: 20px;
             font-size: 14px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 20px;
         }
 
         section {
@@ -38,97 +31,51 @@
             font-weight: 600;
         }
 
-        /* Popular Items (Flexbox) */
-        .popular-items {
-            text-align: left;
+        p {
+            color: #666;
+            font-size: 14px;
+            margin: 0 0 10px;
+            line-height: 1.5;
         }
 
-        .items-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
+        p.task {
+            margin-left: 20px;
         }
 
-        .item {
+        p.task::before {
+            content: "•";
+            color: #333;
+            margin-right: 5px;
+        }
+
+        p.task.highlight {
+            color: #00cc00; /* Green color for highlighted task */
+        }
+
+        /* Card-like Component */
+        .card {
             background-color: #fff;
             padding: 15px;
             border-radius: 10px;
-            width: calc(33.33% - 10px); /* 3 columns */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 250px;
             text-align: center;
+            box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1); /* Left-side shadow */
             border: 1px solid #e0e0e0;
+            margin-top: 20px;
         }
 
-        .item h3 {
-            font-size: 16px;
-            color: #333;
-            margin: 0 0 5px;
-            font-weight: 600;
-        }
-
-        .item p {
-            color: #666;
-            margin: 0;
-            font-size: 14px;
-        }
-
-        /* World Cuisine Highlights (Flexbox for 3-column layout) */
-        .world-cuisine {
-            text-align: left;
-        }
-
-        .grid-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .grid-item {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            width: calc(33.33% - 10px); /* 3 columns */
-            text-align: left;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e0e0e0;
-        }
-
-        .grid-item h3 {
+        .card h3 {
             font-size: 14px;
             color: #333;
             margin: 0 0 5px;
             font-weight: 600;
         }
 
-        .grid-item p {
+        .card p {
             color: #666;
             margin: 0;
             font-size: 14px;
         }
-
-        /* Grid Item Borders (Matching the Highlights from Image) */
-        .grid-item:nth-child(1) { border: 2px solid #ff4444; } /* A1 */
-        .grid-item:nth-child(2) { border: 2px solid #ff4444; } /* A2 */
-        .grid-item:nth-child(3) { border: 2px dashed #ff4444; } /* A3 */
-        .grid-item:nth-child(4) { border: none; } /* A4 */
-        .grid-item:nth-child(5) { border: 2px solid #00cc00; } /* A5 */
-        .grid-item:nth-child(6) { border: 2px solid #00cc00; } /* A6 */
-        .grid-item:nth-child(7) { border: 2px solid #00cc00; } /* B1 */
-        .grid-item:nth-child(8) { border: 2px solid #00cc00; } /* B2 */
-        .grid-item:nth-child(9) { border: 2px solid #00cc00; } /* B3 */
-        .grid-item:nth-child(10) { border: 2px solid #00cc00; } /* B4 */
-        .grid-item:nth-child(11) { border: 2px solid #ff4444; } /* B5 */
-        .grid-item:nth-child(12) { border: 2px solid #ff4444; } /* B6 */
-        .grid-item:nth-child(13) { border: 2px solid #00cc00; } /* C1 */
-        .grid-item:nth-child(14) { border: 2px solid #00cc00; } /* C2 */
-        .grid-item:nth-child(15) { border: 2px solid #00cc00; } /* C3 */
-        .grid-item:nth-child(16) { border: 2px solid #00cc00; } /* C4 */
-        .grid-item:nth-child(17) { border: 2px solid #00cc00; } /* C5 */
-        .grid-item:nth-child(18) { border: 2px solid #00cc00; } /* C6 */
-        .grid-item:nth-child(19) { border: 2px solid #00cc00; } /* C7 */
-        .grid-item:nth-child(20) { border: none; } /* D1 */
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -140,16 +87,21 @@
                 font-size: 16px;
             }
 
-            .item, .grid-item {
-                width: calc(50% - 10px); /* 2 columns */
+            p {
+                font-size: 12px;
+            }
+
+            .card {
+                width: 200px;
                 padding: 10px;
+                margin-top: 15px;
             }
 
-            .item h3, .grid-item h3 {
-                font-size: 14px;
+            .card h3 {
+                font-size: 12px;
             }
 
-            .item p, .grid-item p {
+            .card p {
                 font-size: 12px;
             }
         }
@@ -164,16 +116,21 @@
                 font-size: 14px;
             }
 
-            .item, .grid-item {
-                width: 100%; /* 1 column */
+            p {
+                font-size: 10px;
+            }
+
+            .card {
+                width: 150px;
                 padding: 8px;
+                margin-top: 10px;
             }
 
-            .item h3, .grid-item h3 {
-                font-size: 12px;
+            .card h3 {
+                font-size: 10px;
             }
 
-            .item p, .grid-item p {
+            .card p {
                 font-size: 10px;
             }
         }
@@ -201,122 +158,17 @@
     </style>
 </head>
 <body>
-    <h1>Orderific: Popular Items & World Cuisine Highlights</h1>
-
-    <!-- Popular Items (Flexbox) -->
-    <section class="popular-items">
-        <h2>Popular Items</h2>
-        <div class="items-container">
-            <div class="item">
-                <h3>Double Chicken Burger + French fries</h3>
-                <p>Order: 88</p>
-            </div>
-            <div class="item">
-                <h3>Mexican Burger</h3>
-                <p>Order: 74</p>
-            </div>
-            <div class="item">
-                <h3>Double Cheese</h3>
-                <p>Order: 56</p>
-            </div>
-            <div class="item">
-                <h3>Double Spicy Bean Burger</h3>
-                <p>Order: 41</p>
-            </div>
-            <div class="item">
-                <h3>Potato Gems</h3>
-                <p>Order: 38</p>
-            </div>
-            <div class="item">
-                <h3>Beer</h3>
-                <p>Order: 32</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- World Cuisine Highlights (Flexbox for 3-column layout) -->
-    <section class="world-cuisine">
-        <h2>World Cuisine Highlights</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <h3>#2001</h3>
-                <p>Ralph Edwards<br>Ordered<br>14 min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2002</h3>
-                <p>Jane Smith<br>Ordered<br>5min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2003</h3>
-                <p>John Doe<br>Ordered<br>10min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2004</h3>
-                <p>Emily Johnson<br>Ordered<br>15min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2005</h3>
-                <p>Michael Brown<br>Ordered<br>20min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2006</h3>
-                <p>Sarah Davis<br>Ordered<br>25min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2007</h3>
-                <p>David Wilson<br>Ordered<br>30min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2008</h3>
-                <p>Lisa Anderson<br>Ordered<br>35min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2009</h3>
-                <p>Robert Taylor<br>Ordered<br>40min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2010</h3>
-                <p>Patricia White<br>Ordered<br>45min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2011</h3>
-                <p>James Harris<br>Ordered<br>50min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2012</h3>
-                <p>Barbara Martinez<br>Ordered<br>55min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2013</h3>
-                <p>Charles Clark<br>Ordered<br>60min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2014</h3>
-                <p>Deborah Lewis<br>Ordered<br>65min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2015</h3>
-                <p>Thomas Walker<br>Ordered<br>70min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2016</h Search for more information if needed.
-            </div>
-            <div class="grid-item">
-                <h3>#2017</h3>
-                <p>Paul Allen<br>Ordered<br>80min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2018</h3>
-                <p>Helen Young<br>Ordered<br>85min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2019</h3>
-                <p>George King<br>Ordered<br>90min ago</p>
-            </div>
-            <div class="grid-item">
-                <h3>#2020</h3>
-                <p>Mary Scott<br>Ordered<br>95min ago</p>
-            </div>
+    <section>
+        <h2>Day 3: Hands-on Practice & Assessments (2 hour)</h2>
+        <h2>Box Model Exercises</h2>
+        <p>Task 1: Create a box with different border widths and colors.</p>
+        <p class="task">Task 2: Add padding to a &lt;div&gt; and observe the changes.</p>
+        <p class="task">Task 3: Adjust margins to space elements properly.</p>
+        <p class="task highlight">Task 4: Use box-sizing: border-box; to control width calculations.</p>
+        <p class="task">Task 5: Create a card-like component with padding, margin, and a border.</p>
+        <div class="card">
+            <h3>#2001</h3>
+            <p>Ralph Edwards<br>Ordered<br>14 min ago</p>
         </div>
     </section>
 </body>
