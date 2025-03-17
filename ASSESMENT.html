@@ -35,6 +35,7 @@
         .pricing-container {
             max-width: 400px;
             width: 100%;
+            position: relative;
         }
 
         .pricing-card {
@@ -42,26 +43,43 @@
             border-radius: var(--border-radius);
             padding: 2rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            text-align: left;
+            text-align: center;
             position: relative;
-            overflow: hidden; /* Ensures image stays within card */
+            overflow: visible; /* Allows image to extend outside */
         }
 
-        .badge-image {
+        .top-image {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
+            top: -1.25rem; /* Half outside, half inside */
+            left: -1.25rem;
             width: 2.5rem;
             height: 2.5rem;
             border-radius: 50%; /* Circular shape */
             background: url('https://via.placeholder.com/40') no-repeat center/cover; /* Placeholder image */
             border: 2px solid var(--primary-color); /* Optional border for visibility */
+            transform: translateY(-50%); /* Center vertically with top offset */
+        }
+
+        .header-group {
+            margin-bottom: 0.5rem;
+        }
+
+        .small-image {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: url('https://via.placeholder.com/20') no-repeat center/cover; /* Placeholder small image */
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.5rem;
         }
 
         .pricing-card h2 {
             font-size: 1.5rem;
             color: var(--text-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
+            display: inline-block;
+            vertical-align: middle;
         }
 
         .pricing-card .price {
@@ -69,12 +87,17 @@
             color: var(--text-color);
             margin-bottom: 0.5rem;
             font-weight: bold;
+            display: inline-block;
+            vertical-align: middle;
         }
 
         .pricing-card .price span {
             font-size: 1rem;
             color: var(--light-text-color);
             font-weight: normal;
+            margin-left: 0.25rem;
+            display: inline-block;
+            vertical-align: middle;
         }
 
         .pricing-card .description {
@@ -82,6 +105,7 @@
             color: var(--light-text-color);
             margin-bottom: 1.5rem;
             line-height: 1.5;
+            text-align: center;
         }
 
         .pricing-card .btn {
@@ -109,11 +133,13 @@
             color: var(--text-color);
             margin-bottom: 1rem;
             font-weight: bold;
+            text-align: left;
         }
 
         .pricing-card ul {
             list-style: none;
             margin-bottom: 2rem;
+            text-align: left;
         }
 
         .pricing-card ul li {
@@ -131,7 +157,7 @@
             position: absolute;
             left: 0;
             font-size: 0.875rem;
-            font-weight: bold; /* Ensure checkmark stands out */
+            font-weight: bold;
         }
 
         .pricing-card ul li strong {
@@ -149,6 +175,7 @@
             font-size: 0.875rem;
             color: var(--light-text-color);
             line-height: 1.5;
+            text-align: left;
         }
 
         .pricing-card .ideal-section strong {
@@ -183,11 +210,16 @@
                 font-size: 0.9rem;
             }
 
-            .badge-image {
-                top: 0.75rem;
-                left: 0.75rem;
+            .top-image {
+                top: -1rem;
+                left: -1rem;
                 width: 2rem;
                 height: 2rem;
+            }
+
+            .small-image {
+                width: 0.75rem;
+                height: 0.75rem;
             }
         }
 
@@ -208,11 +240,16 @@
                 font-size: 0.85rem;
             }
 
-            .badge-image {
-                top: 0.5rem;
-                left: 0.5rem;
+            .top-image {
+                top: -0.75rem;
+                left: -0.75rem;
                 width: 1.75rem;
                 height: 1.75rem;
+            }
+
+            .small-image {
+                width: 0.5rem;
+                height: 0.5rem;
             }
         }
 
@@ -231,9 +268,15 @@
     <div class="pricing-container">
         <!-- Full/Pro Plan -->
         <div class="pricing-card">
-            <div class="badge-image"></div>
-            <h2>Full/Pro Plan</h2>
-            <div class="price">$99<span>/Month</span></div>
+            <div class="top-image"></div>
+            <div class="header-group">
+                <span class="small-image"></span>
+                <h2>Full/Pro Plan</h2>
+            </div>
+            <div class="header-group">
+                <span class="small-image"></span>
+                <div class="price">$99<span>/month</span></div>
+            </div>
             <p class="description">Become a culinary sensation with Orderific's Full Plan at just $99/month.</p>
             <a href="#" class="btn">Get Started</a>
             <h3>Key Features:</h3>
