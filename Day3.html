@@ -12,15 +12,20 @@
             margin: 0;
             padding: 20px;
             font-size: 14px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
         }
 
-        section {
-            max-width: 800px;
-            margin: 0 auto;
+        .container {
+            background-color: #e0e0e0; /* Bright grey color */
+            border-radius: 10px 10px 10px 10px; /* Circular ends on all corners */
             padding: 15px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 800px; /* Fixed width to match the original layout */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Added shadow */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
         }
 
         h2 {
@@ -29,6 +34,7 @@
             font-size: 18px;
             margin-bottom: 15px;
             font-weight: 600;
+            padding-left: 15px; /* Align with item padding */
         }
 
         /* Popular Items (Flexbox) */
@@ -40,7 +46,8 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            justify-content: center;
+            justify-content: flex-start; /* Align with x-axis of rectangles */
+            padding-left: 15px; /* Match item padding for x-axis alignment */
         }
 
         .item {
@@ -68,12 +75,19 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            section {
+            .container {
+                width: 90%; /* Adjust width for smaller screens */
                 padding: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             }
 
             h2 {
                 font-size: 16px;
+                padding-left: 10px;
+            }
+
+            .items-container {
+                padding-left: 10px;
             }
 
             .item {
@@ -91,13 +105,19 @@
         }
 
         @media (max-width: 480px) {
-            section {
+            .container {
+                width: 95%; /* Full width for very small screens */
                 padding: 5px;
-                margin-bottom: 20px;
+                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
             }
 
             h2 {
                 font-size: 14px;
+                padding-left: 5px;
+            }
+
+            .items-container {
+                padding-left: 5px;
             }
 
             .item {
@@ -137,34 +157,36 @@
     </style>
 </head>
 <body>
-    <section class="popular-items">
+    <div class="container">
         <h2>Popular Items</h2>
-        <div class="items-container">
-            <div class="item">
-                <h3>Double Chicken Burger + French fries</h3>
-                <p>Order: 88</p>
-            </div>
-            <div class="item">
-                <h3>Mexican Burger</h3>
-                <p>Order: 74</p>
-            </div>
-            <div class="item">
-                <h3>Double Cheese</h3>
-                <p>Order: 56</p>
-            </div>
-            <div class="item">
-                <h3>Double Spicy Bean Burger</h3>
-                <p>Order: 41</p>
-            </div>
-            <div class="item">
-                <h3>Potato Gems</h3>
-                <p>Order: 38</p>
-            </div>
-            <div class="item">
-                <h3>Beer</h3>
-                <p>Order: 32</p>
+        <div class="popular-items">
+            <div class="items-container">
+                <div class="item">
+                    <h3>Double Chicken Burger + French fries</h3>
+                    <p>Order: 88</p>
+                </div>
+                <div class="item">
+                    <h3>Mexican Burger</h3>
+                    <p>Order: 74</p>
+                </div>
+                <div class="item">
+                    <h3>Double Cheese</h3>
+                    <p>Order: 56</p>
+                </div>
+                <div class="item">
+                    <h3>Double Spicy Bean Burger</h3>
+                    <p>Order: 41</p>
+                </div>
+                <div class="item">
+                    <h3>Potato Gems</h3>
+                    <p>Order: 38</p>
+                </div>
+                <div class="item">
+                    <h3>Beer</h3>
+                    <p>Order: 32</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 </body>
 </html>
