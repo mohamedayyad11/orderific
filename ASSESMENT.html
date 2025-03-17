@@ -3,95 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing Plan</title>
+    <title>Pricing - Orderific</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-        .pricing-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
             padding: 20px;
-            max-width: 400px;
-            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .badge {
-            background: #FF6F61;
-            color: white;
-            padding: 5px 10px;
-            font-size: 12px;
-            border-radius: 15px;
-            display: inline-block;
-            position: relative;
-            top: -20px;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .price {
+
+        .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #333;
+            color: #2c3e50;
         }
-        .btn {
-            background: #FF6F61;
-            color: white;
-            padding: 10px 20px;
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .nav-links li a:hover {
+            color: #e74c3c;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .pricing-section h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-section p {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        /* Toggle Switch */
+        .toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #e74c3c;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Pricing Cards */
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .card .price {
+            font-size: 40px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .card .price span {
+            font-size: 16px;
+            font-weight: normal;
+            color: #7f8c8d;
+        }
+
+        .card .description {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin: 10px 0 20px;
+        }
+
+        .card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .card ul li {
+            font-size: 16px;
+            margin: 10px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .card ul li:before {
+            content: "✓";
+            color: #e74c3c;
+            position: absolute;
+            left: 0;
+        }
+
+        .card button {
+            background: #e74c3c;
+            color: #fff;
             border: none;
+            padding: 10px 20px;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            margin-top: 15px;
+            transition: background 0.3s;
         }
-        .btn:hover {
-            background: #e65c50;
+
+        .card button:hover {
+            background: #c0392b;
         }
-        .features {
-            text-align: left;
-            margin-top: 20px;
+
+        .hidden {
+            display: none;
         }
-        .features li {
-            list-style: none;
-            padding: 5px 0;
-            font-size: 14px;
-        }
-        .features li:before {
-            content: "\2713";
-            color: #FF6F61;
-            font-weight: bold;
-            margin-right: 5px;
-        }
-        .footer {
-            font-size: 14px;
-            margin-top: 15px;
-            color: #666;
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="pricing-card">
-        <div class="badge">No Setup Fee or Binding Contracts</div>
-        <h2>Full/Pro Plan</h2>
-        <div class="price">$99/month</div>
-        <p>Become a culinary sensation with Orderific's Full Plan at just $99/month.</p>
-        <button class="btn">Get Started</button>
-        <ul class="features">
-            <li>Digital Smart Menu - Real-time updates.</li>
-            <li>Loyalty Program - Rewarding & retaining customers.</li>
-            <li>Business Analytics - Analyze & strategize data.</li>
-            <li>Website Builder - Create a dynamic online presence.</li>
-            <li>Integrated Payment Options - Customer convenience.</li>
-            <li>Delivery System Setup - Manage deliveries.</li>
-            <li>Marketing Tools - Enhance reach & effectiveness.</li>
-            <li>Menu Translation - Multi-language support.</li>
-            <li>Clear Reporting - Stay informed with analytics.</li>
-            <li>Seamless POS Integration - Efficient connection.</li>
-        </ul>
-        <div class="footer">...and much more!</div>
-    </div>
+    <header>
+        <nav>
+            <div class="logo">Orderific</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="pricing-section">
+        <h1>Pricing Plans</h1>
+        <p>Choose the plan that fits your restaurant's needs.</p>
+        <div class="toggle">
+            <span>Monthly</span>
+            <label class="switch">
+                <input type="checkbox" id="pricing-toggle">
+                <span class="slider"></span>
+            </label>
+            <span>Yearly (Save 20%)</span>
+        </div>
+
+        <div class="pricing-cards">
+            <div class="card complimentary">
+                <h2>Complimentary</h2>
+                <p class="price monthly">$0<span>/mo</span></p>
+                <p class="price yearly hidden">$0<span>/yr</span></p>
+                <p class="description">Free with Price Guarantee</p>
+                <ul>
+                    <li>Smart Menu</li>
+                    <li>Zero Commissions</li>
+                    <li>Loyalty Program</li>
+                    <li>Basic Analytics</li>
+                </ul>
+                <button>Get Started</button>
+            </div>
+            <div class="card full">
+                <h2>Full Plan</h2>
+                <p class="price monthly">$99<span>/mo</span></p>
+                <p class="price yearly hidden">$950<span>/yr</span></p>
+                <p class="description">Everything you need to succeed</p>
+                <ul>
+                    <li>All Complimentary Features</li>
+                    <li>Advanced Analytics</li>
+                    <li>Multi-Language Menus</li>
+                    <li>Priority Support</li>
+                </ul>
+                <button>Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Orderific. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('pricing-toggle').addEventListener('change', function() {
+            const monthlyPrices = document.querySelectorAll('.price.monthly');
+            const yearlyPrices = document.querySelectorAll('.price.yearly');
+
+            if (this.checked) {
+                monthlyPrices.forEach(price => price.classList.add('hidden'));
+                yearlyPrices.forEach(price => price.classList.remove('hidden'));
+            } else {
+                monthlyPrices.forEach(price => price.classList.remove('hidden'));
+                yearlyPrices.forEach(price => price.classList.add('hidden'));
+            }
+        });
+    </script>
 </body>
 </html>
