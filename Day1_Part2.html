@@ -4,182 +4,272 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Orderific - HTML5 Forms, Multimedia, and Notifications">
+    <meta name="theme-color" content="#f5e6ea">
     <title>Orderific - All-in-One Solution</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            background-color: #f5f5f5;
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #28a745;
+            --background-color: #f5e6ea;
+            --text-color: #333;
+            --border-radius: 8px;
+            --spacing: 1.5rem;
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: var(--spacing);
+        }
+
         header {
             text-align: center;
-            margin-bottom: 30px;
-        }
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-        }
-        h2 {
-            color: #1a73e8;
-            margin-top: 0;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding: 20px;
+            margin-bottom: var(--spacing);
+            padding: var(--spacing);
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            color: var(--primary-color);
+        }
+
+        h2 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .section {
+            margin-bottom: var(--spacing);
+            padding: var(--spacing);
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-2px);
+        }
+
         hr {
             border: 0;
             height: 1px;
             background: #ddd;
-            margin: 30px 0;
+            margin: calc(var(--spacing) * 1.5) 0;
         }
+
         form {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 1rem;
         }
+
         label {
-            font-weight: bold;
-            color: #333;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
         }
-        input, button {
-            padding: 10px;
+
+        input {
+            padding: 0.75rem;
             border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            width: 100%;
+            max-width: 100%;
+            transition: border-color 0.3s;
         }
         input:invalid {
             border-color: #ff4444;
         }
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(26, 115, 232, 0.5);
+        }
+
         button {
-            background-color: #1a73e8;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
             color: white;
             border: none;
+            border-radius: var(--border-radius);
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.2s;
         }
         button:hover {
             background-color: #1557b0;
+            transform: scale(1.05);
         }
+
         .error {
             color: #ff4444;
-            font-size: 14px;
+            font-size: 0.875rem;
             display: none;
         }
+
         video, audio, iframe {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
+            width: 100%;
+            max-width: 600px;
+            border-radius: var(--border-radius);
+            margin: 0 auto;
+            display: block;
         }
+
         .svg-container {
             text-align: center;
+            margin: 1rem 0;
         }
+
         .notifications {
             display: flex;
-            justify-content: space-between;
+            gap: var(--spacing);
+            flex-wrap: wrap;
         }
+
         .notifications-list {
-            flex: 3;
+            flex: 2;
+            min-width: 0;
         }
+
         .notifications-settings {
             flex: 1;
-            padding-left: 20px;
+            min-width: 200px;
         }
+
         .notification-item {
-            padding: 10px;
+            padding: 0.75rem;
             border-bottom: 1px solid #eee;
+            transition: background-color 0.3s;
+        }
+        .notification-item:hover {
+            background-color: #f9f9f9;
         }
         .notification-item:last-child {
             border-bottom: none;
         }
+
         .tabs {
             display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
+
         .tab {
-            padding: 5px 10px;
+            padding: 0.5rem 1rem;
             background-color: #f0f0f0;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             cursor: pointer;
+            transition: background-color 0.3s;
         }
         .tab.active {
-            background-color: #0066cc;
+            background-color: var(--primary-color);
             color: white;
         }
+        .tab:hover {
+            background-color: #e0e0e0;
+        }
+
         .settings-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 0.75rem;
         }
+
         .toggle {
-            width: 40px;
-            height: 20px;
+            width: 2.5rem;
+            height: 1.25rem;
             background-color: #ccc;
-            border-radius: 10px;
+            border-radius: 0.625rem;
             position: relative;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
         .toggle.active {
-            background-color: #28a745;
+            background-color: var(--secondary-color);
         }
         .toggle-circle {
-            width: 18px;
-            height: 18px;
+            width: 1.125rem;
+            height: 1.125rem;
             background-color: white;
             border-radius: 50%;
             position: absolute;
-            top: 1px;
-            left: 1px;
+            top: 0.0625rem;
+            left: 0.0625rem;
             transition: transform 0.3s;
         }
         .toggle.active .toggle-circle {
-            transform: translateX(20px);
+            transform: translateX(calc(2.5rem - 1.125rem - 0.125rem));
         }
+
         footer {
             text-align: center;
-            padding: 20px;
+            padding: var(--spacing);
             background-color: #f0f0f0;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing);
         }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             body {
-                padding: 10px;
+                padding: 0.5rem;
             }
             .section {
-                padding: 15px;
+                padding: 1rem;
             }
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.5em; }
-            p { font-size: 0.95em; }
             .notifications {
                 flex-direction: column;
             }
             .notifications-settings {
                 padding-left: 0;
-                margin-top: 20px;
+                margin-top: 1rem;
             }
             iframe {
                 height: 200px;
             }
+            button {
+                width: 100%;
+            }
         }
+
         @media (max-width: 480px) {
-            h1 { font-size: 1.5em; }
-            h2 { font-size: 1.3em; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
             .section {
-                margin-bottom: 20px;
+                margin-bottom: 1rem;
             }
-            button, input {
-                padding: 8px 15px;
+            input, button {
+                font-size: 0.9rem;
+                padding: 0.5rem;
             }
+            .tabs {
+                flex-direction: column;
+            }
+            .tab {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Accessibility */
+        [aria-hidden="true"] {
+            display: none;
+        }
+        button, input {
+            touch-action: manipulation;
         }
     </style>
 </head>
@@ -191,24 +281,24 @@
     </header>
 
     <!-- Task 1: User Registration Form with Validation -->
-    <section class="section">
-        <h2>Point of Sale - Register</h2>
+    <section class="section" aria-labelledby="reg-section">
+        <h2 id="reg-section">Point of Sale - Register</h2>
         <form id="registrationForm" onsubmit="return validateForm(event)">
             <label for="reg-username">Username:</label>
-            <input type="text" id="reg-username" name="username" required minlength="3" pattern="[A-Za-z0-9]+" title="Only letters and numbers allowed">
-            <div class="error" id="usernameError">Username must be at least 3 characters (letters and numbers only).</div>
+            <input type="text" id="reg-username" name="username" required minlength="3" pattern="[A-Za-z0-9]+" title="Only letters and numbers allowed" aria-describedby="usernameError">
+            <div class="error" id="usernameError" role="alert">Username must be at least 3 characters (letters and numbers only).</div>
 
             <label for="reg-email">Email:</label>
-            <input type="email" id="reg-email" name="email" required>
-            <div class="error" id="emailError">Please enter a valid email address.</div>
+            <input type="email" id="reg-email" name="email" required aria-describedby="emailError">
+            <div class="error" id="emailError" role="alert">Please enter a valid email address.</div>
 
             <label for="reg-password">Password:</label>
-            <input type="password" id="reg-password" name="password" required pattern="[A-Za-z0-9]{6,}" title="At least 6 characters">
-            <div class="error" id="passwordError">Password must be at least 6 characters with letters and numbers.</div>
+            <input type="password" id="reg-password" name="password" required pattern="[A-Za-z0-9]{6,}" title="At least 6 characters" aria-describedby="passwordError">
+            <div class="error" id="passwordError" role="alert">Password must be at least 6 characters with letters and numbers.</div>
 
             <label for="age">Age:</label>
-            <input type="number" id="age" name="age" min="18" max="100" required>
-            <div class="error" id="ageError">Age must be between 18 and 100.</div>
+            <input type="number" id="age" name="age" min="18" max="100" required aria-describedby="ageError">
+            <div class="error" id="ageError" role="alert">Age must be between 18 and 100.</div>
 
             <button type="submit">Register</button>
         </form>
@@ -216,8 +306,8 @@
     <hr>
 
     <!-- Task 5: WSP Sign-in Form (No Styling) -->
-    <section class="section">
-        <h2>Advanced Reporting - Sign In</h2>
+    <section class="section" aria-labelledby="signin-section">
+        <h2 id="signin-section">Advanced Reporting - Sign In</h2>
         <form>
             <label for="signin-username">WSP Username:</label><br>
             <input type="text" id="signin-username" name="username" required><br>
@@ -232,15 +322,15 @@
     <hr>
 
     <!-- Task 2: Video and Audio Player -->
-    <section class="section">
-        <h2>Online Ordering - Media</h2>
+    <section class="section" aria-labelledby="media-section">
+        <h2 id="media-section">Online Ordering - Media</h2>
         <p>Watch a sample video:</p>
-        <video controls>
+        <video controls aria-label="Sample video player">
             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <p>Listen to a sample audio:</p>
-        <audio controls>
+        <audio controls aria-label="Sample audio player">
             <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
             Your browser does not support the audio tag.
         </audio>
@@ -248,11 +338,11 @@
     <hr>
 
     <!-- Task 3: SVG Icon -->
-    <section class="section">
-        <h2>Table Reservations - SVG Icon</h2>
+    <section class="section" aria-labelledby="svg-section">
+        <h2 id="svg-section">Table Reservations - SVG Icon</h2>
         <div class="svg-container">
-            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#1a73e8"/>
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Star icon">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="var(--primary-color)"/>
             </svg>
             <p>A star icon inspired by Figma design principles.</p>
         </div>
@@ -260,58 +350,59 @@
     <hr>
 
     <!-- Task 4: YouTube Video -->
-    <section class="section">
-        <h2>Menu Management - Video Tutorial</h2>
+    <section class="section" aria-labelledby="youtube-section">
+        <h2 id="youtube-section">Menu Management - Video Tutorial</h2>
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
                 title="YouTube video player" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></iframe>
+                allowfullscreen 
+                aria-label="YouTube video tutorial"></iframe>
         <p>Watch this sample video from YouTube.</p>
     </section>
     <hr>
 
     <!-- Figma Data: Notifications Section -->
-    <section class="section">
-        <h2>Notifications</h2>
-        <div class="tabs">
-            <div class="tab active">Unread <span style="background:#0066cc; color:white; padding:2px 6px; border-radius:10px;">8</span></div>
-            <div class="tab">All</div>
+    <section class="section" aria-labelledby="notifications-section">
+        <h2 id="notifications-section">Notifications</h2>
+        <div class="tabs" role="tablist">
+            <div class="tab active" role="tab" aria-selected="true">Unread <span style="background:var(--primary-color); color:white; padding:2px 6px; border-radius:10px;">8</span></div>
+            <div class="tab" role="tab" aria-selected="false">All</div>
         </div>
         <div class="notifications">
-            <div class="notifications-list">
-                <div class="notification-item">
+            <div class="notifications-list" role="region" aria-label="Notification list">
+                <div class="notification-item" role="listitem">
                     <p>#202 order, "mushroom burger" was "accepted". <span style="float:right;">11:32</span><br>6 Jan 2024</p>
                 </div>
-                <div class="notification-item">
+                <div class="notification-item" role="listitem">
                     <p>#588 order, "Soda" was Ready. <span style="float:right;">11:11</span><br>6 Jan 2024</p>
                 </div>
-                <div class="notification-item">
+                <div class="notification-item" role="listitem">
                     <p>#164 order for "Table A101" Placed. <span style="float:right;">10:59</span><br>6 Jan 2024</p>
                 </div>
-                <div class="notification-item">
+                <div class="notification-item" role="listitem">
                     <p>#202 order was Completed. <span style="float:right;">18:36</span><br>5 Jan 2024</p>
                 </div>
-                <div class="notification-item">
+                <div class="notification-item" role="listitem">
                     <p>#202 order, "mushroom burger" was "Served". <span style="float:right;">18:07</span><br>5 Jan 2024</p>
                 </div>
-                <div class="notification-item">
+                <div class="notification-item" role="listitem">
                     <p>#202 order was Completed. <span style="float:right;">17:17</span><br>5 Jan 2024</p>
                 </div>
-                <div class="notification-item">
+                <div class="notification-item" role="listitem">
                     <p>#164 order for "Table A101" Placed. <span style="float:right;">17:01</span><br>5 Jan 2024</p>
                 </div>
-                <div class="notification-item">
+                <div class="notification-item" role="listitem">
                     <p>#164 order for "Table A101" Placed. <span style="float:right;">16:24</span><br>5 Jan 2024</p>
                 </div>
-                <div class="notification-item">
+                <div class="notification-item" role="listitem">
                     <p>#202 order was Completed. <span style="float:right;">16:20</span><br>5 Jan 2024</p>
                 </div>
-                <div class="notification-item">
+                <div class="notification-item" role="listitem">
                     <p>#588 order, "Soda" was Ready. <span style="float:right;">16:10</span><br>5 Jan 2024</p>
                 </div>
                 <p style="text-align:center; color:#666;">Loading More...</p>
             </div>
-            <div class="notifications-settings">
+            <div class="notifications-settings" role="region" aria-label="Notification settings">
                 <h3>Settings</h3>
                 <div class="settings-item">
                     <span>Banner and sound</span>
@@ -349,7 +440,7 @@
     <!-- Footer -->
     <footer>
         <h2>Customer Loyalty</h2>
-        <p>Contact us: <a href="mailto:support@orderific.com">support@orderific.com</a></p>
+        <p>Contact us: <a href="mailto:support@orderific.com" aria-label="Email support">support@orderific.com</a></p>
     </footer>
 
     <script>
