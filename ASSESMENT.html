@@ -10,6 +10,7 @@
             --primary-color: #ff5733; /* Orange for button */
             --text-color: #333;
             --light-text-color: #666;
+            --badge-bg: #ff6f61; /* Adjusted orange for badge */
             --background-color: #fff;
             --check-color: #ff5733; /* Orange for checkmarks */
             --border-radius: 15px;
@@ -33,9 +34,23 @@
         }
 
         .pricing-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem; /* Space between badge and card */
             max-width: 400px;
             width: 100%;
-            position: relative;
+        }
+
+        .badge {
+            background-color: var(--badge-bg);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px; /* Circular badge */
+            font-size: 0.875rem;
+            font-weight: normal;
+            line-height: 1.2;
+            white-space: nowrap;
+            margin-top: 0.5rem;
         }
 
         .pricing-card {
@@ -44,20 +59,7 @@
             padding: 2rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
-            position: relative;
-            overflow: visible; /* Allows image to extend outside */
-        }
-
-        .top-image {
-            position: absolute;
-            top: 0rem *---------------------------------rem; /* Moves image down, 3/4 outside */
-            left: -1.85rem; /* 3/4 outside on left */
-            width: 7rem; /* Increased size */
-            height: 7rem; /* Increased size */
-            border-radius: 50%; /* Circular shape */
-            background: url('https://orderific.com/ord-website/assets/img/pricing/logo/icon7.png') no-repeat center/cover; /* Larger placeholder image */
-            border: 2px solid var(--primary-color); /* Optional border for visibility */
-            transform: translateY(-50%); /* Center vertically with top offset */
+            flex: 1;
         }
 
         .header-group {
@@ -65,13 +67,13 @@
         }
 
         .small-image {
-            width: 2.8rem;
-            height: 2.8rem;
+            width: 1.5rem; /* Adjusted to match dollar sign size in image */
+            height: 1.5rem;
             border-radius: 50%;
-            background: url('https://orderific.com/ord-website/assets/img/pricing/logo/icon4.png') no-repeat center/cover; /* Placeholder small image */
+            background: url('https://via.placeholder.com/30') no-repeat center/cover; /* Placeholder for dollar sign */
             display: inline-block;
             vertical-align: middle;
-            margin-right: 0.5rem;
+            margin-left: 0.5rem;
         }
 
         .pricing-card h2 {
@@ -85,7 +87,7 @@
         .pricing-card .price {
             font-size: 2.25rem;
             color: var(--text-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem; /* Increased to match image spacing */
             font-weight: bold;
             display: inline-block;
             vertical-align: middle;
@@ -117,7 +119,7 @@
             font-size: 1rem;
             cursor: pointer;
             display: block;
-            margin: 0 auto 2rem;
+            margin: 0 auto;
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.2s;
@@ -186,7 +188,14 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .pricing-container {
-                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .badge {
+                margin-top: 0;
+                margin-bottom: 0.25rem;
             }
 
             .pricing-card {
@@ -210,15 +219,8 @@
                 font-size: 0.9rem;
             }
 
-            .top-image {
-                top: -2.25rem;
-                left: -2.25rem;
-                width: 3rem;
-                height: 3rem;
-            }
-
             .small-image {
-                width: 0.5rem;
+                width: 1.2rem;
                 height: 1.2rem;
             }
         }
@@ -240,16 +242,9 @@
                 font-size: 0.85rem;
             }
 
-            .top-image {
-                top: -1.5rem;
-                left: -1.5rem;
-                width: 2rem;
-                height: 2rem;
-            }
-
             .small-image {
-                width: 0.5rem;
-                height: 1.2rem;
+                width: 1rem;
+                height: 1rem;
             }
         }
 
@@ -266,15 +261,15 @@
 </head>
 <body>
     <div class="pricing-container">
-        <!-- Full/Pro Plan -->
+        <div class="badge">No Setup Fee or Binding Contracts</div>
         <div class="pricing-card">
-            <div class="top-image"></div>
             <div class="header-group">
                 <h2>Full/Pro Plan</h2>
+                <span class="small-image"></span>
             </div>
             <div class="header-group">
-                <span class="small-image"></span>
                 <div class="price">$99<span>/month</span></div>
+                <span class="small-image"></span>
             </div>
             <p class="description">Become a culinary sensation with Orderific's Full Plan at just $99/month.</p>
             <a href="#" class="btn">Get Started</a>
