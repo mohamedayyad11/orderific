@@ -46,12 +46,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #e0e0e0; /* Default border */
             position: relative;
             overflow: hidden;
+            border-style: solid;
+            border-width: 1px;
+            border-color: black black black transparent; /* Black on top, right, bottom; transparent on left */
         }
 
-        /* Left-side Colored Shadow (Red or Green) */
+        /* Left-side Colored Border and Shadow (Red or Green) */
+        .grid-item:nth-child(1),
+        .grid-item:nth-child(2),
+        .grid-item:nth-child(11),
+        .grid-item:nth-child(12) {
+            border-left: 2px solid #ff4444; /* Red border on left */
+        }
+
         .grid-item:nth-child(1)::before,
         .grid-item:nth-child(2)::before,
         .grid-item:nth-child(11)::before,
@@ -61,9 +70,13 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 5px; /* Solid shadow width */
+            width: 5px;
             background: #ff4444; /* Red shadow */
             z-index: -1;
+        }
+
+        .grid-item:nth-child(3) {
+            border-left: 2px solid #ff4444; /* Red border on left */
         }
 
         .grid-item:nth-child(3)::before {
@@ -75,6 +88,22 @@
             width: 5px;
             background: #ff4444; /* Red shadow */
             z-index: -1;
+        }
+
+        .grid-item:nth-child(5),
+        .grid-item:nth-child(6),
+        .grid-item:nth-child(7),
+        .grid-item:nth-child(8),
+        .grid-item:nth-child(9),
+        .grid-item:nth-child(10),
+        .grid-item:nth-child(13),
+        .grid-item:nth-child(14),
+        .grid-item:nth-child(15),
+        .grid-item:nth-child(16),
+        .grid-item:nth-child(17),
+        .grid-item:nth-child(18),
+        .grid-item:nth-child(19) {
+            border-left: 2px solid #00cc00; /* Green border on left */
         }
 
         .grid-item:nth-child(5)::before,
@@ -100,28 +129,10 @@
             z-index: -1;
         }
 
-        /* No colored borders, only default border */
-        .grid-item:nth-child(1),
-        .grid-item:nth-child(2),
-        .grid-item:nth-child(3),
+        /* Ensure A4 and D1 have no colored border or shadow on the left */
         .grid-item:nth-child(4),
-        .grid-item:nth-child(5),
-        .grid-item:nth-child(6),
-        .grid-item:nth-child(7),
-        .grid-item:nth-child(8),
-        .grid-item:nth-child(9),
-        .grid-item:nth-child(10),
-        .grid-item:nth-child(11),
-        .grid-item:nth-child(12),
-        .grid-item:nth-child(13),
-        .grid-item:nth-child(14),
-        .grid-item:nth-child(15),
-        .grid-item:nth-child(16),
-        .grid-item:nth-child(17),
-        .grid-item:nth-child(18),
-        .grid-item:nth-child(19),
         .grid-item:nth-child(20) {
-            border: 1px solid #e0e0e0; /* Uniform border */
+            border-left: 1px solid black; /* Black border on left */
         }
 
         /* Mobile Responsiveness */
