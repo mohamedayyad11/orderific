@@ -226,6 +226,9 @@
         .download-section {
             margin-top: 30px;
             text-align: left;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
         }
 
         .download-section img {
@@ -350,37 +353,154 @@
             text-decoration: underline;
         }
 
-        /* Responsive Design */
+        /* Enhanced Responsive Design */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                padding: 20px;
+                padding: 15px;
                 text-align: center;
+            }
+
+            .logo {
+                font-size: 20px;
+                margin-bottom: 10px;
             }
 
             .nav-links {
                 flex-direction: column;
                 gap: 10px;
-                margin-top: 20px;
+                margin-top: 15px;
+                width: 100%;
+            }
+
+            .nav-links a {
+                font-size: 16px; /* Slightly larger for touch */
+                padding: 5px 0;
+            }
+
+            .nav-links img {
+                margin-left: 0;
+            }
+
+            .login-btn, .start-free-btn {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
             }
 
             .container {
                 flex-direction: column;
-                margin: 20px;
+                margin: 20px 10px;
+                padding: 0 10px;
+                gap: 20px;
+            }
+
+            .content h1 {
+                font-size: 28px;
+            }
+
+            .content h2 {
+                font-size: 16px;
+            }
+
+            .content p {
+                font-size: 13px;
             }
 
             .sidebar {
                 margin-top: 20px;
+                padding: 20px;
+            }
+
+            .sidebar h2 {
+                font-size: 16px;
+            }
+
+            .sidebar .price {
+                font-size: 20px;
+            }
+
+            .sidebar p {
+                font-size: 11px;
+            }
+
+            .get-started-btn {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .sidebar ul li {
+                font-size: 13px;
+                padding-left: 18px;
+            }
+
+            .download-section {
+                padding: 0 10px;
+            }
+
+            .download-btns {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .download-btn {
+                width: 100%;
+                padding: 12px;
+                font-size: 14px;
             }
 
             .footer {
                 flex-direction: column;
-                text-align: center;
                 padding: 20px;
+                text-align: center;
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
             }
 
             .locations {
                 justify-content: center;
+                gap: 15px;
+            }
+
+            .footer-bottom {
+                font-size: 11px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 18px;
+            }
+
+            .logo img {
+                width: 25px;
+            }
+
+            .content h1 {
+                font-size: 24px;
+            }
+
+            .sidebar {
+                padding: 15px;
+            }
+
+            .sidebar img {
+                width: 40px;
+            }
+
+            .footer-column h4 {
+                font-size: 13px;
+            }
+
+            .footer-column ul li a {
+                font-size: 11px;
+            }
+
+            .location-item {
+                font-size: 11px;
             }
         }
     </style>
@@ -438,7 +558,7 @@
     </div>
 
     <!-- Download Section -->
-    <div class="download-section" style="max-width: 1200px; margin: 0 auto 50px; padding: 0 20px;">
+    <div class="download-section">
         <p><img src="https://img.icons8.com/ios-filled/30/f60/delivery.png" alt="Orderific Logo"> Order<span>ific</span> ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
         <div class="download-btns">
             <button class="download-btn ios-btn">Download for iOS</button>
