@@ -31,7 +31,7 @@
         }
 
         h2 {
-            text-align: center;
+            text-align: left;
             color: #333;
             font-size: 18px;
             margin-bottom: 15px;
@@ -41,6 +41,12 @@
         /* Display & Positioning Section (Popup) */
         .culinary-experience {
             text-align: center;
+        }
+
+        .culinary-experience p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
 
         button#exploreBtn {
@@ -66,7 +72,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            display: none; /* Changed from flex to none for initial state */
+            display: none;
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -105,6 +111,13 @@
             font-weight: 600;
         }
 
+        .popup-content .item-details {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
         .close {
             position: absolute;
             top: 10px;
@@ -115,7 +128,7 @@
         }
 
         .cancel-btn {
-            background-color: #dc3545; /* Red color from image */
+            background-color: #dc3545;
             color: #fff;
             border: none;
             padding: 8px 15px;
@@ -127,18 +140,18 @@
         }
 
         .cancel-btn:hover {
-            background-color: #c82333; /* Darker red on hover */
+            background-color: #c82333;
         }
 
-        /* Flexbox Section (Popular Items) */
+        /* Popular Items (Flexbox) */
         .popular-items {
-            text-align: center;
+            text-align: left;
         }
 
         .items-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
         }
 
@@ -146,7 +159,7 @@
             background-color: #fff;
             padding: 15px;
             border-radius: 10px;
-            width: 200px;
+            width: calc(33.33% - 10px); /* 3 columns */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
             border: 1px solid #e0e0e0;
@@ -165,27 +178,23 @@
             font-size: 14px;
         }
 
-        /* Grid Section (World Cuisine Highlights) */
+        /* World Cuisine Highlights (Grid) */
         .world-cuisine {
-            text-align: center;
+            text-align: left;
         }
 
         .grid-container {
-            display: grid;
-            grid-template-areas: 
-                "A1 A2 A3 A4 A5 A6 B1 B2 B3 B4"
-                "B5 B6 C1 C2 C3 C4 C5 C6 C7 D1";
+            display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
-            max-width: 1000px;
-            margin: 0 auto;
         }
 
         .grid-item {
             background-color: #fff;
             padding: 15px;
             border-radius: 10px;
-            width: 200px;
+            width: calc(33.33% - 10px); /* 3 columns */
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border: 1px solid #e0e0e0;
@@ -204,27 +213,27 @@
             font-size: 14px;
         }
 
-        /* Grid Item Positioning */
-        .grid-item:nth-child(1) { grid-area: A1; border: 2px solid #ff4444; }
-        .grid-item:nth-child(2) { grid-area: A2; border: 2px solid #ff4444; }
-        .grid-item:nth-child(3) { grid-area: A3; border: 2px dashed #ff4444; }
-        .grid-item:nth-child(4) { grid-area: A4; }
-        .grid-item:nth-child(5) { grid-area: A5; border: 2px solid #00cc00; }
-        .grid-item:nth-child(6) { grid-area: A6; border: 2px solid #00cc00; }
-        .grid-item:nth-child(7) { grid-area: B1; border: 2px solid #00cc00; }
-        .grid-item:nth-child(8) { grid-area: B2; border: 2px solid #00cc00; }
-        .grid-item:nth-child(9) { grid-area: B3; border: 2px solid #00cc00; }
-        .grid-item:nth-child(10) { grid-area: B4; border: 2px solid #00cc00; }
-        .grid-item:nth-child(11) { grid-area: B5; border: 2px solid #ff4444; }
-        .grid-item:nth-child(12) { grid-area: B6; border: 2px solid #ff4444; }
-        .grid-item:nth-child(13) { grid-area: C1; border: 2px solid #00cc00; }
-        .grid-item:nth-child(14) { grid-area: C2; border: 2px solid #00cc00; }
-        .grid-item:nth-child(15) { grid-area: C3; border: 2px solid #00cc00; }
-        .grid-item:nth-child(16) { grid-area: C4; border: 2px solid #00cc00; }
-        .grid-item:nth-child(17) { grid-area: C5; border: 2px solid #00cc00; }
-        .grid-item:nth-child(18) { grid-area: C6; border: 2px solid #00cc00; }
-        .grid-item:nth-child(19) { grid-area: C7; border: 2px solid #00cc00; }
-        .grid-item:nth-child(20) { grid-area: D1; }
+        /* Grid Item Borders */
+        .grid-item:nth-child(1) { border: 2px solid #ff4444; }
+        .grid-item:nth-child(2) { border: 2px solid #ff4444; }
+        .grid-item:nth-child(3) { border: 2px dashed #ff4444; }
+        .grid-item:nth-child(4) { border: none; }
+        .grid-item:nth-child(5) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(6) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(7) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(8) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(9) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(10) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(11) { border: 2px solid #ff4444; }
+        .grid-item:nth-child(12) { border: 2px solid #ff4444; }
+        .grid-item:nth-child(13) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(14) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(15) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(16) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(17) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(18) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(19) { border: 2px solid #00cc00; }
+        .grid-item:nth-child(20) { border: none; }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -234,6 +243,10 @@
 
             h2 {
                 font-size: 16px;
+            }
+
+            .culinary-experience p {
+                font-size: 12px;
             }
 
             button#exploreBtn, .cancel-btn {
@@ -260,14 +273,8 @@
                 font-size: 18px;
             }
 
-            .items-container, .grid-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-
             .item, .grid-item {
-                width: 180px;
+                width: calc(50% - 10px); /* 2 columns */
                 padding: 10px;
             }
 
@@ -277,16 +284,6 @@
 
             .item p, .grid-item p {
                 font-size: 12px;
-            }
-
-            .grid-container {
-                grid-template-areas: 
-                    "A1 A2 A3 A4"
-                    "A5 A6 B1 B2"
-                    "B3 B4 B5 B6"
-                    "C1 C2 C3 C4"
-                    "C5 C6 C7 D1";
-                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -298,6 +295,10 @@
 
             h2 {
                 font-size: 14px;
+            }
+
+            .culinary-experience p {
+                font-size: 10px;
             }
 
             button#exploreBtn, .cancel-btn {
@@ -325,7 +326,7 @@
             }
 
             .item, .grid-item {
-                width: 150px;
+                width: 100%; /* 1 column */
                 padding: 8px;
             }
 
@@ -335,21 +336,6 @@
 
             .item p, .grid-item p {
                 font-size: 10px;
-            }
-
-            .grid-container {
-                grid-template-areas: 
-                    "A1 A2"
-                    "A3 A4"
-                    "A5 A6"
-                    "B1 B2"
-                    "B3 B4"
-                    "B5 B6"
-                    "C1 C2"
-                    "C3 C4"
-                    "C5 C6"
-                    "C7 D1";
-                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -389,13 +375,15 @@
                 <span id="closePopup" class="close">×</span>
                 <h2>Cancel Item</h2>
                 <p>Are you sure to cancel this item?</p>
-                <p><strong>Tasty Burger</strong><br>Size: Small, Cheese: A little bit, Salt: No</p>
+                <div class="item-details">
+                    <p><strong>Tasty Burger</strong><br>Size: Small, Cheese: A little bit, Salt: No</p>
+                </div>
                 <button class="cancel-btn">Cancel Items</button>
             </div>
         </div>
     </section>
 
-    <!-- Flexbox Section (Popular Items) -->
+    <!-- Popular Items (Flexbox) -->
     <section class="popular-items">
         <h2>Popular Items</h2>
         <div class="items-container">
@@ -426,7 +414,7 @@
         </div>
     </section>
 
-    <!-- Grid Section (World Cuisine Highlights) -->
+    <!-- World Cuisine Highlights (Grid) -->
     <section class="world-cuisine">
         <h2>World Cuisine Highlights</h2>
         <div class="grid-container">
