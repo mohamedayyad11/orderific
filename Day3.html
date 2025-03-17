@@ -46,81 +46,83 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e0e0e0; /* Default border, no colored borders */
             position: relative;
             overflow: hidden;
         }
 
-        /* Left-side Shadow with Green or Red based on Borders */
-        .grid-item:nth-child(1)::before,
-        .grid-item:nth-child(2)::before,
-        .grid-item:nth-child(11)::before,
-        .grid-item:nth-child(12)::before {
+        /* Left-side Shadow with Green or Red based on Original Borders */
+        .grid-item:nth-child(1)::after,
+        .grid-item:nth-child(2)::after,
+        .grid-item:nth-child(11)::after,
+        .grid-item:nth-child(12)::after {
             content: '';
             position: absolute;
             left: 0;
             top: 0;
+            bottom: 0;
             width: 10px;
-            height: 100%;
-            background: radial-gradient(circle at left, #ff4444 0%, transparent 70%); /* Red shadow */
+            background: radial-gradient(circle at left, rgba(255, 68, 68, 0.3) 0%, transparent 70%); /* Red shadow */
             z-index: -1;
         }
 
-        .grid-item:nth-child(3)::before {
+        .grid-item:nth-child(3)::after {
             content: '';
             position: absolute;
             left: 0;
             top: 0;
+            bottom: 0;
             width: 10px;
-            height: 100%;
-            background: radial-gradient(circle at left, #ff4444 0%, transparent 70%); /* Red dashed shadow */
+            background: radial-gradient(circle at left, rgba(255, 68, 68, 0.3) 0%, transparent 70%); /* Red shadow */
             z-index: -1;
         }
 
-        .grid-item:nth-child(5)::before,
-        .grid-item:nth-child(6)::before,
-        .grid-item:nth-child(7)::before,
-        .grid-item:nth-child(8)::before,
-        .grid-item:nth-child(9)::before,
-        .grid-item:nth-child(10)::before,
-        .grid-item:nth-child(13)::before,
-        .grid-item:nth-child(14)::before,
-        .grid-item:nth-child(15)::before,
-        .grid-item:nth-child(16)::before,
-        .grid-item:nth-child(17)::before,
-        .grid-item:nth-child(18)::before,
-        .grid-item:nth-child(19)::before {
+        .grid-item:nth-child(5)::after,
+        .grid-item:nth-child(6)::after,
+        .grid-item:nth-child(7)::after,
+        .grid-item:nth-child(8)::after,
+        .grid-item:nth-child(9)::after,
+        .grid-item:nth-child(10)::after,
+        .grid-item:nth-child(13)::after,
+        .grid-item:nth-child(14)::after,
+        .grid-item:nth-child(15)::after,
+        .grid-item:nth-child(16)::after,
+        .grid-item:nth-child(17)::after,
+        .grid-item:nth-child(18)::after,
+        .grid-item:nth-child(19)::after {
             content: '';
             position: absolute;
             left: 0;
             top: 0;
+            bottom: 0;
             width: 10px;
-            height: 100%;
-            background: radial-gradient(circle at left, #00cc00 0%, transparent 70%); /* Green shadow */
+            background: radial-gradient(circle at left, rgba(0, 204, 0, 0.3) 0%, transparent 70%); /* Green shadow */
             z-index: -1;
         }
 
-        /* Grid Item Borders (Matching the Highlights from Image) */
-        .grid-item:nth-child(1) { border: 2px solid #ff4444; } /* A1 - Red solid */
-        .grid-item:nth-child(2) { border: 2px solid #ff4444; } /* A2 - Red solid */
-        .grid-item:nth-child(3) { border: 2px dashed #ff4444; } /* A3 - Red dashed */
-        .grid-item:nth-child(4) { border: none; } /* A4 - No border */
-        .grid-item:nth-child(5) { border: 2px solid #00cc00; } /* A5 - Green solid */
-        .grid-item:nth-child(6) { border: 2px solid #00cc00; } /* A6 - Green solid */
-        .grid-item:nth-child(7) { border: 2px solid #00cc00; } /* B1 - Green solid */
-        .grid-item:nth-child(8) { border: 2px solid #00cc00; } /* B2 - Green solid */
-        .grid-item:nth-child(9) { border: 2px solid #00cc00; } /* B3 - Green solid */
-        .grid-item:nth-child(10) { border: 2px solid #00cc00; } /* B4 - Green solid */
-        .grid-item:nth-child(11) { border: 2px solid #ff4444; } /* B5 - Red solid */
-        .grid-item:nth-child(12) { border: 2px solid #ff4444; } /* B6 - Red solid */
-        .grid-item:nth-child(13) { border: 2px solid #00cc00; } /* C1 - Green solid */
-        .grid-item:nth-child(14) { border: 2px solid #00cc00; } /* C2 - Green solid */
-        .grid-item:nth-child(15) { border: 2px solid #00cc00; } /* C3 - Green solid */
-        .grid-item:nth-child(16) { border: 2px solid #00cc00; } /* C4 - Green solid */
-        .grid-item:nth-child(17) { border: 2px solid #00cc00; } /* C5 - Green solid */
-        .grid-item:nth-child(18) { border: 2px solid #00cc00; } /* C6 - Green solid */
-        .grid-item:nth-child(19) { border: 2px solid #00cc00; } /* C7 - Green solid */
-        .grid-item:nth-child(20) { border: none; } /* D1 - No border */
+        /* No colored borders, only default border */
+        .grid-item:nth-child(1),
+        .grid-item:nth-child(2),
+        .grid-item:nth-child(3),
+        .grid-item:nth-child(4),
+        .grid-item:nth-child(5),
+        .grid-item:nth-child(6),
+        .grid-item:nth-child(7),
+        .grid-item:nth-child(8),
+        .grid-item:nth-child(9),
+        .grid-item:nth-child(10),
+        .grid-item:nth-child(11),
+        .grid-item:nth-child(12),
+        .grid-item:nth-child(13),
+        .grid-item:nth-child(14),
+        .grid-item:nth-child(15),
+        .grid-item:nth-child(16),
+        .grid-item:nth-child(17),
+        .grid-item:nth-child(18),
+        .grid-item:nth-child(19),
+        .grid-item:nth-child(20) {
+            border: 1px solid #e0e0e0; /* Uniform border */
+        }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -134,7 +136,7 @@
                 font-size: 12px;
             }
 
-            .grid-item::before {
+            .grid-item::after {
                 width: 8px; /* Adjusted shadow width for smaller screens */
             }
         }
@@ -150,7 +152,7 @@
                 font-size: 10px;
             }
 
-            .grid-item::before {
+            .grid-item::after {
                 width: 6px; /* Further adjusted shadow width */
             }
         }
