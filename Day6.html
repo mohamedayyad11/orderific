@@ -3,126 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Order Dashboard</title>
+    <title>Combined Layout Exercise</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-6">
-    <!-- Order Card Section -->
-    <section class="mb-12">
-        <div class="bg-blue-800 text-white rounded-xl p-4 w-64 shadow-xl border border-blue-700">
-            <h3 class="text-xl font-semibold">#F102</h3>
-            <p class="mt-1">Emma Wilson</p>
-            <p class="mt-2 text-blue-200">Ordered</p>
-            <p class="text-blue-200">8 min ago</p>
+<body class="font-sans bg-gray-100 min-h-screen p-4 sm:p-5 flex flex-col items-center">
+    <!-- Section 1: Popup Exercise -->
+    <div class="text-center text-gray-600 mb-4 sm:mb-5">
+        <p class="text-sm sm:text-base">Display & Positioning Exercises</p>
+        <p class="text-sm sm:text-base">Create a button "CLICK HERE". Once the button is pressed, show a popup below. Popup should be positioned centered to the screen</p>
+    </div>
+    <button class="bg-blue-500 text-white px-4 py-2 sm:px-5 sm:py-2 rounded-md hover:bg-blue-600 mb-4 sm:mb-5" onclick="showPopup()">CLICK HERE</button>
+
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-[999] hidden overlay" onclick="hidePopup()"></div>
+    <div class="popup hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-4 sm:p-5 rounded-lg shadow-2xl w-[250px] sm:w-[300px] text-center z-[1000]" id="popup">
+        <span class="absolute top-2 right-2 text-xl sm:text-2xl cursor-pointer text-gray-400 hover:text-black" onclick="hidePopup()">×</span>
+        <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">Cancel Item</h3>
+        <p class="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">Are you sure to cancel this item?</p>
+        <div class="bg-gray-100 p-2 rounded-md mb-3 sm:mb-4 text-left">
+            <p class="text-xs sm:text-sm text-gray-600 m-1">Tasty Burger</p>
+            <p class="text-xs sm:text-sm text-gray-600 m-1">Size: Small, Cheese: A little bit, Salt: No</p>
+        </div>
+        <button class="bg-red-500 text-white px-4 py-2 sm:px-5 sm:py-2 rounded-full w-full hover:bg-red-600 text-sm sm:text-base" onclick="hidePopup()">Cancel Items</button>
+    </div>
+
+    <!-- Section 2: Order Details -->
+    <section class="order-details w-full max-w-3xl mx-auto mb-6 sm:mb-8 p-3 sm:p-4 bg-white rounded-lg shadow-md">
+        <h2 class="text-left text-gray-800 text-base sm:text-lg font-semibold mb-3 sm:mb-4">Order Details</h2>
+        <div class="card bg-[#f7f3f2] p-3 sm:p-4 rounded-lg w-[200px] sm:w-64 text-center shadow-[-6px_0_12px_rgba(0,0,0,0.15)] sm:shadow-[-8px_0_12px_rgba(0,0,0,0.15)] border border-gray-200 mx-auto">
+            <h3 class="text-xs sm:text-sm font-semibold text-gray-800 mb-1">#2001</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Ralph Edwards<br>Ordered<br>14 min ago</p>
         </div>
     </section>
 
-    <!-- Flexbox Section (Popular Items) -->
-    <section class="mb-12 w-full max-w-xl">
-        <h2 class="text-xl font-bold text-gray-800 text-center mb-3">Popular Items</h2>
-        <div class="bg-blue-100 p-1.5 rounded-lg shadow-lg">
-            <div class="grid grid-cols-2 gap-1">
-                <div class="bg-gray-100 p-1 rounded-lg text-center shadow-sm">
-                    <p class="font-semibold text-xs">Spicy Avocado Wrap</p>
-                    <p class="text-gray-600 text-2xs">Order: 92</p>
-                </div>
-                <div class="bg-gray-100 p-1 rounded-lg text-center shadow-sm">
-                    <p class="font-semibold text-xs">Crispy Onion Burger</p>
-                    <p class="text-gray-600 text-2xs">Order: 85</p>
-                </div>
-                <div class="bg-gray-100 p-1 rounded-lg text-center shadow-sm">
-                    <p class="font-semibold text-xs">Garlic Herb Fries</p>
-                    <p class="text-gray-600 text-2xs">Order: 67</p>
-                </div>
-                <div class="bg-gray-100 p-1 rounded-lg text-center shadow-sm">
-                    <p class="font-semibold text-xs">Zesty Lemonade</p>
-                    <p class="text-gray-600 text-2xs">Order: 53</p>
-                </div>
-                <div class="bg-gray-100 p-1 rounded-lg text-center shadow-sm">
-                    <p class="font-semibold text-xs">Choco Lava Cake</p>
-                    <p class="text-gray-600 text-2xs">Order: 48</p>
-                </div>
-                <div class="bg-gray-100 p-1 rounded-lg text-center shadow-sm">
-                    <p class="font-semibold text-xs">Mango Tango Smoothie</p>
-                    <p class="text-gray-600 text-2xs">Order: 39</p>
-                </div>
-                <div class="bg-gray-100 p-1 rounded-lg text-center shadow-sm">
-                    <p class="font-semibold text-xs">BBQ Chicken Bites</p>
-                    <p class="text-gray-600 text-2xs">Order: 35</p>
-                </div>
-                <div class="bg-gray-100 p-1 rounded-lg text-center shadow-sm">
-                    <p class="font-semibold text-xs">Truffle Mac & Cheese</p>
-                    <p class="text-gray-600 text-2xs">Order: 29</p>
-                </div>
-                <div class="bg-gray-100 p-1 rounded-lg text-center shadow-sm">
-                    <p class="font-semibold text-xs">Peppermint Milkshake</p>
-                    <p class="text-gray-600 text-2xs">Order: 22</p>
-                </div>
-                <div class="bg-gray-100 p-1 rounded-lg text-center shadow-sm">
-                    <p class="font-semibold text-xs">Sizzling Veggie Tacos</p>
-                    <p class="text-gray-600 text-2xs">Order: 18</p>
+    <!-- Section 3: Grid Layout Exercise -->
+    <div class="grid-section bg-gray-100 p-4 sm:p-5 flex flex-col items-center w-full">
+        <h1 class="text-center text-gray-800 text-xl sm:text-2xl font-semibold mb-4 sm:mb-5">Grid Layout Exercise</h1>
+        <div class="grid-container flex flex-wrap gap-1 justify-center max-w-4xl">
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-red-500">A1</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-red-500">A2</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-red-500">A3</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black">A4</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">A5</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">A6</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">B1</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">B2</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">B3</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">B4</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-red-500">B5</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-red-500">B6</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">C1</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">C2</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">C3</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">C4</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">C5</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">C6</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black border-l-2 border-l-green-500">C7</div>
+            <div class="grid-item bg-white w-[70px] sm:w-[90px] h-[40px] sm:h-[50px] rounded-md text-xs sm:text-sm text-gray-800 flex items-center justify-center border border-black">D1</div>
+        </div>
+    </div>
+
+    <!-- Section 4: Popular Items -->
+    <div class="popular-section flex justify-center w-full">
+        <div class="container bg-gray-200 rounded-lg p-2 sm:p-3 shadow-2xl w-full sm:w-[600px] h-auto sm:h-[800px] flex flex-col m-4 sm:m-5">
+            <h2 class="text-left text-gray-800 text-sm sm:text-base font-semibold mb-2 pl-2">Popular Items</h2>
+            <div class="popular-items flex-1 flex justify-center">
+                <div class="items-container grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 w-full p-2">
+                    <div class="item bg-white w-full sm:w-[180px] h-[160px] sm:h-[180px] rounded-3xl shadow-md border border-gray-200 flex flex-col justify-center items-center text-center p-3 sm:p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 mb-1 break-words max-w-full">Double Chicken Burger + French fries</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">Order: 88</p>
+                    </div>
+                    <div class="item bg-white w-full sm:w-[180px] h-[160px] sm:h-[180px] rounded-3xl shadow-md border border-gray-200 flex flex-col justify-center items-center text-center p-3 sm:p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 mb-1 break-words max-w-full">Double Cheese</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">Order: 56</p>
+                    </div>
+                    <div class="item bg-white w-full sm:w-[180px] h-[160px] sm:h-[180px] rounded-3xl shadow-md border border-gray-200 flex flex-col justify-center items-center text-center p-3 sm:p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 mb-1 break-words max-w-full">Potato Gems</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">Order: 38</p>
+                    </div>
+                    <div class="item bg-white w-full sm:w-[180px] h-[160px] sm:h-[180px] rounded-3xl shadow-md border border-gray-200 flex flex-col justify-center items-center text-center p-3 sm:p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 mb-1 break-words max-w-full">Mexican Burger</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">Order: 74</p>
+                    </div>
+                    <div class="item bg-white w-full sm:w-[180px] h-[160px] sm:h-[180px] rounded-3xl shadow-md border border-gray-200 flex flex-col justify-center items-center text-center p-3 sm:p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 mb-1 break-words max-w-full">Double Spicy Bean Burger</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">Order: 41</p>
+                    </div>
+                    <div class="item bg-white w-full sm:w-[180px] h-[160px] sm:h-[180px] rounded-3xl shadow-md border border-gray-200 flex flex-col justify-center items-center text-center p-3 sm:p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 mb-1 break-words max-w-full">Beer</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">Order: 32</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Menu Layout Practice Section -->
-    <section class="mb-12 w-full max-w-3xl">
-        <h2 class="text-xl font-bold text-gray-800 text-center mb-3">Menu Layout Practice</h2>
-        <div class="bg-blue-100 p-1.5 rounded-lg shadow-lg">
-            <div class="grid grid-cols-6 gap-1">
-                <div class="bg-gray-100 border-2 border-red-500 text-black p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M1</div>
-                <div class="bg-gray-100 p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M2</div>
-                <div class="bg-gray-100 p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M3</div>
-                <div class="bg-gray-100 border-2 border-green-500 text-black p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M4</div>
-                <div class="bg-gray-100 p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M5</div>
-                <div class="bg-gray-100 p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M6</div>
-                <div class="bg-gray-100 border-2 border-blue-500 text-black p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M7</div>
-                <div class="bg-gray-100 p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M8</div>
-                <div class="bg-gray-100 p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M9</div>
-                <div class="bg-gray-100 border-2 border-yellow-500 text-black p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M10</div>
-                <div class="bg-gray-100 p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M11</div>
-                <div class="bg-gray-100 p-1 rounded w-20 h-10 flex items-center justify-center shadow-md">M12</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Popup Section -->
-    <section class="text-center">
-        <button id="openPopup" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-200 shadow-md">Click HERE</button>
-
-        <div id="popup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-            <div class="bg-white p-5 rounded-lg text-center relative w-80 shadow-md">
-                <button id="closePopup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">×</button>
-                <h3 class="text-lg font-semibold text-gray-800">Cancel Item</h3>
-                <p class="mt-2 text-gray-600">Are you sure to cancel this item?</p>
-                <div class="mt-4 bg-gray-100 p-3 rounded-lg">
-                    <p class="font-semibold">Zesty Lemonade</p>
-                    <p class="text-gray-600">Size: Medium, Ice: Extra, Sugar: Light</p>
-                </div>
-                <button id="confirmCancel" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200 shadow-md">Cancel Item</button>
-            </div>
-        </div>
-    </section>
-
+    <!-- JavaScript for Popup Functionality -->
     <script>
-        const openPopupBtn = document.getElementById('openPopup');
-        const popup = document.getElementById('popup');
-        const closePopupBtn = document.getElementById('closePopup');
-        const confirmCancelBtn = document.getElementById('confirmCancel');
+        function showPopup() {
+            document.getElementById('popup').classList.remove('hidden');
+            document.querySelector('.overlay').classList.remove('hidden');
+        }
 
-        openPopupBtn.addEventListener('click', () => {
-            popup.classList.remove('hidden');
-        });
-
-        closePopupBtn.addEventListener('click', () => {
-            popup.classList.add('hidden');
-        });
-
-        confirmCancelBtn.addEventListener('click', () => {
-            alert('Item cancellation confirmed!');
-            popup.classList.add('hidden');
-        });
+        function hidePopup() {
+            document.getElementById('popup').classList.add('hidden');
+            document.querySelector('.overlay').classList.add('hidden');
+        }
     </script>
 </body>
 </html>
