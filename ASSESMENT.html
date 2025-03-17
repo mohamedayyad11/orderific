@@ -16,6 +16,7 @@
             --check-color: #ff5733; /* Orange for checkmarks */
             --border-radius: 15px;
             --spacing: 1.5rem;
+            --small-spacing: 0.75rem;
         }
 
         * {
@@ -37,8 +38,8 @@
         .pricing-container {
             display: flex;
             align-items: flex-start;
-            gap: 2rem;
-            max-width: 600px;
+            gap: var(--small-spacing);
+            max-width: 400px;
             width: 100%;
         }
 
@@ -48,29 +49,30 @@
             padding: 0.5rem 1rem;
             border-radius: 20px; /* Circular badge */
             font-size: 0.875rem;
-            font-weight: bold;
+            font-weight: normal;
             line-height: 1.2;
             white-space: nowrap;
-            margin-top: 0.5rem;
+            margin-top: 0.25rem;
         }
 
         .pricing-card {
             background-color: var(--background-color);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
             flex: 1;
         }
 
         .pricing-card h2 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--text-color);
-            margin-bottom: 0.5rem;
+            font-weight: normal;
+            margin-bottom: 0.25rem;
         }
 
         .pricing-card .price {
-            font-size: 2.25rem;
+            font-size: 2rem;
             color: var(--price-color);
             margin-bottom: 0.5rem;
             font-weight: bold;
@@ -81,13 +83,13 @@
 
         .pricing-card .price::before {
             content: "💲";
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             margin-right: 0.25rem;
             color: var(--price-color);
         }
 
         .pricing-card .price span {
-            font-size: 1rem;
+            font-size: 0.875rem;
             color: var(--light-text-color);
             font-weight: normal;
             margin-left: 0.25rem;
@@ -96,22 +98,25 @@
         .pricing-card .description {
             font-size: 0.875rem;
             color: var(--light-text-color);
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
+            font-weight: normal;
+            margin-bottom: 1rem;
+            line-height: 1.4;
         }
 
         .pricing-card .btn {
             background-color: var(--primary-color);
             color: #fff;
-            padding: 0.75rem 2rem;
+            padding: 0.75rem 1.5rem;
             border: none;
             border-radius: 25px;
-            font-size: 1rem;
+            font-size: 0.875rem;
             cursor: pointer;
             display: block;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1.5rem;
             text-align: center;
             text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
             transition: background-color 0.3s, transform 0.2s;
         }
 
@@ -121,25 +126,27 @@
         }
 
         .pricing-card h3 {
-            font-size: 1.125rem;
+            font-size: 1rem;
             color: var(--text-color);
-            margin-bottom: 1rem;
             font-weight: bold;
+            margin-bottom: 0.75rem;
+            text-align: left;
         }
 
         .pricing-card ul {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 0.75rem;
             text-align: left;
         }
 
         .pricing-card ul li {
             font-size: 0.875rem;
             color: var(--light-text-color);
-            margin-bottom: 0.75rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
             position: relative;
-            padding-left: 1.5rem;
-            line-height: 1.5;
+            padding-left: 1.25rem;
+            line-height: 1.4;
         }
 
         .pricing-card ul li::before {
@@ -147,19 +154,22 @@
             color: var(--check-color);
             position: absolute;
             left: 0;
-            font-size: 1rem;
+            font-size: 0.875rem;
         }
 
         .pricing-card .features-more {
             font-size: 0.875rem;
             color: var(--light-text-color);
-            margin-bottom: 2rem;
+            font-weight: normal;
+            margin-bottom: 1rem;
+            text-align: left;
         }
 
         .pricing-card .ideal-section {
             font-size: 0.875rem;
             color: var(--light-text-color);
-            line-height: 1.5;
+            font-weight: normal;
+            line-height: 1.4;
             text-align: left;
         }
 
@@ -173,20 +183,20 @@
             .pricing-container {
                 flex-direction: column;
                 align-items: center;
-                gap: 1rem;
+                gap: 0.5rem;
             }
 
             .badge {
                 margin-top: 0;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.25rem;
             }
 
             .pricing-card {
-                padding: 1.5rem;
+                padding: 1.25rem;
             }
 
             .pricing-card h2 {
-                font-size: 1.25rem;
+                font-size: 1.125rem;
             }
 
             .pricing-card .price {
@@ -194,22 +204,22 @@
             }
 
             .pricing-card .price::before {
-                font-size: 1.25rem;
+                font-size: 1.125rem;
             }
 
             .pricing-card .price span {
-                font-size: 0.875rem;
+                font-size: 0.75rem;
             }
 
             .pricing-card .btn {
-                padding: 0.5rem 1.5rem;
-                font-size: 0.9rem;
+                padding: 0.5rem 1.25rem;
+                font-size: 0.75rem;
             }
         }
 
         @media (max-width: 480px) {
             .pricing-card h2 {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .pricing-card .price {
@@ -225,12 +235,13 @@
             }
 
             .pricing-card .btn {
-                font-size: 0.85rem;
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
             }
 
             .badge {
                 font-size: 0.75rem;
-                padding: 0.25rem 0.5rem;
+                padding: 0.25rem 0.75rem;
             }
         }
 
