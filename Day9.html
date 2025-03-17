@@ -27,24 +27,29 @@
 
         /* Header */
         .header {
-            padding: 20px 0;
+            padding: 10px 0;
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            top: -50px; /* Adjust to align with Free Plan */
         }
 
         .header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 900px; /* Reduced width to bring logo closer to Home */
         }
 
         .header .logo img {
             height: 30px;
+            margin-right: 10px; /* Space between logo and Home */
         }
 
         .header nav ul {
             list-style: none;
             display: flex;
             gap: 20px;
+            align-items: center;
         }
 
         .header nav ul li a {
@@ -89,6 +94,7 @@
             display: flex;
             gap: 40px;
             flex-wrap: wrap;
+            align-items: flex-start;
         }
 
         .main-section .content {
@@ -124,6 +130,7 @@
             padding: 30px;
             text-align: center;
             min-width: 300px;
+            max-width: 350px; /* Align with header actions */
         }
 
         .main-section .pricing-card img {
@@ -184,11 +191,16 @@
             border-top: 1px solid #e0e0e0;
         }
 
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
         .footer .top {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
+            align-items: flex-start;
             flex-wrap: wrap;
             gap: 20px;
         }
@@ -225,7 +237,6 @@
         .footer .links {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 40px;
             flex-wrap: wrap;
             gap: 20px;
         }
@@ -284,7 +295,7 @@
             }
 
             .header nav {
-                display: none; /* Simplified: Replace with a hamburger menu in a real implementation */
+                display: none; /* Simplified: Replace with a hamburger menu */
             }
 
             .header .actions {
@@ -311,6 +322,10 @@
 
             .footer .top .buttons {
                 justify-content: flex-start;
+            }
+
+            .footer .links {
+                flex-direction: column;
             }
         }
 
