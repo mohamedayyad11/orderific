@@ -23,51 +23,46 @@
         .container {
             width: 100%;
             max-width: 1400px;
-            height: auto;
+            padding: 20px;
             display: flex;
-            flex-direction: column;
-            padding: 50px 0;
+            justify-content: center;
         }
 
         .frame {
             width: 100%;
-            height: auto;
+            max-width: 600px;
             background: #f4e4d8;
             border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 50px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding-bottom: 100px; /* Extra space under Sign In */
         }
 
         .logo {
             width: 130px;
             height: auto;
-            filter: hue-rotate(30deg) saturate(500%) brightness(80%); /* Orange logo */
-            margin-top: -20px;
-            margin-bottom: 40px;
+            filter: hue-rotate(30deg) saturate(500%) brightness(80%);
+            margin-bottom: 30px;
         }
 
         .service-panel {
             font-size: 24px;
-            color: #000; /* Black color */
-            font-weight: bold; /* Bold text */
-            margin-bottom: 60px;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 40px;
             text-align: center;
         }
 
         .login-form {
             width: 100%;
-            max-width: 450px;
-            text-align: left;
+            max-width: 400px;
         }
 
         .login-form h2 {
             font-size: 24px;
-            color: #000; /* Black color */
+            color: #000;
             margin-bottom: 20px;
             font-weight: bold;
             text-transform: uppercase;
@@ -97,35 +92,32 @@
             position: relative;
         }
 
-        .password-container input[type="password"] {
-            padding-right: 40px;
-        }
-
         .password-eye {
             position: absolute;
             right: 10px;
-            top: 40%;
+            top: 50%;
             transform: translateY(-50%);
             width: 20px;
             height: auto;
+            cursor: pointer;
         }
 
-        .login-form .remember-me {
+        .remember-me {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
         }
 
-        .login-form .remember-me input[type="checkbox"] {
+        .remember-me input[type="checkbox"] {
             margin-right: 10px;
         }
 
-        .login-form .remember-me label {
+        .remember-me label {
             font-size: 14px;
             color: #555;
         }
 
-        .login-form .login-with-code {
+        .login-with-code {
             display: block;
             font-size: 14px;
             color: #0066cc;
@@ -143,108 +135,67 @@
             border-radius: 5px;
             font-size: 18px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .login-form button:hover {
             background-color: #333;
         }
 
+        /* Mobile devices (up to 768px) */
         @media (max-width: 768px) {
-            .container {
-                max-width: 100%;
-                padding: 20px;
-            }
-
             .frame {
                 padding: 20px;
-                padding-bottom: 60px;
+                margin: 10px;
             }
 
             .logo {
-                display: block;
-            }
-
-            .login-form {
-                max-width: 100%;
-                padding: 0 20px;
+                width: 100px;
+                margin-bottom: 20px;
             }
 
             .service-panel {
                 font-size: 20px;
+                margin-bottom: 30px;
             }
 
             .login-form h2 {
                 font-size: 20px;
             }
 
-            .login-form label {
-                font-size: 14px;
-            }
-
             .login-form input[type="text"],
             .login-form input[type="password"] {
+                padding: 10px;
                 font-size: 14px;
-            }
-
-            .login-form .remember-me label {
-                font-size: 12px;
-            }
-
-            .login-form .login-with-code {
-                font-size: 12px;
             }
 
             .login-form button {
+                padding: 10px;
                 font-size: 16px;
             }
         }
 
-        @media (min-width: 769px) {
-            .container {
-                max-width: 700px;
-                height: auto;
-            }
-
+        /* Tablets (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
             .frame {
-                padding: 70px;
-                padding-bottom: 120px;
+                max-width: 500px;
+                padding: 30px;
             }
 
             .logo {
-                display: block;
-            }
-
-            .login-form {
-                max-width: 500px;
+                width: 120px;
             }
 
             .service-panel {
-                font-size: 24px;
+                font-size: 22px;
             }
+        }
 
-            .login-form h2 {
-                font-size: 24px;
-            }
-
-            .login-form label {
-                font-size: 16px;
-            }
-
-            .login-form input[type="text"],
-            .login-form input[type="password"] {
-                font-size: 16px;
-            }
-
-            .login-form .remember-me label {
-                font-size: 14px;
-            }
-
-            .login-form .login-with-code {
-                font-size: 14px;
-            }
-
-            .login-form button {
-                font-size: 18px;
+        /* Desktops (1025px and above) */
+        @media (min-width: 1025px) {
+            .frame {
+                max-width: 600px;
+                padding: 40px;
             }
         }
     </style>
