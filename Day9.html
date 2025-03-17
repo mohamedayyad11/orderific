@@ -18,14 +18,12 @@
             color: #000;
         }
 
-        /* Container for consistent width */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Header */
         .header {
             padding: 20px 0;
             border-bottom: 1px solid #e0e0e0;
@@ -80,7 +78,6 @@
             font-weight: 600;
         }
 
-        /* Main Section */
         .main-section {
             padding: 50px 0;
         }
@@ -89,11 +86,13 @@
             display: flex;
             gap: 40px;
             flex-wrap: wrap;
+            align-items: flex-start;
         }
 
         .main-section .content {
             flex: 2;
             min-width: 300px;
+            margin-left: 0; /* Aligned with logo */
         }
 
         .main-section .content h1 {
@@ -121,31 +120,36 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            padding: 40px; /* Increased padding */
             text-align: center;
-            min-width: 300px;
-            max-width: 350px; /* Align with header actions */
+            min-width: 350px; /* Increased min-width */
+            max-width: 400px; /* Increased max-width */
+        }
+
+        .main-section .pricing-card .price-section {
+            margin-bottom: 30px;
         }
 
         .main-section .pricing-card img {
-            height: 40px;
-            margin-bottom: 10px;
+            height: 48px; /* Slightly larger icon */
+            margin-bottom: 15px;
         }
 
         .main-section .pricing-card h4 {
-            font-size: 24px;
+            font-size: 28px; /* Increased size */
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .main-section .pricing-card .price {
-            font-size: 36px;
+            font-size: 42px; /* Increased size */
             font-weight: 700;
             color: #EF6C00;
+            margin-bottom: 15px;
         }
 
-        .main-section .pricing-card p {
-            font-size: 14px;
+        .main-section .pricing-card .price-desc {
+            font-size: 16px; /* Slightly larger */
             color: #666;
             margin-bottom: 20px;
         }
@@ -153,13 +157,14 @@
         .main-section .pricing-card .btn {
             background-color: #EF6C00;
             color: #fff;
-            padding: 12px 0;
+            padding: 14px 0; /* Slightly taller button */
             width: 100%;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-size: 16px;
         }
 
         .main-section .pricing-card ul {
@@ -179,7 +184,6 @@
             height: 16px;
         }
 
-        /* Footer */
         .footer {
             padding: 40px 0;
             border-top: 1px solid #e0e0e0;
@@ -281,7 +285,6 @@
             color: #666;
         }
 
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .header .container {
                 flex-wrap: wrap;
@@ -289,7 +292,7 @@
             }
 
             .header nav {
-                display: none; /* Simplified: Replace with a hamburger menu */
+                display: none;
             }
 
             .header .actions {
@@ -333,11 +336,15 @@
             }
 
             .main-section .pricing-card h4 {
-                font-size: 20px;
+                font-size: 24px;
             }
 
             .main-section .pricing-card .price {
-                font-size: 28px;
+                font-size: 32px;
+            }
+
+            .main-section .pricing-card .price-desc {
+                font-size: 14px;
             }
 
             .footer .top .buttons a {
@@ -348,7 +355,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo">
@@ -372,7 +378,6 @@
         </div>
     </header>
 
-    <!-- Main Section -->
     <section class="main-section">
         <div class="container">
             <div class="content">
@@ -384,10 +389,12 @@
                 <p>Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis turpis.</p>
             </div>
             <div class="pricing-card">
-                <img src="https://orderific.com/ord-website/assets/img/pricing/logo/icon5.png" alt="Icon">
-                <h4>FREE</h4>
-                <div class="price">$0/mo</div>
-                <p>Lorem ipsum dolor sit amet dolor adipiscing elit sit consectetur elit.</p>
+                <div class="price-section">
+                    <img src="https://orderific.com/ord-website/assets/img/pricing/logo/icon5.png" alt="Icon">
+                    <h4>FREE</h4>
+                    <div class="price">$0/mo</div>
+                    <p class="price-desc">Lorem ipsum dolor sit amet dolor adipiscing elit sit consectetur elit.</p>
+                </div>
                 <a href="#" class="btn">Get started</a>
                 <p><b>What's included:</b></p>
                 <ul>
@@ -405,7 +412,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="top">
@@ -467,7 +473,6 @@
         </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
