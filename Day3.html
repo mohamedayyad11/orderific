@@ -20,7 +20,7 @@
         .container {
             background-color: #e0e0e0; /* Bright grey color */
             border-radius: 10px 10px 10px 10px; /* Circular ends on all corners */
-            padding: 15px 15px 15px 15px; /* Equal padding on all sides */
+            padding: 15px 15px 30px 15px; /* Padding with 2 steps (approx. 15px each) below items */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Added shadow */
             display: inline-block; /* Makes container width shrink to content */
         }
@@ -31,7 +31,7 @@
             font-size: 18px;
             margin-bottom: 15px;
             font-weight: 600;
-            padding-left: 0; /* Remove extra padding */
+            padding-left: 0; /* Align with item padding */
         }
 
         /* Popular Items (Flexbox) */
@@ -44,16 +44,18 @@
             flex-wrap: wrap;
             gap: 10px;
             justify-content: flex-start; /* Align with x-axis of rectangles */
+            column-gap: 10px; /* Consistent gap between columns */
         }
 
         .item {
             background-color: #fff;
             padding: 15px;
             border-radius: 10px;
-            width: 200px; /* Fixed width for consistent item size (approx. original width) */
+            width: 300px; /* Fixed width for two columns (adjusted to fit content) */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
             border: 1px solid #e0e0e0;
+            flex: 0 0 auto; /* Prevent stretching */
         }
 
         .item h3 {
@@ -72,7 +74,7 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
+                padding: 10px 10px 20px 10px; /* Adjusted padding with 2 steps */
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             }
 
@@ -81,7 +83,7 @@
             }
 
             .item {
-                width: 150px; /* Adjust width for smaller screens */
+                width: 45%; /* Approximately half width for two columns */
                 padding: 10px;
             }
 
@@ -96,7 +98,7 @@
 
         @media (max-width: 480px) {
             .container {
-                padding: 5px;
+                padding: 5px 5px 10px 5px; /* Adjusted padding with 2 steps */
                 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
             }
 
@@ -105,7 +107,7 @@
             }
 
             .item {
-                width: 100%; /* Full width for very small screens */
+                width: 100%; /* Full width for one column on very small screens */
                 padding: 8px;
             }
 
@@ -150,20 +152,20 @@
                     <p>Order: 88</p>
                 </div>
                 <div class="item">
-                    <h3>Mexican Burger</h3>
-                    <p>Order: 74</p>
-                </div>
-                <div class="item">
                     <h3>Double Cheese</h3>
                     <p>Order: 56</p>
                 </div>
                 <div class="item">
-                    <h3>Double Spicy Bean Burger</h3>
-                    <p>Order: 41</p>
-                </div>
-                <div class="item">
                     <h3>Potato Gems</h3>
                     <p>Order: 38</p>
+                </div>
+                <div class="item">
+                    <h3>Mexican Burger</h3>
+                    <p>Order: 74</p>
+                </div>
+                <div class="item">
+                    <h3>Double Spicy Bean Burger</h3>
+                    <p>Order: 41</p>
                 </div>
                 <div class="item">
                     <h3>Beer</h3>
