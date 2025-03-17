@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box Model Exercises</title>
+    <title>Order Details</title>
     <style>
         /* General Styles */
         body {
@@ -31,35 +31,14 @@
             font-weight: 600;
         }
 
-        p {
-            color: #666;
-            font-size: 14px;
-            margin: 0 0 10px;
-            line-height: 1.5;
-        }
-
-        p.task {
-            margin-left: 20px;
-        }
-
-        p.task::before {
-            content: "•";
-            color: #333;
-            margin-right: 5px;
-        }
-
-        p.task.highlight {
-            color: #00cc00; /* Green color for highlighted task */
-        }
-
         /* Card-like Component */
         .card {
-            background-color: #fff;
+            background-color: #f7f3f2; /* Updated color as requested */
             padding: 15px;
             border-radius: 10px;
             width: 250px;
             text-align: center;
-            box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1); /* Left-side shadow */
+            box-shadow: -8px 0 12px rgba(0, 0, 0, 0.15); /* Enhanced left-side shadow */
             border: 1px solid #e0e0e0;
             margin-top: 20px;
         }
@@ -87,14 +66,11 @@
                 font-size: 16px;
             }
 
-            p {
-                font-size: 12px;
-            }
-
             .card {
                 width: 200px;
                 padding: 10px;
                 margin-top: 15px;
+                box-shadow: -6px 0 10px rgba(0, 0, 0, 0.15); /* Adjusted shadow for smaller screens */
             }
 
             .card h3 {
@@ -116,14 +92,11 @@
                 font-size: 14px;
             }
 
-            p {
-                font-size: 10px;
-            }
-
             .card {
                 width: 150px;
                 padding: 8px;
                 margin-top: 10px;
+                box-shadow: -4px 0 8px rgba(0, 0, 0, 0.15); /* Further adjusted shadow */
             }
 
             .card h3 {
@@ -159,13 +132,7 @@
 </head>
 <body>
     <section>
-        <h2>Day 3: Hands-on Practice & Assessments (2 hour)</h2>
-        <h2>Box Model Exercises</h2>
-        <p>Task 1: Create a box with different border widths and colors.</p>
-        <p class="task">Task 2: Add padding to a &lt;div&gt; and observe the changes.</p>
-        <p class="task">Task 3: Adjust margins to space elements properly.</p>
-        <p class="task highlight">Task 4: Use box-sizing: border-box; to control width calculations.</p>
-        <p class="task">Task 5: Create a card-like component with padding, margin, and a border.</p>
+        <h2>Order Details</h2>
         <div class="card">
             <h3>#2001</h3>
             <p>Ralph Edwards<br>Ordered<br>14 min ago</p>
