@@ -3,474 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orderific: Culinary Adventure Hub</title>
+    <title>Orderific: Popular Items & World Cuisine Highlights</title>
     <style>
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 20px;
+            font-size: 14px;
         }
 
-        h1, h2 {
+        h1 {
             text-align: center;
-            color: #2d2d2d;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
         section {
             max-width: 800px;
             margin: 0 auto 30px;
             padding: 15px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Display & Positioning Section */
-        .culinary-experience {
-            text-align: center;
-        }
-
-        button#exploreBtn {
-            padding: 12px 25px;
-            font-size: 16px;
-            background-color: #1E3A8A; /* Dark Blue Color */
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button#exploreBtn:hover {
-            background-color: #152e6b; /* Darker Blue on Hover */
-        }
-
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content {
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            width: 250px;
-            text-align: center;
-            position: relative;
-        }
-
-        .close {
-            position: absolute;
-            top: 8px;
-            right: 12px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .cancel-btn {
-            background-color: #1E3A8A; /* Dark Blue */
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 12px;
-        }
-
-        .cancel-btn:hover {
-            background-color: #152e6b; /* Darker Blue on Hover */
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* Flexbox Section (Top Culinary Journeys) */
-        .global-dishes h2 {
-            font-size: 22px;
+        h2 {
+            text-align: left;
+            color: #333;
+            font-size: 18px;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
-        .dishes-container {
+        /* Popular Items (Flexbox) */
+        .popular-items {
+            text-align: left;
+        }
+
+        .items-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
         }
 
-        .dish {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 12px;
-            width: 200px;
+        .item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            width: calc(33.33% - 10px); /* 3 columns */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
+            border: 1px solid #e0e0e0;
         }
 
-        .dish h3 {
+        .item h3 {
             font-size: 16px;
-            margin: 0 0 8px;
+            color: #333;
+            margin: 0 0 5px;
+            font-weight: 600;
         }
 
-        .dish p {
+        .item p {
             color: #666;
             margin: 0;
+            font-size: 14px;
         }
 
-        /* Grid Section (World Cuisine Highlights) */
-        .world-cuisine h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
+        /* World Cuisine Highlights (Flexbox for 3-column layout) */
+        .world-cuisine {
+            text-align: left;
         }
 
         .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            justify-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
 
         .grid-item {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 12px;
-            width: 200px;
-            text-align: center;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            width: calc(33.33% - 10px); /* 3 columns */
+            text-align: left;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
         }
 
         .grid-item h3 {
             font-size: 14px;
-            margin: 0 0 8px;
+            color: #333;
+            margin: 0 0 5px;
+            font-weight: 600;
         }
 
         .grid-item p {
             color: #666;
             margin: 0;
-            text-align: center;
-        }
-
-        /* Grid Item Positioning */
-        .grid-item:nth-child(1) { grid-area: A1; }
-        .grid-item:nth-child(2) { grid-area: A2; }
-        .grid-item:nth-child(3) { grid-area: A3; }
-        .grid-item:nth-child(4) { grid-area: A4; }
-        .grid-item:nth-child(5) { grid-area: A5; }
-        .grid-item:nth-child(6) { grid-area: A6; }
-        .grid-item:nth-child(7) { grid-area: B1; }
-        .grid-item:nth-child(8) { grid-area: B2; }
-        .grid-item:nth-child(9) { grid-area: B3; }
-        .grid-item:nth-child(10) { grid-area: B4; }
-        .grid-item:nth-child(11) { grid-area: B5; }
-        .grid-item:nth-child(12) { grid-area: B6; }
-        .grid-item:nth-child(13) { grid-area: C1; }
-        .grid-item:nth-child(14) { grid-area: C2; }
-        .grid-item:nth-child(15) { grid-area: C3; }
-        .grid-item:nth-child(16) { grid-area: C4; }
-        .grid-item:nth-child(17) { grid-area: C5; }
-        .grid-item:nth-child(18) { grid-area: C6; }
-        .grid-item:nth-child(19) { grid-area: C7; }
-        .grid-item:nth-child(20) { grid-area: D1; }
-
-        /* New Flexbox Section (Explore More Cuisines) */
-        .explore-more h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-
-        .explore-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
-
-        .explore-item {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 12px;
-            width: 200px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .explore-item h3 {
             font-size: 14px;
-            margin: 0 0 8px;
         }
 
-        .explore-item p {
-            color: #666;
-            margin: 0;
-            text-align: center;
+        /* Grid Item Borders (Matching the Highlights from Image) */
+        .grid-item:nth-child(1) { border: 2px solid #ff4444; } /* A1 */
+        .grid-item:nth-child(2) { border: 2px solid #ff4444; } /* A2 */
+        .grid-item:nth-child(3) { border: 2px dashed #ff4444; } /* A3 */
+        .grid-item:nth-child(4) { border: none; } /* A4 */
+        .grid-item:nth-child(5) { border: 2px solid #00cc00; } /* A5 */
+        .grid-item:nth-child(6) { border: 2px solid #00cc00; } /* A6 */
+        .grid-item:nth-child(7) { border: 2px solid #00cc00; } /* B1 */
+        .grid-item:nth-child(8) { border: 2px solid #00cc00; } /* B2 */
+        .grid-item:nth-child(9) { border: 2px solid #00cc00; } /* B3 */
+        .grid-item:nth-child(10) { border: 2px solid #00cc00; } /* B4 */
+        .grid-item:nth-child(11) { border: 2px solid #ff4444; } /* B5 */
+        .grid-item:nth-child(12) { border: 2px solid #ff4444; } /* B6 */
+        .grid-item:nth-child(13) { border: 2px solid #00cc00; } /* C1 */
+        .grid-item:nth-child(14) { border: 2px solid #00cc00; } /* C2 */
+        .grid-item:nth-child(15) { border: 2px solid #00cc00; } /* C3 */
+        .grid-item:nth-child(16) { border: 2px solid #00cc00; } /* C4 */
+        .grid-item:nth-child(17) { border: 2px solid #00cc00; } /* C5 */
+        .grid-item:nth-child(18) { border: 2px solid #00cc00; } /* C6 */
+        .grid-item:nth-child(19) { border: 2px solid #00cc00; } /* C7 */
+        .grid-item:nth-child(20) { border: none; } /* D1 */
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            section {
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            .item, .grid-item {
+                width: calc(50% - 10px); /* 2 columns */
+                padding: 10px;
+            }
+
+            .item h3, .grid-item h3 {
+                font-size: 14px;
+            }
+
+            .item p, .grid-item p {
+                font-size: 12px;
+            }
         }
 
-        /* Borders for specific items as per the image */
-        .explore-item:nth-child(1) { border: 2px solid #ff4444; } /* A1 */
-        .explore-item:nth-child(2) { border: 2px solid #ff4444; } /* A2 */
-        .explore-item:nth-child(3) { border: 2px dashed #ff4444; } /* A3 */
-        .explore-item:nth-child(5) { border: 2px solid #00cc00; } /* A5 */
-        .explore-item:nth-child(6) { border: 2px solid #00cc00; } /* A6 */
-        .explore-item:nth-child(7) { border: 2px solid #00cc00; } /* B1 */
-        .explore-item:nth-child(8) { border: 2px solid #00cc00; } /* B2 */
-        .explore-item:nth-child(9) { border: 2px solid #00cc00; } /* B3 */
-        .explore-item:nth-child(10) { border: 2px solid #00cc00; } /* B4 */
-        .explore-item:nth-child(11) { border: 2px solid #ff4444; } /* B5 */
-        .explore-item:nth-child(12) { border: 2px solid #ff4444; } /* B6 */
-        .explore-item:nth-child(13) { border: 2px solid #00cc00; } /* C1 */
-        .explore-item:nth-child(14) { border: 2px solid #00cc00; } /* C2 */
-        .explore-item:nth-child(15) { border: 2px solid #00cc00; } /* C3 */
-        .explore-item:nth-child(16) { border: 2px solid #00cc00; } /* C4 */
-        .explore-item:nth-child(17) { border: 2px solid #00cc00; } /* C5 */
-        .explore-item:nth-child(18) { border: 2px solid #00cc00; } /* C6 */
+        @media (max-width: 480px) {
+            section {
+                padding: 5px;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 14px;
+            }
+
+            .item, .grid-item {
+                width: 100%; /* 1 column */
+                padding: 8px;
+            }
+
+            .item h3, .grid-item h3 {
+                font-size: 12px;
+            }
+
+            .item p, .grid-item p {
+                font-size: 10px;
+            }
+        }
+
+        /* Browser Compatibility and Accessibility */
+        button:focus {
+            outline: 2px solid #dc3545;
+            outline-offset: 2px;
+        }
+
+        a {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        img, a {
+            border: 0;
+            outline: none;
+        }
     </style>
 </head>
 <body>
-    <h1>Orderific: Culinary Adventure Hub</h1>
+    <h1>Orderific: Popular Items & World Cuisine Highlights</h1>
 
-    <!-- Display & Positioning Section -->
-    <section class="culinary-experience">
-        <h2>Explore Global Flavors</h2>
-        <button id="exploreBtn">EXPLORE NOW</button>
-
-        <div id="popup" class="popup hidden">
-            <div class="popup-content">
-                <span id="closePopup" class="close">×</span>
-                <h2>Cancel Adventure</h2>
-                <p>Are you sure you want to cancel this culinary journey?</p>
-                <p><strong>Savory Thai Noodle Bowl</strong><br>Region: Southeast Asia, Spice Level: Medium, Add-on: Peanuts</p>
-                <button class="cancel-btn">CANCEL JOURNEY</button>
+    <!-- Popular Items (Flexbox) -->
+    <section class="popular-items">
+        <h2>Popular Items</h2>
+        <div class="items-container">
+            <div class="item">
+                <h3>Double Chicken Burger + French fries</h3>
+                <p>Order: 88</p>
+            </div>
+            <div class="item">
+                <h3>Mexican Burger</h3>
+                <p>Order: 74</p>
+            </div>
+            <div class="item">
+                <h3>Double Cheese</h3>
+                <p>Order: 56</p>
+            </div>
+            <div class="item">
+                <h3>Double Spicy Bean Burger</h3>
+                <p>Order: 41</p>
+            </div>
+            <div class="item">
+                <h3>Potato Gems</h3>
+                <p>Order: 38</p>
+            </div>
+            <div class="item">
+                <h3>Beer</h3>
+                <p>Order: 32</p>
             </div>
         </div>
     </section>
 
-    <!-- Flexbox Section (Top Culinary Journeys) -->
-    <section class="global-dishes">
-        <h2>Top Culinary Journeys</h2>
-        <div class="dishes-container">
-            <div class="dish">
-                <h3>Italian Pasta Feast</h3>
-                <p>Orders: 95</p>
-            </div>
-            <div class="dish">
-                <h3>Mexican Street Tacos</h3>
-                <p>Orders: 88</p>
-            </div>
-            <div class="dish">
-                <h3>Japanese Sushi Platter</h3>
-                <p>Orders: 70</p>
-            </div>
-            <div class="dish">
-                <h3>Indian Butter Chicken</h3>
-                <p>Orders: 60</p>
-            </div>
-            <div class="dish">
-                <h3>French Crepe Delight</h3>
-                <p>Orders: 50</p>
-            </div>
-            <div class="dish">
-                <h3>Brazilian BBQ Skewers</h3>
-                <p>Orders: 45</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Grid Section (World Cuisine Highlights) -->
+    <!-- World Cuisine Highlights (Flexbox for 3-column layout) -->
     <section class="world-cuisine">
         <h2>World Cuisine Highlights</h2>
         <div class="grid-container">
             <div class="grid-item">
-                <h3>Spanish Paella</h3>
-                <p>Orders: 110</p>
+                <h3>#2001</h3>
+                <p>Ralph Edwards<br>Ordered<br>14 min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Greek Souvlaki</h3>
-                <p>Orders: 102</p>
+                <h3>#2002</h3>
+                <p>Jane Smith<br>Ordered<br>5min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Korean Kimchi Stew</h3>
-                <p>Orders: 90</p>
+                <h3>#2003</h3>
+                <p>John Doe<br>Ordered<br>10min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Turkish Kebab</h3>
-                <p>Orders: 78</p>
+                <h3>#2004</h3>
+                <p>Emily Johnson<br>Ordered<br>15min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Vietnamese Pho</h3>
-                <p>Orders: 68</p>
+                <h3>#2005</h3>
+                <p>Michael Brown<br>Ordered<br>20min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Egyptian Koshari</h3>
-                <p>Orders: 62</p>
+                <h3>#2006</h3>
+                <p>Sarah Davis<br>Ordered<br>25min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Peruvian Ceviche</h3>
-                <p>Orders: 55</p>
+                <h3>#2007</h3>
+                <p>David Wilson<br>Ordered<br>30min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Swedish Meatballs</h3>
-                <p>Orders: 50</p>
+                <h3>#2008</h3>
+                <p>Lisa Anderson<br>Ordered<br>35min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Moroccan Tagine</h3>
-                <p>Orders: 47</p>
+                <h3>#2009</h3>
+                <p>Robert Taylor<br>Ordered<br>40min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Thai Green Curry</h3>
-                <p>Orders: 43</p>
+                <h3>#2010</h3>
+                <p>Patricia White<br>Ordered<br>45min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Argentinian Empanadas</h3>
-                <p>Orders: 40</p>
+                <h3>#2011</h3>
+                <p>James Harris<br>Ordered<br>50min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Indian Samosas</h3>
-                <p>Orders: 37</p>
+                <h3>#2012</h3>
+                <p>Barbara Martinez<br>Ordered<br>55min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Chinese Dumplings</h3>
-                <p>Orders: 34</p>
+                <h3>#2013</h3>
+                <p>Charles Clark<br>Ordered<br>60min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Russian Borscht</h3>
-                <p>Orders: 31</p>
+                <h3>#2014</h3>
+                <p>Deborah Lewis<br>Ordered<br>65min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Australian Lamington</h3>
-                <p>Orders: 28</p>
+                <h3>#2015</h3>
+                <p>Thomas Walker<br>Ordered<br>70min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Colombian Arepas</h3>
-                <p>Orders: 25</p>
+                <h3>#2016</h Search for more information if needed.
             </div>
             <div class="grid-item">
-                <h3>Polish Pierogi</h3>
-                <p>Orders: 22</p>
+                <h3>#2017</h3>
+                <p>Paul Allen<br>Ordered<br>80min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Jamaican Jerk Chicken</h3>
-                <p>Orders: 19</p>
+                <h3>#2018</h3>
+                <p>Helen Young<br>Ordered<br>85min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Caramel Popcorn</h3>
-                <p>Orders: 15</p>
+                <h3>#2019</h3>
+                <p>George King<br>Ordered<br>90min ago</p>
             </div>
             <div class="grid-item">
-                <h3>Ethiopian Injera</h3>
-                <p>Orders: 12</p>
+                <h3>#2020</h3>
+                <p>Mary Scott<br>Ordered<br>95min ago</p>
             </div>
         </div>
     </section>
-
-    <!-- New Flexbox Section (Explore More Cuisines) -->
-    <section class="explore-more">
-        <h2>Explore More Cuisines</h2>
-        <div class="explore-container">
-            <div class="explore-item">
-                <h3>Spanish Paella</h3>
-                <p>Orders: 110</p>
-            </div>
-            <div class="explore-item">
-                <h3>Greek Souvlaki</h3>
-                <p>Orders: 102</p>
-            </div>
-            <div class="explore-item">
-                <h3>Korean Kimchi Stew</h3>
-                <p>Orders: 90</p>
-            </div>
-            <div class="explore-item">
-                <h3>Turkish Kebab</h3>
-                <p>Orders: 78</p>
-            </div>
-            <div class="explore-item">
-                <h3>Vietnamese Pho</h3>
-                <p>Orders: 68</p>
-            </div>
-            <div class="explore-item">
-                <h3>Egyptian Koshari</h3>
-                <p>Orders: 62</p>
-            </div>
-            <div class="explore-item">
-                <h3>Peruvian Ceviche</h3>
-                <p>Orders: 55</p>
-            </div>
-            <div class="explore-item">
-                <h3>Swedish Meatballs</h3>
-                <p>Orders: 50</p>
-            </div>
-            <div class="explore-item">
-                <h3>Moroccan Tagine</h3>
-                <p>Orders: 47</p>
-            </div>
-            <div class="explore-item">
-                <h3>Thai Green Curry</h3>
-                <p>Orders: 43</p>
-            </div>
-            <div class="explore-item">
-                <h3>Argentinian Empanadas</h3>
-                <p>Orders: 40</p>
-            </div>
-            <div class="explore-item">
-                <h3>Indian Samosas</h3>
-                <p>Orders: 37</p>
-            </div>
-            <div class="explore-item">
-                <h3>Chinese Dumplings</h3>
-                <p>Orders: 34</p>
-            </div>
-            <div class="explore-item">
-                <h3>Russian Borscht</h3>
-                <p>Orders: 31</p>
-            </div>
-            <div class="explore-item">
-                <h3>Australian Lamington</h3>
-                <p>Orders: 28</p>
-            </div>
-            <div class="explore-item">
-                <h3>Colombian Arepas</h3>
-                <p>Orders: 25</p>
-            </div>
-            <div class="explore-item">
-                <h3>Polish Pierogi</h3>
-                <p>Orders: 22</p>
-            </div>
-            <div class="explore-item">
-                <h3>Jamaican Jerk Chicken</h3>
-                <p>Orders: 19</p>
-            </div>
-            <div class="explore-item">
-                <h3>Caramel Popcorn</h3>
-                <p>Orders: 15</p>
-            </div>
-            <div class="explore-item">
-                <h3>Ethiopian Injera</h3>
-                <p>Orders: 12</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- JavaScript for Popup -->
-    <script>
-        const exploreBtn = document.getElementById('exploreBtn');
-        const popup = document.getElementById('popup');
-        const closePopup = document.getElementById('closePopup');
-
-        exploreBtn.addEventListener('click', () => {
-            popup.classList.remove('hidden');
-        });
-
-        closePopup.addEventListener('click', () => {
-            popup.classList.add('hidden');
-        });
-    </script>
 </body>
 </html>
